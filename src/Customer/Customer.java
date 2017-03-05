@@ -20,7 +20,7 @@ public class Customer {
     }
 
     public String toString(){
-        return username + ":" +  password; //  + ":" + fullName +  ":" + dob;
+        return username + ":" +  password + "\n"; //  + ":" + fullName +  ":" + dob;
     }
 
 
