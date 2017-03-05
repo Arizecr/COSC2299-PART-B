@@ -20,13 +20,28 @@ public class Main {
         String choice = reader.nextLine();
 
 
-        //login menu
-        if(choice.charAt(0) == 'l'){
-            //user chooses to log in
-            login.loginMenu();
+        //infinite loop
+        while(true){
+
+            //go to login menu
+            if(choice.charAt(0) == 'l'){
+                login.loginMenu();
+            }
+
+            //go to registration menu
+            else if(choice.charAt(0) == 'r'){
+
+            }
+
+            //invalid choice
+            else{
+                System.out.println("Invalid choice. Try again");
+                System.out.println("Enter 'l' to login or 'r' to register an account");
+            }
         }
 
-        //registration menu
+
+
 
     }
 }

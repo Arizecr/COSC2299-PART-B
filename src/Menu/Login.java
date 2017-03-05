@@ -13,7 +13,7 @@ public class Login {
         Scanner reader = new Scanner(System.in);
 
         // Logs user into the system
-        System.out.println("Welcome to the system! Enter your details below. \n");
+        System.out.println("\n\nGreat. Just enter your username and password to log in \n");
 
         //infinite loop
         while(true){
