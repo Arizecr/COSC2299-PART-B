@@ -16,8 +16,8 @@ public class Register {
         WriteToFile toTxt = new WriteToFile();
 
         // Logs user into the system
-        System.out.println("\n\nGreat! Just enter your username and password below to register. ");
-        System.out.println("---------------------------------------------------------------- \n");
+        System.out.println("\n\nRegister your details below. ");
+        System.out.println("------------------------------------ \n");
 
         //infinite loop
         while(true){
