@@ -16,12 +16,14 @@ public class Main {
         System.out.println("|               system             |");
         System.out.println("+----------------------------------+");
         System.out.println("Would you like to login or register an account? (l/r)");
-        System.out.print("Enter choice: ");
-        String choice = reader.nextLine();
+
 
 
         //infinite loop
         while(true){
+
+            System.out.print("Enter choice: ");
+            String choice = reader.nextLine();
 
             //go to login menu
             if(choice.charAt(0) == 'l'){
@@ -35,8 +37,9 @@ public class Main {
 
             //invalid choice
             else{
-                System.out.println("Invalid choice. Try again");
-                System.out.println("Enter 'l' to login or 'r' to register an account");
+                System.out.println("\nInvalid choice. Try again");
+                System.out.println("Enter 'l' to login or 'r' to register an account\n");
+
             }
         }
 
