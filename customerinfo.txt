@@ -1,8 +1,1 @@
-<<<<<<< HEAD
-
 c123:123
-
-c321:321
-=======
-c1:123
->>>>>>> refs/remotes/origin/master
