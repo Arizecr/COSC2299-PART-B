@@ -12,6 +12,8 @@ public class Main {
         Login login = new Login();
         Register register = new Register();
 
+        //testing if this works
+
         //display main page
         System.out.println("\n+----------------------------------+");
         System.out.println("|           Welcome to the         |");
