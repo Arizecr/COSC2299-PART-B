@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Login {
 
     public void loginMenu(){
-        System.out.println("test");
+
 
         Scanner reader = new Scanner(System.in);
 
@@ -24,8 +24,7 @@ public class Login {
             System.out.print("Password: ");
             String password = reader.nextLine();
 
-            //Login details are valid
-
+            //test if customer login is valid
             if(username.charAt(0) == 'c'){
                 if(verifyCustomerLogin(username, password)){
 
@@ -33,6 +32,7 @@ public class Login {
                 //customer
             }
 
+            //test if customer login is valid
             if(username.charAt(0) == 'b'){
                 if(verifyOwnerLogin(username, password)){
 
@@ -49,10 +49,16 @@ public class Login {
         }
     }
 
+    /*
+     * Tests whether customer login details are valid
+     */
     public boolean verifyCustomerLogin(String username, String password){
         return true;
     }
 
+    /*
+     * Tests whether owner login details are valid
+     */
     public boolean verifyOwnerLogin(String username, String password){
         return true;
     }
