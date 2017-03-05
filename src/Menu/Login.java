@@ -1,5 +1,9 @@
 package Menu;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -27,18 +31,21 @@ public class Login {
 
             //test if customer login is valid
             if(username.charAt(0) == 'c'){
-                if(verifyCustomerLogin(username, password)){
-
+                if(verifyLoginDetails(username, password)){
+                    System.out.println("customer login works!\n");
+                    System.exit(0);
                 }
-                //customer
+
             }
 
             //test if customer login is valid
             if(username.charAt(0) == 'b'){
-                if(verifyOwnerLogin(username, password)){
+                if(verifyLoginDetails(username, password)){
+                    System.out.println("owner login works!\n");
 
+                    System.exit(0);
                 }
-                //owner
+
             }
 
 
@@ -53,15 +60,52 @@ public class Login {
     /*
      * Tests whether customer login details are valid
      */
-    public boolean verifyCustomerLogin(String username, String password){
-        return true;
-    }
+    public boolean verifyLoginDetails(String username, String password){
+        BufferedReader br;
+        try {
 
-    /*
-     * Tests whether owner login details are valid
-     */
-    public boolean verifyOwnerLogin(String username, String password){
-        return true;
+            //business
+            if(username.charAt(0) == 'b'){
+                br = new BufferedReader(new FileReader("business.txt"));
+            }
+
+            //customer
+            else {
+                br = new BufferedReader(new FileReader("customerinfo.txt"));
+            }
+
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",2);
+                    if(username.equals(loginDetails[0])){
+
+                        if(password.equals(loginDetails[1])){
+
+                            return true;
+                        }
+                        else{
+
+                            return false;
+
+                        }
+                    }
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+        return false;
+
+
     }
 
 
