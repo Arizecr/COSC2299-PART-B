@@ -1,9 +1,12 @@
 package Menu;
 
+import Customer.Customer;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,7 +15,10 @@ import java.util.Scanner;
 public class Login {
 
     public void loginMenu(){
+        ArrayList<Customer> list = new ArrayList<Customer>();
 
+        //load textfile to customer and business owner class
+        //loadInformation();
 
         Scanner reader = new Scanner(System.in);
 
@@ -57,6 +63,9 @@ public class Login {
         }
     }
 
+    public void loadInformation(){
+
+    }
     /*
      * Tests whether customer login details are valid
      */
