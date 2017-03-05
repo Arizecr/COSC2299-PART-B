@@ -1,4 +1,5 @@
 import Menu.Login;
+import Menu.Register;
 
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class Main {
     public static void main(String[] args){
         Scanner reader = new Scanner(System.in);
         Login login = new Login();
+        Register register = new Register();
 
         //display main page
         System.out.println("\n+----------------------------------+");
@@ -28,10 +30,12 @@ public class Main {
             //go to login menu
             if(choice.charAt(0) == 'l'){
                 login.loginMenu();
+
             }
 
             //go to registration menu
             else if(choice.charAt(0) == 'r'){
+                register.registerMenu();
 
             }
 
@@ -42,6 +46,8 @@ public class Main {
 
             }
         }
+
+
 
 
 
