@@ -8,7 +8,8 @@ public class Customer {
     // information/details related to a Customer ??
     private String username;
     private String password;
-    //private String fullName;
+    //private String firstName;
+    //private String lastName;
    // private String dob;
 
 
@@ -21,6 +22,11 @@ public class Customer {
 
     public String toString(){
         return username + ":" +  password + "\n"; //  + ":" + fullName +  ":" + dob;
+    }
+
+    public String getUsername(){
+
+        return username;
     }
 
 

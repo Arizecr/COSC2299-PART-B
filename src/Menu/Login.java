@@ -2,10 +2,7 @@ package Menu;
 
 import Customer.Customer;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,12 +10,16 @@ import java.util.Scanner;
  * Created by Gabrielle on 5/03/2017.
  */
 public class Login {
+    ArrayList<Customer> list = new ArrayList<Customer>();
 
     public void loginMenu(){
-        ArrayList<Customer> list = new ArrayList<Customer>();
+
 
         //load textfile to customer and business owner class
-        //loadInformation();
+        loadInformation();
+
+        System.out.println("Contents of al: " + list.get(1).getUsername());
+
 
         Scanner reader = new Scanner(System.in);
 
@@ -63,7 +64,38 @@ public class Login {
         }
     }
 
+    /*
+     * Load customer data
+     */
+
     public void loadInformation(){
+        BufferedReader br;
+        try {
+
+
+                br = new BufferedReader(new FileReader("customerinfo.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",2);
+                    String username = loginDetails[0];
+                    String password = loginDetails[1];
+                    Customer course = new Customer(username, password);
+                    list.add(course);
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
 
     }
     /*
