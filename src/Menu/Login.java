@@ -13,7 +13,7 @@ public class Login {
     ArrayList<Customer> list = new ArrayList<Customer>();
 
     public void loginMenu(){
-
+        CustomerMenu customer = new CustomerMenu();
 
         //load customer information
         loadCustomerInformation();
@@ -37,7 +37,7 @@ public class Login {
             //test if customer login is valid
             if(username.charAt(0) == 'c'){
                 if(verifyLoginDetails(username, password)){
-                    System.out.println("customer login works!\n");
+                    customer.printMenu();
                     System.exit(0);
                 }
 
