@@ -15,7 +15,7 @@ public class Login {
     public void loginMenu(){
 
 
-        //load textfile to customer and business owner class
+        //load customer information
         loadInformation();
 
         System.out.println("Contents of al: " + list.get(1).getUsername());
@@ -101,51 +101,23 @@ public class Login {
     /*
      * Tests whether customer login details are valid
      */
-    public boolean verifyLoginDetails(String username, String password){
-        BufferedReader br;
-        try {
+    public boolean verifyLoginDetails(String username, String password) {
 
-            //business
-            if(username.charAt(0) == 'b'){
-                br = new BufferedReader(new FileReader("business.txt"));
-            }
-
-            //customer
-            else {
-                br = new BufferedReader(new FileReader("customerinfo.txt"));
-            }
-
-
-            try {
-                String x;
-                while ( (x = br.readLine()) != null ) {
-                    // printing out each line in the file
-                    String loginDetails[] = x.split(":",2);
-                    if(username.equals(loginDetails[0])){
-
-                        if(password.equals(loginDetails[1])){
-
-                            return true;
-                        }
-                        else{
-
-                            return false;
-
-                        }
-                    }
+        for(int i=0; i < list.size() ;i++){
+            if(username.equals(list.get(i).getUsername())){
+                if(password.equals(list.get(i).getPassword())){
+                    return true;
                 }
-                //prints error
-            } catch (IOException e) {
-                e.printStackTrace();
+                else{
+                    return false;
+                }
+
             }
 
-            //file cannot be found
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
-        }
-        return false;
 
+        }
+
+        return false;
 
     }
 
