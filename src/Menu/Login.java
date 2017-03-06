@@ -16,9 +16,8 @@ public class Login {
 
 
         //load customer information
-        loadInformation();
+        //load business owner data
 
-        System.out.println("Contents of al: " + list.get(1).getUsername());
 
 
         Scanner reader = new Scanner(System.in);
@@ -68,7 +67,7 @@ public class Login {
      * Load customer data
      */
 
-    public void loadInformation(){
+    public void loadCustomerInformation(){
         BufferedReader br;
         try {
 
@@ -90,12 +89,12 @@ public class Login {
                 e.printStackTrace();
             }
 
+
             //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
         }
-
 
     }
     /*
@@ -111,9 +110,7 @@ public class Login {
                 else{
                     return false;
                 }
-
             }
-
 
         }
 

@@ -24,6 +24,9 @@ public class Register {
 
             System.out.print("Username: ");
             String username = reader.nextLine();
+            //verify whether the username exists
+            //remember to append c to the start of username
+
 
             System.out.print("Password: ");
             String password = reader.nextLine();
