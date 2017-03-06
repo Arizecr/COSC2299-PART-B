@@ -16,8 +16,7 @@ public class Login {
 
 
         //load customer information
-        //load business owner data
-
+        loadCustomerInformation();
 
 
         Scanner reader = new Scanner(System.in);
