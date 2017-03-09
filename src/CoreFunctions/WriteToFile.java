@@ -1,10 +1,9 @@
 package CoreFunctions;
 
-import Customer.Customer;
+import Actor.Customer;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Created by Martin on 5/03/2017.

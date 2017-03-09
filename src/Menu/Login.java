@@ -1,7 +1,7 @@
 package Menu;
 
-import Customer.Customer;
-import Owner.Owner;
+import Actor.Customer;
+import Actor.Business;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Login {
     ArrayList<Customer> list = new ArrayList<Customer>();
-    ArrayList<Owner> ownerList = new ArrayList<Owner>();
+    ArrayList<Business> ownerList = new ArrayList<Business>();
 
     public void loginMenu(){
         CustomerMenu customer = new CustomerMenu();
@@ -123,7 +123,7 @@ public class Login {
                     String loginDetails[] = x.split(":",2);
                     String username = loginDetails[0];
                     String password = loginDetails[1];
-                    Owner ownerInfo = new Owner(username, password);
+                    Business ownerInfo = new Business(username, password);
                     ownerList.add(ownerInfo);
                 }
                 //prints error

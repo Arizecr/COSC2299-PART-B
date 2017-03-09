@@ -7,7 +7,7 @@ public class CustomerMenu {
 
     public void printMenu(){
         System.out.println("\n+----------------------------------+");
-        System.out.println("|           Customer               |");
+        System.out.println("|           Actor               |");
         System.out.println("|              Menu                |");
         System.out.println("+----------------------------------+");
 

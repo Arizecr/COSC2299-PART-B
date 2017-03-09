@@ -1,7 +1,7 @@
 package Menu;
 
+import Actor.Customer;
 import CoreFunctions.WriteToFile;
-import Customer.Customer;
 
 import java.util.Scanner;
 
@@ -22,32 +22,28 @@ public class Register {
         //infinite loop
         while(true){
 
-            System.out.print("Username: ");
+            System.out.print("Username [Must start C]: ");
             String username = reader.nextLine();
-            //verify whether the username exists
             //remember to append c to the start of username
-
 
             System.out.print("Password: ");
             String password = reader.nextLine();
 
+
+
             //test if customer login is valid
-            if(username.charAt(0) == 'c'){
+            if(username.charAt(0) == 'c' && username.length() <= 15){
+
                 toTxt.WriteToTXT(new Customer(username, password), "customerinfo.txt");
                 //customer
 
                 break;
             }
 
-            //test if customer login is valid
-            else if(username.charAt(0) == 'b'){
-
-            }
-
 
             //Login details are not valid, try again
             else{
-                System.out.println("Invalid Registry details. Try again");
+                System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
 
             }
         }

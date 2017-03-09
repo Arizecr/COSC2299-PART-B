@@ -1,18 +1,19 @@
-package Owner;
+package Actor;
 
 /**
- * Created by xemorth on 6/03/2017.
+ * Created by Martin on 5/03/2017.
  */
-public class Owner {
-    // information/details related to a Customer ??
+public class Customer {
+
+    // information/details related to a Actor ??
     private String username;
     private String password;
     //private String firstName;
     //private String lastName;
-    // private String dob;
+   // private String dob;
 
 
-    public Owner(String username, String password){  //, String fullName, String dob)
+    public Customer(String username, String password){  //, String fullName, String dob)
         this.username = username;
         this.password = password;
         //this.fullName = fullName;
@@ -20,7 +21,7 @@ public class Owner {
     }
 
     public String toString(){
-        return username + ":" +  password + "\n"; //  + ":" + fullName +  ":" + dob;
+        return username + ":" +  password; //  + ":" + fullName +  ":" + dob;
     }
 
     public String getUsername(){
@@ -32,4 +33,6 @@ public class Owner {
 
         return password;
     }
+
+
 }
