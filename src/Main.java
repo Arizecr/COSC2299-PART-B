@@ -8,9 +8,15 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args){
+
+
         Scanner reader = new Scanner(System.in);
         Login login = new Login();
         Register register = new Register();
+
+        login.loadCustomerInformation();
+
+
 
         //display main page
         System.out.println("\n+----------------------------------+");
