@@ -100,7 +100,7 @@ public class Login {
     /*
      * Load owner information
      */
-    public void loadOwnerInformation(){
+    private void loadOwnerInformation(){
         BufferedReader br;
         try {
 
@@ -135,7 +135,7 @@ public class Login {
     /*
      * Tests whether customer login details are valid
      */
-    public boolean verifyLoginDetails(String type, String username, String password) {
+    private boolean verifyLoginDetails(String type, String username, String password) {
 
         if (type.equals("customer")){//verify customer
             for(int i=0; i < list.size() ;i++){
