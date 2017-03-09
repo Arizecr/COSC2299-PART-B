@@ -10,14 +10,12 @@ import java.util.Scanner;
  * Created by Gabrielle on 5/03/2017.
  */
 public class Login {
-    public static ArrayList<Customer> list = new ArrayList<Customer>();
-    ArrayList<Business> ownerList = new ArrayList<Business>();
+    public static ArrayList<Customer> list = new ArrayList<>();
+    public static ArrayList<Business> ownerList = new ArrayList<>();
 
     public void loginMenu(){
         CustomerMenu customer = new CustomerMenu();
-
-
-
+        loadOwnerInformation();
 
         Scanner reader = new Scanner(System.in);
 
