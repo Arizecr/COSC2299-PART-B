@@ -7,7 +7,7 @@ import org.junit.Test;
 public class RegisterTesting {
 
 
-    @Test (expected = class.ArrayIndexOutOfBoundsException)
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
     public void registerMenu() {
 
     }
