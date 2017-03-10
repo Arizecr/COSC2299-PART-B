@@ -135,6 +135,9 @@ public class Login {
     /*
      * Tests whether customer login details are valid
      */
+    public boolean getVerification(String type, String username, String password){
+        return verifyLoginDetails(type,username,password);
+    }
     private boolean verifyLoginDetails(String type, String username, String password) {
 
         if (type.equals("customer")){//verify customer
