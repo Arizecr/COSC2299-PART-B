@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
  * Created by yesmi on 10/03/2017.
  */
 public class LoginTesting {
+    Login login = new Login();
+    boolean toVerify = true;
     @BeforeClass
     public static void loadUsers(){
         Login log = new Login();
@@ -18,43 +20,47 @@ public class LoginTesting {
 ////////////////////////////////////user testing
     @Test
     public void verifyLoginAll() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("customer","c1","123");
+        toVerify =  login.getVerification("customer","c1","123");
         assertTrue(toVerify);
     }
 
     @Test //invalid Type + correct User Details
     public void IncorrectUN() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("c","c1","123");
+        toVerify =  login.getVerification("c","c1","123");
         assertFalse(toVerify);
     }
 
     @Test
     public void IncorrectPW() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("customer","c1","c");
+        toVerify =  login.getVerification("customer","c1","c");
         assertFalse(toVerify);
     }
     ////////////////////////////////////business owner testing
     @Test //invalid Type + User Details
     public void verifyLoginAllB() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("business","b1","123");
+        toVerify =  login.getVerification("business","b1","123");
         assertTrue(toVerify);
     }
 
     @Test
     public void IncorrectUNB() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("business","b1notrealusername","123");
+        toVerify =  login.getVerification("business","b1notrealusername","123");
         assertFalse(toVerify);
     }
 
     @Test
     public void IncorrectPWB() {
-        Login login = new Login();
-        boolean toVerify =  login.getVerification("business","b1","fakepassword");
+        toVerify =  login.getVerification("business","b1","fakepassword");
         assertFalse(toVerify);
+    }
+
+    /////////////////////////////////////////general testing
+    @Test (expected = StringIndexOutOfBoundsException.class)
+    public void errorTest1() {
+        login.testLogin("","fake");
+    }
+    @Test (expected = StringIndexOutOfBoundsException.class)
+    public void errorTest2() {
+        login.testLogin("","");
     }
 }

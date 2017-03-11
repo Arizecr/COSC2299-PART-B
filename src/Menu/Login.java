@@ -3,8 +3,7 @@ package Menu;
 import Actor.Customer;
 import Actor.Business;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by Gabrielle on 5/03/2017.
@@ -14,7 +13,7 @@ public class Login {
     public static ArrayList<Business> ownerList = new ArrayList<>();
 
     public void loginMenu(){
-        CustomerMenu customer = new CustomerMenu();
+
         loadOwnerInformation();
 
         Scanner reader = new Scanner(System.in);
@@ -31,33 +30,36 @@ public class Login {
 
             System.out.print("Password: ");
             String password = reader.nextLine();
-
-            //test if customer login is valid
-            if(username.charAt(0) == 'c'){
-                if(verifyLoginDetails("customer",username, password)){
-                    customer.printMenu();
-                    System.exit(0);
-                }
-
+            testLogin(username,password);
+        }
+    }
+    public void testLogin(String username, String password){
+        CustomerMenu customer = new CustomerMenu();
+        //test if customer login is valid
+        if(username.charAt(0) == 'c'){
+            if(verifyLoginDetails("customer",username, password)){
+                customer.printMenu();
+                System.exit(0);
             }
 
-            //test if customer login is valid
-            if(username.charAt(0) == 'b'){
-                if(verifyLoginDetails("owner",username, password)){
-                    System.out.println("owner login works!\n");
+        }
 
-                    System.exit(0);
-                }
-                System.out.println("Invalid login details. Details do not exist in system.");
+        //test if customer login is valid
+        if(username.charAt(0) == 'b'){
+            if(verifyLoginDetails("owner",username, password)){
+                System.out.println("owner login works!\n");
 
+                System.exit(0);
             }
+            System.out.println("Invalid login details. Details do not exist in system.");
+
+        }
 
 
-            //Login details are not valid, try again
-            else{
-                System.out.println("Invalid login details. Try again");
+        //Login details are not valid, try again
+        else{
+            System.out.println("Invalid login details. Try again");
 
-            }
         }
     }
 
