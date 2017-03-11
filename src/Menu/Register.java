@@ -14,7 +14,7 @@ public class Register {
 
 
     public void registerMenu(){
-        Login login = new Login();
+
         Scanner reader = new Scanner(System.in);
         WriteToFile toTxt = new WriteToFile();
 
@@ -40,30 +40,7 @@ public class Register {
             System.out.print("Password: ");
             String password = reader.nextLine();
 
-
-
-            //test if customer login is valid
-            if(username.charAt(0) == 'c' && username.length() <= 15){
-                for(int i = 0; i< login.list.size(); i++){
-                    if( login.list.get(i).getUsername().equals(username) ){
-                        System.out.println("Username already exists. Re-enter valid username");
-                        valid++;
-                    }
-
-
-                }
-
-            }
-
-
-            //Login details are not valid, try again
-            else{
-                System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
-                valid++;
-
-            }
-
-
+            valid = testRegister(username, password);
             if(valid == 0){
                 toTxt.WriteToTXT(new Customer(username, password), "customerinfo.txt");
                 System.out.println("Succesfully Registered");
@@ -71,11 +48,32 @@ public class Register {
             }
         }
 
-
-
-
     }
+    public int testReg(String username,String password){
+        return testRegister(username, password);
+    }
+    private int testRegister(String username,String password){
+        Login login = new Login();
+        int valid = 0;
+        //test if customer login is valid
+        if(username.charAt(0) == 'c' && username.length() <= 15 && username.length()>1){
+            for(int i = 0; i< login.list.size(); i++){
+                if( login.list.get(i).getUsername().equals(username) ){
+                    System.out.println("Username already exists. Re-enter valid username");
+                    valid++;
+                }
+            }
 
+        }
+
+        //Login details are not valid, try again
+        else{
+            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
+            valid++;
+
+        }
+        return valid;
+    }
 
 
 }
