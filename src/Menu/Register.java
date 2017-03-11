@@ -52,7 +52,7 @@ public class Register {
     public int testReg(String username,String password){
         return testRegister(username, password);
     }
-    private int testRegister(String username,String password){
+    private int testRegister(String username,String password){//cannot have null password here--------------------------------------
         Login login = new Login();
         int valid = 0;
         //test if customer login is valid

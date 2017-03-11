@@ -1,41 +1,61 @@
 package Test;
 
 import Menu.Register;
-import org.junit.Test;
+import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
  * Created by yesmi on 10/03/2017.
  */
-public class RegisterTesting {
 
+public class RegisterTesting {
+    Register reg = new Register();
+    int incorrect = 1; //
+    int correct = 0;
     @Test
     public void correctUsername() {
-        Register reg = new Register();
         String u = "c1";
         String p = "password";
         int value = reg.testReg(u,p);
-        int expected = 0;
-        assertEquals(value,expected);
+        assertEquals(value,correct);
     }
 
-    @Test //(expected = ArrayIndexOutOfBoundsException.class)
-    public void oneCharUsername() {
-        Register reg = new Register();
+    @Test // expect  username to be larger than just c
+    public void oneCharCUsername() {
         String u = "c";
         String p = "password";
         int value = reg.testReg(u,p);
-        int expected = 1;
-        assertEquals(value,expected);
+        assertEquals(value,incorrect);
     }
+    @Test // expect  username to be larger than just c
+    public void invalidCharUsername() {
 
-    @Test //(expected = ArrayIndexOutOfBoundsException.class)
-    public void registerMenuTest() {
-        Register reg = new Register();
-        String u = "c1";
+        String u = "a";
         String p = "password";
         int value = reg.testReg(u,p);
-        int expected = 0;
-        assertEquals(value,expected);
+        assertEquals(value,incorrect);
+    }
+    @Test // expect  username to be larger than just c
+    public void invalidUsername() {
+
+        String u = "abc123";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(value,incorrect);
+    }
+    @Test //(expected = ArrayIndexOutOfBoundsException.class)
+    public void passwordNull() {//needs to be addressed when fixing code
+
+        String u = "c1";
+        String p = null;
+        int value = reg.testReg(u,p);
+        assertEquals(value,incorrect);
+    }
+    @Test //(expected = ArrayIndexOutOfBoundsException.class)
+    public void registerMenuTest() {
+        String u = "c12";
+        String p = "password";
+        int value = reg.testReg(u,p);
+        assertEquals(value,0);
     }
 }
