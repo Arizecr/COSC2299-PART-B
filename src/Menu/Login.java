@@ -95,7 +95,9 @@ public class Login {
         }
 
     }
-
+    public void getOwnerinfo(){
+        loadOwnerInformation();
+    }
 
     /*
      * Load owner information
