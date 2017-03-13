@@ -10,8 +10,8 @@ import java.util.Scanner;
  * Created by Gabrielle on 5/03/2017.
  */
 public class Login {
-    public static ArrayList<Customer> list = new ArrayList<>();
-    public static ArrayList<Business> ownerList = new ArrayList<>();
+    public static ArrayList<Customer> customerList = new ArrayList<>();
+    public static ArrayList<Business> businessList = new ArrayList<>();
 
     public void loginMenu(){
         CustomerMenu customer = new CustomerMenu();
@@ -80,7 +80,7 @@ public class Login {
                     String username = loginDetails[0];
                     String password = loginDetails[1];
                     Customer course = new Customer(username, password);
-                    list.add(course);
+                    customerList.add(course);
                 }
                 //prints error
             } catch (IOException e) {
@@ -115,7 +115,7 @@ public class Login {
                     String username = loginDetails[0];
                     String password = loginDetails[1];
                     Business ownerInfo = new Business(username, password);
-                    ownerList.add(ownerInfo);
+                    businessList.add(ownerInfo);
                 }
                 //prints error
             } catch (IOException e) {
@@ -141,9 +141,9 @@ public class Login {
     private boolean verifyLoginDetails(String type, String username, String password) {
 
         if (type.equals("customer")){//verify customer
-            for(int i=0; i < list.size() ;i++){
-                if(username.equals(list.get(i).getUsername())){
-                    if(password.equals(list.get(i).getPassword())){
+            for(int i=0; i < customerList.size() ;i++){
+                if(username.equals(customerList.get(i).getUsername())){
+                    if(password.equals(customerList.get(i).getPassword())){
                         return true;
                     }
                     else{
@@ -158,9 +158,9 @@ public class Login {
         }
 
         else{ //verify business owner
-            for(int i=0; i < ownerList.size() ;i++){
-                if(username.equals(ownerList.get(i).getUsername())){
-                    if(password.equals(ownerList.get(i).getPassword())){
+            for(int i=0; i < businessList.size() ;i++){
+                if(username.equals(businessList.get(i).getUsername())){
+                    if(password.equals(businessList.get(i).getPassword())){
                         return true;
                     }
                     else{
