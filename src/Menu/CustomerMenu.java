@@ -16,11 +16,13 @@ public class CustomerMenu {
         System.out.println("\n1. Book appointment");
         System.out.println("2. View Booking(s)");
 
-        /* debug
-        for(int i=0; i < login.customerList.size() ;i++){
-            System.out.println(login.list.get(i).getUsername());
 
-        } */
+        for(int i=0; i < login.customerList.size() ;i++){
+            System.out.println(login.customerList.get(i).getUsername());
+
+        }
+
+
 
 
 
