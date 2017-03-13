@@ -35,11 +35,12 @@ public class Login {
     }
     public void testLogin(String username, String password){
         CustomerMenu customer = new CustomerMenu();
+        BusinessMenu business = new BusinessMenu();
         //test if customer login is valid
         if(username.charAt(0) == 'c'){
             if(verifyLoginDetails("customer",username, password)){
                 customer.printMenu();
-                System.exit(0);
+
             }
 
         }
@@ -48,8 +49,8 @@ public class Login {
         if(username.charAt(0) == 'b'){
             if(verifyLoginDetails("owner",username, password)){
                 System.out.println("owner login works!\n");
+                business.printMenu();
 
-                System.exit(0);
             }
             System.out.println("Invalid login details. Details do not exist in system.");
 
