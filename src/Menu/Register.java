@@ -52,13 +52,15 @@ public class Register {
     public int testReg(String username,String password){
         return testRegister(username, password);
     }
-    private int testRegister(String username,String password){
+    private int testRegister(String username,String password){//cannot have null password here--------------------------------------
         Login login = new Login();
         int valid = 0;
         //test if customer login is valid
         if(username.charAt(0) == 'c' && username.length() <= 15 && username.length()>1){
-            for(int i = 0; i< login.customerList.size(); i++){
-                if( login.customerList.get(i).getUsername().equals(username) ){
+
+            for(int i = 0; i< login.list.size(); i++){
+
+                if( login.list.get(i).getUsername().equals(username) ){
                     System.out.println("Username already exists. Re-enter valid username");
                     valid++;
                 }
