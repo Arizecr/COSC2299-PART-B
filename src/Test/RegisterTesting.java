@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Yesmi on 10/03/2017.
  */
-
+/*
 public class RegisterTesting {
     Register reg = new Register();
     private int incorrect = 1; //
@@ -68,6 +68,9 @@ public class RegisterTesting {
         String u = "c12";
         String p = "123";
         int value = reg.testReg(u,p);
+
+
         assertEquals(incorrect, value);
     }
 }
+*/

@@ -4,6 +4,8 @@ import Actor.Customer;
 import CoreFunctions.WriteToFile;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Martin on 5/03/2017.
@@ -44,45 +46,95 @@ public class Register {
             System.out.print("Password: ");
             String password = reader.nextLine();
 
-            valid = testRegister(username, password);
+            System.out.print("Name: ");
+            String name = reader.nextLine();
+
+            System.out.print("Address: ");
+            String address = reader.nextLine();
+
+            System.out.print("Mobile: ");
+            String mobile = reader.nextLine();
+
+
+            valid = testRegister(username, password, name, address, mobile);
             if(valid == 0){
-                toTxt.WriteToTXT(new Customer(username, password, "temp", "temp", "temp"), "customerinfo.txt");
+                toTxt.WriteToTXT(new Customer(username, password, name, address, mobile), "customerinfo.txt");
                 System.out.println("Succesfully Registered");
                 break;
             }
         }
 
     }
-    public int testReg(String username,String password){
-        return testRegister(username, password);
+
+/*
+    public int testReg(String username,String password, String name, String address, String mobile){
+        return testRegister(username, password, name, address, mobile);
     }
-    private int testRegister(String username,String password){
+
+*/
+    private int testRegister(String username,String password, String name, String address, String mobile){
         Login login = new Login();
         int valid = 0;
         //test if customer login is valid
+
+        if(username.isEmpty() || username.charAt(0) != 'c' ){
+
+            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
+            return ++valid;
+
+        }
+
+
         if(username.charAt(0) == 'c' && username.length() <= 15 && username.length()>1){
 
-            for(int i = 0; i< login.customerList.size(); i++){
+            for(int i = 0; i< login.customerList.size(); i++) {
 
-                if( login.customerList.get(i).getUsername().equals(username) ){
+                if (login.customerList.get(i).getUsername().equals(username)) {
                     System.out.println("Username already exists. Re-enter valid username");
-                    valid++;
+                    return ++valid;
                 }
             }
 
+
         }
 
-        //Login details are not valid, try again
+        if(name.isEmpty() || name.length() < 1  ){
+
+            System.out.println("Invalid Name");
+            return ++valid;
+
+
+        }
+
+        if(address.isEmpty() || address.length() < 1){
+            System.out.println("Invalid Address");
+            return ++valid;
+
+        }
+
+        if(mobile.isEmpty() || mobile.length() != 10 ){
+            System.out.println("Invalid Mobile");
+            return ++valid;
+
+        }
+
+
+        if( password.isEmpty()) {
+            System.out.println("Invalid Password");
+            ++valid;
+        }
+
+            //Login details are not valid, try again
+        /*
         else{
-            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
-            valid++;
+
 
         }
-        if( password==null)
-            valid++;
+        */
 
         return valid;
     }
+
 
 
 }
