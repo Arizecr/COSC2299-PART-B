@@ -79,10 +79,13 @@ public class Login {
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(":",2);
+                    String loginDetails[] = x.split(":",5);
                     String username = loginDetails[0];
                     String password = loginDetails[1];
-                    Customer course = new Customer(username, password);
+                    String fullName = loginDetails[2];
+                    String address = loginDetails[3];
+                    String phoneNo = loginDetails[4];
+                    Customer course = new Customer(username, password, fullName, address, phoneNo);
                     customerList.add(course);
                 }
                 //prints error

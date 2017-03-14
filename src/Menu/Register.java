@@ -42,7 +42,7 @@ public class Register {
 
             valid = testRegister(username, password);
             if(valid == 0){
-                toTxt.WriteToTXT(new Customer(username, password), "customerinfo.txt");
+                toTxt.WriteToTXT(new Customer(username, password, "temp", "temp", "temp"), "customerinfo.txt");
                 System.out.println("Succesfully Registered");
                 break;
             }

@@ -14,7 +14,10 @@ public class WriteToFileTesting {
     {
         String username = "c";
         String password = "12345";
-        Customer c = new Customer(username, password);
+        String name = "Kelly";
+        String address = "address";
+        String phoneNo = "phone";
+        Customer c = new Customer(username, password, name, address, phoneNo);
         WriteToFile w = new WriteToFile();
         w.WriteToTXT(c,"customerinfo.txt");
     }

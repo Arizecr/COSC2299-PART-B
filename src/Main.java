@@ -23,34 +23,50 @@ public class Main {
         System.out.println("|           Welcome to the         |");
         System.out.println("|               system             |");
         System.out.println("+----------------------------------+");
-        System.out.println("Would you like to login or register an account? (l/r)");
+        System.out.println("1. Login");
+        System.out.println("2. Register an account");
+        System.out.println("3. Exit system");
 
 
 
         //infinite loop
         while(true){
 
-            System.out.print("Enter choice: ");
-            String choice = reader.nextLine();
+            System.out.print("Enter choice (1-3): ");
+
+            //error- user entered a non integer
+            while(!reader.hasNextInt()) {
+                System.out.println("Error: entered a non integer. Enter a number between 1-3.");
+                System.out.print("Enter choice (1-3): ");
+                reader.next();
+            }
+            int choice = reader.nextInt();
 
             //go to login menu
-            if(choice.charAt(0) == 'l'){
+            if(choice == 1){
                 login.loginMenu();
 
             }
 
             //go to registration menu
-            else if(choice.charAt(0) == 'r'){
+            else if(choice == 2){
                 register.registerMenu();
                 System.out.println("\nThank you for registering!");
                 System.out.println("Would you like to login or register another account? (l/r)");
 
             }
 
+            //log out of system
+            else if(choice == 3){
+                System.out.println("\nSuccessfully logged out of the system!");
+                System.exit(0);
+
+            }
+
             //invalid choice
             else{
                 System.out.println("\nInvalid choice. Try again");
-                System.out.println("Enter 'l' to login or 'r' to register an account\n");
+                System.out.println("Enter a number between 1-3\n");
 
             }
         }
