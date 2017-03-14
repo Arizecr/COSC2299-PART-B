@@ -20,9 +20,11 @@ public class CustomerMenu {
         System.out.println("2. View Booking(s)");
         System.out.println("3. Log out");
 
-        /* debug
+      /*
         for(int i=0; i < login.customerList.size() ;i++){
-            System.out.println(login.customerList.get(i).getUsername());
+            System.out.println(login.customerList.get(i).getName());
+            System.out.println(login.customerList.get(i).getAddress());
+            System.out.println(login.customerList.get(i).getPhoneNo());
 
         } */
 

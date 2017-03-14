@@ -9,7 +9,11 @@ import java.util.Scanner;
  * Created by Martin on 5/03/2017.
  */
 public class Register {
-
+/*
+ * NOTE FOR MARTIN!!!! create additional registration details such as
+ * full name of customer, their address, and phone number!!!! Also verification
+ * + make sure username + password length is >= 3 (or some other reasonable number)
+ */
 
 
 

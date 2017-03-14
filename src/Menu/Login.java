@@ -119,10 +119,14 @@ public class Login {
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(":",2);
+                    String loginDetails[] = x.split(":",6);
                     String username = loginDetails[0];
                     String password = loginDetails[1];
-                    Business ownerInfo = new Business(username, password);
+                    String businessName = loginDetails[2];
+                    String name = loginDetails[3];
+                    String address = loginDetails[4];
+                    String phone = loginDetails[5];
+                    Business ownerInfo = new Business(username, password, businessName, name, phone, address);
                     businessList.add(ownerInfo);
                 }
                 //prints error
