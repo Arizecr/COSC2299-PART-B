@@ -56,7 +56,7 @@ public class Register {
     public int testReg(String username,String password){
         return testRegister(username, password);
     }
-    private int testRegister(String username,String password){//cannot have null password here--------------------------------------
+    private int testRegister(String username,String password){
         Login login = new Login();
         int valid = 0;
         //test if customer login is valid
@@ -78,6 +78,9 @@ public class Register {
             valid++;
 
         }
+        if( password==null)
+            valid++;
+
         return valid;
     }
 
