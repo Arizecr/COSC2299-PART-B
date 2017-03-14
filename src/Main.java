@@ -51,8 +51,8 @@ public class Main {
             //go to registration menu
             else if(choice == 2){
                 register.registerMenu();
-                System.out.println("\nThank you for registering!");
-                System.out.println("Would you like to login or register another account? (l/r)");
+                System.out.println("\nWhat would you like to do now?");
+                System.out.println("1. Login\n2. Register another account\n3. Exit system.");
 
             }
 
