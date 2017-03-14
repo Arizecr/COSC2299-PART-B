@@ -4,21 +4,16 @@ import Actor.Customer;
 import CoreFunctions.WriteToFile;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by Martin on 5/03/2017.
  */
 public class Register {
+
+
 /*
- * NOTE FOR MARTIN!!!! create additional registration details such as
- * full name of customer, their address, and phone number!!!! Also verification
- * + make sure username + password length is >= 3 (or some other reasonable number)
+ * Customer is presented with the registration menu
  */
-
-
-
     public void registerMenu(){
 
         Scanner reader = new Scanner(System.in);
