@@ -77,6 +77,8 @@ public class Register {
         int valid = 0;
         //test if customer login is valid
 
+
+        //isEmpty just checks for null
         if(username.isEmpty() || username.charAt(0) != 'c' ){
 
             System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
@@ -121,7 +123,7 @@ public class Register {
 
         if( password.isEmpty()) {
             System.out.println("Invalid Password");
-            ++valid;
+            return ++valid;
         }
 
             //Login details are not valid, try again
@@ -132,6 +134,7 @@ public class Register {
         }
         */
 
+        // if it makes it to this valid, register success :D
         return valid;
     }
 
