@@ -8,6 +8,9 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by Yesmi on 10/03/2017.
  */
+
+/********************COMENTED OUT NEEDS TO CHECK FOR NAME, ADDRESS ETC *************************/
+
 /*
 public class RegisterTesting {
     Register reg = new Register();
