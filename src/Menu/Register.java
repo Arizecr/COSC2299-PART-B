@@ -15,6 +15,7 @@ public class Register {
  * Customer is presented with the registration menu
  */
     public void registerMenu(){
+        String username;
 
         Scanner reader = new Scanner(System.in);
         WriteToFile toTxt = new WriteToFile();
@@ -34,9 +35,18 @@ public class Register {
         while(true){
             int valid = 0;
 
-            System.out.print("Username (must start with C): ");
-            String username = reader.nextLine();
-            //remember to append c to the start of username
+            while(true){
+
+                System.out.print("Username (must start with C): ");
+                username = reader.nextLine();
+                if(testUsername(username)){
+                    System.out.println("Username Valid");
+                    break;
+
+                }
+                //remember to append c to the start of username
+            }
+
 
             System.out.print("Password: ");
             String password = reader.nextLine();
@@ -51,7 +61,7 @@ public class Register {
             String mobile = reader.nextLine();
 
 
-            valid = testRegister(username, password, name, address, mobile);
+            valid = testRegister(password, name, address, mobile);
             if(valid == 0){
                 toTxt.WriteToTXT(new Customer(username, password, name, address, mobile), "customerinfo.txt");
                 System.out.println("Succesfully Registered");
@@ -63,16 +73,47 @@ public class Register {
 
 
     public int testReg(String username,String password, String name, String address, String mobile){
-        return testRegister(username, password, name, address, mobile);
+        return testRegister(password, name, address, mobile);
+    }
+
+    private boolean testUsername(String username){
+        Login login = new Login();
+        //isEmpty just checks for null
+        if(username.isEmpty() || username.charAt(0) != 'c' ){
+
+            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
+            return false;
+
+        }
+
+
+        if((username.charAt(0) == 'c') && (username.length()<= 15) && (username.length()>1)){
+
+            for(int i = 0; i< login.customerList.size(); i++) {
+
+                if (login.customerList.get(i).getUsername().equals(username)) {
+                    System.out.println("Username already exists. Re-enter valid username");
+                    return false;
+                }
+            }
+
+
+        }
+        else{
+            return false;
+        }
+
+
+        return true;
     }
 
 
-    private int testRegister(String username,String password, String name, String address, String mobile){
-        Login login = new Login();
+    private int testRegister(String password, String name, String address, String mobile){
+        //Login login = new Login();
         int valid = 0;
         //test if customer login is valid
 
-
+        /*
         //isEmpty just checks for null
         if(username.isEmpty() || username.charAt(0) != 'c' ){
 
@@ -95,6 +136,8 @@ public class Register {
 
         }
         else return ++valid;
+
+        */
 
         if(name.isEmpty() || (name.length() < 1)  ){
 
