@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="added some comments">
+    <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Test/LoginTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Test/LoginTesting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/LoginTesting.java" afterPath="$PROJECT_DIR$/src/Test/LoginTesting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/RegisterTesting.java" afterPath="$PROJECT_DIR$/src/Test/RegisterTesting.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,19 +24,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Test/RegisterTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginTesting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginTesting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test/LoginTesting.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="537">
@@ -102,11 +100,11 @@
         <option value="$PROJECT_DIR$/src/Menu/CustomerMenu.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/customerinfo.txt" />
-        <option value="$PROJECT_DIR$/src/Test/RegisterTesting.java" />
         <option value="$PROJECT_DIR$/src/Menu/Register.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/Menu/Login.java" />
         <option value="$PROJECT_DIR$/src/Test/LoginTesting.java" />
+        <option value="$PROJECT_DIR$/src/Test/RegisterTesting.java" />
       </list>
     </option>
   </component>
@@ -767,7 +765,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489527759951</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="login testing&#10;">
+      <created>1489738510174</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1489738510174</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -919,7 +924,8 @@
     <MESSAGE value="refractored some code + also made a checklist for martin" />
     <MESSAGE value="small fix" />
     <MESSAGE value="added some comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some comments" />
+    <MESSAGE value="login testing&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="login testing&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1228,16 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/RegisterTesting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/LoginTesting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="537">
@@ -1245,6 +1241,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/RegisterTesting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
