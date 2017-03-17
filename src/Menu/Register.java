@@ -72,14 +72,16 @@ public class Register {
     }
 
 
-    public int testReg(String username,String password, String name, String address, String mobile){
+    public int testReg(String password, String name, String address, String mobile){
         return testRegister(password, name, address, mobile);
     }
-
+    public boolean testUser(String username){
+        return testUsername(username);
+    }
     private boolean testUsername(String username){
         Login login = new Login();
         //isEmpty just checks for null
-        if(username.isEmpty() || username.charAt(0) != 'c' ){
+        if(username.isEmpty() || (username.charAt(0) != 'c' )){
 
             System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
             return false;
