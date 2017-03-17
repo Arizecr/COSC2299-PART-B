@@ -95,7 +95,7 @@ public class Register {
 
         }
 
-        if(name.isEmpty() || name.length() < 1  ){
+        if(name.isEmpty() || (name.length() < 1)  ){
 
             System.out.println("Invalid Name");
             return ++valid;
@@ -103,13 +103,13 @@ public class Register {
 
         }
 
-        if(address.isEmpty() || address.length() < 1){
+        if(address.isEmpty() || (address.length() < 1)){
             System.out.println("Invalid Address");
             return ++valid;
 
         }
 
-        if(mobile.isEmpty() || mobile.length() != 10 ){
+        if(mobile.isEmpty() || (mobile.length() != 10) ){
             System.out.println("Invalid Mobile");
             return ++valid;
 

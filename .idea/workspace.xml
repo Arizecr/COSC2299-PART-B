@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customerinfo.txt" afterPath="$PROJECT_DIR$/customerinfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menu/Register.java" afterPath="$PROJECT_DIR$/src/Menu/Register.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/RegisterTesting.java" afterPath="$PROJECT_DIR$/src/Test/RegisterTesting.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,18 +27,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="847">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="201">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test/RegisterTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="217">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,17 +50,17 @@
         <entry file="file://$PROJECT_DIR$/customerinfo.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="47" />
+              <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Register.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Menu/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -125,8 +125,8 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/Menu/Login.java" />
         <option value="$PROJECT_DIR$/src/Test/LoginTesting.java" />
-        <option value="$PROJECT_DIR$/src/Menu/Register.java" />
         <option value="$PROJECT_DIR$/src/Test/RegisterTesting.java" />
+        <option value="$PROJECT_DIR$/src/Menu/Register.java" />
       </list>
     </option>
   </component>
@@ -224,7 +224,7 @@
       <recent name="junit.framework.TestCase" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RegisterTesting.oneCharCUsername">
+  <component name="RunManager" selected="JUnit.RegisterTesting">
     <configuration default="false" name="RegisterTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -239,32 +239,6 @@
       <option name="MAIN_CLASS_NAME" value="Test.RegisterTesting" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="RegisterTesting.passwordNullUppBound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="COSC-2299-Part-A" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.RegisterTesting" />
-      <option name="METHOD_NAME" value="passwordNullUppBound" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -353,6 +327,21 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="COSC-2299-Part-A" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -561,18 +550,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterTesting.passwordNullUppBound" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound2" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting.oneCharCUsername" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound2" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting.oneCharCUsername" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting.oneCharCUsername" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound2" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting.passwordNullUppBound" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting.oneCharCUsername" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting.invalidUsernameBound2" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -819,21 +808,34 @@
       <option name="project" value="LOCAL" />
       <updated>1489739865267</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="testing new register format">
+      <created>1489741239461</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1489741239461</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RegisterTesting - 2017.03.17 at 19h 56m 37s.xml">
+    <history-entry file="RegisterTesting - 2017.03.17 at 20h 04m 15s.xml">
       <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting - 2017.03.17 at 19h 57m 35s.xml">
+    <history-entry file="RegisterTesting - 2017.03.17 at 20h 04m 49s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting - 2017.03.17 at 20h 05m 55s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting - 2017.03.17 at 20h 06m 13s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting - 2017.03.17 at 20h 09m 14s.xml">
       <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RegisterTesting_invalidUsernameBound - 2017.03.17 at 19h 58m 22s.xml">
       <configuration name="RegisterTesting.invalidUsernameBound" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegisterTesting_invalidUsernameBound2 - 2017.03.17 at 19h 57m 56s.xml">
-      <configuration name="RegisterTesting.invalidUsernameBound2" configurationId="JUnit" />
     </history-entry>
     <history-entry file="RegisterTesting_oneCharCUsername - 2017.03.17 at 19h 58m 39s.xml">
       <configuration name="RegisterTesting.oneCharCUsername" configurationId="JUnit" />
@@ -841,17 +843,11 @@
     <history-entry file="RegisterTesting_oneCharCUsername - 2017.03.17 at 19h 59m 59s.xml">
       <configuration name="RegisterTesting.oneCharCUsername" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting_passwordNullUppBound - 2017.03.17 at 19h 53m 31s.xml">
-      <configuration name="RegisterTesting.passwordNullUppBound" configurationId="JUnit" />
+    <history-entry file="RegisterTesting_oneCharCUsername - 2017.03.17 at 20h 01m 55s.xml">
+      <configuration name="RegisterTesting.oneCharCUsername" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting_passwordNullUppBound - 2017.03.17 at 19h 54m 20s.xml">
-      <configuration name="RegisterTesting.passwordNullUppBound" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegisterTesting_passwordNullUppBound - 2017.03.17 at 19h 55m 15s.xml">
-      <configuration name="RegisterTesting.passwordNullUppBound" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegisterTesting_passwordNullUppBound - 2017.03.17 at 19h 55m 44s.xml">
-      <configuration name="RegisterTesting.passwordNullUppBound" configurationId="JUnit" />
+    <history-entry file="RegisterTesting_oneCharCUsername - 2017.03.17 at 20h 02m 00s.xml">
+      <configuration name="RegisterTesting.oneCharCUsername" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -948,7 +944,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a function to do. Arraylist" />
     <MESSAGE value="Customer data is loaded on login via arraylist" />
     <MESSAGE value="reformat" />
     <MESSAGE value="reformatted some stuff" />
@@ -973,7 +968,8 @@
     <MESSAGE value="login testing&#10;" />
     <MESSAGE value="commented out&#10;" />
     <MESSAGE value="testing register" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing register" />
+    <MESSAGE value="testing new register format" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing new register format" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1179,13 +1175,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java" />
     <entry file="file://$PROJECT_DIR$/src/Menu/OwnerMenu.java" />
     <entry file="file://$PROJECT_DIR$/src/CoreFunctions/WriteToFileTesting.java" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/MainTesting.java" />
     <entry file="file://$PROJECT_DIR$/src/Actor/Business.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1270,18 +1259,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="847">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Menu/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="123">
+          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1289,18 +1270,34 @@
     <entry file="file://$PROJECT_DIR$/customerinfo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="47" />
+          <caret line="1" column="37" lean-forward="false" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/RegisterTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state relative-caret-position="217">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Menu/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

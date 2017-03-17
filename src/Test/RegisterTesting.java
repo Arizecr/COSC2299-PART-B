@@ -34,13 +34,13 @@ public class RegisterTesting {
     @Test // expect  username to be larger than just c
     public void oneCharCUsername() {
         String u = "c";
-        String p = "password";
+        String p = "p";
         int value = reg.testReg(u,p,name,a,m);
-        assertEquals(incorrect,value);
+        assertNotEquals(correct,value);
     }
     @Test // expect  username to be larger than just c
     public void Namefake() {
-        String u = "c1hbhjk";
+        String u = "cnotinsys";
         String p = "passwd";
         int value = reg.testReg(u,p,"t","1234sdfg","1234567890");
         assertEquals(incorrect,value);
