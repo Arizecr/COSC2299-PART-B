@@ -1,6 +1,5 @@
 package Test;
-
-        import Menu.Login;
+import Menu.Login;
 import Menu.Register;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -15,9 +14,9 @@ public class RegisterTesting {
     Register reg = new Register();
     private int incorrect = 1; //
     private int correct = 0;
-    public String name = "test";
-    public String a = "123 l st";
-    private String m = "0412345678";
+    private String name = "test";
+    private String a = "123 l st";
+    private String m = "1234567890";
     @BeforeClass
     public static void loadUsers(){
         Login log = new Login();
@@ -39,6 +38,14 @@ public class RegisterTesting {
         int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
+    @Test // expect  username to be larger than just c
+    public void Namefake() {
+        String u = "c1hbhjk";
+        String p = "passwd";
+        int value = reg.testReg(u,p,"t","1234sdfg","1234567890");
+        assertEquals(incorrect,value);
+    }
+
     @Test // expect  username to be larger than just c
     public void invalidCharUsername() {
 
@@ -67,20 +74,17 @@ public class RegisterTesting {
     @Test //fixed in code
     public void passwordNull() {
         String u = "c1gsy";
-        String p = null;
+        String p = "";
         int value = reg.testReg(u,p,name,a,m);
-        assertEquals(incorrect,value);
+        assert(correct != value);
     }
     @Test
     public void passwordNullUppBound() {
         String u = "c1gsyc1gsy111256";
-        String p = null;
+        String p = "";
         int value = reg.testReg(u,p,name,a,m);
-        assert(correct != value);
-    }
+        assertNotEquals(correct,value);
 
-    @Test //(expected = ArrayIndexOutOfBoundsException.class)
-    public void registerMenuTest() {
     }
 
 
@@ -126,10 +130,10 @@ public class RegisterTesting {
     @Test // length 16
     public void invalidUsernameBoundLarge() {
 
-        String u = "c12345678910111288888888888888888888888888888888888888888888888";
+        String u = "c123459999999999344666666666666";
         String p = "password";
         int value = reg.testReg(u,p,name,a,m);
-        assert(correct!=value);
+        assert(correct==value);
     }
     @Test // length 14
     public void validUsernameBound3() {
@@ -150,7 +154,7 @@ public class RegisterTesting {
     @Ignore// (expected = NullPointerException.class)//searches and compares to current logins
     public void errorTest2() {
 
-        String u = null;
+        String u = "";
         String p = "password";
         int value = reg.testReg(u,p,name,a,m);
     }
