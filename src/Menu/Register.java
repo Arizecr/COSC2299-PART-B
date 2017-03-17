@@ -61,12 +61,12 @@ public class Register {
 
     }
 
-/*
+
     public int testReg(String username,String password, String name, String address, String mobile){
         return testRegister(username, password, name, address, mobile);
     }
 
-*/
+
     private int testRegister(String username,String password, String name, String address, String mobile){
         Login login = new Login();
         int valid = 0;

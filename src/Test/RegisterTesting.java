@@ -1,13 +1,23 @@
 package Test;
 
+        import Menu.Login;
+import Menu.Register;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 /**
  * Created by Yesmi on 10/03/2017.
  */
-/***
+
 public class RegisterTesting {
     Register reg = new Register();
     private int incorrect = 1; //
     private int correct = 0;
+    public String name = "test";
+    public String a = "123 l st";
+    private String m = "0412345678";
     @BeforeClass
     public static void loadUsers(){
         Login log = new Login();
@@ -18,7 +28,7 @@ public class RegisterTesting {
     public void correctUsername() {
         String u = "c123456";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(correct,value);
     }
 
@@ -26,7 +36,7 @@ public class RegisterTesting {
     public void oneCharCUsername() {
         String u = "c";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test // expect  username to be larger than just c
@@ -34,7 +44,7 @@ public class RegisterTesting {
 
         String u = "a";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test // expect  username to be larger than just c
@@ -42,7 +52,7 @@ public class RegisterTesting {
 
         String u = "abc123";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test
@@ -50,7 +60,7 @@ public class RegisterTesting {
 
         String u = "abcdef0123456789";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
 
@@ -58,14 +68,14 @@ public class RegisterTesting {
     public void passwordNull() {
         String u = "c1gsy";
         String p = null;
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test
     public void passwordNullUppBound() {
         String u = "c1gsyc1gsy111256";
         String p = null;
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assert(correct != value);
     }
 
@@ -78,7 +88,7 @@ public class RegisterTesting {
     public void sameUsername() {
         String u = "c12";
         String p = "123";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect, value);
     }
     @Test // length 16
@@ -86,7 +96,7 @@ public class RegisterTesting {
 
         String u = "c123456789101112";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test // length 15
@@ -94,7 +104,7 @@ public class RegisterTesting {
 
         String u = "c12345678910112";
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(correct,value);
     }
     @Test // length 14
@@ -102,7 +112,7 @@ public class RegisterTesting {
 
         String u = "c1234978910112";
         String p = "passwooord";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(correct,value);
     }
     @Test // length 16
@@ -110,7 +120,7 @@ public class RegisterTesting {
 
         String u = "cccccccccccccccc";
         String p = "passwooord";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Test // length 16
@@ -118,15 +128,15 @@ public class RegisterTesting {
 
         String u = "c12345678910111288888888888888888888888888888888888888888888888";
         String p = "password";
-        int value = reg.testReg(u,p);
-        assertEquals(incorrect,value);
+        int value = reg.testReg(u,p,name,a,m);
+        assert(correct!=value);
     }
     @Test // length 14
     public void validUsernameBound3() {
 
         String u = "ccccccc8910112";
         String p = "passwooord";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(correct,value);
     }
     @Test // length 16
@@ -134,7 +144,7 @@ public class RegisterTesting {
 
         String u = "bbc1234978910112";
         String p = "passwooord";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
         assertEquals(incorrect,value);
     }
     @Ignore// (expected = NullPointerException.class)//searches and compares to current logins
@@ -142,6 +152,6 @@ public class RegisterTesting {
 
         String u = null;
         String p = "password";
-        int value = reg.testReg(u,p);
+        int value = reg.testReg(u,p,name,a,m);
     }
-}**/
+}
