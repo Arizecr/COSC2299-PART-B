@@ -17,7 +17,7 @@ public class LoginTesting {
         log.loadCustomerInformation();
         log.getOwnerinfo();
     }
-////////////////////////////////////user testing
+    ////////////////////////////////////user testing
     @Test
     public void verifyLoginAll() {
         toVerify =  login.getVerification("customer","c1","123");
@@ -27,6 +27,11 @@ public class LoginTesting {
     @Test //invalid Type + correct User Details
     public void IncorrectUN() {
         toVerify =  login.getVerification("c","c1","123");
+        assertFalse(toVerify);
+    }
+    @Test
+    public void IncorrectUNBoundary() {
+        toVerify =  login.getVerification("c","c0000000000000000000000000000000001","123");
         assertFalse(toVerify);
     }
 
@@ -54,7 +59,7 @@ public class LoginTesting {
         assertFalse(toVerify);
     }
 
-    /////////////////////////////////////////general testing
+    /////////////////////////////////////////should fail once addressed in code
     @Test (expected = StringIndexOutOfBoundsException.class)
     public void errorTest1() {
         login.testLogin("","fake");
