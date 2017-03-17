@@ -133,7 +133,7 @@ public class RegisterTesting {
         String u = "c123459999999999344666666666666";
         String p = "password";
         int value = reg.testReg(u,p,name,a,m);
-        assert(correct==value);
+        assertNotEquals(correct,value);
     }
     @Test // length 14
     public void validUsernameBound3() {

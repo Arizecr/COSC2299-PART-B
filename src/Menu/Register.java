@@ -82,7 +82,7 @@ public class Register {
         }
 
 
-        if(username.charAt(0) == 'c' && username.length() <= 15 && username.length()>1){
+        if((username.charAt(0) == 'c') && (username.length()<= 15) && (username.length()>1)){
 
             for(int i = 0; i< login.customerList.size(); i++) {
 
@@ -94,6 +94,7 @@ public class Register {
 
 
         }
+        else return ++valid;
 
         if(name.isEmpty() || (name.length() < 1)  ){
 
