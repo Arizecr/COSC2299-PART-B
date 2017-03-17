@@ -30,6 +30,13 @@ public class Login {
 
             System.out.print("Password: ");
             String password = reader.nextLine();
+
+
+            if(username.length() <1 || password.length()<1){
+                System.out.println("Error: username or password cannot be blank");
+                continue;
+            }
+
             testLogin(username,password);
         }
     }
