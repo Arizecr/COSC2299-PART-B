@@ -1,4 +1,7 @@
 package coreFunctions;
+
+import user.Employee;
+
 import java.util.Date;
 import java.util.Scanner;
 /**
@@ -15,16 +18,20 @@ public class Driver {
         System.out.println("====================");
 
         //to implement: automatically generate employee id
+        String employeeID = "e2";
 
         //other stuff
         System.out.println("Enter full name: ");
         String employeeName = reader.nextLine();
-        System.out.println("Enter address: ");
-        String address = reader.nextLine();
+
         System.out.println("Enter tax file number");
         String tfn = reader.nextLine();
         System.out.println("Enter phone number");
         String phoneNo = reader.nextLine();
+
+        filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
+
+        System.out.println("Successfully added a new employee");
     }
 
 

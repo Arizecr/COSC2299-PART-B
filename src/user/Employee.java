@@ -9,5 +9,16 @@ public class Employee{
     private String phoneNo;
 
 
+    public Employee(String employeeID, String fullName, String taxFileNo, String phoneNo){
+        this.employeeID = employeeID;
+        this.fullName = fullName;
+        this.taxFileNo = taxFileNo;
+        this.phoneNo = phoneNo;
+    }
+
+    public String toString(){
+
+        return employeeID + ":" +  fullName + ":" + taxFileNo + ":" + phoneNo;
+    }
 
 }

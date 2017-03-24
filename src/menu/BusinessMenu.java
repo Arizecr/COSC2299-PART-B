@@ -47,6 +47,7 @@ public class BusinessMenu {
 
             if(choice == 1){
                 driver.addEmployee();
+                continue;
             }
 
             if(choice == 2){
