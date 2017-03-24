@@ -13,4 +13,8 @@ public class Business extends User{
         super(username, password, fullName, address, phoneNo);
         this.businessName = businessName;
     }
+
+
+
+
 }

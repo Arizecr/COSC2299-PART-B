@@ -1,9 +1,12 @@
 package coreFunctions;
+import java.util.Date;
 import java.util.Scanner;
 /**
  * Created by Gabrielle on 24/03/2017.
  */
 public class Driver {
+    WriteToFile filewriter = new WriteToFile();
+
 
     public void addEmployee(){
         Scanner reader = new Scanner(System.in);
@@ -24,4 +27,16 @@ public class Driver {
         String phoneNo = reader.nextLine();
     }
 
+
+    public void addWorkdays(Date dateAndTime){
+        /*
+        Still needs to create a date class for now
+        All it does is currently write to txt file to save the work dates.
+         */
+        filewriter.WriteToWorkingdayTXT(dateAndTime, "workdaysList.txt");
+
+
+
+
+    }
 }

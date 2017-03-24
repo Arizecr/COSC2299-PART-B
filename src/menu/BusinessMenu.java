@@ -1,6 +1,9 @@
 package menu;
 import coreFunctions.Driver;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -12,6 +15,7 @@ public class BusinessMenu {
 
     public void printMenu(){
         Scanner reader = new Scanner(System.in);
+        Scanner datereader = new Scanner(System.in);
 
 
 
@@ -43,6 +47,30 @@ public class BusinessMenu {
 
             if(choice == 1){
                 driver.addEmployee();
+            }
+
+            if(choice == 2){
+                while(true){
+                    System.out.print("Enter Date (dd/mm/yyyy)");
+                    String firstdate = datereader.nextLine();
+                    System.out.print("Time (hh:mm:ss)");
+                    String firsttime = datereader.nextLine();
+
+                    SimpleDateFormat dateformat2 = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
+                    String dateNtime = firstdate + " " + firsttime;
+
+                    try{
+                        Date magicdate = dateformat2.parse(dateNtime);
+                        System.out.println("Work Day Created on " + magicdate);
+                        driver.addWorkdays(magicdate);
+                        break;
+
+                    }catch(ParseException e){
+                        System.out.println("Invalid Date/Time");
+
+
+                    }
+                }
             }
 
             else if(choice == 6){
