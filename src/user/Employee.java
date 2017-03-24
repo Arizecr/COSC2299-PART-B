@@ -5,7 +5,6 @@ package user;
 public class Employee{
     private String employeeID;
     private String fullName;
-    private String address;
     private String taxFileNo;
     private String phoneNo;
 
