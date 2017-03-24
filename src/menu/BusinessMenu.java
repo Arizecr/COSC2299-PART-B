@@ -10,6 +10,8 @@ public class BusinessMenu {
 
     public void printMenu(){
         Scanner reader = new Scanner(System.in);
+
+        //print business menu
         System.out.println("\n+----------------------------------+");
         System.out.println("|           Business               |");
         System.out.println("|              menu                |");
@@ -30,6 +32,7 @@ public class BusinessMenu {
 
         } */
 
+        //infinite loop
         while(true) {
 
             System.out.print("Enter choice: ");

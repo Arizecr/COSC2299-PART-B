@@ -5,7 +5,6 @@ import userBase.User;
  * Created by xemorth on 6/03/2017.
  */
 public class Business extends User{
-    // information/details related to a user ??
 
     private String businessName;
 

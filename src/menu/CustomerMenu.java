@@ -11,6 +11,8 @@ public class CustomerMenu {
     public void printMenu(){
 
         Scanner reader = new Scanner(System.in);
+
+        //print customer menu
         System.out.println("\n+----------------------------------+");
         System.out.println("|           Customer               |");
         System.out.println("|              menu                |");
@@ -28,6 +30,7 @@ public class CustomerMenu {
 
         } */
 
+        //infinite loop
         while(true) {
 
             System.out.print("Enter choice: ");

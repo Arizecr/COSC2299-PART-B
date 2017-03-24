@@ -1,4 +1,5 @@
 package userBase;
+
 /**
  * Created by xemorth on 24/03/2017.
  */
@@ -9,6 +10,9 @@ public abstract class User {
     protected String address;
     protected String phoneNo;
 
+
+    //Base constructor to set username, password, full name, address, phoneNo of a user.
+
     public User(String username, String password, String fullName, String address, String phoneNo){
         this.username = username;
         this.password = password;
@@ -17,6 +21,7 @@ public abstract class User {
         this.phoneNo = phoneNo;
     }
 
+    //string representation of the current user
     @Override
     public String toString(){
         return username + ":" +  password + ":" + fullName + ":" + address + ":" + phoneNo;
