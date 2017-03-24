@@ -1,5 +1,5 @@
-import Menu.Login;
-import Menu.Register;
+import menu.Login;
+import menu.Register;
 
 import java.util.Scanner;
 

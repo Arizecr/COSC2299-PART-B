@@ -1,7 +1,7 @@
-package Test;
+package test;
 
-import Actor.Customer;
-import CoreFunctions.WriteToFile;
+import user.Customer;
+import coreFunctions.WriteToFile;
 import org.junit.Test;
 
 /**

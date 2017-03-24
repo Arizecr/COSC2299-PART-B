@@ -1,6 +1,6 @@
-package Test;
-import Menu.Login;
-import Menu.Register;
+package test;
+import menu.Login;
+import menu.Register;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;

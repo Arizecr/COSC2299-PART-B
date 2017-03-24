@@ -1,6 +1,6 @@
-package Test;
+package test;
 
-import Menu.Login;
+import menu.Login;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -24,7 +24,7 @@ public class LoginTesting {
         assertTrue(toVerify);
     }
 
-    @Test //invalid Type + correct User Details
+    @Test //invalid Type + correct user Details
     public void IncorrectUN() {
         toVerify =  login.getVerification("c","c1","123");
         assertFalse(toVerify);
@@ -41,7 +41,7 @@ public class LoginTesting {
         assertFalse(toVerify);
     }
     ////////////////////////////////////business owner testing
-    @Test //invalid Type + User Details
+    @Test //invalid Type + user Details
     public void verifyLoginAllB() {
         toVerify =  login.getVerification("business","b1","123");
         assertTrue(toVerify);

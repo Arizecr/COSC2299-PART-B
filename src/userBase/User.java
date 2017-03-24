@@ -1,28 +1,23 @@
-package Actor;
-
+package userBase;
 /**
- * Created by Martin on 5/03/2017.
+ * Created by xemorth on 24/03/2017.
  */
-public class Customer {
+public abstract class User {
+    protected String username;
+    protected String password;
+    protected String fullName;
+    protected String address;
+    protected String phoneNo;
 
-    // information/details related to a Actor ??
-    private String username;
-    private String password;
-    private String fullName;
-    private String address;
-    private String phoneNo;
-   // private String dob;
-
-
-    public Customer(String username, String password, String fullName, String address, String phoneNo){  //, String fullName, String dob)
+    public User(String username, String password, String fullName, String address, String phoneNo){
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.address = address;
         this.phoneNo = phoneNo;
-        //this.dob = dob;
     }
 
+    @Override
     public String toString(){
         return username + ":" +  password + ":" + fullName + ":" + address + ":" + phoneNo;
     }
@@ -51,6 +46,4 @@ public class Customer {
 
         return phoneNo;
     }
-
-
 }

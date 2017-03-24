@@ -1,7 +1,7 @@
-package Menu;
+package menu;
 
-import Actor.Customer;
-import Actor.Business;
+import user.Customer;
+import user.Business;
 import java.io.*;
 import java.util.*;
 

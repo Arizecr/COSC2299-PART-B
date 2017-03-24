@@ -1,7 +1,7 @@
-package Menu;
+package menu;
 
-import Actor.Customer;
-import CoreFunctions.WriteToFile;
+import user.Customer;
+import coreFunctions.WriteToFile;
 
 import java.util.Scanner;
 

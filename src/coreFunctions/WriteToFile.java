@@ -1,6 +1,6 @@
-package CoreFunctions;
+package coreFunctions;
 
-import Actor.Customer;
+import user.Customer;
 
 import java.io.FileWriter;
 import java.io.IOException;

@@ -1,20 +1,32 @@
-package Menu;
+package menu;
 
 import java.util.Scanner;
 
 /**
  * Created by Gabrielle on 5/03/2017.
  */
-public class BusinessMenu {
+public class CustomerMenu {
+    Login login = new Login();
 
     public void printMenu(){
+
         Scanner reader = new Scanner(System.in);
         System.out.println("\n+----------------------------------+");
-        System.out.println("|           Business               |");
-        System.out.println("|              Menu                |");
+        System.out.println("|           Customer               |");
+        System.out.println("|              menu                |");
         System.out.println("+----------------------------------+");
 
+        System.out.println("\n1. Book appointment");
+        System.out.println("2. View Booking(s)");
         System.out.println("3. Log out");
+
+        /* debug purposes
+        for(int i=0; i < login.customerList.size() ;i++){
+            System.out.println(login.customerList.get(i).getName());
+            System.out.println(login.customerList.get(i).getAddress());
+            System.out.println(login.customerList.get(i).getPhoneNo());
+
+        } */
 
         while(true) {
 
@@ -24,6 +36,7 @@ public class BusinessMenu {
             if(choice == 3){
                 System.out.println("Successfully logged out of the system!");
                 System.exit(0);
+
             }
 
             else {
@@ -35,10 +48,7 @@ public class BusinessMenu {
 
         }
 
+
+
     }
-
-
-
-
-
 }
