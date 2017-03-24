@@ -40,7 +40,7 @@ public class Register {
                 System.out.print("Username (must start with C): ");
                 username = reader.nextLine();
                 if(testUsername(username)){
-                    System.out.println("Username Valid");
+                    System.out.println("Username Valid\n");
                     break;
 
                 }
@@ -94,7 +94,7 @@ public class Register {
             for(int i = 0; i< login.customerList.size(); i++) {
 
                 if (login.customerList.get(i).getUsername().equals(username)) {
-                    System.out.println("Username already exists. Re-enter valid username");
+                    System.out.println("Username already exists. Re-enter valid username\n");
                     return false;
                 }
             }
