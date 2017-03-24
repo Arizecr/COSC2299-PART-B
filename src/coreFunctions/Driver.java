@@ -2,6 +2,10 @@ package coreFunctions;
 
 import user.Employee;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 /**
@@ -17,21 +21,54 @@ public class Driver {
         System.out.println("\nAdd Employee");
         System.out.println("====================");
 
-        //to implement: automatically generate employee id
-        String employeeID = "e2";
+        String employeeID = generateEmployeeNo();
+
+        /* debug */
+        System.out.println("Employee ID is "+ employeeID);
 
         //other stuff
-        System.out.println("Enter full name: ");
+        System.out.print("Enter full name: ");
         String employeeName = reader.nextLine();
 
-        System.out.println("Enter tax file number");
+        System.out.print("Enter tax file number: ");
         String tfn = reader.nextLine();
-        System.out.println("Enter phone number");
+        System.out.print("Enter phone number: ");
         String phoneNo = reader.nextLine();
 
         filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
 
         System.out.println("Successfully added a new employee");
+    }
+
+    /*
+     * Generate employee ID
+     */
+    public String generateEmployeeNo(){
+        int count = 1;
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("employeeList.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    count++;
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+        return "e"+count;
     }
 
 
