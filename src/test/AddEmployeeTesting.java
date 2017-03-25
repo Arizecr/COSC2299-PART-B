@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * Created by yesmi on 25/03/2017.
  */
-public class BusinessMenuTesting {
+public class AddEmployeeTesting {
     Driver driver = new Driver();
     boolean details;
     String name = "Employee";
