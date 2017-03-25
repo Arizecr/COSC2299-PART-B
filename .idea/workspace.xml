@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" afterPath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="122" column="75" lean-forward="false" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
+            <state relative-caret-position="376">
+              <caret line="114" column="35" lean-forward="true" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkingTimesTesting.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WorkingTimesTesting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+            <state relative-caret-position="274">
+              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,8 +162,8 @@
         <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/test/AddEmployeeTesting.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-        <option value="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
+        <option value="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
       </list>
     </option>
   </component>
@@ -304,32 +305,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.WorkingTimesTesting">
-    <configuration default="false" name="RegisterTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="COSC-2299-Part-A" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.RegisterTesting" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -411,6 +386,32 @@
       <option name="MAIN_CLASS_NAME" value="test.WorkingTimesTesting" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="WorkingTimesTesting.TomorrowWorkingTimes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="COSC-2299-Part-A" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.WorkingTimesTesting" />
+      <option name="METHOD_NAME" value="TomorrowWorkingTimes" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -628,19 +629,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.LoginTesting" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.WorkingTimesTesting" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.LoginTesting" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WorkingTimesTesting" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.WorkingTimesTesting.TomorrowWorkingTimes" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.WorkingTimesTesting" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.LoginTesting" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WorkingTimesTesting.TomorrowWorkingTimes" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.LoginTesting" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -676,13 +677,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
-    </task>
-    <task id="LOCAL-00005" summary="reformat">
-      <created>1488769724949</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1488769724949</updated>
     </task>
     <task id="LOCAL-00006" summary="reformatted some stuff">
       <created>1488770572299</created>
@@ -1020,39 +1014,46 @@
       <option name="project" value="LOCAL" />
       <updated>1490439564032</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="started working times testing">
+      <created>1490482081548</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1490482081548</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 58m 22s.xml">
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 58m 13s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 29m 39s.xml">
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 01m 01s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 31m 38s.xml">
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 03m 33s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 34m 48s.xml">
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 16m 41s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 36m 26s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 06m 05s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 37m 43s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 07m 56s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 43m 20s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 09m 15s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 44m 23s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 10m 32s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 44m 49s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 11m 05s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 46m 59s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 12m 51s.xml">
+      <configuration name="WorkingTimesTesting.TomorrowWorkingTimes" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1068,7 +1069,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.50732064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4369085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42439026" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1488,20 +1489,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
+    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+        <state relative-caret-position="376">
+          <caret line="114" column="35" lean-forward="true" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="122" column="75" lean-forward="false" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
+        <state relative-caret-position="274">
+          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
