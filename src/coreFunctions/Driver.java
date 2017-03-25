@@ -30,38 +30,27 @@ public class Driver {
 
             //other stuff
 
-            System.out.print("Enter full name: ");
-            String employeeName = reader.nextLine();
 
-            //error check for length of name
-            employeeName = verifyEmployeeName(employeeName);
+            String employeeName;
+            do {
+                System.out.print("Enter full name: ");
+                employeeName = reader.nextLine();
+            }while(verifyEmployeeName(employeeName)); //error check for length of name IN WHILE CONDITION
 
 
-
-            System.out.print("Enter tax file number: ");
-
-            //checks if numbers are entered for tfn
-            while(!reader.hasNextInt()) {
-                System.out.println("\nError: entered a non integer as tfn.");
+            String checkTfn;
+            do{
                 System.out.print("Enter tax file number: ");
-                reader.next();
-            }
-            String checkTfn = reader.nextLine();
-            checkTfn = verifyEmployeeTFN(checkTfn);
+                checkTfn = reader.nextLine();
+            }while(verifyEmployeeTFN(checkTfn)); //checks if numbers are entered for tfn
             String tfn = checkTfn;
 
-
-            System.out.print("Enter phone number: ");
-
-            //checks if numbers are entered for phone no
-            while(!reader.hasNextInt()) {
-                System.out.println("\nError: a phone number consists of 10 digits.");
+            String checkPhone;
+            do {
                 System.out.print("Enter phone number: ");
-                reader.next();
-            }
+                checkPhone = reader.nextLine();
+            }while(verifyEmployeeMobile(checkPhone));//checks if numbers are entered for phone no
 
-            String checkPhone = reader.nextLine();
-            checkPhone = verifyEmployeeMobile(checkPhone);
             String phoneNo = checkPhone;
 
 
@@ -78,60 +67,50 @@ public class Driver {
     /*
      * Checks validity of employee name (length)
      */
-    public String verifyEmployeeName(String name){
+
+    public Boolean verifyEmployeeName(String name){
         Scanner reader = new Scanner(System.in);
         while(name.length()< 3){
             System.out.println("Error: Name must be longer than 2 characters");
-            System.out.print("Re-enter full name: ");
-            name = reader.nextLine();
+            //System.out.print("Re-enter full name: ");
+            return true;
         }
-        return name;
+        return false;
     }
 
     /*
      * Checks validity of employee tfn (tfn consists of 8-9 digits)
      */
-    public String verifyEmployeeTFN(String tfn){
-        Scanner reader = new Scanner(System.in);
-
+    public Boolean verifyEmployeeTFN(String tfn){
         int length = tfn.length();
-        System.out.println(length);
 
         while(length < 8 || length>9){
             System.out.print("Error: TFN must be 8-9 digits in length.");
-
-            while(!isNumeric(tfn)) {
-                System.out.println("\nError: entered a non integer as tfn.");
-                System.out.print("Enter tax file number: ");
-                reader.next();
-            }
-            tfn = reader.nextLine();
-            length = tfn.length();
-
+           return true;
         }
-
-        return tfn;
+        while(!isNumeric(tfn)) {
+            System.out.println("\nError: entered a non integer as tfn.");
+           // System.out.print("Enter tax file number: ");
+            return true;
+        }
+        return false;
     }
 
     /*
      * Checks validity of employee mobile (mobile consists of 10 digits)
      */
-    public String verifyEmployeeMobile(String phone){
+    public Boolean verifyEmployeeMobile(String phone){
         Scanner reader = new Scanner(System.in);
 
         while(phone.length() != 10){
             System.out.print("Error: Phone no is 10 digits in length.");
-
-            while(!isNumeric(phone)) {
-                System.out.println("\nError: entered a non integer as tfn.");
-                System.out.print("Enter tax file number: ");
-                reader.next();
-            }
-            phone = reader.nextLine();
-
+            return true;
         }
-
-        return phone;
+        while(!isNumeric(phone)) {
+            System.out.println("\nError: entered a non integer as tfn.");
+            return true;
+        }
+        return false;
     }
 
 
