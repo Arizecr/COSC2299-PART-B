@@ -84,7 +84,7 @@ public class BusinessMenu {
 
 
     private boolean Worktimes(String firstdate,String starttime,String endtime){
-        SimpleDateFormat dateformat2 = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        SimpleDateFormat dateformat2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         String dateNtime = firstdate + " " + starttime;
         String endNTime = firstdate + " " + endtime;
