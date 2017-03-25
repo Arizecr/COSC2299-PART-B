@@ -69,8 +69,7 @@ public class Driver {
      */
 
     public Boolean verifyEmployeeName(String name){
-        Scanner reader = new Scanner(System.in);
-        while(name.length()< 3){
+        if((name.length()< 3)||(name.length()>20)){
             System.out.println("Error: Name must be longer than 2 characters");
             //System.out.print("Re-enter full name: ");
             return true;
@@ -84,12 +83,12 @@ public class Driver {
     public Boolean verifyEmployeeTFN(String tfn){
         int length = tfn.length();
 
-        while(length < 8 || length>9){
-            System.out.print("Error: TFN must be 8-9 digits in length.");
+        if(length < 8 || length>9){
+            System.out.println("Error: TFN must be 8-9 digits in length.");
            return true;
         }
-        while(!isNumeric(tfn)) {
-            System.out.println("\nError: entered a non integer as tfn.");
+        if(!isNumeric(tfn)) {
+            System.out.println("Error: entered a non integer as tfn.");
            // System.out.print("Enter tax file number: ");
             return true;
         }
@@ -100,14 +99,12 @@ public class Driver {
      * Checks validity of employee mobile (mobile consists of 10 digits)
      */
     public Boolean verifyEmployeeMobile(String phone){
-        Scanner reader = new Scanner(System.in);
-
-        while(phone.length() != 10){
-            System.out.print("Error: Phone no is 10 digits in length.");
+        if(phone.length() != 10){
+            System.out.println("Error: Phone no is 10 digits in length.");
             return true;
         }
-        while(!isNumeric(phone)) {
-            System.out.println("\nError: entered a non integer as tfn.");
+        if(!isNumeric(phone)) {
+            System.out.println("Error: entered a non integer as tfn.");
             return true;
         }
         return false;
@@ -118,7 +115,7 @@ public class Driver {
     /*
      * Generate employee ID
      */
-    public String generateEmployeeNo(){
+    private String generateEmployeeNo(){
         int count = 1;
         BufferedReader br;
         try {

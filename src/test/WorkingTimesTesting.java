@@ -35,8 +35,21 @@ public class WorkingTimesTesting {
 
     @Test // tfn and phone no should be restricted to a specific format
     public void correctWorkingTimes() {
+        firstdate = "";
+        firsttime = "";
+        firsttime = "";
         verify = b.Workt(firstdate, firsttime,endtime);
         assertTrue(verify);
+
+    }
+
+    @Test // tfn and phone no should be restricted to a specific format
+    public void AllNullWorkingTimes() {
+        firstdate = "";
+        firsttime = "";
+        firsttime = "";
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertFalse(verify);
 
     }
 
