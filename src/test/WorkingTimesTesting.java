@@ -199,6 +199,22 @@ public class WorkingTimesTesting {
         assertTrue(verify);
 
     }
+    @Test//time too far in future
+    public void WorkingTimesOverMonth() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,31);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        firstdate = date.format(c.getTime());
+        firsttime = time.format(c.getTime());
+        c.add(Calendar.HOUR,8);
+        endtime = time.format(c.getTime());
+        c.add(Calendar.MINUTE,1);
+        endtime = time.format(c.getTime());
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertTrue(verify);
+
+    }
     @Test//length too long
     public void WorkingTimesOver8HOURs2() {
         Calendar c = Calendar.getInstance();
