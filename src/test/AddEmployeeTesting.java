@@ -10,7 +10,9 @@ import static org.junit.Assert.*;
 public class AddEmployeeTesting {
 
     Driver driver = new Driver();
-    int details;
+    String details;
+    String tfn = "1234567890";
+    String mobile = "0412345678";
     String name = "Employee";
 
     @BeforeClass
@@ -28,22 +30,20 @@ public class AddEmployeeTesting {
     }
     @Test // tfn and phone no should be restricted to a specific format
     public void correctNewEmployee9() {
-        int tfn = 123456789;
         details = driver.verifyEmployeeTFN(tfn);
         assertEquals(details,tfn);
     }
     @Test // tfn and phone no should be restricted to a specific format
     public void correctNewEmployee8() {
-        int tfn = 12345678;
+        tfn = "12345678";
         details = driver.verifyEmployeeTFN(tfn);
         assertEquals(details,tfn);
     }
 
     @Test
     public void correctUppBoundEmployeeMobile() {
-        int data = 1234567890;
-        details = driver.verifyEmployeeMobile(data);
-        assertEquals(details,data);
+        details = driver.verifyEmployeeMobile(mobile);
+        assertEquals(details,mobile);
     }
 
 /*
