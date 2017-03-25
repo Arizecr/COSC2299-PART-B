@@ -61,22 +61,23 @@ public class Driver {
         }
 
         int checkPhone = reader.nextInt();
+        checkPhone = verifyEmployeeMobile(checkPhone);
         String phoneNo = Integer.toString(checkPhone);
 
-        valid = VerifyEmployee(tfn,phoneNo);
-        if(valid){
-            filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
-            System.out.println("Successfully added a new employee");
-            break;
-        }
-        else{
-            System.out.println("\nPlease re-enter employee details.");
-            continue;
-        }
+
+
+        filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
+        System.out.println("Successfully added a new employee");
+        break;
+
+
     }
 
     }
 
+    /*
+     * Checks validity of employee name (length)
+     */
     public String verifyEmployeeName(String name){
         Scanner reader = new Scanner(System.in);
         while(name.length()< 3){
@@ -87,12 +88,17 @@ public class Driver {
         return name;
     }
 
+    /*
+     * Checks validity of employee tfn (tfn consists of 8-9 digits)
+     */
     public int verifyEmployeeTFN(int tfn){
         Scanner reader = new Scanner(System.in);
 
-        int length = (int) Math.log10(tfn) + 1;
-        if((length != 8) || (length != 9)){
-            System.out.println("Please re-enter");
+        int length = Integer.toString(tfn).length();
+        System.out.println(length);
+
+        while(length < 8 || length>9){
+            System.out.print("Error: TFN must be 8-9 digits in length.");
 
             while(!reader.hasNextInt()) {
                 System.out.println("\nError: entered a non integer as tfn.");
@@ -100,29 +106,38 @@ public class Driver {
                 reader.next();
             }
             tfn = reader.nextInt();
+            length = Integer.toString(tfn).length();
 
         }
-
-
 
         return tfn;
     }
 
-    public boolean VerifyEmployee(String tfn, String mobile){
+    /*
+     * Checks validity of employee mobile (mobile consists of 10 digits)
+     */
+    public int verifyEmployeeMobile(int phone){
+        Scanner reader = new Scanner(System.in);
 
-        if(tfn.isEmpty() || (tfn.length() != 8)||(tfn.length() != 9) ){
-            System.out.println("Invalid TFN");
-            return false;
+        int length = (int) Math.log10(phone) + 1;
+        while(length != 10){
+            System.out.print("Error: Phone no is 10 digits in length.");
+
+            while(!reader.hasNextInt()) {
+                System.out.println("\nError: entered a non integer as tfn.");
+                System.out.print("Enter tax file number: ");
+                reader.next();
+            }
+            phone = reader.nextInt();
+            length = (int) Math.log10(phone) + 1;
 
         }
 
-        if(mobile.isEmpty() || (mobile.length() != 10) ){
-            System.out.println("Invalid Mobile");
-            return false;
-
-        }
-        return true;
+        return phone;
     }
+
+
+
     /*
      * Generate employee ID
      */

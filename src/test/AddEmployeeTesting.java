@@ -1,23 +1,20 @@
 package test;
 
-import coreFunctions.Driver;
-import org.junit.*;
-import static org.junit.Assert.*;
-
 /**
  * Created by yesmi on 25/03/2017.
  */
 public class AddEmployeeTesting {
+    /*
     Driver driver = new Driver();
     boolean details;
     String name = "Employee";
 
     @BeforeClass
     public static void loadDriver(){
-      /*  Login log = new Login();
+       Login log = new Login();
 
         log.loadCustomerInformation();
-        log.getOwnerinfo();*/
+        log.getOwnerinfo();
     }
     @Before
     public void setUp() throws Exception {
@@ -102,5 +99,5 @@ public class AddEmployeeTesting {
         assertTrue(details);
     }
 
-
+*/
 }
