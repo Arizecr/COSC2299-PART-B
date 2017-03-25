@@ -31,74 +31,74 @@ public class BusinessMenuTesting {
 
     @Test // tfn and phone no should be restricted to a specific format
     public void correctNewEmployee9() {
-        details = driver.Vemployee(name,"123456789","0434567890");
+        details = driver.VerifyEmployee(name,"123456789","0434567890");
         assertFalse(details);
     }
     @Test // tfn and phone no should be restricted to a specific format
     public void correctNewEmployee8() {
-        details = driver.Vemployee(name,"12345678","0393345678");
+        details = driver.VerifyEmployee(name,"12345678","0393345678");
         assertFalse(details);
     }
 
     @Test
     public void correctUppBoundEmployeeNO() {
-        details = driver.Vemployee(name,"123456789","1234567890");
+        details = driver.VerifyEmployee(name,"123456789","1234567890");
         assertFalse(details);
     }
 
     @Test//not a number
     public void fakeNewEmployeeTFN() {
-        details = driver.Vemployee(name,"123a67890","1234567890");
+        details = driver.VerifyEmployee(name,"123a67890","1234567890");
         assertTrue(details);
     }
     @Test //not a number
     public void fakeNewEmployeeNO() {
-        details = driver.Vemployee(name,"123456789","04sascgf");
+        details = driver.VerifyEmployee(name,"123456789","04sascgf");
         assertTrue(details);
     }
     @Test
     public void fakeNewEmployeeBoth() {
-        details = driver.Vemployee(name,"1234h567890","qwe");
+        details = driver.VerifyEmployee(name,"1234h567890","qwe");
         assertTrue(details);
     }
     @Test
     public void UppBoundNewEmployeeTFN() {
-        details = driver.Vemployee(name,"12345678908","1234567890");
+        details = driver.VerifyEmployee(name,"12345678908","1234567890");
         assertTrue(details);
     }
     @Test
     public void UppBoundEmployeeNO() {
-        details = driver.Vemployee(name,"123456789","12345678900");
+        details = driver.VerifyEmployee(name,"123456789","12345678900");
         assertTrue(details);
     }
     @Test
     public void UppBoundNewEmployeeTFN2() {
-        details = driver.Vemployee(name,"123456789082","1234567890");
+        details = driver.VerifyEmployee(name,"123456789082","1234567890");
         assertTrue(details);
     }
     @Test
     public void UppBoundEmployeeNO2() {
-        details = driver.Vemployee(name,"123456789","123456789002");
+        details = driver.VerifyEmployee(name,"123456789","123456789002");
         assertTrue(details);
     }
     @Test
     public void UppBoundNewEmployeeTFN3() {
-        details = driver.Vemployee(name,"1234567890823","1234567890");
+        details = driver.VerifyEmployee(name,"1234567890823","1234567890");
         assertTrue(details);
     }
     @Test
     public void UppBoundEmployeeNO3() {
-        details = driver.Vemployee(name,"123456789","1234567890023");
+        details = driver.VerifyEmployee(name,"123456789","1234567890023");
         assertTrue(details);
     }
     @Test
     public void NullNewEmployeeTFN() {
-        details = driver.Vemployee(name,"","1234567890");
+        details = driver.VerifyEmployee(name,"","1234567890");
         assertTrue(details);
     }
     @Test
     public void NullNewEmployeeNO() {
-        details = driver.Vemployee(name,"1234567890","");
+        details = driver.VerifyEmployee(name,"1234567890","");
         assertTrue(details);
     }
 

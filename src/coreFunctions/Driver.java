@@ -34,7 +34,7 @@ public class Driver {
         String tfn = reader.nextLine();
         System.out.print("Enter phone number: ");
         String phoneNo = reader.nextLine();
-        valid = Vemployee(employeeName,tfn,phoneNo);
+        valid = VerifyEmployee(employeeName,tfn,phoneNo);
         if(valid){
             filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
 
@@ -43,7 +43,7 @@ public class Driver {
     }
 
     }
-    public boolean Vemployee(String name,String tfn, String mobile){
+    public boolean VerifyEmployee(String name,String tfn, String mobile){
         if(name.isEmpty() || (name.length() < 1)  ){
 
             System.out.println("Invalid Name");
