@@ -1,23 +1,23 @@
 package test;
 
 import coreFunctions.Driver;
-import menu.Login;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import org.junit.*;
+import static org.junit.Assert.*;
 
 /**
  * Created by yesmi on 25/03/2017.
  */
 public class BusinessMenuTesting {
+    Driver driver = new Driver();
+    boolean details;
+    String name = "Employee";
+
     @BeforeClass
     public static void loadDriver(){
-        Login log = new Login();
-        Driver driver = new Driver();
+      /*  Login log = new Login();
+
         log.loadCustomerInformation();
-        log.getOwnerinfo();
+        log.getOwnerinfo();*/
     }
     @Before
     public void setUp() throws Exception {
@@ -29,8 +29,78 @@ public class BusinessMenuTesting {
 
     }
 
-    @Test
-    public void verifyLoginAll() {
+    @Test // tfn and phone no should be restricted to a specific format
+    public void correctNewEmployee9() {
+        details = driver.Vemployee(name,"123456789","0434567890");
+        assertFalse(details);
     }
+    @Test // tfn and phone no should be restricted to a specific format
+    public void correctNewEmployee8() {
+        details = driver.Vemployee(name,"12345678","0393345678");
+        assertFalse(details);
+    }
+
+    @Test
+    public void correctUppBoundEmployeeNO() {
+        details = driver.Vemployee(name,"123456789","1234567890");
+        assertFalse(details);
+    }
+
+    @Test//not a number
+    public void fakeNewEmployeeTFN() {
+        details = driver.Vemployee(name,"123a67890","1234567890");
+        assertTrue(details);
+    }
+    @Test //not a number
+    public void fakeNewEmployeeNO() {
+        details = driver.Vemployee(name,"123456789","04sascgf");
+        assertTrue(details);
+    }
+    @Test
+    public void fakeNewEmployeeBoth() {
+        details = driver.Vemployee(name,"1234h567890","qwe");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundNewEmployeeTFN() {
+        details = driver.Vemployee(name,"12345678908","1234567890");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundEmployeeNO() {
+        details = driver.Vemployee(name,"123456789","12345678900");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundNewEmployeeTFN2() {
+        details = driver.Vemployee(name,"123456789082","1234567890");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundEmployeeNO2() {
+        details = driver.Vemployee(name,"123456789","123456789002");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundNewEmployeeTFN3() {
+        details = driver.Vemployee(name,"1234567890823","1234567890");
+        assertTrue(details);
+    }
+    @Test
+    public void UppBoundEmployeeNO3() {
+        details = driver.Vemployee(name,"123456789","1234567890023");
+        assertTrue(details);
+    }
+    @Test
+    public void NullNewEmployeeTFN() {
+        details = driver.Vemployee(name,"","1234567890");
+        assertTrue(details);
+    }
+    @Test
+    public void NullNewEmployeeNO() {
+        details = driver.Vemployee(name,"1234567890","");
+        assertTrue(details);
+    }
+
 
 }

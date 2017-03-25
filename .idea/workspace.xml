@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/RegisterTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/RegisterTesting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreFunctions/Driver.java" afterPath="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/BusinessMenuTesting.java" afterPath="$PROJECT_DIR$/src/test/BusinessMenuTesting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workdaysList.txt" afterPath="$PROJECT_DIR$/workdaysList.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-471">
-              <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+            <state relative-caret-position="359">
+              <caret line="161" column="9" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="161" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -42,20 +40,30 @@
       <file leaf-file-name="LoginTesting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/LoginTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
-                <marker date="1490410783162" expanded="true" signature="22:87" ph="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/RegisterTesting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
+            <state relative-caret-position="367">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,14 +81,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BusinessMenuTesting.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BusinessMenuTesting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/BusinessMenuTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+            <state relative-caret-position="368">
+              <caret line="95" column="41" lean-forward="false" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="business.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,6 +125,7 @@
       <find>null</find>
       <find>username valid</find>
       <find>F</find>
+      <find>&quot;1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,8 +185,8 @@
         <option value="$PROJECT_DIR$/src/test/RegisterTesting.java" />
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/test/LoginTesting.java" />
-        <option value="$PROJECT_DIR$/src/test/BusinessMenuTesting.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
+        <option value="$PROJECT_DIR$/src/test/BusinessMenuTesting.java" />
       </list>
     </option>
   </component>
@@ -1018,7 +1037,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490411613388</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="reformatted addEmployee to allow testing">
+      <created>1490413712158</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1490413712158</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1149,7 +1175,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created Junit4 testing classes&#10;- basic structure&#10;" />
     <MESSAGE value="changed register class method to allow testing" />
     <MESSAGE value="deleted empty line in text file" />
     <MESSAGE value="register testing" />
@@ -1174,7 +1199,8 @@
     <MESSAGE value="add new employee function" />
     <MESSAGE value="small fix of register test" />
     <MESSAGE value="basic template created" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic template created" />
+    <MESSAGE value="reformatted addEmployee to allow testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformatted addEmployee to allow testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1382,14 +1408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RegisterTesting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1406,26 +1424,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/employeeList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-471">
-          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1465,13 +1467,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/business.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/LoginTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <marker date="1490410783162" expanded="true" signature="22:87" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/RegisterTesting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="161" column="9" lean-forward="true" selection-start-line="143" selection-start-column="1" selection-end-line="161" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1485,21 +1511,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/BusinessMenuTesting.java">
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="367">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/test/BusinessMenuTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="40" column="68" lean-forward="false" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
-          <folding />
+        <state relative-caret-position="368">
+          <caret line="95" column="41" lean-forward="false" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

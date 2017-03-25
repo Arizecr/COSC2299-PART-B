@@ -34,7 +34,7 @@ public class Driver {
         String tfn = reader.nextLine();
         System.out.print("Enter phone number: ");
         String phoneNo = reader.nextLine();
-        valid = Vemployee(tfn,phoneNo);
+        valid = Vemployee(employeeName,tfn,phoneNo);
         if(valid){
             filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
 
@@ -43,7 +43,28 @@ public class Driver {
     }
 
     }
-    public boolean Vemployee(String tfn, String phoneNo){ return false;}
+    public boolean Vemployee(String name,String tfn, String mobile){
+        if(name.isEmpty() || (name.length() < 1)  ){
+
+            System.out.println("Invalid Name");
+            return true;
+
+
+        }
+
+        if(tfn.isEmpty() || (tfn.length() != 8)||(tfn.length() != 9) ){
+            System.out.println("Invalid TFN");
+            return true;
+
+        }
+
+        if(mobile.isEmpty() || (mobile.length() != 10) ){
+            System.out.println("Invalid Mobile");
+            return true;
+
+        }
+        return false;
+    }
     /*
      * Generate employee ID
      */
