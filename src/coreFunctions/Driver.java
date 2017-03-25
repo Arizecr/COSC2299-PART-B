@@ -22,56 +22,56 @@ public class Driver {
         System.out.println("====================");
 
         //infinite loop
-    while(true) {
-        String employeeID = generateEmployeeNo();
+        while(true) {
+            String employeeID = generateEmployeeNo();
 
         /* debug */
-        System.out.println("Employee ID is " + employeeID);
+            System.out.println("Employee ID is " + employeeID);
 
-        //other stuff
+            //other stuff
 
-        System.out.print("Enter full name: ");
-        String employeeName = reader.nextLine();
+            System.out.print("Enter full name: ");
+            String employeeName = reader.nextLine();
 
-        //error check for length of name
-        employeeName = verifyEmployeeName(employeeName);
+            //error check for length of name
+            employeeName = verifyEmployeeName(employeeName);
 
 
 
-        System.out.print("Enter tax file number: ");
-
-        //checks if numbers are entered for tfn
-        while(!reader.hasNextInt()) {
-            System.out.println("\nError: entered a non integer as tfn.");
             System.out.print("Enter tax file number: ");
-            reader.next();
-        }
-        String checkTfn = reader.nextLine();
-        checkTfn = verifyEmployeeTFN(checkTfn);
-        String tfn = checkTfn;
+
+            //checks if numbers are entered for tfn
+            while(!reader.hasNextInt()) {
+                System.out.println("\nError: entered a non integer as tfn.");
+                System.out.print("Enter tax file number: ");
+                reader.next();
+            }
+            String checkTfn = reader.nextLine();
+            checkTfn = verifyEmployeeTFN(checkTfn);
+            String tfn = checkTfn;
 
 
-        System.out.print("Enter phone number: ");
-
-        //checks if numbers are entered for phone no
-        while(!reader.hasNextInt()) {
-            System.out.println("\nError: a phone number consists of 10 digits.");
             System.out.print("Enter phone number: ");
-            reader.next();
+
+            //checks if numbers are entered for phone no
+            while(!reader.hasNextInt()) {
+                System.out.println("\nError: a phone number consists of 10 digits.");
+                System.out.print("Enter phone number: ");
+                reader.next();
+            }
+
+            String checkPhone = reader.nextLine();
+            checkPhone = verifyEmployeeMobile(checkPhone);
+            String phoneNo = checkPhone;
+
+
+
+            filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
+            System.out.println("Successfully added a new employee");
+            break;
+
+
         }
-
-        String checkPhone = reader.nextLine();
-        checkPhone = verifyEmployeeMobile(checkPhone);
-        String phoneNo = checkPhone;
-
-
-
-        filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
-        System.out.println("Successfully added a new employee");
-        break;
-
-
-    }
 
     }
 
