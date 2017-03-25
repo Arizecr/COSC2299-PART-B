@@ -128,6 +128,50 @@ public class WorkingTimesTesting {
         assertTrue(verify);
 
     }
+    @Test
+    public void TomorrowWorkingTimes() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        firstdate = date.format(c.getTime());
+        firsttime = time.format(c.getTime());
+        c.add(Calendar.HOUR,2);
+        endtime = time.format(c.getTime());
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertFalse(verify);
+
+    }
+    @Test//length too short
+    public void WorkingTimes10MIN() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        firstdate = date.format(c.getTime());
+        firsttime = time.format(c.getTime());
+        c.add(Calendar.MINUTE,10);
+        endtime = time.format(c.getTime());
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertTrue(verify);
+
+    }
+    @Test//length too long
+    public void WorkingTimes8HOURs() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        firstdate = date.format(c.getTime());
+        firsttime = time.format(c.getTime());
+        c.add(Calendar.HOUR,8);
+        endtime = time.format(c.getTime());
+        c.add(Calendar.MINUTE,10);
+        endtime = time.format(c.getTime());
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertTrue(verify);
+
+    }
 
 
 }

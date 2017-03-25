@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/AddEmployeeTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/AddEmployeeTesting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" afterPath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
@@ -33,9 +31,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
+            <state relative-caret-position="663">
               <caret line="42" column="42" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="42" selection-end-column="42" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-211">
-              <caret line="88" column="55" lean-forward="true" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+            <state relative-caret-position="123">
+              <caret line="122" column="75" lean-forward="false" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkingTimesTesting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WorkingTimesTesting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+            <state relative-caret-position="223">
+              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,8 +161,8 @@
         <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/test/AddEmployeeTesting.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
+        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
       </list>
     </option>
   </component>
@@ -677,13 +677,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
     </task>
-    <task id="LOCAL-00004" summary="Customer data is loaded on login via arraylist">
-      <created>1488765135891</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1488765135891</updated>
-    </task>
     <task id="LOCAL-00005" summary="reformat">
       <created>1488769724949</created>
       <option name="number" value="00005" />
@@ -1020,38 +1013,45 @@
       <option name="project" value="LOCAL" />
       <updated>1490434820694</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="started working times testing">
+      <created>1490439564032</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1490439564032</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 25m 51s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 36m 53s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 41m 23s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 47m 59s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 52m 09s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 52m 58s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 55m 05s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 56m 59s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 57m 16s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WorkingTimesTesting - 2017.03.25 at 21h 58m 22s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 29m 39s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 31m 38s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 34m 48s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 36m 26s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 37m 43s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 43m 20s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 44m 23s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 44m 49s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 46m 59s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1068,7 +1068,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.50732064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4369085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42439026" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1151,7 +1151,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refractored some code + also made a checklist for martin" />
     <MESSAGE value="small fix" />
     <MESSAGE value="added some comments" />
     <MESSAGE value="login testing&#10;" />
@@ -1176,7 +1175,8 @@
     <MESSAGE value="reformatted" />
     <MESSAGE value="reformatted Driver code to be easier to test and shortened code length" />
     <MESSAGE value="add employee testing complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="add employee testing complete" />
+    <MESSAGE value="started working times testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working times testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1214,7 +1214,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,7 +1279,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,7 +1296,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1354,7 +1360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,7 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,13 +1424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1842#1843#0" expanded="false" />
-            <element signature="e#1884#1885#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2014#2015#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1446,7 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,15 +1458,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
+        <state relative-caret-position="663">
           <caret line="42" column="42" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="42" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1479,7 +1476,7 @@
         <state relative-caret-position="89">
           <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1488,24 +1485,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="88" column="55" lean-forward="true" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+        <state relative-caret-position="223">
+          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
+    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+        <state relative-caret-position="123">
+          <caret line="122" column="75" lean-forward="false" selection-start-line="122" selection-start-column="75" selection-end-line="122" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -96,6 +96,7 @@ public class BusinessMenu {
 
             long diff = enddate.getTime() - startdate.getTime();
             long diffHours = diff / (60 * 60 * 1000) % 24;
+            long diffMinutes = diff / (60 * 1000) % 60;
 
                         /* If needed
                         long diffSeconds = diff / 1000 % 60;
@@ -118,15 +119,15 @@ public class BusinessMenu {
                 return true;
             }
 
-            if(diffHours == 0 || diffHours > 8){
-                System.out.println(diffHours);
+            if(diffHours == 0 || diffHours > 8|| diffMinutes>(8*60)){
+                System.out.println("no of hours selected "+diffHours + " "+diffMinutes);
                 System.out.println("Work day must be in range between 1 to 8 hours");
                 return true;
 
             }
 
 
-            System.out.println(diffHours);
+            //System.out.println(diffHours);
             System.out.println("The working time of:\t\t\t " + startdate + "\nTil:\t\t\t\t\t\t\t " + enddate);
 
             driver.addWorkdays(dateNtime, endNTime);
