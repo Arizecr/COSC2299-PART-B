@@ -36,12 +36,6 @@ public class RegisterTesting {
         boolean value = reg.testUser(u);
         assertFalse(value);
     }
-    @Test // expect  username to be larger than just c
-    public void Namefake() {
-        String u = "cnotinsys";
-        boolean value = reg.testUser(u);
-        assertFalse(value);
-    }
 
     @Test // expect  username to be larger than just c
     public void invalidCharUsername() {
