@@ -44,8 +44,11 @@ public class WorkingTimesTesting {
     }
 
     @Test
-    public void correctWorkingTimes() {
-        firstdate = "01/05/2017";
+    public void correctWorkingTimesAM() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        firstdate = date.format(c.getTime());
         firsttime = "00:00:00";
         endtime = "03:30:00";
         verify = b.Workt(firstdate, firsttime,endtime);
@@ -53,8 +56,23 @@ public class WorkingTimesTesting {
 
     }
     @Test
+    public void correctWorkingTimesPM() {
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        firstdate = date.format(c.getTime());
+        firsttime = "13:00:00";
+        endtime = "19:30:00";
+        verify = b.Workt(firstdate, firsttime,endtime);
+        assertFalse(verify);
+
+    }
+    @Test
     public void correctWorkingTimesMidday() {
-        firstdate = "01/05/2017";
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        firstdate = date.format(c.getTime());
         firsttime = "10:00:00";
         endtime = "12:30:00";
         verify = b.Workt(firstdate, firsttime,endtime);

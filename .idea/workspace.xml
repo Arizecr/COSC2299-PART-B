@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/WorkingTimesTesting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" afterPath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workdaysList.txt" afterPath="$PROJECT_DIR$/workdaysList.txt" />
     </list>
@@ -66,8 +64,8 @@
       <file leaf-file-name="WorkingTimesTesting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+            <state relative-caret-position="283">
+              <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -678,13 +676,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
     </task>
-    <task id="LOCAL-00006" summary="reformatted some stuff">
-      <created>1488770572299</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1488770572300</updated>
-    </task>
     <task id="LOCAL-00007" summary="reformatted some stuff">
       <created>1488771093982</created>
       <option name="number" value="00007" />
@@ -1021,13 +1012,17 @@
       <option name="project" value="LOCAL" />
       <updated>1490482081548</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="issue found with 12: time">
+      <created>1490483835459</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1490483835459</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WorkingTimesTesting - 2017.03.26 at 09h 58m 13s.xml">
-      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 01m 01s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
@@ -1035,6 +1030,9 @@
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
     <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 16m 41s.xml">
+      <configuration name="WorkingTimesTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WorkingTimesTesting - 2017.03.26 at 10h 18m 13s.xml">
       <configuration name="WorkingTimesTesting" configurationId="JUnit" />
     </history-entry>
     <history-entry file="WorkingTimesTesting_TomorrowWorkingTimes - 2017.03.26 at 10h 06m 05s.xml">
@@ -1069,7 +1067,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.50732064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4369085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42439026" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1152,7 +1150,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="small fix" />
     <MESSAGE value="added some comments" />
     <MESSAGE value="login testing&#10;" />
     <MESSAGE value="commented out&#10;" />
@@ -1177,7 +1174,8 @@
     <MESSAGE value="reformatted Driver code to be easier to test and shortened code length" />
     <MESSAGE value="add employee testing complete" />
     <MESSAGE value="started working times testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="started working times testing" />
+    <MESSAGE value="issue found with 12: time" />
+    <option name="LAST_COMMIT_MESSAGE" value="issue found with 12: time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1501,8 +1499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/WorkingTimesTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        <state relative-caret-position="283">
+          <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
