@@ -72,12 +72,14 @@ public class Driver {
     }
 
 
-    public void addWorkdays(Date dateAndTime){
+    public void addWorkdays(String dateAndTime, String endTime){
         /*
         Still needs to create a date class for now
         All it does is currently write to txt file to save the work dates.
          */
-        filewriter.WriteToWorkingdayTXT(dateAndTime, "workdaysList.txt");
+        String combinedDate = dateAndTime + " " + endTime;
+
+        filewriter.WriteToWorkingdayTXT(combinedDate, "workdaysList.txt");
 
 
 

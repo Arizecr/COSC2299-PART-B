@@ -54,16 +54,47 @@ public class BusinessMenu {
                 while(true){
                     System.out.print("Enter Date (dd/mm/yyyy)");
                     String firstdate = datereader.nextLine();
-                    System.out.print("Time (hh:mm:ss)");
+                    System.out.print("Start Time (hh:mm:ss)");
                     String firsttime = datereader.nextLine();
+                    System.out.print("End Time (hh:mm:ss)");
+                    String endtime = datereader.nextLine();
 
                     SimpleDateFormat dateformat2 = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
                     String dateNtime = firstdate + " " + firsttime;
+                    String endNTime = firstdate + " " + endtime;
 
                     try{
                         Date magicdate = dateformat2.parse(dateNtime);
-                        System.out.println("Work Day Created on " + magicdate);
-                        driver.addWorkdays(magicdate);
+                        Date enddate = dateformat2.parse(endNTime);
+
+                        long diff = enddate.getTime() - magicdate.getTime();
+                        long diffHours = diff / (60 * 60 * 1000) % 24;
+
+                        /* If needed
+                        long diffSeconds = diff / 1000 % 60;
+                        long diffMinutes = diff / (60 * 1000) % 60;
+                        long diffDays = diff / (24 * 60 * 60 * 1000);
+                        */
+
+                        if(magicdate.after(enddate) || magicdate.equals(enddate)){
+
+
+                            System.out.println("Impossible dates");
+                            continue;
+                        }
+
+                        if(diffHours < 1 || diffHours > 7){
+
+                            System.out.println("Work day must be in range bewtween 1 to 8 hours");
+                            continue;
+
+                        }
+
+
+
+                        System.out.println("The working time of:\t\t\t " + magicdate + "\nTil:\t\t\t\t\t\t\t " + enddate);
+
+                        driver.addWorkdays(dateNtime, endNTime);
                         break;
 
                     }catch(ParseException e){
