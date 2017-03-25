@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Scanner;
 /**
  * Created by Gabrielle on 24/03/2017.
@@ -17,14 +16,15 @@ public class Driver {
 
     public void addEmployee(){
         Scanner reader = new Scanner(System.in);
-
+        boolean valid = true;
+    while(valid) {
         System.out.println("\nAdd Employee");
         System.out.println("====================");
 
         String employeeID = generateEmployeeNo();
 
         /* debug */
-        System.out.println("Employee ID is "+ employeeID);
+        System.out.println("Employee ID is " + employeeID);
 
         //other stuff
         System.out.print("Enter full name: ");
@@ -34,12 +34,16 @@ public class Driver {
         String tfn = reader.nextLine();
         System.out.print("Enter phone number: ");
         String phoneNo = reader.nextLine();
+        valid = Vemployee(tfn,phoneNo);
+        if(valid){
+            filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
 
-        filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
-
-        System.out.println("Successfully added a new employee");
+            System.out.println("Successfully added a new employee");
+        }
     }
 
+    }
+    public boolean Vemployee(String tfn, String phoneNo){ return false;}
     /*
      * Generate employee ID
      */
