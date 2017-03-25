@@ -52,14 +52,16 @@ public class BusinessMenu {
 
             if(choice == 2){
                 boolean valid = true;
+
                 while(valid){
+
                     System.out.print("Enter Date (dd/mm/yyyy)");
                     String firstdate = datereader.nextLine();
                     System.out.print("Start Time (hh:mm:ss)");
-                    String firsttime = datereader.nextLine();
+                    String starttime = datereader.nextLine();
                     System.out.print("End Time (hh:mm:ss)");
                     String endtime = datereader.nextLine();
-                    valid = Worktimes(firstdate,firsttime,endtime);
+                    valid = Worktimes(firstdate,starttime,endtime);
 
                 }
             }
@@ -81,16 +83,18 @@ public class BusinessMenu {
     }
 
 
-    private boolean Worktimes(String firstdate,String firsttime,String endtime){
+    private boolean Worktimes(String firstdate,String starttime,String endtime){
         SimpleDateFormat dateformat2 = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
-        String dateNtime = firstdate + " " + firsttime;
+
+        String dateNtime = firstdate + " " + starttime;
         String endNTime = firstdate + " " + endtime;
 
         try{
-            Date magicdate = dateformat2.parse(dateNtime);
+            Date currDate =  new Date();
+            Date startdate = dateformat2.parse(dateNtime);
             Date enddate = dateformat2.parse(endNTime);
 
-            long diff = enddate.getTime() - magicdate.getTime();
+            long diff = enddate.getTime() - startdate.getTime();
             long diffHours = diff / (60 * 60 * 1000) % 24;
 
                         /* If needed
@@ -99,23 +103,31 @@ public class BusinessMenu {
                         long diffDays = diff / (24 * 60 * 60 * 1000);
                         */
 
-            if(magicdate.after(enddate) || magicdate.equals(enddate)){
 
+            // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
+            if(startdate.before(currDate)){
 
-                System.out.println("Impossible dates");
+                System.out.println("Going back in time");
+                return true;
+            }else if(!enddate.after(startdate)){
+                System.out.println("Can't Start after its ended");
+                return true;
+
+            }else if(startdate.equals(enddate)){
+                System.out.println("Can't Start and end at same time");
                 return true;
             }
 
-            if(diffHours < 1 || diffHours > 7){
-
+            if(diffHours == 0 || diffHours > 8){
+                System.out.println(diffHours);
                 System.out.println("Work day must be in range between 1 to 8 hours");
                 return true;
 
             }
 
 
-
-            System.out.println("The working time of:\t\t\t " + magicdate + "\nTil:\t\t\t\t\t\t\t " + enddate);
+            System.out.println(diffHours);
+            System.out.println("The working time of:\t\t\t " + startdate + "\nTil:\t\t\t\t\t\t\t " + enddate);
 
             driver.addWorkdays(dateNtime, endNTime);
             return false;
@@ -124,10 +136,8 @@ public class BusinessMenu {
             System.out.println("Invalid Date/Time");
             return true;
 
-
         }
-
-        }
+    }
     public  boolean Workt(String firstdate,String firsttime,String endtime){return Worktimes(firstdate,firsttime,endtime);}
 
 

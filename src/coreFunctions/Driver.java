@@ -46,9 +46,9 @@ public class Driver {
             System.out.print("Enter tax file number: ");
             reader.next();
         }
-        int checkTfn = reader.nextInt();
+        String checkTfn = reader.nextLine();
         checkTfn = verifyEmployeeTFN(checkTfn);
-        String tfn = Integer.toString(checkTfn);
+        String tfn = checkTfn;
 
 
         System.out.print("Enter phone number: ");
@@ -60,9 +60,9 @@ public class Driver {
             reader.next();
         }
 
-        int checkPhone = reader.nextInt();
+        String checkPhone = reader.nextLine();
         checkPhone = verifyEmployeeMobile(checkPhone);
-        String phoneNo = Integer.toString(checkPhone);
+        String phoneNo = checkPhone;
 
 
 
@@ -91,22 +91,22 @@ public class Driver {
     /*
      * Checks validity of employee tfn (tfn consists of 8-9 digits)
      */
-    public int verifyEmployeeTFN(int tfn){
+    public String verifyEmployeeTFN(String tfn){
         Scanner reader = new Scanner(System.in);
 
-        int length = Integer.toString(tfn).length();
+        int length = tfn.length();
         System.out.println(length);
 
         while(length < 8 || length>9){
             System.out.print("Error: TFN must be 8-9 digits in length.");
 
-            while(!reader.hasNextInt()) {
+            while(!isNumeric(tfn)) {
                 System.out.println("\nError: entered a non integer as tfn.");
                 System.out.print("Enter tax file number: ");
                 reader.next();
             }
-            tfn = reader.nextInt();
-            length = Integer.toString(tfn).length();
+            tfn = reader.nextLine();
+            length = tfn.length();
 
         }
 
@@ -116,20 +116,18 @@ public class Driver {
     /*
      * Checks validity of employee mobile (mobile consists of 10 digits)
      */
-    public int verifyEmployeeMobile(int phone){
+    public String verifyEmployeeMobile(String phone){
         Scanner reader = new Scanner(System.in);
 
-        int length = (int) Math.log10(phone) + 1;
-        while(length != 10){
+        while(phone.length() != 10){
             System.out.print("Error: Phone no is 10 digits in length.");
 
-            while(!reader.hasNextInt()) {
+            while(!isNumeric(phone)) {
                 System.out.println("\nError: entered a non integer as tfn.");
                 System.out.print("Enter tax file number: ");
                 reader.next();
             }
-            phone = reader.nextInt();
-            length = (int) Math.log10(phone) + 1;
+            phone = reader.nextLine();
 
         }
 
@@ -182,5 +180,10 @@ public class Driver {
 
 
 
+    }
+
+
+    public boolean isNumeric(String s) {
+        return s.matches("[-+]?\\d*\\.?\\d+");
     }
 }
