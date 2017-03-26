@@ -40,7 +40,7 @@ public class BusinessMenu {
             System.out.println("+----------------------------------+");
 
             System.out.println("1. Add Employee");
-            System.out.println("2. Add working dates/times");
+            System.out.println("2. Add working days/times");
             System.out.println("3. View summaries of bookings");
             System.out.println("4. View new Bookings");
             System.out.println("5. Show worker availability");
