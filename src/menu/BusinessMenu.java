@@ -3,7 +3,9 @@ import coreFunctions.Driver;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
@@ -16,6 +18,8 @@ public class BusinessMenu {
     public void printMenu(){
         Scanner reader = new Scanner(System.in);
         Scanner datereader = new Scanner(System.in);
+        GregorianCalendar cur = new GregorianCalendar();
+        String firstdate;
 
 
 
@@ -36,7 +40,7 @@ public class BusinessMenu {
             System.out.println("+----------------------------------+");
 
             System.out.println("1. Add Employee");
-            System.out.println("2. Add working dates/times");
+            System.out.println("2. Add working days/times");
             System.out.println("3. View summaries of bookings");
             System.out.println("4. View new Bookings");
             System.out.println("5. Show worker availability");
@@ -54,9 +58,36 @@ public class BusinessMenu {
                 boolean valid = true;
 
                 while(valid){
+                    while(true){
+                        System.out.print("Enter Date (dd/mm/yyyy)");
+                        firstdate = datereader.nextLine();
 
-                    System.out.print("Enter Date (dd/mm/yyyy)");
-                    String firstdate = datereader.nextLine();
+                        String[] dateparts = firstdate.split("/");
+                        try{
+                            try{
+                                int check = Integer.parseInt(dateparts[1]) - 1;
+                            }catch (IndexOutOfBoundsException e){
+                                System.out.println("Invalid");
+                                continue;
+                            }
+                            int check = Integer.parseInt(dateparts[1]) - 1;
+                            int monthRestriction = cur.MONTH+1;
+                            /*
+                            System.out.println("Month inputted " + check);
+                            System.out.println("Month Restriction " + monthRestriction);
+                            */
+                            if(check == -1 || check > monthRestriction){
+                                System.out.println("Work days can only be booked within a month");
+                                continue;
+                            }
+                            break;
+
+
+                        }catch(NumberFormatException e){
+                            System.out.println("Invalid Date");
+                        }
+                    }
+
                     System.out.print("Start Time (hh:mm:ss)");
                     String starttime = datereader.nextLine();
                     System.out.print("End Time (hh:mm:ss)");
@@ -104,7 +135,6 @@ public class BusinessMenu {
                         long diffMinutes = diff / (60 * 1000) % 60;
                         long diffDays = diff / (24 * 60 * 60 * 1000);
                         */
-
 
             // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
             if(startdate.before(currDate)){
