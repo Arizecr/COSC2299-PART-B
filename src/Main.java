@@ -27,7 +27,7 @@ public class Main {
         System.out.println("2. Register an account");
         System.out.println("3. Exit system");
 
-//c
+
 
         //infinite loop
         while(true){
