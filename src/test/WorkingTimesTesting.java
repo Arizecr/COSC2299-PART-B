@@ -2,9 +2,6 @@ package test;
 
 import coreFunctions.Driver;
 import menu.BusinessMenu;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -26,22 +23,7 @@ public class WorkingTimesTesting {
     String endtime;//(hh:mm:ss)
     BusinessMenu b = new BusinessMenu();
     boolean verify;
-    @BeforeClass
-    public static void loadDriver(){
-      /*  Login log = new Login();
 
-        log.loadCustomerInformation();
-        log.getOwnerinfo();*/
-    }
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
 
     @Test
     public void correctWorkingTimesAM() {
