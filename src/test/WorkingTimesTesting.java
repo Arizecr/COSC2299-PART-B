@@ -207,9 +207,7 @@ public class WorkingTimesTesting {
         DateFormat time = new SimpleDateFormat("HH:mm:ss");
         firstdate = date.format(c.getTime());
         firsttime = time.format(c.getTime());
-        c.add(Calendar.HOUR,8);
-        endtime = time.format(c.getTime());
-        c.add(Calendar.MINUTE,1);
+        c.add(Calendar.HOUR,7);
         endtime = time.format(c.getTime());
         verify = b.Workt(firstdate, firsttime,endtime);
         assertTrue(verify);
