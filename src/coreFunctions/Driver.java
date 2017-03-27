@@ -23,13 +23,9 @@ public class Driver {
 
         //infinite loop
         while(true) {
-            String employeeID = generateEmployeeNo();
+            String employeeID = generateEmployeeNo(); //generate user id
 
-        /* debug */
             System.out.println("Employee ID is " + employeeID);
-
-            //other stuff
-
 
             String employeeName;
             do {
@@ -40,14 +36,14 @@ public class Driver {
 
             String checkTfn;
             do{
-                System.out.print("Enter tax file number: ");
+                System.out.print("Enter tax file number (8-9 digits): ");
                 checkTfn = reader.nextLine();
             }while(verifyEmployeeTFN(checkTfn)); //checks if numbers are entered for tfn
             String tfn = checkTfn;
 
             String checkPhone;
             do {
-                System.out.print("Enter phone number: ");
+                System.out.print("Enter phone number (10 digits): ");
                 checkPhone = reader.nextLine();
             }while(verifyEmployeeMobile(checkPhone));//checks if numbers are entered for phone no
 
