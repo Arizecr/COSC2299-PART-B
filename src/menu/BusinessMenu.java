@@ -19,7 +19,9 @@ public class BusinessMenu {
         Scanner reader = new Scanner(System.in);
         Scanner datereader = new Scanner(System.in);
         GregorianCalendar cur = new GregorianCalendar();
+        Scanner eID = new Scanner(System.in);
         String firstdate;
+        String empID;
 
 
 
@@ -59,7 +61,12 @@ public class BusinessMenu {
 
                 while(valid){
                     while(true){
-                        System.out.print("Enter Date (dd/mm/yyyy)");
+                        do{
+                        System.out.print("Enter employee ID:");
+                        empID = eID.nextLine();
+                        }while(!checkEmployeeID(empID));
+
+                        System.out.print("Enter Day(s):");
                         firstdate = datereader.nextLine();
 
                         String[] dateparts = firstdate.split("/");
@@ -172,5 +179,16 @@ public class BusinessMenu {
     }
     public  boolean Workt(String firstdate,String firsttime,String endtime){return Worktimes(firstdate,firsttime,endtime);}
 
+
+    public boolean checkEmployeeID(String empID){
+
+        if (empID.equals("e1") || empID.equals("e2")){
+            return true;
+        }
+
+        else
+            return false;
+
+    }
 
 }
