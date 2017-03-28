@@ -1,1 +1,7 @@
-b1 Monday|Tuesday|Wednesday 1-10
+b1 e1 Monday 11:00:00 12:00:00
+b1 e1 Wednesday 10:00:00 12:30:00
+b1 e1 Tuesday 00:00:00 03:30:00
+b2 e4 Monday 11:00:00 12:00:00
+b1 e1 Wednesday 10:00:00 12:30:00
+b1 e1 Monday 00:00:00 03:30:00
+b1 e1 Thursday 13:00:00 19:30:00
