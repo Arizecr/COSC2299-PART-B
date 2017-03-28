@@ -54,6 +54,7 @@ public class BusinessMenu {
             System.out.println("4. View summaries of bookings");
             System.out.println("5. View new Bookings");
             System.out.println("6. Show worker availability");
+            System.out.println("7. Adjust business hours");
             System.out.println("8. Log out");
 
             System.out.print("Enter choice: ");
@@ -90,6 +91,10 @@ public class BusinessMenu {
                     valid = Worktimes(bId,empID, day,starttime,endtime);
 
                 }
+            }
+            if(choice == 7){
+
+
             }
             if(choice == 8){
                 System.out.println("--------- New Service---------");

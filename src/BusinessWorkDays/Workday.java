@@ -3,7 +3,6 @@ package BusinessWorkDays;
 import coreFunctions.WriteToFile;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -88,7 +87,7 @@ public class Workday
     }
 
     public void writeToFile(){
-        write.WriteToWorkingdayTXT(toString(), "workdaysList.txt");
+        write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
 
     }
 
