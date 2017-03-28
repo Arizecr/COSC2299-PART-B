@@ -22,7 +22,6 @@ public class BusinessMenu {
     Login login = new Login();
     Driver driver = new Driver();
     public static ArrayList<Employee> employeeList = new ArrayList<>();
-
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
         Scanner eID = new Scanner(System.in);
