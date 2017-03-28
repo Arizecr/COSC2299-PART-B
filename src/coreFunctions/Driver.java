@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+
 /**
  * Created by Gabrielle on 24/03/2017.
  */
@@ -14,7 +15,7 @@ public class Driver {
     WriteToFile filewriter = new WriteToFile();
 
 
-    public void addEmployee(){
+    public void addEmployee(String bId){
         Scanner reader = new Scanner(System.in);
 
         boolean valid = true;
@@ -51,7 +52,7 @@ public class Driver {
 
 
 
-            filewriter.WriteToEmployee(new Employee(employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
+            filewriter.WriteToEmployee(new Employee(bId,employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
             System.out.println("Successfully added a new employee");
             break;
 
@@ -140,14 +141,14 @@ public class Driver {
     }
 
 
-    public void addWorkdays(String dateAndTime, String endTime){
+    public void addWorkdays(String bId, String empId, String day, String startTime, String endTime){
         /*
         Still needs to create a date class for now
         All it does is currently write to txt file to save the work dates.
          */
-        String combinedDate = dateAndTime + " " + endTime;
+        String combinedData = bId+" "+empId + " " +day + " "+startTime + " "+ endTime;
 
-        filewriter.WriteToWorkingdayTXT(combinedDate, "workdaysList.txt");
+        filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
 
 
 
