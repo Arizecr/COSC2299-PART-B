@@ -5,7 +5,6 @@ import user.Employee;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
 
 /**
  * Created by Martin on 5/03/2017.
