@@ -1,11 +1,11 @@
 package menu;
+import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
+import user.Business;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by Gabrielle on 5/03/2017.
@@ -14,14 +14,27 @@ import java.util.Scanner;
 public class BusinessMenu {
     Login login = new Login();
     Driver driver = new Driver();
+    String starttime;
+    String endtime;
 
-    public void printMenu(){
+
+
+
+
+
+    public void printMenu(String bID){
         Scanner reader = new Scanner(System.in);
-        Scanner datereader = new Scanner(System.in);
+        Scanner hours = new Scanner(System.in);
+        Scanner workdayreader = new Scanner(System.in);
+        int command;
         GregorianCalendar cur = new GregorianCalendar();
         Scanner eID = new Scanner(System.in);
         String firstdate;
         String empID;
+
+        ArrayList<String> workday = new ArrayList<>(7);
+        ArrayList<String> chosendays = new ArrayList<>(7);
+
 
 
 
@@ -35,6 +48,15 @@ public class BusinessMenu {
 
         //infinite loop
         while(true) {
+            /* adds into arraylist */
+            workday.add("Monday");
+            workday.add("Tuesday");
+            workday.add("Wednesday");
+            workday.add("Thursday");
+            workday.add("Friday");
+            workday.add("Saturday");
+            workday.add("Sunday");
+
             //print business menu
             System.out.println("\n+----------------------------------+");
             System.out.println("|           Business               |");
@@ -58,50 +80,105 @@ public class BusinessMenu {
 
             if(choice == 2){
                 boolean valid = true;
+                boolean validwork = true;
+
 
                 while(valid){
+
                     while(true){
+                        try{
+                            System.out.println("Enter Start Time");
+                            starttime = hours.nextLine();
+
+                            if(Integer.parseInt(starttime) > 24 ||Integer.parseInt(starttime) <0){
+                                System.out.println("Invalid Start Times");
+                                continue;
+                            }else{
+                                System.out.println("Enter End Time");
+                                endtime = hours.nextLine();
+                                if(Integer.parseInt(endtime) <0 || Integer.parseInt(endtime) > 24 || Integer.parseInt(endtime) < Integer.parseInt(starttime)){
+                                    System.out.println("Invalid Start Times");
+                                    continue;
+                                }
+                            }
+
+                            break;
+                        }
+                        catch (NumberFormatException e){
+                            System.out.println("Invalid Times");
+
+                        }
+
+
+
+
+                    }
+
+
+                    while(validwork){
+
+                        for(int i=0; i< workday.size(); i++){
+                            System.out.println((i+1) + ". " + workday.get(i));
+
+                        }
+                        if(workday.size() == 0){
+                            break;
+                        }
+                        System.out.println("0. Exit");
+
+                        command = workdayreader.nextInt();
+                        /*
                         do{
                         System.out.print("Enter employee ID:");
                         empID = eID.nextLine();
                         }while(!checkEmployeeID(empID));
 
-                        System.out.print("Enter Day(s):");
-                        firstdate = datereader.nextLine();
-
-                        String[] dateparts = firstdate.split("/");
-                        try{
-                            try{
-                                int check = Integer.parseInt(dateparts[1]) - 1;
-                            }catch (IndexOutOfBoundsException e){
-                                System.out.println("Invalid");
-                                continue;
-                            }
-                            int check = Integer.parseInt(dateparts[1]) - 1;
-                            int monthRestriction = cur.MONTH+1;
-                            /*
-                            System.out.println("Month inputted " + check);
-                            System.out.println("Month Restriction " + monthRestriction);
-                            */
-                            if(check == -1 || check > monthRestriction){
-                                System.out.println("Work days can only be booked within a month");
-                                continue;
-                            }
-                            break;
-
-
-                        }catch(NumberFormatException e){
-                            System.out.println("Invalid Date");
+*/
+                        if(command == 0 && workday.size() < 7){
+                            validwork = false;
                         }
+
+                        else if(command == 1 ){
+                            chosendays.add(workday.get(0));
+                            workday.remove(0);
+
+                        }
+                        else if(command == 2  && workday.size()>=2 ){
+                            chosendays.add(workday.get(1));
+                            workday.remove(1);
+                        }
+                        else if(command == 3  && workday.size()>=3 ){
+                            chosendays.add(workday.get(2));
+                            workday.remove(2);
+                        }
+                        else if(command == 4 && workday.size()>=4 ){
+                            chosendays.add(workday.get(3));
+                            workday.remove(3);
+                        }
+                        else if(command == 5 && workday.size()>=5){
+                            chosendays.add(workday.get(4));
+                            workday.remove(4);
+                        }
+                        else if(command == 6 && workday.size()>=6){
+                            chosendays.add(workday.get(5));
+                            workday.remove(5);
+                        }
+                        else if(command == 7 && workday.size()>=7){
+                            chosendays.add(workday.get(6));
+                            workday.remove(6);
+                        }
+                        else{
+                            System.out.println("Invalid input");
+                        }
+
                     }
+                    Workday createWorkdays = new Workday(bID, chosendays,starttime,endtime);
 
-                    System.out.print("Start Time (hh:mm:ss)");
-                    String starttime = datereader.nextLine();
-                    System.out.print("End Time (hh:mm:ss)");
-                    String endtime = datereader.nextLine();
-                    valid = Worktimes(firstdate,starttime,endtime);
-
+                    createWorkdays.writeToFile();
+                    workday.clear();
+                    break;
                 }
+
             }
 
             else if(choice == 6){

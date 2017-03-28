@@ -56,7 +56,7 @@ public class Login {
         if(username.charAt(0) == 'b'){
             if(verifyLoginDetails("owner",username, password)){
                 System.out.println("owner login works!\n");
-                business.printMenu();
+                business.printMenu(username);
 
             }
             System.out.println("Invalid login details. Details do not exist in system.");

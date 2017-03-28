@@ -47,7 +47,7 @@ public class WriteToFile {
 
     }
 
-    public void WriteToWorkingdayTXT(String datentime, String txtname){
+    public void WriteToWorkingdayTXT(String chosenwork, String txtname){
 
 
         try{
@@ -55,7 +55,7 @@ public class WriteToFile {
             FileWriter fw = new FileWriter(txtname,true); //the true will append the new data
 
             fw.write("\n");
-            fw.write(datentime);//appends the string to the file
+            fw.write(chosenwork);//appends the string to the file
             fw.close();
     }
         catch(IOException ioe)
@@ -65,10 +65,6 @@ public class WriteToFile {
 
 
     }
-
-
-
-
 
 
 
