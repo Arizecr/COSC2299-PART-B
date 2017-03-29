@@ -14,34 +14,9 @@ import java.util.ArrayList;
 public class Workday
 
 {
-    int tmp;
+
     public static ArrayList<Workday> workhours = new ArrayList<>();
-    String sortedString ="";
     WriteToFile write = new WriteToFile();
-    public enum DayOfWeek {
-        Monday(1),Tuesday(2),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
-
-        private final int value;
-
-        DayOfWeek(int value) {
-
-            this.value = value;
-        }
-
-        public int getValue() {
-
-            return value;
-        }
-
-        @Override
-        public String toString() {
-
-            return value + "";
-        }
-    }
-
-
-
 
     private String starttime;
     private String endtime;
@@ -98,18 +73,25 @@ public class Workday
             System.out.println(e);
             e.printStackTrace();
         }
+        int num= 0;
+        int num2=0;
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
-                if(!d.equals(workhours.get(i).workD())){
-                    this.starttime = s;
-                    this.endtime=end;
-                    this.businessid=b;
-                    this.workday =d;
-                    writeToFile();
+                if(d.equals(workhours.get(i).workD())){
+                   num ++;
+
                 }
             }
 
         }
+        if(num==0){
+            this.starttime = s;
+            this.endtime=end;
+            this.businessid=b;
+            this.workday =d;
+            writeToFile();
+        }
+        else if (num>0){System.out.println("this date will be overwritten");}
     }
     public void printFile(String realbId){
         BufferedReader br;
@@ -139,9 +121,7 @@ public class Workday
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
-            //file cannot be found
+       //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
@@ -149,58 +129,13 @@ public class Workday
 
     }
 
-   /* public void sort(){
-        int i =0 ;
-        int j;
-        DayOfWeek curr;
-
-        while(i < workdays.size() ){
-            curr = DayOfWeek.valueOf(workdays.get(i));
-            j = i+1;
-            tmp = i;
-            while(j < workdays.size()){
-                if(DayOfWeek.valueOf(workdays.get(j)).getValue() <= curr.getValue()){
-                    tmp = j;
-                }
-                j++;
-            }
-
-            if(DayOfWeek.valueOf(workdays.get(tmp)).getValue() <= DayOfWeek.valueOf(workdays.get(i)).getValue()){
-                Collections.swap(workdays, i, tmp);
-
-            }
-            i++;
-
-        }
-
-
-    }
-
-    public void getWorkdays(){
-        sort();
-        for(int i=0; i< workdays.size(); i++){
-            System.out.println(workdays.get(i));
-        }
-    }*/
-
     public void writeToFile(){
         write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
 
     }
 
-
-
     public String toString(){
 
-
-       /* for(int i=0; i< workdays.size(); i++){
-            if(i == workdays.size()-1){
-                sortedString = sortedString + workdays.get(i);
-            }else{
-                sortedString = sortedString + workdays.get(i) + "|";
-            }
-
-        }*/
         String format = businessid + " " + workday + " " + starttime + " " + endtime;
 
         return format;

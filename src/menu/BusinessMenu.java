@@ -37,15 +37,6 @@ public class BusinessMenu {
         String empID;
 
 
-
-        /* debug purposes
-        for(int i=0; i < login.businessList.size() ;i++){
-            System.out.println(login.businessList.get(i).getName());
-            System.out.println(login.businessList.get(i).getAddress());
-            System.out.println(login.businessList.get(i).getPhoneNo());
-
-        } .*/
-
         //infinite loop
         while(true) {
             //print business menu
@@ -97,6 +88,7 @@ public class BusinessMenu {
                     valid = Worktimes(bId,empID, day,starttime,endtime);
 
                 }
+                continue;
             }
             else if(choice == 7){
                 System.out.println("\n+----------------------------------+");
@@ -131,6 +123,7 @@ public class BusinessMenu {
                         valid = BHours(bId, day, starttime, endtime);
 
                     }
+                    continue;
                 }
                 else{continue;}
 
@@ -138,10 +131,10 @@ public class BusinessMenu {
             if(choice == 9){
                 System.out.println("--------- New Service---------");
                 addNewService();
-
+                continue;
             }
 
-            else if(choice == 8){
+            if(choice == 8){
                 System.out.println("Successfully logged out of the system!");
                 System.exit(0);
             }
@@ -188,9 +181,11 @@ public boolean checkD(String day){return checkDay(day);}
             return true;
 
         }
+        if (!t.contains(":00")&&!t.contains(":30")){System.out.println("In the form HH:30 or HH:00 only");return true;}
+
         return false;
     }
-    private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
+    private boolean timeCheck (String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
 
         try{
@@ -208,11 +203,18 @@ public boolean checkD(String day){return checkDay(day);}
                 System.out.println("Can't Start and end at same time");
                 return true;
             }
-         /*   if(//call to method ){
-         System.out.println("This is an invalid shift");
-         return true;
-         }
-         */
+
+        }catch(ParseException e){
+            System.out.println("Invalid Time");
+            return true;
+
+        }
+
+        return false;
+    }
+    private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
+        DateFormat time = new SimpleDateFormat("HH:mm");
+       if( !timeCheck (starttime, endtime)){
 
 
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
@@ -220,45 +222,26 @@ public boolean checkD(String day){return checkDay(day);}
             driver.addWorkdays(bId,empId,day,starttime,endtime);
             return false;
 
-        }catch(ParseException e){
-            System.out.println("Invalid Date/Time");
-            return true;
 
         }
+        return true;
         //CHECK AGAINST TEXTFILE WITH DAY RESTRICTIONS SET BY BUSINESS
     }
     private boolean BHours(String bId, String day,String starttime,String endtime){
 
-        DateFormat time = new SimpleDateFormat("HH:mm:ss");
-
-        try{
-
-            Date st = time.parse(starttime);
-            Date et = time.parse(endtime);
+        if( !timeCheck (starttime, endtime)){
 
 
-            // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
-            if(!et.after(st)){
-                System.out.println("Can't Start after its ended");
-                return true;
+            System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
 
-            }else if(st.equals(et)){
-                System.out.println("Can't Start and end at same time");
-                return true;
-            }
+            w.readFile(bId, day, starttime, endtime);
+            return false;
 
-            System.out.println("The working hours time of: " + day + ":  "+starttime+" - " + endtime);
-
-            //
-
-
-        }catch(ParseException e){
-            System.out.println("Invalid Date/Time");
-            return true;
 
         }
-        w.readFile(bId, day, starttime, endtime);
-        return false;
+
+
+        return true;
 
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}

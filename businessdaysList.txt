@@ -1,2 +1,5 @@
 b1 Wednesday 01:00:00 03:00:00
 b1 monday 8:00 9:00
+b1 tuesday 12:30 19:30
+b1 thursday 5:00 22:00
+b1 sunday 8:30 16:00
