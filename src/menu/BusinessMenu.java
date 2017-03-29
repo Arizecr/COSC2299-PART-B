@@ -234,7 +234,7 @@ public class BusinessMenu {
         }
 
         return true;
-        //CHECK AGAINST TEXTFILE WITH DAY RESTRICTIONS SET BY BUSINESS
+
     }
     private boolean BHours(String bId, String day,String starttime,String endtime){
 

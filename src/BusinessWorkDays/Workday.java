@@ -106,7 +106,7 @@ public class Workday
             writeToFile();
         }
         else if (num>0){
-
+      //  removeTimeFromEmployee();
         rewriteToFile(workhours);
     }
     }
