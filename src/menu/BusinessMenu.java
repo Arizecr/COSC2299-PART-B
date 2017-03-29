@@ -43,7 +43,7 @@ public class BusinessMenu {
             System.out.println(login.businessList.get(i).getAddress());
             System.out.println(login.businessList.get(i).getPhoneNo());
 
-        } */
+        } .*/
 
         //infinite loop
         while(true) {
