@@ -5,3 +5,9 @@ b2 e4 Monday 11:00:00 12:00:00
 b1 e1 Wednesday 10:00:00 12:30:00
 b1 e1 Monday 00:00:00 03:30:00
 b1 e1 Thursday 13:00:00 19:30:00
+b1 e1 Thursday 10:00 12:30
+b1 e1 Tuesday 00:00 03:30
+b1 e1 Friday 13:00 19:30
+b1 e1 Thursday 10:00 12:30
+b1 e1 Tuesday 00:00 03:30
+b1 e1 Friday 13:00 19:30

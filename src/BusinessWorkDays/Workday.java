@@ -111,6 +111,43 @@ public class Workday
 
         }
     }
+    public void printFile(String realbId){
+        BufferedReader br;
+        String bId= "" ;
+        String day ="" ;
+        String starttime ;
+        String endtime;
+        try {
+
+
+            br = new BufferedReader(new FileReader("businessdaysList.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(" ",4);
+                    bId = loginDetails[0];
+                    day = loginDetails[1];
+                    starttime = loginDetails[2];
+                    endtime = loginDetails[3];
+
+                    if(realbId.equals(bId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
+
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+    }
 
    /* public void sort(){
         int i =0 ;

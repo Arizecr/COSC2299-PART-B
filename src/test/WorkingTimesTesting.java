@@ -18,8 +18,8 @@ import static org.junit.Assert.assertTrue;
 public class WorkingTimesTesting {
     Driver driver = new Driver();
     String day;//(EEEE)
-    String firsttime;//(hh:mm:ss)
-    String endtime;//(hh:mm:ss)
+    String firsttime;//(hh:mm)
+    String endtime;//(hh:mm)
     BusinessMenu b = new BusinessMenu();
     boolean verify;
     String bId = "b1";
@@ -33,8 +33,8 @@ public class WorkingTimesTesting {
         c.add(Calendar.DATE,13);
         DateFormat date = new SimpleDateFormat("EEEE");
         day = date.format(c.getTime());
-        firsttime = "00:00:00";
-        endtime = "03:30:00";
+        firsttime = "00:00";
+        endtime = "03:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
@@ -45,8 +45,8 @@ public class WorkingTimesTesting {
         c.add(Calendar.DATE,121);
         DateFormat date = new SimpleDateFormat("EEEE");
         day = date.format(c.getTime());
-        firsttime = "13:00:00";
-        endtime = "19:30:00";
+        firsttime = "13:00";
+        endtime = "19:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
@@ -57,8 +57,8 @@ public class WorkingTimesTesting {
         c.add(Calendar.DATE,1);
         DateFormat date = new SimpleDateFormat("EEEE");
         day = date.format(c.getTime());
-        firsttime = "10:00:00";
-        endtime = "12:30:00";
+        firsttime = "10:00";
+        endtime = "12:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
@@ -94,7 +94,7 @@ public class WorkingTimesTesting {
     public void NullStartTimeWorkingTimes() {
         day = "Monday";
         firsttime = "";
-        endtime = "08:30:00";
+        endtime = "08:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertTrue(verify);
 
@@ -103,7 +103,7 @@ public class WorkingTimesTesting {
     public void NullStartAndDayTimeWorkingTimes() {
         day = "";
         firsttime = "";
-        endtime = "08:30:00";
+        endtime = "08:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertTrue(verify);
 
@@ -115,7 +115,7 @@ public class WorkingTimesTesting {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE,1);
         DateFormat date = new SimpleDateFormat("EEEE");
-        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        DateFormat time = new SimpleDateFormat("HH:mm");
         day = date.format(c.getTime());
         firsttime = time.format(c.getTime());
         c.add(Calendar.HOUR,-8);
@@ -129,7 +129,7 @@ public class WorkingTimesTesting {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE,1);
         DateFormat date = new SimpleDateFormat("EEEE");
-        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        DateFormat time = new SimpleDateFormat("HH:mm");
         day = date.format(c.getTime());
         firsttime = time.format(c.getTime());
         verify = b.Workt(bId,empId, day, firsttime,firsttime);

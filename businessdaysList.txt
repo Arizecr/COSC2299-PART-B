@@ -1,2 +1,2 @@
-b1 Wednesday 01:10:00 03:00:00
-b1 mon 8:0:0 9:0:0
+b1 Wednesday 01:00:00 03:00:00
+b1 monday 8:00 9:00

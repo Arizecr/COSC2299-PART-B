@@ -23,12 +23,13 @@ import java.util.Scanner;
  */
 public class BusinessMenu {
     Login login = new Login();
-
+    Workday w = new Workday();
     Driver driver = new Driver();
     public static ArrayList<Employee> employeeList = new ArrayList<>();
 
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
+        Scanner r = new Scanner(System.in);
         Scanner eID = new Scanner(System.in);
         String starttime;
         String endtime;
@@ -59,7 +60,7 @@ public class BusinessMenu {
             System.out.println("4. View summaries of bookings");
             System.out.println("5. View new Bookings");
             System.out.println("6. Show worker availability");
-            System.out.println("7. Adjust business hours");
+            System.out.println("7. View business hours");
             System.out.println("8. Log out");
 
             System.out.print("Enter choice: ");
@@ -97,30 +98,44 @@ public class BusinessMenu {
 
                 }
             }
-            if(choice == 7){
-                boolean valid =true;
+            else if(choice == 7){
+                System.out.println("\n+----------------------------------+");
+                System.out.println("|           Business               |");
+                System.out.println("|              Hours                |");
+                System.out.println("+----------------------------------+\n");
+                w.printFile(bId);
+                System.out.println("\n1. Add/Change Business Hours");
+                System.out.println("OR\nAny key to return to business menu");
 
-                while(valid){
+                String nextChoice;
+                nextChoice = r.nextLine();
+                if(nextChoice.equals( "1" )) {
+                    boolean valid = true;
 
-                    day = reader.nextLine();
-                    do {
-                        System.out.println("Enter Day:");
+                    while (valid) {
+
                         day = reader.nextLine();
-                    }while(checkDay(day));
-                    do {
-                        System.out.print("Enter opening time:");
-                        starttime = reader.nextLine();
-                    }while(checktime(starttime));
-                    do {
-                        System.out.print("Enter closing times:");
-                        endtime = reader.nextLine();
-                    }while(checktime(endtime));
+                        do {
+                            System.out.println("Enter Day:");
+                            day = reader.nextLine();
+                        } while (checkDay(day));
+                        do {
+                            System.out.print("Enter opening time:");
+                            starttime = reader.nextLine();
+                        } while (checktime(starttime));
+                        do {
+                            System.out.print("Enter closing times:");
+                            endtime = reader.nextLine();
+                        } while (checktime(endtime));
 
-                    valid = BHours(bId,day,starttime,endtime);
+                        valid = BHours(bId, day, starttime, endtime);
 
+                    }
                 }
+                else{continue;}
+
             }
-            if(choice == 8){
+            if(choice == 9){
                 System.out.println("--------- New Service---------");
                 addNewService();
 
@@ -165,7 +180,7 @@ public boolean checkD(String day){return checkDay(day);}
     }
     private boolean checktime(String t){
         try{
-            DateFormat time = new SimpleDateFormat("HH:mm:ss");
+            DateFormat time = new SimpleDateFormat("HH:mm");
             time.parse(t);
         }
         catch(ParseException e){
@@ -176,7 +191,7 @@ public boolean checkD(String day){return checkDay(day);}
         return false;
     }
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
-        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+        DateFormat time = new SimpleDateFormat("HH:mm");
 
         try{
 
@@ -213,7 +228,7 @@ public boolean checkD(String day){return checkDay(day);}
         //CHECK AGAINST TEXTFILE WITH DAY RESTRICTIONS SET BY BUSINESS
     }
     private boolean BHours(String bId, String day,String starttime,String endtime){
-        Workday w = new Workday();
+
         DateFormat time = new SimpleDateFormat("HH:mm:ss");
 
         try{
