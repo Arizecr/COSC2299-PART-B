@@ -37,7 +37,7 @@ public class BusinessMenu {
         String empID;
 
 
-        //infinite loop
+          //infinite loop
         while(true) {
             //print business menu
             System.out.println("\n+----------------------------------+");
