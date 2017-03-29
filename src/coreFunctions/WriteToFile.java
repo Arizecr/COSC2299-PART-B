@@ -45,7 +45,23 @@ public class WriteToFile {
         }
 
     }
+    public void reWriteToWorkingdayTXT(String chosenwork, String txtname){
 
+
+        try{
+
+            FileWriter fw = new FileWriter(txtname,false); //the true will append the new data
+
+            fw.write(chosenwork);//appends the string to the file
+            fw.close();
+        }
+        catch(IOException ioe)
+        {
+            System.err.println("IOException: " + ioe.getMessage());
+        }
+
+
+    }
     public void WriteToWorkingdayTXT(String chosenwork, String txtname){
 
 

@@ -29,6 +29,7 @@ public class BusinessMenu {
 
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
+        Scanner read = new Scanner(System.in);
         Scanner r = new Scanner(System.in);
         Scanner eID = new Scanner(System.in);
         String starttime;
@@ -37,7 +38,8 @@ public class BusinessMenu {
         String empID;
 
 
-          //infinite loop
+
+        //infinite loop
         while(true) {
             //print business menu
             System.out.println("\n+----------------------------------+");
@@ -71,10 +73,10 @@ public class BusinessMenu {
                         System.out.print("Enter employee ID:");
                         empID = eID.nextLine();
                         }while(!checkEmployeeID(bId,empID));
-                    day = reader.nextLine();
+
                         do {
                             System.out.println("Enter Day:");
-                            day = reader.nextLine();
+                            day = read.nextLine().toLowerCase();
                         }while(checkDay(day));
                     do {
                         System.out.print("Enter shift start time:");
@@ -106,10 +108,10 @@ public class BusinessMenu {
 
                     while (valid) {
 
-                        day = reader.nextLine();
+
                         do {
                             System.out.println("Enter Day:");
-                            day = reader.nextLine();
+                            day = read.nextLine().toLowerCase();
                         } while (checkDay(day));
                         do {
                             System.out.print("Enter opening time:");

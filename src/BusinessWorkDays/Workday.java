@@ -43,8 +43,8 @@ public class Workday
         BufferedReader br;
         String bId= "" ;
         String day ="" ;
-        String starttime ;
-        String endtime;
+        String starttime = "" ;
+        String endtime = "";
         try {
 
 
@@ -54,11 +54,11 @@ public class Workday
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(" ",4);
-                   bId = loginDetails[0];
-                    day = loginDetails[1];
-                   starttime = loginDetails[2];
-                    endtime = loginDetails[3];
+                    String Details[] = x.split(" ",4);
+                   bId = Details[0];
+                    day = Details[1];
+                   starttime = Details[2];
+                    endtime = Details[3];
                     Workday n = new Workday(bId,day,starttime,endtime);
                     workhours.add(n);
                 }
@@ -79,6 +79,8 @@ public class Workday
             if(b.equals(workhours.get(i).getBId())){
                 if(d.equals(workhours.get(i).workD())){
                    num ++;
+                    Workday n = new Workday(bId,d,s,end);
+                    workhours.set(i, n);
 
                 }
             }
@@ -91,8 +93,12 @@ public class Workday
             this.workday =d;
             writeToFile();
         }
-        else if (num>0){System.out.println("this date will be overwritten");}
+        else if (num>0){
+
+        rewriteToFile(workhours);
     }
+    }
+
     public void printFile(String realbId){
         BufferedReader br;
         String bId= "" ;
@@ -131,6 +137,15 @@ public class Workday
 
     public void writeToFile(){
         write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
+
+    }
+    public void rewriteToFile( ArrayList workhours){
+        if(workhours.size()>0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
+        for(int i=1; i < workhours.size() ;i++){
+            write.WriteToWorkingdayTXT(workhours.get(i).toString(), "businessdaysList.txt");
+
+
+        }
 
     }
 
