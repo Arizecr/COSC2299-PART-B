@@ -160,7 +160,12 @@ public class BusinessMenu {
         // description
         // this is sent to a text file to allow the customer to choose from service when booking
     }
-public boolean checkD(String day){return checkDay(day);}
+    public boolean checkOpen(String bId, String day,String starttime,String endtime){
+       w.readWork(bId,day,starttime,endtime);
+        System.out.println("employee ID invalid");
+     return false;
+    }
+    public boolean checkD(String day){return checkDay(day);}
     private boolean checkDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");
@@ -171,6 +176,7 @@ public boolean checkD(String day){return checkDay(day);}
             return true;
 
         }
+
         return false;
     }
     private boolean checktime(String t){
@@ -217,7 +223,7 @@ public boolean checkD(String day){return checkDay(day);}
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
        if( !timeCheck (starttime, endtime)){
-
+           if( !w.readWork(bId,day,starttime,endtime)){return true;}
 
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
 
@@ -226,6 +232,7 @@ public boolean checkD(String day){return checkDay(day);}
 
 
         }
+
         return true;
         //CHECK AGAINST TEXTFILE WITH DAY RESTRICTIONS SET BY BUSINESS
     }
@@ -247,7 +254,7 @@ public boolean checkD(String day){return checkDay(day);}
 
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
-    public void loadCustomerInformation(){
+    public void loadEmployeeInformation(){
         BufferedReader br;
         try {
 
@@ -283,7 +290,7 @@ public boolean checkD(String day){return checkDay(day);}
 
     public boolean checkEmployeeID(String bId,String empID){
 
-        loadCustomerInformation();
+        loadEmployeeInformation();
 
             for(int i=0; i < employeeList.size() ;i++){
                 if(empID.equals(employeeList.get(i).geteId())){
