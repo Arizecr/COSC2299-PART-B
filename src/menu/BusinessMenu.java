@@ -2,6 +2,7 @@ package menu;
 
 import coreFunctions.Driver;
 import user.Employee;
+import BusinessWorkDays.Workday;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -14,14 +15,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+
+
 /**
  * Created by Gabrielle on 5/03/2017.
  * test
  */
 public class BusinessMenu {
     Login login = new Login();
+
     Driver driver = new Driver();
     public static ArrayList<Employee> employeeList = new ArrayList<>();
+
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
         Scanner eID = new Scanner(System.in);
@@ -93,8 +98,27 @@ public class BusinessMenu {
                 }
             }
             if(choice == 7){
+                boolean valid =true;
 
+                while(valid){
 
+                    day = reader.nextLine();
+                    do {
+                        System.out.println("Enter Day:");
+                        day = reader.nextLine();
+                    }while(checkDay(day));
+                    do {
+                        System.out.print("Enter opening time:");
+                        starttime = reader.nextLine();
+                    }while(checktime(starttime));
+                    do {
+                        System.out.print("Enter closing times:");
+                        endtime = reader.nextLine();
+                    }while(checktime(endtime));
+
+                    valid = BHours(bId,day,starttime,endtime);
+
+                }
             }
             if(choice == 8){
                 System.out.println("--------- New Service---------");
@@ -187,6 +211,40 @@ public boolean checkD(String day){return checkDay(day);}
 
         }
         //CHECK AGAINST TEXTFILE WITH DAY RESTRICTIONS SET BY BUSINESS
+    }
+    private boolean BHours(String bId, String day,String starttime,String endtime){
+        Workday w = new Workday();
+        DateFormat time = new SimpleDateFormat("HH:mm:ss");
+
+        try{
+
+            Date st = time.parse(starttime);
+            Date et = time.parse(endtime);
+
+
+            // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
+            if(!et.after(st)){
+                System.out.println("Can't Start after its ended");
+                return true;
+
+            }else if(st.equals(et)){
+                System.out.println("Can't Start and end at same time");
+                return true;
+            }
+
+            System.out.println("The working hours time of: " + day + ":  "+starttime+" - " + endtime);
+
+            //
+
+
+        }catch(ParseException e){
+            System.out.println("Invalid Date/Time");
+            return true;
+
+        }
+        w.readFile(bId, day, starttime, endtime);
+        return false;
+
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
     public void loadCustomerInformation(){
