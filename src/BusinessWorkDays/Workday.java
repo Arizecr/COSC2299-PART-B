@@ -142,9 +142,11 @@ public class Workday
                 }
 
             }
-            if(count==0){System.out.println("Not Open on " + d);return true;}
 
-        } return false;
+
+        }
+        if(count==0){System.out.println("Not Open on " + d);return true;}
+        return false;
     }
 
     public void printFile(String realbId){

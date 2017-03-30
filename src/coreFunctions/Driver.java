@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ import java.util.Scanner;
  */
 public class Driver {
     WriteToFile filewriter = new WriteToFile();
-
+    public static ArrayList<String> hours = new ArrayList<>();
 
     public void addEmployee(String bId){
         Scanner reader = new Scanner(System.in);
@@ -187,7 +188,86 @@ public class Driver {
         }
         return false;
     }
+
+    public void loadInfo(String b,String d,String s,String e){
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("workdaysList.txt"));
+
+            try {
+                String x;
+                int count = 0;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String Details[] = x.split(" ",5);
+                    String bId = Details[0];
+                    String empID = Details[1];
+                    String day = Details[2];
+                    String start = Details[3];
+                    String end = Details[4];
+                    String combinedData = bId+" "+empID + " " +day + " "+start + " "+ end;
+                    hours.add(x);
+                    /*
+                    if(b.equals(bId)&&d.equals(day)&&timeCheck(start,end,s,e)) {
+                        if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
+                            count++;}
+                    }
+                    else{
+                        if (count == 1) {
+                            filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");
+                            count++;
+                        } else
+                        {
+                            filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
+                        }
+                    }*/
+                }
+                //prints error
+            } catch (IOException error) {
+                error.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException error) {
+            System.out.println(e);
+            error.printStackTrace();
+        }
+
+    }
     public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
+        loadInfo(b,d,s,e);
+        int count = 0;
+        for(int i=0; i < hours.size() ;i++) {
+
+                    // printing out each line in the file
+                    String Details[] = hours.get(i).split(" ",5);
+                    String bId = Details[0];
+                    String empID = Details[1];
+                    String day = Details[2];
+                    String start = Details[3];
+                    String end = Details[4];
+                    String combinedData = bId+" "+empID + " " +day + " "+start + " "+ end;
+
+                    if(b.equals(bId)&&d.equals(day)&&timeCheck(start,end,s,e)) {
+                        if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
+                            count++;}
+                    }
+                    else{
+                        if (count == 1) {
+                            filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                            count++;
+                        } else
+                        {
+                            filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                        }
+                    }
+                }
+
+    }
+    public void loadEmployeeWorktimes(String b,String d,String s,String e){
         BufferedReader br;
         try {
 
@@ -206,25 +286,15 @@ public class Driver {
                     String start = Details[3];
                     String end = Details[4];
                     String combinedData = bId+" "+empID + " " +day + " "+start + " "+ end;
-                    if(b.equals(bId)&&d.equals(day)&&timeCheck(start,end,s,e)) {
-                       if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
-                           count++;}
+                    if(b.equals(bId)&&d.equals(day)) {
+
                     }
-                    else{
-                        if (count == 1) {
-                            filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");
-                            count++;
-                        } else
-                            {
-                            filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
-                        }
-                    }
+
                 }
                 //prints error
             } catch (IOException error) {
                 error.printStackTrace();
             }
-
 
             //file cannot be found
         } catch (FileNotFoundException error) {
@@ -233,6 +303,7 @@ public class Driver {
         }
 
     }
+
 
 
 

@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/CoreFunctions/WriteToFile.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/CoreFunctions/WriteToFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/Employee.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/Employee.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/businessdaysList.txt" afterPath="$PROJECT_DIR$/businessdaysList.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/employeeList.txt" afterPath="$PROJECT_DIR$/employeeList.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" afterPath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreFunctions/Driver.java" afterPath="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/user/Employee.java" afterPath="$PROJECT_DIR$/src/user/Employee.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workdaysList.txt" afterPath="$PROJECT_DIR$/workdaysList.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="businessdaysList.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="businessdaysList.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+              <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -69,8 +61,20 @@
       <file leaf-file-name="Workday.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="123" column="67" lean-forward="false" selection-start-line="123" selection-start-column="67" selection-end-line="123" selection-end-column="67" />
+            <state relative-caret-position="353">
+              <caret line="114" column="54" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="114" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="259" column="74" lean-forward="false" selection-start-line="259" selection-start-column="74" selection-end-line="259" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,20 +85,8 @@
       <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="3757">
               <caret line="221" column="56" lean-forward="false" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="210" column="36" lean-forward="false" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,7 +126,6 @@
       <find>:mmin</find>
       <find>check</find>
       <find>checkO</find>
-      <find>load</find>
       <find>loadCustomerInformation</find>
       <find>w.</find>
       <find>readf</find>
@@ -154,8 +145,9 @@
       <find>timec</find>
       <find>WriteToW</find>
       <find>time</find>
-      <find>can</find>
       <find>read</find>
+      <find>can</find>
+      <find>load</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,10 +210,10 @@
         <option value="$PROJECT_DIR$/src/user/Employee.java" />
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/businessdaysList.txt" />
+        <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/workdaysList.txt" />
-        <option value="$PROJECT_DIR$/employeeList.txt" />
       </list>
     </option>
   </component>
@@ -766,13 +758,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
     </task>
-    <task id="LOCAL-00026" summary="added some comments">
-      <created>1489527710398</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1489527710398</updated>
-    </task>
     <task id="LOCAL-00027" summary="added some comments">
       <created>1489527759951</created>
       <option name="number" value="00027" />
@@ -1109,7 +1094,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490834320597</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="employee list">
+      <created>1490839875481</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1490839875481</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1163,7 +1155,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0032520324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1200,7 +1192,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2823344" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4652997" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4369085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0032520324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1543,44 +1535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="123" column="67" lean-forward="false" selection-start-line="123" selection-start-column="67" selection-end-line="123" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="221" column="56" lean-forward="false" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="210" column="36" lean-forward="false" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workdaysList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/employeeList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1597,11 +1551,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3757">
+          <caret line="221" column="56" lean-forward="false" selection-start-line="221" selection-start-column="56" selection-end-line="221" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="114" column="54" lean-forward="true" selection-start-line="113" selection-start-column="8" selection-end-line="114" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workdaysList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="259" column="74" lean-forward="false" selection-start-line="259" selection-start-column="74" selection-end-line="259" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,3 +1,5 @@
 b1 e2 friday 12:00 15:00
 b1 e5 friday 12:00 13:00
 b1 e2 friday 12:00 13:00
+b1 e3 thursday 12:00 14:00
+b1 e2 thursday 12:00 13:00
