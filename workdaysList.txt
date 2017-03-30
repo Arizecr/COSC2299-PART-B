@@ -1,3 +1,0 @@
-b1 e3 thursday 12:00 14:00
-b1 e2 thursday 12:00 13:00
-b1 e6 thursday 12:00 18:30

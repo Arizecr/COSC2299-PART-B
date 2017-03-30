@@ -2,10 +2,7 @@ package coreFunctions;
 
 import user.Employee;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -152,8 +149,11 @@ public class Driver {
         All it does is currently write to txt file to save the work dates.
          */
         String combinedData = bId+" "+empId + " " +day + " "+startTime + " "+ endTime;
-
-        filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
+File file = new File("workdaysList.txt");
+        if(file.length()==0)
+{filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");}
+else{
+        filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
 
 
 
@@ -185,6 +185,7 @@ public class Driver {
     }
 
     public void loadInfo(){
+        hours = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -193,16 +194,8 @@ public class Driver {
 
             try {
                 String x;
-                int count = 0;
-                while ( (x = br.readLine()) != null ) {
-                    // printing out each line in the file
-                    String Details[] = x.split(" ",5);
-                    String bId = Details[0];
-                    String empID = Details[1];
-                    String day = Details[2];
-                    String start = Details[3];
-                    String end = Details[4];
 
+                while ( (x = br.readLine()) != null ) {
                     hours.add(x);
 
                 }
@@ -247,8 +240,41 @@ public class Driver {
                             filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                         }
                     }
-                }
+                    else{filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");}
+        }
 
+
+    }
+    public void removeWorktimes(String b,String d) {
+        loadInfo();
+        int count = 1;
+        for (int i = 0; i < hours.size(); i++) {
+
+            // printing out each line in the file
+            String Details[] = hours.get(i).split(" ", 5);
+            String bId = Details[0];
+            String empID = Details[1];
+            String day = Details[2];
+
+            if (!(b.equals(bId) && d.equals(day))) {
+
+                if (count == 1) {
+                    filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                    count++;
+                } else {
+                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                }
+            }
+            else {
+
+                if (count == 1) {
+                    filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
+
+                } else {
+                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                }
+            }
+        }
     }
 
     public void printEmployeeWorktimes(String bId){

@@ -53,7 +53,9 @@ public class Workday
 
         return businessid;
     }
-    public void Details(String b,String d,String s,String end){ BufferedReader br;
+    public void Details(){
+        workhours = new ArrayList<>();
+        BufferedReader br;
         String bId= "" ;
         String day ="" ;
         String starttime = "" ;
@@ -87,29 +89,44 @@ public class Workday
             e.printStackTrace();
         }}
     public void readFile(String b,String d,String s,String end){
-       Details(b,d,s,end);
-        int num= 0;
+       Details();
+        int num = 0;
+        Workday n = new Workday(b,d,s,end);
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
                 if(d.equals(workhours.get(i).workD())){
                    num ++;
-                    Workday n = new Workday(b,d,s,end);
                     workhours.set(i, n);
-
+                    System.out.println("---------------------------"+workhours.size());
                 }
-            }
 
+            }
         }
 
         if (num>0){
-       drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
+            drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
+        }
+        else{ workhours.add(n);}
+        rewriteToFile(workhours);
 
     }
-        rewriteToFile(workhours);
+    public void removeDayFromFile(String b,String d){
+        Details();
+
+        for(int i=0; i < workhours.size() ;i++){
+            if(b.equals(workhours.get(i).getBId())){
+                if(d.equals(workhours.get(i).workD())){
+                    workhours.remove(i);
+                    drive.removeWorktimes( b, d);
+                    rewriteToFile(workhours);
+                }
+            }
+        }
     }
+
 
     public boolean readWork(String b,String d,String s,String end){
-        Details(b,d,s,end);
+        Details();
         //------------------------------------------------------check if date already exists
         int count = 0;
         for(int i=0; i < workhours.size() ;i++) {

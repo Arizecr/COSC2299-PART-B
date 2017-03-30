@@ -94,12 +94,13 @@ public class BusinessMenu {
                 System.out.println("|              Hours                |");
                 System.out.println("+----------------------------------+\n");
                 w.printFile(bId);
-                System.out.println("\n1. Add/Change Business Hours");
-                System.out.println("OR\nAny key to return to business menu");
+                System.out.println("\n 1. Add/Change Business Hours");
+                System.out.println("\n 2. Remove Business Hours");
+                System.out.println("OR Any key to return to business menu");
 
                 String nextChoice;
                 nextChoice = r.nextLine();
-                if(nextChoice.equals( "1" )) {
+                if(nextChoice.equals( "1")||nextChoice.equals("2")) {
                     boolean valid = true;
 
                     while (valid) {
@@ -109,17 +110,23 @@ public class BusinessMenu {
                             System.out.println("Enter Day:");
                             day = read.nextLine().toLowerCase();
                         } while (checkDay(day));
-                        do {
-                            System.out.print("Enter opening time:");
-                            starttime = reader.nextLine();
-                        } while (checktime(starttime));
-                        do {
-                            System.out.print("Enter closing times:");
-                            endtime = reader.nextLine();
-                        } while (checktime(endtime));
+                        if(nextChoice.equals( "1")) {
+                            do {
+                                System.out.print("Enter opening time:");
+                                starttime = reader.nextLine();
+                            } while (checktime(starttime));
+                            do {
+                                System.out.print("Enter closing times:");
+                                endtime = reader.nextLine();
+                            } while (checktime(endtime));
 
-                        valid = BHours(bId, day, starttime, endtime);
-
+                            valid = BHours(bId, day, starttime, endtime);
+                        }
+                        if(nextChoice.equals( "2")){
+                            w.removeDayFromFile(bId,day);
+                            System.out.print("Business Hours for "+ day + " removed");
+                            valid = false;
+                        }
                     }
                     continue;
                 }
