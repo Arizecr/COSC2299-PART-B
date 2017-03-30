@@ -1,2 +1,4 @@
-b1 friday 12:00 18:00
-b1 thursday 12:00 19:00
+b1 friday 12:00 14:00
+b1 thursday 10:00 17:00
+b1 friday 12:00 14:00
+b1 thursday 10:00 17:00
