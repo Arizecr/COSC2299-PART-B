@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7710c9f7-cb28-4169-a7d6-8221b2bd16a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/businessdaysList.txt" afterPath="$PROJECT_DIR$/businessdaysList.txt" />
@@ -29,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="businessdaysList.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="businessdaysList.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+            <state relative-caret-position="51">
+              <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -49,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriteToFile.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WriteToFile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,8 +73,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="234" column="46" lean-forward="false" selection-start-line="234" selection-start-column="46" selection-end-line="234" selection-end-column="46" />
+            <state relative-caret-position="148">
+              <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,8 +97,8 @@
       <file leaf-file-name="workdaysList.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workdaysList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="34">
+              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -212,9 +211,9 @@
         <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
-        <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/businessdaysList.txt" />
         <option value="$PROJECT_DIR$/workdaysList.txt" />
+        <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
       </list>
     </option>
   </component>
@@ -759,13 +758,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
     </task>
-    <task id="LOCAL-00031" summary="testing new register format">
-      <created>1489741239461</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1489741239461</updated>
-    </task>
     <task id="LOCAL-00032" summary="fixed register&#10;">
       <created>1489741931494</created>
       <option name="number" value="00032" />
@@ -1102,7 +1094,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490843481556</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="errors">
+      <created>1490858091171</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1490858091171</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1150,7 +1149,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.50732064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5457413" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3911672" sideWeight="0.49267936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4369085" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0032520324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1233,7 +1232,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="defined employee class" />
     <MESSAGE value="add new employee function" />
     <MESSAGE value="small fix of register test" />
     <MESSAGE value="basic template created" />
@@ -1258,7 +1256,8 @@
     <MESSAGE value="code minimising" />
     <MESSAGE value="add working time and business hours done&#10;------need to do remove/edit employee working times" />
     <MESSAGE value="created view employee working time /--not the same as view availablility--/" />
-    <option name="LAST_COMMIT_MESSAGE" value="created view employee working time /--not the same as view availablility--/" />
+    <MESSAGE value="errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1521,19 +1520,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/employeeList.txt">
+    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="474">
+          <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1547,20 +1540,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="234" column="46" lean-forward="false" selection-start-line="234" selection-start-column="46" selection-end-line="234" selection-end-column="46" />
+        <state relative-caret-position="148">
+          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1569,16 +1552,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workdaysList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/employeeList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>

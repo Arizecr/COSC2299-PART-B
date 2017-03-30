@@ -172,19 +172,14 @@ public class Driver {
 
 
             // checks if employee worktimes are now outside new constraints
-            if (et.after(Bet)||st.after(Bet)) {
-
-                return true;
-
-            } else if (st.before(Bst)||et.before(Bst)) {
-
-                return true;
-            }
+            if (et.equals(Bet)&&st.equals(Bst)){return false;}
+            if (et.before(Bet)&&st.equals(Bst)){return false;}
+            if (et.equals(Bet)&&st.after(Bst)){return false;}
+            if (et.after(Bet)||st.after(Bet)) { return true;}
+            else if (st.before(Bst)||et.before(Bst)) {return true;}
 
         } catch (ParseException e) {
-
             return true;
-
         }
         return false;
     }
@@ -226,7 +221,7 @@ public class Driver {
     }
     public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
         loadInfo();
-        int count = 0;
+        int count = 1;
         for(int i=0; i < hours.size() ;i++) {
 
                     // printing out each line in the file
@@ -238,11 +233,12 @@ public class Driver {
                     String end = Details[4];
             String combinedData = bId+" "+empID + " " +day + " "+s + " "+ e;
                     if((b.equals(bId)&&d.equals(day))&&!timeCheck(start,end,s,e)) {
-                        if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
-                        hours.remove(i);
-                            }
+                        if(count ==1){filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                            count++;
+                                               }
                     }
-                    else {
+            else if(!(b.equals(bId)&&d.equals(day))) {
+
                         if (count == 1) {
                             filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                             count++;
