@@ -219,7 +219,7 @@ public class BusinessMenu {
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
        if( !timeCheck (starttime, endtime)){
-           if( !w.readWork(bId,day,starttime,endtime)){return true;}
+           if( w.readWork(bId,day,starttime,endtime)){return true;}
 
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
 

@@ -100,28 +100,22 @@ public class Workday
             }
 
         }
-        if(num==0){
-            this.starttime = s;
-            this.endtime=end;
-            this.businessid=b;
-            this.workday =d;
-            writeToFile();
-        }
-        else if (num>0){
-       removeTimeFromEmployee(b,d,s,end);
-        rewriteToFile(workhours);
-    }
-    }
-    public void removeTimeFromEmployee(String b , String d, String s, String e){
+
+        if (num>0){
+       drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
 
     }
+        rewriteToFile(workhours);
+    }
+
     public boolean readWork(String b,String d,String s,String end){
         Details(b,d,s,end);
+        int count = 0;
         for(int i=0; i < workhours.size() ;i++) {
             if (b.equals(workhours.get(i).getBId())) {
                 if (d.equals(workhours.get(i).workD())) {
                     DateFormat time = new SimpleDateFormat("HH:mm");
-
+                    count++;
                     try {
 
                         Date st = time.parse(s);
@@ -148,6 +142,7 @@ public class Workday
                 }
 
             }
+            if(count==0){System.out.println("Not Open on " + d);return true;}
 
         } return false;
     }
@@ -188,12 +183,12 @@ public class Workday
 
     }
 
-    public void writeToFile(){
+ /*   public void writeToFile(){
         write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
 
-    }
+    }*/
     public void rewriteToFile( ArrayList workhours){
-        if(workhours.size()>0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
+        if(workhours.size()>=0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
         for(int i=1; i < workhours.size() ;i++){
             write.WriteToWorkingdayTXT(workhours.get(i).toString(), "businessdaysList.txt");
         }

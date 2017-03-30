@@ -6,6 +6,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -154,6 +158,82 @@ public class Driver {
 
 
     }
+
+
+    public boolean timeCheck(String s,String end,String Bs,String Be){
+        DateFormat time = new SimpleDateFormat("EEEE");
+        try {
+
+            Date st = time.parse(s);
+            Date et = time.parse(end);
+            Date Bst = time.parse(Bs);
+            Date Bet = time.parse(Be);
+
+
+            // checks if employee worktimes are now outside new constraints
+            if (et.after(Bet)||st.after(Bet)) {
+
+                return true;
+
+            } else if (st.before(Bst)||et.before(Bst)) {
+
+                return true;
+            }
+
+        } catch (ParseException e) {
+
+            return true;
+
+        }
+        return false;
+    }
+    public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("workdaysList.txt"));
+
+            try {
+                String x;
+                int count = 1;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String Details[] = x.split(" ",5);
+                    String bId = Details[0];
+                    String empID = Details[1];
+                    String day = Details[2];
+                    String start = Details[3];
+                    String end = Details[4];
+                    String combinedData = bId+" "+empID + " " +day + " "+start + " "+ end;
+                    if(b.equals(bId)&&d.equals(day)&&timeCheck(start,end,s,e)) {
+                       if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
+                           count++;}
+                    }
+                    else{
+                        if (count == 1) {
+                            filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");
+                            count++;
+                        } else
+                            {
+                            filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
+                        }
+                    }
+                }
+                //prints error
+            } catch (IOException error) {
+                error.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException error) {
+            System.out.println(e);
+            error.printStackTrace();
+        }
+
+    }
+
 
 
 

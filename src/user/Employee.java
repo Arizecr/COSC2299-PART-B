@@ -50,12 +50,12 @@ public Employee(){}
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(":",5);
-                    String bId = loginDetails[0];
-                    String empID = loginDetails[1];
-                    String fullName = loginDetails[2];
-                    String TFN = loginDetails[3];
-                    String phoneNo = loginDetails[4];
+                    String Details[] = x.split(":",5);
+                    String bId = Details[0];
+                    String empID = Details[1];
+                    String fullName = Details[2];
+                    String TFN = Details[3];
+                    String phoneNo = Details[4];
                     Employee e = new Employee(bId, empID, fullName, TFN, phoneNo);
                     employeeList.add(e);
                 }
