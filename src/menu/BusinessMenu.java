@@ -136,7 +136,11 @@ public class BusinessMenu {
                 System.out.println("Successfully logged out of the system!");
                 System.exit(0);
             }
-
+            if(choice ==6){
+                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the choosen emploee
+                //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
+                //
+            }
             else {
                 System.out.println("Will do these options later!");
                 System.exit(0);

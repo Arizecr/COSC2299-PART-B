@@ -189,7 +189,7 @@ public class Driver {
         return false;
     }
 
-    public void loadInfo(String b,String d,String s,String e){
+    public void loadInfo(){
         BufferedReader br;
         try {
 
@@ -209,20 +209,7 @@ public class Driver {
                     String end = Details[4];
                     String combinedData = bId+" "+empID + " " +day + " "+start + " "+ end;
                     hours.add(x);
-                    /*
-                    if(b.equals(bId)&&d.equals(day)&&timeCheck(start,end,s,e)) {
-                        if(count ==1){filewriter.reWriteToWorkingdayTXT(null, "workdaysList.txt");
-                            count++;}
-                    }
-                    else{
-                        if (count == 1) {
-                            filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");
-                            count++;
-                        } else
-                        {
-                            filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");
-                        }
-                    }*/
+
                 }
                 //prints error
             } catch (IOException error) {
@@ -232,13 +219,13 @@ public class Driver {
 
             //file cannot be found
         } catch (FileNotFoundException error) {
-            System.out.println(e);
+            System.out.println(error);
             error.printStackTrace();
         }
 
     }
     public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
-        loadInfo(b,d,s,e);
+        loadInfo();
         int count = 0;
         for(int i=0; i < hours.size() ;i++) {
 
@@ -264,6 +251,32 @@ public class Driver {
                         }
                     }
                 }
+
+    }
+
+    public void printEmployeeWorktimes(String bId){
+        Employee emp = new Employee();
+        Scanner eID = new Scanner(System.in);
+        String empID;
+        do{
+            System.out.print("Enter employee ID:");
+            empID = eID.nextLine();
+        }while(!emp.checkEmployeeID(bId,empID));
+        loadInfo();
+        System.out.println("----------------CURRENT SHIFTS-----------");
+        int count = 0;
+        for(int i=0; i < hours.size() ;i++) {
+
+            // printing out each line in the file
+            String Details[] = hours.get(i).split(" ",5);
+
+            String e = Details[1];
+
+            if(empID.equals(e)){System.out.print(hours.get(i));}
+
+
+        }
+        System.out.println("-----------------------------------------");
 
     }
 
