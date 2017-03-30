@@ -156,11 +156,11 @@ public class BusinessMenu {
         // description
         // this is sent to a text file to allow the customer to choose from service when booking
     }
-    public boolean checkOpen(String bId, String day,String starttime,String endtime){
-       w.readWork(bId,day,starttime,endtime);
+  /*  public boolean checkOpen(String bId, String day,String starttime,String endtime){
+      if( w.readWork(bId,day,starttime,endtime)){return true;};
         System.out.println("employee ID invalid");
      return false;
-    }
+    }*/
     public boolean checkD(String day){return checkDay(day);}
     private boolean checkDay(String day){
         try{
@@ -236,18 +236,12 @@ public class BusinessMenu {
 
         if( !timeCheck (starttime, endtime)){
 
-
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
 
             w.readFile(bId, day, starttime, endtime);
             return false;
-
-
         }
-
-
         return true;
-
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
 
