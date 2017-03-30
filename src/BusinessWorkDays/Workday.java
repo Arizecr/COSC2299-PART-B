@@ -17,13 +17,11 @@ import java.util.Date;
  * Created by Martin on 28/03/2017.
  */
 public class Workday
-
 {
 
     public static ArrayList<Workday> workhours = new ArrayList<>();
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();
-
     private String starttime;
     private String endtime;
     private String businessid;
@@ -35,22 +33,17 @@ public class Workday
         this.workday = workday;
         this.starttime = starttime;
         this.endtime = endtime;
-
     }
     public String workD(){
-
         return workday;
     }
     public String getStarttime(){
-
         return starttime;
     }
     public String getEndtime(){
-
         return endtime;
     }
     public String getBId(){
-
         return businessid;
     }
     public void Details(){
@@ -61,10 +54,7 @@ public class Workday
         String starttime = "" ;
         String endtime = "";
         try {
-
-
             br = new BufferedReader(new FileReader("businessdaysList.txt"));
-
             try {
                 String x;
                 while ( (x = br.readLine()) != null ) {
@@ -81,13 +71,12 @@ public class Workday
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
             //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
-        }}
+        }
+    }
     public void readFile(String b,String d,String s,String end){
         Details();
         int num = 0;
@@ -99,10 +88,8 @@ public class Workday
                     workhours.set(i, n);
                     System.out.println("---------------------------"+workhours.size());
                 }
-
             }
         }
-
         if (num>0){
             drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
         }
@@ -112,7 +99,6 @@ public class Workday
     }
     public void removeDayFromFile(String b,String d){
         Details();
-
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
                 if(d.equals(workhours.get(i).workD())){
@@ -135,12 +121,10 @@ public class Workday
                     DateFormat time = new SimpleDateFormat("HH:mm");
                     count++;
                     try {
-
                         Date st = time.parse(s);
                         Date et = time.parse(end);
                         Date Bst = time.parse(workhours.get(i).getStarttime());
                         Date Bet = time.parse(workhours.get(i).getEndtime());
-
 
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (et.after(Bet)) {
@@ -151,17 +135,12 @@ public class Workday
                             System.out.println("Can't Start before open");
                             return true;
                         }
-
                     } catch (ParseException e) {
                         System.out.println("Invalid Time");
                         return true;
-
                     }
                 }
-
             }
-
-
         }
         if(count==0){System.out.println("Not Open on " + d);return true;}
         return false;
@@ -174,10 +153,7 @@ public class Workday
         String starttime ="";
         String endtime="";
         try {
-
-
             br = new BufferedReader(new FileReader("businessdaysList.txt"));
-
             try {
                 String x;
                 while ( (x = br.readLine()) != null ) {
@@ -187,9 +163,7 @@ public class Workday
                     day = Details[1];
                     starttime = Details[2];
                     endtime = Details[3];
-
                     if(realbId.equals(bId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
-
                 }
                 //prints error
             } catch (IOException e) {
@@ -200,13 +174,8 @@ public class Workday
             System.out.println(e);
             e.printStackTrace();
         }
-
     }
 
-    /*   public void writeToFile(){
-           write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
-
-       }*/
     public void rewriteToFile( ArrayList workhours){
         if(workhours.size()>=0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
         for(int i=1; i < workhours.size() ;i++){
@@ -215,11 +184,7 @@ public class Workday
     }
 
     public String toString(){
-
         String format = businessid + " " + workday + " " + starttime + " " + endtime;
-
         return format;
     }
-
-
 }

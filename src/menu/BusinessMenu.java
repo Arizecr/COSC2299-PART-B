@@ -94,18 +94,17 @@ public class BusinessMenu {
                 System.out.println("|              Hours                |");
                 System.out.println("+----------------------------------+\n");
                 w.printFile(bId);
+                System.out.println("+----------------------------------+\n");
                 System.out.println("\n 1. Add/Change Business Hours");
                 System.out.println("\n 2. Remove Business Hours");
                 System.out.println("OR Any key to return to business menu");
-
+                System.out.println("+----------------------------------+\n");
                 String nextChoice;
                 nextChoice = r.nextLine();
+
                 if(nextChoice.equals( "1")||nextChoice.equals("2")) {
                     boolean valid = true;
-
                     while (valid) {
-
-
                         do {
                             System.out.println("Enter Day:");
                             day = read.nextLine().toLowerCase();
@@ -119,7 +118,6 @@ public class BusinessMenu {
                                 System.out.print("Enter closing times:");
                                 endtime = reader.nextLine();
                             } while (checktime(endtime));
-
                             valid = BHours(bId, day, starttime, endtime);
                         }
                         if(nextChoice.equals( "2")){
@@ -131,7 +129,6 @@ public class BusinessMenu {
                     continue;
                 }
                 else{continue;}
-
             }
             if(choice == 9){
                 System.out.println("--------- New Service---------");
@@ -139,39 +136,24 @@ public class BusinessMenu {
                 continue;
             }
 
-            if(choice == 8){
-                System.out.println("Successfully logged out of the system!");
-                System.exit(0);
-            }
             if(choice ==6){
                 driver.printEmployeeWorktimes(bId);//this shows the current shifts of the choosen emploee
                 //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
                 //
+                continue;
+            }
+            if(choice == 8){
+                System.out.println("Successfully logged out of the system!");
+                System.exit(0);
             }
             else {
                 System.out.println("Will do these options later!");
                 System.exit(0);
-
             }
-
-
         }
+    }
+    public void addNewService(){}
 
-    }
-    public void addNewService()
-    {
-        // owner adds the service
-        // name
-        // cost
-        // time length
-        // description
-        // this is sent to a text file to allow the customer to choose from service when booking
-    }
-    /*  public boolean checkOpen(String bId, String day,String starttime,String endtime){
-        if( w.readWork(bId,day,starttime,endtime)){return true;};
-          System.out.println("employee ID invalid");
-       return false;
-      }*/
     public boolean checkD(String day){return checkDay(day);}
     private boolean checkDay(String day){
         try{
@@ -181,11 +163,10 @@ public class BusinessMenu {
         catch(ParseException e){
             System.out.println("Invalid Day");
             return true;
-
         }
-
         return false;
     }
+    //check general format
     private boolean checktime(String t){
         try{
             DateFormat time = new SimpleDateFormat("HH:mm");
@@ -194,67 +175,48 @@ public class BusinessMenu {
         catch(ParseException e){
             System.out.println("Invalid time:");
             return true;
-
         }
         if (!t.contains(":00")&&!t.contains(":30")){System.out.println("In the form HH:30 or HH:00 only");return true;}
-
         return false;
     }
+    //check valid start and end time
     private boolean timeCheck (String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
-
         try{
-
             Date st = time.parse(starttime);
             Date et = time.parse(endtime);
-
-
             // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
             if(!et.after(st)){
                 System.out.println("Can't Start after its ended");
                 return true;
-
             }else if(st.equals(et)){
                 System.out.println("Can't Start and end at same time");
                 return true;
             }
-
         }catch(ParseException e){
             System.out.println("Invalid Time");
             return true;
-
         }
-
         return false;
     }
+    public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         if( !timeCheck (starttime, endtime)){
             if( w.readWork(bId,day,starttime,endtime)){return true;}
-
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
-
             driver.addWorkdays(bId,empId,day,starttime,endtime);
             return false;
-
-
         }
-
         return true;
-
     }
     private boolean BHours(String bId, String day,String starttime,String endtime){
-
         if( !timeCheck (starttime, endtime)){
-
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
-
             w.readFile(bId, day, starttime, endtime);
             return false;
         }
         return true;
     }
-    public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
-
 
 }

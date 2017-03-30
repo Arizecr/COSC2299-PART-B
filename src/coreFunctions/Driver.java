@@ -52,8 +52,6 @@ public class Driver {
 
             String phoneNo = checkPhone;
 
-
-
             filewriter.WriteToEmployee(new Employee(bId,employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
             System.out.println("Successfully added a new employee");
             break;
@@ -70,7 +68,6 @@ public class Driver {
     public Boolean verifyEmployeeName(String name){
         if((name.length()< 3)||(name.length()>20)){
             System.out.println("Error: Name must be longer than 2 characters");
-            //System.out.print("Re-enter full name: ");
             return true;
         }
         return false;
