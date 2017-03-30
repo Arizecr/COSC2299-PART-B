@@ -1,4 +1,11 @@
 package user;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * Created by Gabrielle on 24/03/2017.
  */
@@ -8,8 +15,9 @@ public class Employee {
     private String fullName;
     private String taxFileNo;
     private String phoneNo;
+    public static ArrayList<Employee> employeeList = new ArrayList<>();
 
-
+public Employee(){}
     public Employee(String businessId, String employeeID, String fullName, String taxFileNo, String phoneNo){
         this.employeeID = employeeID;
         this.businessId = businessId;
@@ -30,6 +38,56 @@ public class Employee {
     public String getbId(){
 
         return businessId;
+    }
+    public void loadEmployeeInformation(){
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("employeeList.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",5);
+                    String bId = loginDetails[0];
+                    String empID = loginDetails[1];
+                    String fullName = loginDetails[2];
+                    String TFN = loginDetails[3];
+                    String phoneNo = loginDetails[4];
+                    Employee e = new Employee(bId, empID, fullName, TFN, phoneNo);
+                    employeeList.add(e);
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+    }
+
+    public boolean checkEmployeeID(String bId,String empID){
+
+        loadEmployeeInformation();
+
+        for(int i=0; i < employeeList.size() ;i++){
+            if(empID.equals(employeeList.get(i).geteId())){
+                if(bId.equals(employeeList.get(i).getbId())){
+                    return true;
+                }
+            }
+
+        }
+        System.out.println("employee ID invalid");
+        return false;
+
     }
 
 }

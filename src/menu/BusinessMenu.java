@@ -1,17 +1,12 @@
 package menu;
 
+import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
 import user.Employee;
-import BusinessWorkDays.Workday;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -25,7 +20,8 @@ public class BusinessMenu {
     Login login = new Login();
     Workday w = new Workday();
     Driver driver = new Driver();
-    public static ArrayList<Employee> employeeList = new ArrayList<>();
+    Employee emp = new Employee();
+
 
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
@@ -72,7 +68,7 @@ public class BusinessMenu {
                         do{
                         System.out.print("Enter employee ID:");
                         empID = eID.nextLine();
-                        }while(!checkEmployeeID(bId,empID));
+                        }while(!emp.checkEmployeeID(bId,empID));
 
                         do {
                             System.out.println("Enter Day:");
@@ -254,55 +250,6 @@ public class BusinessMenu {
 
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
-    public void loadEmployeeInformation(){
-        BufferedReader br;
-        try {
 
-
-            br = new BufferedReader(new FileReader("employeeList.txt"));
-
-            try {
-                String x;
-                while ( (x = br.readLine()) != null ) {
-                    // printing out each line in the file
-                    String loginDetails[] = x.split(":",5);
-                    String bId = loginDetails[0];
-                    String empID = loginDetails[1];
-                    String fullName = loginDetails[2];
-                    String TFN = loginDetails[3];
-                    String phoneNo = loginDetails[4];
-                    Employee e = new Employee(bId, empID, fullName, TFN, phoneNo);
-                    employeeList.add(e);
-                }
-                //prints error
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            //file cannot be found
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
-        }
-
-    }
-
-    public boolean checkEmployeeID(String bId,String empID){
-
-        loadEmployeeInformation();
-
-            for(int i=0; i < employeeList.size() ;i++){
-                if(empID.equals(employeeList.get(i).geteId())){
-                    if(bId.equals(employeeList.get(i).getbId())){
-                        return true;
-                    }
-                }
-
-            }
-            System.out.println("employee ID invalid");
-            return false;
-
-    }
 
 }

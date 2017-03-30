@@ -1,6 +1,6 @@
 package BusinessWorkDays;
 
-import coreFunctions.WriteToFile;
+import coreFunctions.*;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 /**
  * Created by Martin on 28/03/2017.
  */
@@ -21,6 +22,7 @@ public class Workday
 
     public static ArrayList<Workday> workhours = new ArrayList<>();
     WriteToFile write = new WriteToFile();
+    Driver drive = new Driver();
 
     private String starttime;
     private String endtime;
@@ -106,9 +108,12 @@ public class Workday
             writeToFile();
         }
         else if (num>0){
-      //  removeTimeFromEmployee();
+       removeTimeFromEmployee(b,d,s,end);
         rewriteToFile(workhours);
     }
+    }
+    public void removeTimeFromEmployee(String b , String d, String s, String e){
+
     }
     public boolean readWork(String b,String d,String s,String end){
         Details(b,d,s,end);
