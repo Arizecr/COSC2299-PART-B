@@ -110,6 +110,7 @@ public class Workday
 
     public boolean readWork(String b,String d,String s,String end){
         Details(b,d,s,end);
+        //------------------------------------------------------check if date already exists
         int count = 0;
         for(int i=0; i < workhours.size() ;i++) {
             if (b.equals(workhours.get(i).getBId())) {
