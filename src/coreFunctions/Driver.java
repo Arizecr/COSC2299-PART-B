@@ -271,8 +271,11 @@ public class Driver {
             String Details[] = hours.get(i).split(" ",5);
 
             String e = Details[1];
+            String day = Details[2];
+            String start = Details[3];
+            String end = Details[4];
 
-            if(empID.equals(e)){System.out.print(hours.get(i));}
+            if(empID.equals(e)){System.out.println(day + " " +start+ " -" + end);}
 
 
         }
