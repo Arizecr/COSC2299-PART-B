@@ -65,15 +65,15 @@ public class BusinessMenu {
 
                 while(valid){
 
-                        do{
+                    do{
                         System.out.print("Enter employee ID:");
                         empID = eID.nextLine();
-                        }while(!emp.checkEmployeeID(bId,empID));
+                    }while(!emp.checkEmployeeID(bId,empID));
 
-                        do {
-                            System.out.println("Enter Day:");
-                            day = read.nextLine().toLowerCase();
-                        }while(checkDay(day));
+                    do {
+                        System.out.println("Enter Day:");
+                        day = read.nextLine().toLowerCase();
+                    }while(checkDay(day));
                     do {
                         System.out.print("Enter shift start time:");
                         starttime = reader.nextLine();
@@ -167,11 +167,11 @@ public class BusinessMenu {
         // description
         // this is sent to a text file to allow the customer to choose from service when booking
     }
-  /*  public boolean checkOpen(String bId, String day,String starttime,String endtime){
-      if( w.readWork(bId,day,starttime,endtime)){return true;};
-        System.out.println("employee ID invalid");
-     return false;
-    }*/
+    /*  public boolean checkOpen(String bId, String day,String starttime,String endtime){
+        if( w.readWork(bId,day,starttime,endtime)){return true;};
+          System.out.println("employee ID invalid");
+       return false;
+      }*/
     public boolean checkD(String day){return checkDay(day);}
     private boolean checkDay(String day){
         try{
@@ -229,8 +229,8 @@ public class BusinessMenu {
     }
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
-       if( !timeCheck (starttime, endtime)){
-           if( w.readWork(bId,day,starttime,endtime)){return true;}
+        if( !timeCheck (starttime, endtime)){
+            if( w.readWork(bId,day,starttime,endtime)){return true;}
 
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
 

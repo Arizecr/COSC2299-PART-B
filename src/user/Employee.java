@@ -17,8 +17,10 @@ public class Employee {
     private String phoneNo;
     public static ArrayList<Employee> employeeList = new ArrayList<>();
 
-public Employee(){}
-    public Employee(String businessId, String employeeID, String fullName, String taxFileNo, String phoneNo){
+    public Employee() {
+    }
+
+    public Employee(String businessId, String employeeID, String fullName, String taxFileNo, String phoneNo) {
         this.employeeID = employeeID;
         this.businessId = businessId;
         this.fullName = fullName;
@@ -26,20 +28,22 @@ public Employee(){}
         this.phoneNo = phoneNo;
     }
 
-    public String toString(){
+    public String toString() {
 
-        return businessId+":"+employeeID + ":" +  fullName + ":" + taxFileNo + ":" + phoneNo;
+        return businessId + ":" + employeeID + ":" + fullName + ":" + taxFileNo + ":" + phoneNo;
     }
-    public String geteId(){
+
+    public String geteId() {
 
         return employeeID;
     }
 
-    public String getbId(){
+    public String getbId() {
 
         return businessId;
     }
-    public void loadEmployeeInformation(){
+
+    public void loadEmployeeInformation() {
         BufferedReader br;
         try {
 
@@ -48,9 +52,9 @@ public Employee(){}
 
             try {
                 String x;
-                while ( (x = br.readLine()) != null ) {
+                while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(":",5);
+                    String Details[] = x.split(":", 5);
                     String bId = Details[0];
                     String empID = Details[1];
                     String fullName = Details[2];
@@ -73,13 +77,13 @@ public Employee(){}
 
     }
 
-    public boolean checkEmployeeID(String bId,String empID){
+    public boolean checkEmployeeID(String bId, String empID) {
 
         loadEmployeeInformation();
 
-        for(int i=0; i < employeeList.size() ;i++){
-            if(empID.equals(employeeList.get(i).geteId())){
-                if(bId.equals(employeeList.get(i).getbId())){
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (empID.equals(employeeList.get(i).geteId())) {
+                if (bId.equals(employeeList.get(i).getbId())) {
                     return true;
                 }
             }

@@ -73,7 +73,7 @@ public class WriteToFile {
             fw.write("\n");
             fw.write(chosenwork);//appends the string to the file
             fw.close();
-    }
+        }
         catch(IOException ioe)
         {
             System.err.println("IOException: " + ioe.getMessage());

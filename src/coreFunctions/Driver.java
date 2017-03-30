@@ -84,11 +84,11 @@ public class Driver {
 
         if(length < 8 || length>9){
             System.out.println("Error: TFN must be 8-9 digits in length.");
-           return true;
+            return true;
         }
         if(!isNumeric(tfn)) {
             System.out.println("Error: entered a non integer as tfn.");
-           // System.out.print("Enter tax file number: ");
+            // System.out.print("Enter tax file number: ");
             return true;
         }
         return false;
@@ -149,15 +149,12 @@ public class Driver {
         All it does is currently write to txt file to save the work dates.
          */
         String combinedData = bId+" "+empId + " " +day + " "+startTime + " "+ endTime;
-File file = new File("workdaysList.txt");
+        File file = new File("workdaysList.txt");
         if(file.length()==0)
-{filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
-else{
-        filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
-
-
-
-
+        {
+            filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
+        else{
+            filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
     }
 
 
@@ -217,30 +214,30 @@ else{
         int count = 1;
         for(int i=0; i < hours.size() ;i++) {
 
-                    // printing out each line in the file
-                    String Details[] = hours.get(i).split(" ",5);
-                    String bId = Details[0];
-                    String empID = Details[1];
-                    String day = Details[2];
-                    String start = Details[3];
-                    String end = Details[4];
+            // printing out each line in the file
+            String Details[] = hours.get(i).split(" ",5);
+            String bId = Details[0];
+            String empID = Details[1];
+            String day = Details[2];
+            String start = Details[3];
+            String end = Details[4];
             String combinedData = bId+" "+empID + " " +day + " "+s + " "+ e;
-                    if((b.equals(bId)&&d.equals(day))&&!timeCheck(start,end,s,e)) {
-                        if(count ==1){filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
-                            count++;
-                                               }
-                    }
+            if((b.equals(bId)&&d.equals(day))&&!timeCheck(start,end,s,e)) {
+                if(count ==1){filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                    count++;
+                }
+            }
             else if(!(b.equals(bId)&&d.equals(day))) {
 
-                        if (count == 1) {
-                            filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
-                            count++;
-                        } else
-                        {
-                            filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
-                        }
-                    }
-                    else{filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");}
+                if (count == 1) {
+                    filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                    count++;
+                } else
+                {
+                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                }
+            }
+            else{filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");}
         }
 
 

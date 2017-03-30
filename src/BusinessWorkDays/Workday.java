@@ -47,7 +47,7 @@ public class Workday
     }
     public String getEndtime(){
 
-    return endtime;
+        return endtime;
     }
     public String getBId(){
 
@@ -89,13 +89,13 @@ public class Workday
             e.printStackTrace();
         }}
     public void readFile(String b,String d,String s,String end){
-       Details();
+        Details();
         int num = 0;
         Workday n = new Workday(b,d,s,end);
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
                 if(d.equals(workhours.get(i).workD())){
-                   num ++;
+                    num ++;
                     workhours.set(i, n);
                     System.out.println("---------------------------"+workhours.size());
                 }
@@ -195,7 +195,7 @@ public class Workday
             } catch (IOException e) {
                 e.printStackTrace();
             }
-       //file cannot be found
+            //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
@@ -203,10 +203,10 @@ public class Workday
 
     }
 
- /*   public void writeToFile(){
-        write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
+    /*   public void writeToFile(){
+           write.WriteToWorkingdayTXT(toString(), "businessdaysList.txt");
 
-    }*/
+       }*/
     public void rewriteToFile( ArrayList workhours){
         if(workhours.size()>=0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
         for(int i=1; i < workhours.size() ;i++){
