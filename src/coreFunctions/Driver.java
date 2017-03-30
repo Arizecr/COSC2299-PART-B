@@ -151,7 +151,7 @@ public class Driver {
         String combinedData = bId+" "+empId + " " +day + " "+startTime + " "+ endTime;
 File file = new File("workdaysList.txt");
         if(file.length()==0)
-{filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");}
+{filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
 else{
         filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
 
