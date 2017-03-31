@@ -176,40 +176,25 @@ public class AvailableDay {
     }
 
     public void printFile(String bId){
-        BufferedReader br;
+        loadInfo();
         String bID= "" ;
         String empid= "" ;
         String day ="" ;
         String starttime ="";
         String endtime="";
-        try {
 
+        for(int i=0; i < hours.size() ;i++){
 
-            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
+            String Details[] = hours.get(i).split(" ",5);
+            bID = Details[0];
+            empid = Details[1];
+            day = Details[2];
+            starttime = Details[3];
+            endtime = Details[4];
+            if(bID.equals(bId)){System.out.println(empid+" "+day+" " + starttime +" to  "+ endtime );}
 
-            try {
-                String x;
-                while ( (x = br.readLine()) != null ) {
-                    // printing out each line in the file
-                    String Details[] = x.split(" ",5);
-                    bID = Details[0];
-                    empid = Details[1];
-                    day = Details[2];
-                    starttime = Details[3];
-                    endtime = Details[4];
-
-                    if(bID.equals(bId)){System.out.println(empid+" "+day+" " + starttime +" to  "+ endtime );}
-
-                }
-                //prints error
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            //file cannot be found
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
         }
+
 
 //        BufferedReader br;
 //        Employee emp = new Employee();
@@ -249,7 +234,50 @@ public class AvailableDay {
 
     }
 
+    public boolean checkFile(String b,String emp, String d,String st,String en)
+    {
+        loadInfo();
+        String bID= "" ;
+        String empid= "" ;
+        String day ="" ;
+        String start ="";
+        String end="";
 
+        for(int i=0; i < hours.size() ;i++){
+
+                String Details[] = hours.get(i).split(" ",5);
+                bID = Details[0];
+                empid = Details[1];
+                day = Details[2];
+                start = Details[3];
+                end = Details[4];
+                if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){
+                    DateFormat time = new SimpleDateFormat("HH:mm");
+
+                    try {
+                        Date sd = time.parse(st);
+                        Date ed = time.parse(en);
+                        Date Asd = time.parse(start);
+                        Date Aed = time.parse(end);
+
+                        // This makes sure scheduled employee shift is within operating hours of business
+                        if (ed.after(Aed)) {
+                            System.out.println("Employee unavailable");
+                            return true;
+
+                        } else if (sd.before(Asd)) {
+                            System.out.println("Employee unavailable");
+                            return true;
+                        }
+                    } catch (ParseException e) {
+                        System.out.println("Invalid Time");
+                        return true;
+                    }
+                }
+
+        }
+        return false;
+    }
 
     public void rewriteToFile(ArrayList availability){
         if(availability.size()>=0){write.reWriteToWorkingdayTXT(availability.get(0).toString(), "employeeAvailabilityList.txt");}
