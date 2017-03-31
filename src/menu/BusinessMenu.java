@@ -1,7 +1,6 @@
 package menu;
 
 import BusinessWorkDays.Workday;
-import EmployeeAvailabilityDays.AvailableDay;
 import coreFunctions.Driver;
 import user.Employee;
 
@@ -20,7 +19,7 @@ import java.util.Scanner;
 public class BusinessMenu {
     Login login = new Login();
     Workday w = new Workday();
-//    AvailableDay a = new AvailableDay();
+    //    AvailableDay a = new AvailableDay();
     Driver driver = new Driver();
     Employee emp = new Employee();
 
@@ -62,7 +61,7 @@ public class BusinessMenu {
                 continue;
             }
 
-            if(choice == 2){
+            if(choice == 2||choice ==3){
                 boolean valid = true;
 
                 while(valid){
@@ -76,16 +75,23 @@ public class BusinessMenu {
                         System.out.println("Enter Day:");
                         day = read.nextLine().toLowerCase();
                     }while(checkDay(day));
-                    do {
-                        System.out.print("Enter shift start time:");
-                        starttime = reader.nextLine();
-                    }while(checktime(starttime));
-                    do {
-                        System.out.print("Enter shift end time:");
-                        endtime = reader.nextLine();
-                    }while(checktime(endtime));
 
-                    valid = Worktimes(bId,empID, day,starttime,endtime);
+                    if(choice == 2) {
+                        do {
+                            System.out.print("Enter shift start time:");
+                            starttime = reader.nextLine();
+                        }while(checktime(starttime));
+                        do {
+                            System.out.print("Enter shift end time:");
+                            endtime = reader.nextLine();
+                        }while(checktime(endtime));
+                        valid = Worktimes(bId, empID, day, starttime, endtime);
+                    }
+                    if(choice==3){
+                        valid = false;
+                        driver.deleteEmployeeWorktimes(bId,empID,day);
+
+                    }
 
                 }
                 continue;
@@ -212,6 +218,7 @@ public class BusinessMenu {
         }
         return true;
     }
+
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);

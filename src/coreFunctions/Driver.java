@@ -239,6 +239,38 @@ public class Driver {
 
 
     }
+    //deletes selected work hours for specific day from employee
+    public void deleteEmployeeWorktimes(String b,String e,String d){
+        loadInfo();
+        int count = 1;
+        for(int i=0; i < hours.size() ;i++) {
+
+            // printing out each line in the file
+            String Details[] = hours.get(i).split(" ", 5);
+            String bId = Details[0];
+            String empID = Details[1];
+            String day = Details[2];
+
+
+            if (!(e.equals(empID) && b.equals(bId) && d.equals(day))) {
+                if (count == 1) {
+                    filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                    count++;
+                } else {
+                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                }
+            }
+            else{
+                if (count == 1) {
+                    filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
+                }
+                System.out.println("Shifts of employee " + empID + " for " + day + " have been removed");
+            }
+        }
+    }
+
+
+
     public void removeWorktimes(String b,String d) {
         loadInfo();
         int count = 1;
