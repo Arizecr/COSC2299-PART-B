@@ -60,29 +60,29 @@ public class BusinessMenu {
                 driver.addEmployee(bId);
                 continue;
             }
-
+            reader = new Scanner(System.in);
             if(choice == 2||choice ==3){
                 boolean valid = true;
 
                 while(valid){
 
                     do{
-                        System.out.print("Enter employee ID:");
-                        empID = eID.nextLine();
+                        System.out.println("Enter employee ID:");
+                        empID = reader.nextLine();
                     }while(!emp.checkEmployeeID(bId,empID));
 
                     do {
                         System.out.println("Enter Day:");
-                        day = read.nextLine().toLowerCase();
+                        day = reader.nextLine().toLowerCase();
                     }while(checkDay(day));
 
                     if(choice == 2) {
                         do {
-                            System.out.print("Enter shift start time:");
+                            System.out.println("Enter shift start time:");
                             starttime = reader.nextLine();
                         }while(checktime(starttime));
                         do {
-                            System.out.print("Enter shift end time:");
+                            System.out.println("Enter shift end time:");
                             endtime = reader.nextLine();
                         }while(checktime(endtime));
                         valid = Worktimes(bId, empID, day, starttime, endtime);

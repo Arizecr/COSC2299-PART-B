@@ -86,7 +86,7 @@ public class Workday
                 if(d.equals(workhours.get(i).workD())){
                     num ++;
                     workhours.set(i, n);
-                    System.out.println("---------------------------"+workhours.size());
+
                 }
             }
         }
