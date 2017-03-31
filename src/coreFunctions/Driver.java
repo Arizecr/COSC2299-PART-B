@@ -296,8 +296,6 @@ public class Driver {
                 if (count == 1) {
                     filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
 
-                } else {
-                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                 }
             }
         }
