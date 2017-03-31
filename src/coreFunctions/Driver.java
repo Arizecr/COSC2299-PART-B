@@ -279,10 +279,9 @@ public class Driver {
             // printing out each line in the file
             String Details[] = hours.get(i).split(" ", 5);
             String bId = Details[0];
-            String empID = Details[1];
             String day = Details[2];
 
-            if (!(b.equals(bId) && d.equals(day))) {
+            if (!(b.equals(bId)&&d.equals(day))) {
 
                 if (count == 1) {
                     filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
@@ -293,9 +292,8 @@ public class Driver {
             }
             else {
 
-                if (count == 1) {
+                if (count<= 1) {
                     filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
-
                 }
             }
         }
