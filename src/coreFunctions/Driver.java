@@ -324,7 +324,7 @@ public class Driver {
                         System.out.println("employee has shift during this time");
                         return true;
 
-                    } else if (Net.before(Cet)) {
+                    } else if (Net.before(Cet)||Net.equals(Cet)) {
                         System.out.println("employee has shift during this time");
                         return true;
                     }
