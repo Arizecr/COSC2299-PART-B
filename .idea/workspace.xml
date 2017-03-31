@@ -869,13 +869,6 @@
       <option name="presentableId" value="Default" />
       <updated>1488743260482</updated>
     </task>
-    <task id="LOCAL-00038" summary="Added Driver + Employee class, and added some comments">
-      <created>1490338135074</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1490338135074</updated>
-    </task>
     <task id="LOCAL-00039" summary="defined employee class">
       <created>1490338454837</created>
       <option name="number" value="00039" />
@@ -1212,7 +1205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490941911772</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="cleaned up code">
+      <created>1490942063338</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1490942063338</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TestHistory">
