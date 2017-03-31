@@ -46,6 +46,7 @@ public class Workday
     public String getBId(){
         return businessid;
     }
+
     public void Details(){
         workhours = new ArrayList<>();
         BufferedReader br;
@@ -86,6 +87,7 @@ public class Workday
                 if(d.equals(workhours.get(i).workD())){
                     num ++;
                     workhours.set(i, n);
+
 
                 }
             }

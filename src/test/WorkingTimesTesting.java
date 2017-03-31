@@ -90,6 +90,23 @@ public class WorkingTimesTesting {
         assertTrue(verify);
 
     }
+
+    @Test
+    public void InvalidDayWorkingTimes() {
+        day = "lodwkaokdo";
+        verify = b.checkD(day);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void validDayWorkingTimes() {
+        day = "monday";
+        verify = b.checkD(day);
+        assertFalse(verify);
+
+    }
+
     @Test
     public void NullStartTimeWorkingTimes() {
         day = "Monday";
