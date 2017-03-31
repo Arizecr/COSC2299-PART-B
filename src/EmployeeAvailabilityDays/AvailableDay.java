@@ -18,7 +18,7 @@ import java.util.Date;
  */
 public class AvailableDay {
 
-    public static ArrayList<AvailableDay> availability = new ArrayList<>();
+
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();
 
@@ -30,9 +30,9 @@ public class AvailableDay {
     public AvailableDay(){};
 
 
-    public static ArrayList<String> hours = new ArrayList<>();
+    public static ArrayList<String> availability = new ArrayList<>();
     public void loadInfo(){
-        hours = new ArrayList<>();
+        availability = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -43,7 +43,7 @@ public class AvailableDay {
                 String x;
 
                 while ( (x = br.readLine()) != null ) {
-                    hours.add(x);
+                    availability.add(x);
 
                 }
                 //prints error
@@ -60,23 +60,23 @@ public class AvailableDay {
 
     }
 
-    public void printFile(String bId){
+    public void printFile(String bId,String eId){
         loadInfo();
         String bID= "" ;
-        String empid= "" ;
+        String eID= "" ;
         String day ="" ;
         String starttime ="";
         String endtime="";
 
-        for(int i=0; i < hours.size() ;i++){
+        for(int i=0; i < availability.size() ;i++){
 
-            String Details[] = hours.get(i).split(" ",5);
+            String Details[] = availability.get(i).split(" ",5);
             bID = Details[0];
-            empid = Details[1];
+            eID = Details[1];
             day = Details[2];
             starttime = Details[3];
             endtime = Details[4];
-            if(bID.equals(bId)){System.out.println(empid+" "+day+" " + starttime +" to  "+ endtime );}
+            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(eID+" "+day+" " + starttime +" to  "+ endtime );}
 
         }
 
@@ -92,9 +92,9 @@ public class AvailableDay {
         String start ="";
         String end="";
         int count = 0;
-        for(int i=0; i < hours.size() ;i++){
+        for(int i=0; i < availability.size() ;i++){
 
-                String Details[] = hours.get(i).split(" ",5);
+                String Details[] = availability.get(i).split(" ",5);
                 bID = Details[0];
                 empid = Details[1];
                 day = Details[2];
@@ -109,7 +109,7 @@ public class AvailableDay {
                         Date Asd = time.parse(start);
                         Date Aed = time.parse(end);
 
-                        // This makes sure scheduled employee shift is within operating hours of business
+                        // This makes sure scheduled employee shift is within operating availability of business
                         if (ed.after(Aed)) {
                             System.out.println("Employee unavailable");
                             count++;
