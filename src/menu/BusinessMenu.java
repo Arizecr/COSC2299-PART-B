@@ -152,7 +152,7 @@ public class BusinessMenu {
                 }while(!emp.checkEmployeeID(bId,empID));
 //                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the chosen employee
                 //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
-                av.printFile(bId,eId);
+                av.printFile(bId,empID);
                 continue;
             }
             if(choice == 8){
