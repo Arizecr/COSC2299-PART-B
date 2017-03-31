@@ -1,6 +1,7 @@
 package menu;
 
 import BusinessWorkDays.Workday;
+import EmployeeAvailabilityDays.AvailableDay;
 import coreFunctions.Driver;
 import user.Employee;
 
@@ -19,7 +20,7 @@ import java.util.Scanner;
 public class BusinessMenu {
     Login login = new Login();
     Workday w = new Workday();
-    //    AvailableDay a = new AvailableDay();
+    AvailableDay av = new AvailableDay();
     Driver driver = new Driver();
     Employee emp = new Employee();
 
@@ -145,9 +146,9 @@ public class BusinessMenu {
             }
 
             if(choice ==6){
-                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the choosen emploee
+//                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the chosen employee
                 //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
-                //
+                av.printFile(bId);
                 continue;
             }
             if(choice == 8){

@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.*;
 import coreFunctions.*;
+import user.Employee;
 
 /**
  * Created by asus on 30-Mar-17.
@@ -21,6 +22,7 @@ public class AvailableDay {
     private String employeeid;
     private String workday;
 
+    public AvailableDay(){};
     public AvailableDay(String employeeid, String workday, String starttime, String endtime){
         this.employeeid = employeeid;
         this.workday = workday;
@@ -99,7 +101,7 @@ public class AvailableDay {
 
     public boolean readWork(String emp,String d,String s,String end){
         Details(emp,d,s,end);
-        //------------------------------------------------------check if date already exists
+        //check if date already exists
         int count = 0;
         for(int i=0; i < availability.size() ;i++) {
             if (emp.equals(availability.get(i).getempid())) {
@@ -116,11 +118,11 @@ public class AvailableDay {
 
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (et.after(Bet)) {
-                            System.out.println("Can't end after closed");
+                            System.out.println("Can't work after closed");
                             return true;
 
                         } else if (st.before(Bst)) {
-                            System.out.println("Can't Start before open");
+                            System.out.println("Can't work before open");
                             return true;
                         }
 
@@ -132,11 +134,43 @@ public class AvailableDay {
                 }
             }
         }
-        if(count==0){System.out.println("Not Open on " + d);return true;}
+        if(count==0){
+            System.out.println("Not Open on " + d);
+            return true;
+        }
         return false;
     }
+    public static ArrayList<String> hours = new ArrayList<>();
+    public void loadInfo(){
+        hours = new ArrayList<>();
+        BufferedReader br;
+        try {
 
-    public void printFile(String realempid){
+
+            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt.txt"));
+
+            try {
+                String x;
+
+                while ( (x = br.readLine()) != null ) {
+                    hours.add(x);
+
+                }
+                //prints error
+            } catch (IOException error) {
+                error.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException error) {
+            System.out.println(error);
+            error.printStackTrace();
+        }
+
+    }
+
+    public void printFile(String eId){
         BufferedReader br;
         String empid= "" ;
         String day ="" ;
@@ -151,13 +185,13 @@ public class AvailableDay {
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String Details[] = x.split(" ",4);
-                    empid = Details[0];
-                    day = Details[1];
-                    starttime = Details[2];
-                    endtime = Details[3];
+                    String Details[] = x.split(" ",5);
+                    empid = Details[1];
+                    day = Details[2];
+                    starttime = Details[3];
+                    endtime = Details[4];
 
-                    if(realempid.equals(empid)){System.out.println(day+" " + starttime +" to  "+ endtime );}
+                    if(eId.equals(empid)){System.out.println(day+" " + starttime +" to  "+ endtime );}
 
                 }
                 //prints error
@@ -170,11 +204,47 @@ public class AvailableDay {
             e.printStackTrace();
         }
 
+//        BufferedReader br;
+//        Employee emp = new Employee();
+//        Scanner eID = new Scanner(System.in);
+//        String empid;
+//        try{
+//            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
+//
+//        do{
+//            System.out.print("Enter employee ID:");
+//            empid = eID.nextLine();
+//        }while(!emp.checkEmployeeID(bId,empid));
+////        loadInfo();
+//        System.out.println("--------------CURRENT SHIFTS-------------");
+//        int count = 0;
+//        for(int i=0; i < hours.size() ;i++) {
+//
+//            // printing out each line in the file
+//            String Details[] = hours.get(i).split(" ",5);
+//
+//            String e = Details[1];
+//            String day = Details[2];
+//            String start = Details[3];
+//            String end = Details[4];
+//
+//            if(empid.equals(e)){System.out.println(day + " " +start+ " -" + end);
+//            }
+//
+//
+//        }
+//        System.out.println("-----------------------------------------");
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e);
+//            e.printStackTrace();
+//        }
+
+
     }
 
 
 
-    public void rewriteToFile( ArrayList availability){
+    public void rewriteToFile(ArrayList availability){
         if(availability.size()>=0){write.reWriteToWorkingdayTXT(availability.get(0).toString(), "employeeAvailabilityList.txt");}
         for(int i=1; i < availability.size() ;i++){
             write.WriteToWorkingdayTXT(availability.get(i).toString(), "employeeAvailabilityList.txt");

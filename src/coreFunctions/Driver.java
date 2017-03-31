@@ -347,7 +347,7 @@ public class Driver {
             empID = eID.nextLine();
         }while(!emp.checkEmployeeID(bId,empID));
         loadInfo();
-        System.out.println("----------------CURRENT SHIFTS-----------");
+        System.out.println("--------------CURRENT SHIFTS-------------");
         int count = 0;
         for(int i=0; i < hours.size() ;i++) {
 
