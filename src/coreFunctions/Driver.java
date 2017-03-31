@@ -298,6 +298,45 @@ public class Driver {
             }
         }
     }
+    public boolean checkWorktimes(String b, String emp, String d, String s , String e) {
+        loadInfo();
+        int count = 1;
+        for (int i = 0; i < hours.size(); i++) {
+
+            // printing out each line in the file
+            String Details[] = hours.get(i).split(" ", 5);
+            String bId = Details[0];
+            String empID = Details[1];
+            String day = Details[2];
+            String start = Details[3];
+            String end = Details[4];
+            if (b.equals(bId) && d.equals(day) && emp.equals(empID)) {
+                DateFormat time = new SimpleDateFormat("HH:mm");
+                count++;
+                try {
+                    Date Nst = time.parse(s);
+                    Date Net = time.parse(e);
+                    Date Cst = time.parse(start);
+                    Date Cet = time.parse(end);
+
+                    // This makes sure scheduled employee shift is within operating hours of business
+                    if ((Nst.after(Cst)||Nst.equals(Cst))) {
+                        System.out.println("employee has shift during this time");
+                        return true;
+
+                    } else if (Net.before(Cet)) {
+                        System.out.println("employee has shift during this time");
+                        return true;
+                    }
+                } catch (ParseException ex) {
+                    System.out.println("Invalid Time");
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
 
     public void printEmployeeWorktimes(String bId){
         Employee emp = new Employee();

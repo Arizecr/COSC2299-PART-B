@@ -212,6 +212,7 @@ public class BusinessMenu {
         DateFormat time = new SimpleDateFormat("HH:mm");
         if( !timeCheck (starttime, endtime)){
             if( w.readWork(bId,day,starttime,endtime)){return true;}
+            if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
             driver.addWorkdays(bId,empId,day,starttime,endtime);
             return false;
