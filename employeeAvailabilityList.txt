@@ -1,7 +1,9 @@
-b1 e1 monday 8:00 20:00
+b1 e1 monday 8:00 12:00
+b1 e1 monday 14:00 20:00
 b1 e1 tuesday 8:00 20:00
 b1 e1 wednesday 8:00 20:00
-b1 e1 thursday 8:00 20:00
+b1 e1 thursday 8:00 14:00
+b1 e1 thursday 16:00 20:00
 b1 e1 friday 8:00 20:00
 b1 e1 saturday 8:00 20:00
 b1 e1 sunday 8:00 20:00
