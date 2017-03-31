@@ -242,7 +242,7 @@ public class AvailableDay {
         String day ="" ;
         String start ="";
         String end="";
-
+int count = 0;
         for(int i=0; i < hours.size() ;i++){
 
                 String Details[] = hours.get(i).split(" ",5);
@@ -263,19 +263,22 @@ public class AvailableDay {
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (ed.after(Aed)) {
                             System.out.println("Employee unavailable");
-                            return true;
+                            count++;
 
                         } else if (sd.before(Asd)) {
                             System.out.println("Employee unavailable");
-                            return true;
+                            count++;
+
                         }
+                        else {return false;}
                     } catch (ParseException e) {
                         System.out.println("Invalid Time");
-                        return true;
+                        count ++;
                     }
                 }
 
         }
+        if(count>0){return true;}
         return false;
     }
 
