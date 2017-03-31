@@ -77,8 +77,9 @@ public class AvailableDay {
             starttime = Details[3];
             endtime = Details[4];
             if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
-
+if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+day+" " + starttime +" to  "+ endtime );}
         }
+
 
 
     }
