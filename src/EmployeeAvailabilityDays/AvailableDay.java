@@ -196,42 +196,6 @@ public class AvailableDay {
         }
 
 
-//        BufferedReader br;
-//        Employee emp = new Employee();
-//        Scanner eID = new Scanner(System.in);
-//        String empid;
-//        try{
-//            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
-//
-//        do{
-//            System.out.print("Enter employee ID:");
-//            empid = eID.nextLine();
-//        }while(!emp.checkEmployeeID(bId,empid));
-////        loadInfo();
-//        System.out.println("--------------CURRENT SHIFTS-------------");
-//        int count = 0;
-//        for(int i=0; i < hours.size() ;i++) {
-//
-//            // printing out each line in the file
-//            String Details[] = hours.get(i).split(" ",5);
-//
-//            String e = Details[1];
-//            String day = Details[2];
-//            String start = Details[3];
-//            String end = Details[4];
-//
-//            if(empid.equals(e)){System.out.println(day + " " +start+ " -" + end);
-//            }
-//
-//
-//        }
-//        System.out.println("-----------------------------------------");
-//        } catch (FileNotFoundException e) {
-//            System.out.println(e);
-//            e.printStackTrace();
-//        }
-
-
     }
 
     public boolean checkFile(String b,String emp, String d,String st,String en)
@@ -242,7 +206,7 @@ public class AvailableDay {
         String day ="" ;
         String start ="";
         String end="";
-int count = 0;
+        int count = 0;
         for(int i=0; i < hours.size() ;i++){
 
                 String Details[] = hours.get(i).split(" ",5);
