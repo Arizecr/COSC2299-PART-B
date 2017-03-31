@@ -1,12 +1,17 @@
 package EmployeeAvailabilityDays;
 
+import coreFunctions.Driver;
+import coreFunctions.WriteToFile;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.io.*;
-import coreFunctions.*;
-import user.Employee;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by asus on 30-Mar-17.
@@ -170,8 +175,9 @@ public class AvailableDay {
 
     }
 
-    public void printFile(String eId){
+    public void printFile(String bId){
         BufferedReader br;
+        String bID= "" ;
         String empid= "" ;
         String day ="" ;
         String starttime ="";
@@ -186,12 +192,13 @@ public class AvailableDay {
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
                     String Details[] = x.split(" ",5);
+                    bID = Details[0];
                     empid = Details[1];
                     day = Details[2];
                     starttime = Details[3];
                     endtime = Details[4];
 
-                    if(eId.equals(empid)){System.out.println(day+" " + starttime +" to  "+ endtime );}
+                    if(bID.equals(bId)){System.out.println(empid+" "+day+" " + starttime +" to  "+ endtime );}
 
                 }
                 //prints error
