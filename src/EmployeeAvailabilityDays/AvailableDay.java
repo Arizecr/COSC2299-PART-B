@@ -28,123 +28,8 @@ public class AvailableDay {
     private String workday;
 
     public AvailableDay(){};
-    public AvailableDay(String employeeid, String workday, String starttime, String endtime){
-        this.employeeid = employeeid;
-        this.workday = workday;
-        this.starttime = starttime;
-        this.endtime = endtime;
-
-    }
-    public String getempid(){
-
-        return employeeid;
-    }
-    public String workD(){
-
-        return workday;
-    }
-    public String getStarttime(){
-
-        return starttime;
-    }
-    public String getEndtime() {
-
-        return endtime;
-    }
-    public void Details(String emp,String d,String s,String end){
-        BufferedReader br;
-        String empid= "" ;
-        String day ="" ;
-        String starttime = "" ;
-        String endtime = "";
-
-        try {
-            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
-
-            try {
-                String x;
-                while ( (x = br.readLine()) != null ) {
-                    // printing out each line in the file
-                    String Details[] = x.split(" ",4);
-                    empid = Details[0];
-                    day = Details[1];
-                    starttime = Details[2];
-                    endtime = Details[3];
-                    AvailableDay n = new AvailableDay(empid,day,starttime,endtime);
-                    availability.add(n);
-                }
-                //prints error
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            //file cannot be found
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
-        }
-    }
-    public void readFile(String emp,String d,String s,String end) {
-        Details(emp, d, s, end);
-        int num = 0;
-        for (int i = 0; i < availability.size(); i++) {
-            if (emp.equals(availability.get(i).getempid())) {
-                if (d.equals(availability.get(i).workD())) {
-                    num++;
-                    AvailableDay n = new AvailableDay(emp, d, s, end);
-                    availability.set(i, n);
-
-                }
-            }
-        }
-
-        if (num > 0) {
-            drive.loadandWriteNEmployeeWorktimes(emp, d, s, end);
-
-        }
-        rewriteToFile(availability);
-    }
-
-    public boolean readWork(String emp,String d,String s,String end){
-        Details(emp,d,s,end);
-        //check if date already exists
-        int count = 0;
-        for(int i=0; i < availability.size() ;i++) {
-            if (emp.equals(availability.get(i).getempid())) {
-                if (d.equals(availability.get(i).workD())) {
-                    DateFormat time = new SimpleDateFormat("HH:mm");
-                    count++;
-                    try {
-
-                        Date st = time.parse(s);
-                        Date et = time.parse(end);
-                        Date Bst = time.parse(availability.get(i).getStarttime());
-                        Date Bet = time.parse(availability.get(i).getEndtime());
 
 
-                        // This makes sure scheduled employee shift is within operating hours of business
-                        if (et.after(Bet)) {
-                            System.out.println("Can't work after closed");
-                            return true;
-
-                        } else if (st.before(Bst)) {
-                            System.out.println("Can't work before open");
-                            return true;
-                        }
-
-                    } catch (ParseException e) {
-                        System.out.println("Invalid Time");
-                        return true;
-
-                    }
-                }
-            }
-        }
-        if(count==0){
-            System.out.println("Not Open on " + d);
-            return true;
-        }
-        return false;
-    }
     public static ArrayList<String> hours = new ArrayList<>();
     public void loadInfo(){
         hours = new ArrayList<>();
@@ -152,7 +37,7 @@ public class AvailableDay {
         try {
 
 
-            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt.txt"));
+            br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
 
             try {
                 String x;
