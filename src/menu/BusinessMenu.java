@@ -270,7 +270,6 @@ public class BusinessMenu {
             System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
             String combine = empid+" "+day + " "+starttime + " "+ endtime;
             filewriter.WriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
-//            av.rewriteToFile(AvailableDay.availability);
             return false;
         }
         return true;
