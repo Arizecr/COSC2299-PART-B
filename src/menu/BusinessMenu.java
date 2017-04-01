@@ -3,6 +3,7 @@ package menu;
 import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
 import coreFunctions.Driver;
+import coreFunctions.WriteToFile;
 import user.Employee;
 
 import java.text.DateFormat;
@@ -51,8 +52,9 @@ public class BusinessMenu {
             System.out.println("4. View summaries of bookings");
             System.out.println("5. View new Bookings");
             System.out.println("6. Show worker availability");
-            System.out.println("7. View business hours");
-            System.out.println("8. Log out");
+            System.out.println("7. Add new availability");
+            System.out.println("8. View business hours");
+            System.out.println("9. Log out");
 
             System.out.print("Enter choice: ");
             int choice = reader.nextInt();
@@ -97,7 +99,7 @@ public class BusinessMenu {
                 }
                 continue;
             }
-            else if(choice == 7){
+            else if(choice == 8){
                 System.out.println("\n+----------------------------------+");
                 System.out.println("|           Business               |");
                 System.out.println("|              Hours                |");
@@ -139,7 +141,7 @@ public class BusinessMenu {
                 }
                 else{continue;}
             }
-            if(choice == 9){
+            if(choice == 10){
                 System.out.println("--------- New Service---------");
                 addNewService();
                 continue;
@@ -155,7 +157,32 @@ public class BusinessMenu {
                 av.printFile(bId,empID);
                 continue;
             }
-            if(choice == 8){
+            if(choice == 7){
+                boolean valid = true;
+                while(valid) {
+                    do {
+                        System.out.println("Enter employee ID: ");
+                        empID = reader.nextLine();
+                    } while (!emp.checkEmployeeID(bId, empID));
+                    do {
+                        System.out.println("Enter day: ");
+                        day = reader.nextLine();
+                    } while (checkDay(day));
+                    do {
+                        System.out.println("Enter start time: ");
+                        starttime = reader.nextLine();
+                    } while (checktime(starttime));
+                    do {
+                        System.out.println("Enter end time: ");
+                        endtime = reader.nextLine();
+                    } while (checktime(endtime));
+                    valid = ATimes(bId, day, starttime, endtime);
+                    System.out.println("Successfully added new availability.");
+                }
+                continue;
+
+            }
+            if(choice == 9){
                 System.out.println("Successfully logged out of the system!");
                 System.exit(0);
             }
@@ -231,6 +258,18 @@ public class BusinessMenu {
         if( !timeCheck (starttime, endtime)){
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
             w.readFile(bId, day, starttime, endtime);
+            return false;
+        }
+        return true;
+    }
+
+    WriteToFile filewriter = new WriteToFile();
+    private boolean ATimes(String empid, String day,String starttime,String endtime){
+        if( !timeCheck (starttime, endtime)){
+            System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
+            String combine = empid+" "+day + " "+starttime + " "+ endtime;
+            filewriter.reWriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
+//            av.rewriteToFile(AvailableDay.availability);
             return false;
         }
         return true;
