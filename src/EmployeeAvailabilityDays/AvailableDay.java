@@ -71,13 +71,13 @@ public class AvailableDay {
         for(int i=0; i < availability.size() ;i++){
 
             String Details[] = availability.get(i).split(" ",5);
-//            bID = Details[0];
+            bID = Details[0];
             eID = Details[0];
             day = Details[1];
             starttime = Details[2];
             endtime = Details[3];
-//            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
-//            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+day+" " + starttime +" to  "+ endtime );}
+            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
+            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+day+" " + starttime +" to  "+ endtime );}
             if(eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
             if(eId.equals("all")){System.out.println(eID +" "+day+" " + starttime +" to "+ endtime );}
         }

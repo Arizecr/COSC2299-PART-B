@@ -52,7 +52,7 @@ public class WorkdayTest {
     }
 
     @Test
-    public void invalidStartTimes()  {
+    public void nullStartTimes()  {
         w.Details();
         day = "monday";
         starttime = "";
@@ -63,7 +63,7 @@ public class WorkdayTest {
     }
 
     @Test
-    public void invalidEndTimes()  {
+    public void nulldEndTimes()  {
         w.Details();
         day = "monday";
         starttime = "2:00";
@@ -72,6 +72,89 @@ public class WorkdayTest {
         assertTrue(verify);
 
     }
+
+    @Test
+    public void nullStartEndTimes()  {
+        w.Details();
+        day = "monday";
+        starttime = "";
+        endtime = "";
+        verify = w.readWork(bId, day, starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void allNull(){
+        verify = w.readWork("", "", "", "");
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void nullDay(){
+        starttime = "8:00";
+        endtime = "19:00";
+        verify = w.readWork(bId, "", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void nullDayandStart(){
+        starttime = "";
+        endtime = "19:00";
+        verify = w.readWork(bId, "", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void nullDayandEnd(){
+        starttime = "8:00";
+        endtime = "";
+        verify = w.readWork(bId, "", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void invalidDay(){
+        starttime = "8:00";
+        endtime = "";
+        verify = w.readWork(bId, "dwadwadwadwasadsfafad", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void invalidStart(){
+        starttime = "aaaaaaaa";
+        endtime = "19:00";
+        verify = w.readWork(bId, "monday", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void invalidStartEnd(){
+        starttime = "aaaaaaaa";
+        endtime = "aaaaaabbbaa";
+        verify = w.readWork(bId, "monday", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+    @Test
+    public void invalidEnd(){
+        starttime = "8:00";
+        endtime = "aaaaaabbbaa";
+        verify = w.readWork(bId, "monday", starttime, endtime);
+        assertTrue(verify);
+
+    }
+
+
 
 
 
