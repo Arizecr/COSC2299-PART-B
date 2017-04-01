@@ -176,7 +176,7 @@ public class BusinessMenu {
                         System.out.println("Enter end time: ");
                         endtime = reader.nextLine();
                     } while (checktime(endtime));
-                    valid = ATimes(bId, day, starttime, endtime);
+                    valid = ATimes(empID, day, starttime, endtime);
                     System.out.println("Successfully added new availability.");
                 }
                 continue;
@@ -264,11 +264,12 @@ public class BusinessMenu {
     }
 
     WriteToFile filewriter = new WriteToFile();
+
     private boolean ATimes(String empid, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
             System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
             String combine = empid+" "+day + " "+starttime + " "+ endtime;
-            filewriter.reWriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
+            filewriter.WriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
 //            av.rewriteToFile(AvailableDay.availability);
             return false;
         }
