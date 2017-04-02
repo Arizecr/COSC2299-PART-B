@@ -33,14 +33,6 @@ public class WorkingTimesTesting {
 
 
     @Test
-    public void correctWorkingTimesAM() {
-        firsttime = "02:00";
-        endtime = "03:30";
-        verify = b.Workt(bId,empId, "monday", firsttime,endtime);
-        assertFalse(verify);
-
-    }
-    @Test
     public void correctWorkingTimesPMOnSameDay() {
         day = "monday";
         firsttime = "15:00";
