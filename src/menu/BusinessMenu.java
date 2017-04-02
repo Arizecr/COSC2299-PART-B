@@ -288,7 +288,7 @@ public class BusinessMenu {
 
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
-            System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
+            System.out.println("The new working hours of " + day + ":  "+starttime+" - " + endtime);
             w.readFile(bId, day, starttime, endtime);
             return false;
         }
