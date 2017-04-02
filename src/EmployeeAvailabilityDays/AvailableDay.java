@@ -2,6 +2,7 @@ package EmployeeAvailabilityDays;
 
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -29,10 +30,11 @@ public class AvailableDay {
 
     public AvailableDay(){};
 
-
+    Employee e = new Employee();
     public static ArrayList<String> availability = new ArrayList<>();
     public void loadInfo(){
         availability = new ArrayList<>();
+
         BufferedReader br;
         try {
 
@@ -64,24 +66,24 @@ public class AvailableDay {
         loadInfo();
         String bID= "" ;
         String eID= "" ;
-        String name= "" ;
         String day ="" ;
         String starttime ="";
         String endtime="";
+        String name = "";
 
         for(int i=0; i < availability.size() ;i++){
 
-            String Details[] = availability.get(i).split(",",6);
+            String Details[] = availability.get(i).split(" ",5);
             bID = Details[0];
             eID = Details[1];
             day = Details[2];
             starttime = Details[3];
             endtime = Details[4];
-            name = Details[5];
-            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
-            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+name+" "+day+" " + starttime +" to "+ endtime );}
-           // if(eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
-          //  if(eId.equals("all")){System.out.println(eID +" "+day+" " + starttime +" to "+ endtime );}
+            name = e.getEmployeeName(bId,eID);
+            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(name+" "+ day+" " + starttime +" to  "+ endtime );}
+            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(name+" "+ eID +": "+day+" " + starttime +" to  "+ endtime );}
+            // if(eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
+            //  if(eId.equals("all")){System.out.println(eID +" "+day+" " + starttime +" to "+ endtime );}
         }
 
 
@@ -99,37 +101,37 @@ public class AvailableDay {
         int count = 0;
         for(int i=0; i < availability.size() ;i++){
 
-                String Details[] = availability.get(i).split(" ",5);
-                bID = Details[0];
-                empid = Details[1];
-                day = Details[2];
-                start = Details[3];
-                end = Details[4];
-                if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){
-                    DateFormat time = new SimpleDateFormat("HH:mm");
+            String Details[] = availability.get(i).split(" ",5);
+            bID = Details[0];
+            empid = Details[1];
+            day = Details[2];
+            start = Details[3];
+            end = Details[4];
+            if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){
+                DateFormat time = new SimpleDateFormat("HH:mm");
 
-                    try {
-                        Date sd = time.parse(st);
-                        Date ed = time.parse(en);
-                        Date Asd = time.parse(start);
-                        Date Aed = time.parse(end);
+                try {
+                    Date sd = time.parse(st);
+                    Date ed = time.parse(en);
+                    Date Asd = time.parse(start);
+                    Date Aed = time.parse(end);
 
-                        // This makes sure scheduled employee shift is within operating availability of business
-                        if (ed.after(Aed)) {
-                            System.out.println("Employee unavailable");
-                            count++;
+                    // This makes sure scheduled employee shift is within operating availability of business
+                    if (ed.after(Aed)) {
+                        System.out.println("Employee unavailable");
+                        count++;
 
-                        } else if (sd.before(Asd)) {
-                            System.out.println("Employee unavailable");
-                            count++;
+                    } else if (sd.before(Asd)) {
+                        System.out.println("Employee unavailable");
+                        count++;
 
-                        }
-                        else {return false;}
-                    } catch (ParseException e) {
-                        System.out.println("Invalid Time");
-                        count ++;
                     }
+                    else {return false;}
+                } catch (ParseException e) {
+                    System.out.println("Invalid Time");
+                    count ++;
                 }
+            }
 
         }
         if(count>0){return true;}

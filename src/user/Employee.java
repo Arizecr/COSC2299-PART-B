@@ -43,6 +43,11 @@ public class Employee {
         return businessId;
     }
 
+    public String getName() {
+
+        return fullName;
+    }
+
     public void loadEmployeeInformation() {
         BufferedReader br;
         try {
@@ -90,8 +95,23 @@ public class Employee {
 
         }
         if(!empID.equals("all")){
-        System.out.println("employee ID invalid");}
+            System.out.println("employee ID invalid");}
         return false;
+
+    }
+    public String getEmployeeName(String bId, String empID) {
+
+        loadEmployeeInformation();
+
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (empID.equals(employeeList.get(i).geteId())) {
+                if (bId.equals(employeeList.get(i).getbId())) {
+                    return employeeList.get(i).getName();
+                }
+            }
+
+        }
+        return null;
 
     }
 

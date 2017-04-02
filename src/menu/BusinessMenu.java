@@ -34,7 +34,7 @@ public class BusinessMenu {
         String endtime;
         String day;
         String empID;
-
+        String name;
 
 
         //infinite loop
@@ -65,7 +65,7 @@ public class BusinessMenu {
                     driver.addEmployee(bId);
                     continue;
 
-                //Add/Remote/Edit working days/times of Employee
+                    //Add/Remote/Edit working days/times of Employee
                 case 2:
                 case 3:
                     boolean valid = true;
@@ -109,17 +109,18 @@ public class BusinessMenu {
                     }
                     continue;
 
-                //Show Employee availibility
+                    //Show Employee availibility
                 case 4:
                     reader = new Scanner(System.in);
                     do{
                         System.out.println("Enter employee ID or 'all':");
                         empID = reader.nextLine();
                     }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));
+
                     av.printFile(bId,empID);
                     continue;
 
-                //Add services
+                    //Add services
                 case 5:
                     System.out.println("--------- New Service---------");
                     addNewService();
@@ -128,7 +129,7 @@ public class BusinessMenu {
                 case 6:
                     continue;
 
-                //Adjust business hours
+                    //Adjust business hours
                 case 7:
                     reader = new Scanner(System.in);
                     System.out.println("\n+----------------------------------+");
@@ -172,7 +173,7 @@ public class BusinessMenu {
                     }
                     else{continue;}
 
-                //Exit system
+                    //Exit system
                 default:
                     System.out.println("Logging out!");
                     System.exit(0);
@@ -269,15 +270,9 @@ public class BusinessMenu {
 
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
-
         if( !timeCheck (starttime, endtime)){
-
-            if( w.readWork(bId,day,starttime,endtime)){
-                return true;}
-
-            if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){
-                return true;}//check against current shifts on this day
-
+            if( w.readWork(bId,day,starttime,endtime)){return true;}
+            if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
             if( av.checkFile(bId,empId,day,starttime,endtime)){return true;}//check against current availability
             System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
             driver.addWorkdays(bId,empId,day,starttime,endtime);
@@ -288,7 +283,7 @@ public class BusinessMenu {
 
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
-            System.out.println("The new working hours of " + day + ":  "+starttime+" - " + endtime);
+            System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
             w.readFile(bId, day, starttime, endtime);
             return false;
         }
