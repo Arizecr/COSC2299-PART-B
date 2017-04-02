@@ -127,7 +127,6 @@ public class BusinessMenu {
 
                     //Add services
                 case 5:
-                    System.out.println("--------- New Service---------");
                     addNewService();
 
 
@@ -223,7 +222,24 @@ public class BusinessMenu {
             } */
         }
     }
-    public void addNewService(){}
+    public void addNewService(){
+        System.out.println("\n+----------------------------------+");
+        System.out.println("|        Current Services          |");
+        System.out.println("|              Available           |");
+        System.out.println("+----------------------------------+");
+
+        //hardcoded now- change later
+        //for the future: grab from textfile
+        System.out.println("(FM01) Female haircut - $60");
+        System.out.println("(BS02) Bleaching hair - $100");
+
+        System.out.println("\n====================================");
+        System.out.println("1. Add/Change Business Hours");
+        System.out.println("2. Remove Business Hours");
+        System.out.println("OR Any key to return to business menu");
+        System.out.println("======================================\n");
+
+    }
 
     public boolean checkD(String day){
         return checkDay(day);
