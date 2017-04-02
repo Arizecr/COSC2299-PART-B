@@ -320,11 +320,11 @@ public class Driver {
                     Date Cet = time.parse(end);
 
                     // This makes sure scheduled employee shift is within operating hours of business
-                    if ((Nst.after(Cst)||Nst.equals(Cst))) {
+                    if (((Nst.after(Cst)&&Nst.before(Cet))||Nst.equals(Cst))) {
                         System.out.println("employee has shift during this time");
                         return true;
 
-                    } else if (Net.before(Cet)||Net.equals(Cet)) {
+                    } else if ((Net.before(Cet)&&Net.after(Cst))||Net.equals(Cet)) {
                         System.out.println("employee has shift during this time");
                         return true;
                     }
