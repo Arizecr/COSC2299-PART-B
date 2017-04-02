@@ -130,11 +130,11 @@ public class Workday
 
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (et.after(Bet)) {
-                            System.out.println("Can't end after closed");
+                            System.out.println("Error: this shift is not within the operating hours of the business");
                             return true;
 
                         } else if (st.before(Bst)) {
-                            System.out.println("Can't Start before open");
+                            System.out.println("Error: this shift is not within the operating hours of the business");
                             return true;
                         }
                     } catch (ParseException e) {

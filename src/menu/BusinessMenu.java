@@ -79,23 +79,24 @@ public class BusinessMenu {
 
                         reader = new Scanner(System.in);
                         do{
-                            System.out.println("Enter employee ID:");
+                            System.out.print("\nEnter employee ID: ");
                             empID = reader.nextLine();
                         }while(!emp.checkEmployeeID(bId,empID)); //check validity of employee id
 
                         do {
-                            System.out.println("Enter Day:");
+                            System.out.print("Enter Day: ");
                             day = reader.nextLine().toLowerCase();
                         }while(checkDay(day));
 
                         //add/edit employee shifts
                         if(choice == 2) {
+
                             do {
-                                System.out.println("Enter shift start time (hour:min):");
+                                System.out.print("Enter shift start time (hour:min): ");
                                 starttime = reader.nextLine();
                             }while(checktime(starttime)); //check validity of start time
                             do {
-                                System.out.println("Enter shift end time (hour:min):");
+                                System.out.print("Enter shift end time (hour:min): ");
                                 endtime = reader.nextLine();
                             }while(checktime(endtime)); //check validity of end time
                             //check validity of shift time
@@ -260,10 +261,10 @@ public class BusinessMenu {
             Date et = time.parse(endtime);
             // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
             if(!et.after(st)){
-                System.out.println("Can't Start after its ended");
+                System.out.println("Can't start after its ended");
                 return true;
             }else if(st.equals(et)){
-                System.out.println("Can't Start and end at same time");
+                System.out.println("Can't start and end at same time");
                 return true;
             }
         }catch(ParseException e){

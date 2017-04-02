@@ -31,7 +31,13 @@ public class AvailableDay {
     public AvailableDay(){};
 
     Employee e = new Employee();
+    //list for worker availability
     public static ArrayList<String> availability = new ArrayList<>();
+
+
+    /*
+     * Load list for worker availability
+     */
     public void loadInfo(){
         availability = new ArrayList<>();
 
@@ -62,6 +68,9 @@ public class AvailableDay {
 
     }
 
+    /*
+     * Print worker availability
+     */
     public void printFile(String bId,String eId){
         loadInfo();
         String bID= "" ;
@@ -90,6 +99,9 @@ public class AvailableDay {
 
     }
 
+    /*
+     *
+     */
     public boolean checkFile(String b,String emp, String d,String st,String en)
     {
         loadInfo();
@@ -119,11 +131,11 @@ public class AvailableDay {
 
                     // This makes sure scheduled employee shift is within operating availability of business
                     if (ed.after(Aed)) {
-                        System.out.println("Employee unavailable");
+                        System.out.println("Error: this shift is not within the operating hours of the business");
                         count++;
 
                     } else if (sd.before(Asd)) {
-                        System.out.println("Employee unavailable");
+                        System.out.println("Error: this shift is not within the operating hours of the business");
                         count++;
 
                     }
@@ -135,7 +147,11 @@ public class AvailableDay {
             }
 
         }
-        if(inFile==0){System.out.println("Employee unavailable");return true;};
+        if(inFile==0){
+            System.out.println("Error: This employee is unavailable on this day & time");
+            return true;
+        };
+
         if(count>0){return true;}
         return false;
     }
