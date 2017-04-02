@@ -36,7 +36,7 @@ public class BusinessMenu {
         Scanner r = new Scanner(System.in);
         String starttime;
         String endtime;
-        String day;
+        String day;//day = day.substring(0,1).toUpperCase() + day.substring(1);
         String empID;
         String name;
 
