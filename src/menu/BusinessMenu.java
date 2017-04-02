@@ -133,13 +133,13 @@ public class BusinessMenu {
                 case 7:
                     reader = new Scanner(System.in);
                     System.out.println("\n+----------------------------------+");
-                    System.out.println("|           Business               |");
-                    System.out.println("|              Hours                |");
-                    System.out.println("+----------------------------------+\n");
+                    System.out.println("|        Current Business          |");
+                    System.out.println("|              Hours               |");
+                    System.out.println("+----------------------------------+");
                     w.printFile(bId);
                     System.out.println("+----------------------------------+\n");
-                    System.out.println("\n 1. Add/Change Business Hours");
-                    System.out.println("\n 2. Remove Business Hours");
+                    System.out.println("1. Add/Change Business Hours");
+                    System.out.println("2. Remove Business Hours");
                     System.out.println("OR Any key to return to business menu");
                     System.out.println("+----------------------------------+\n");
                     String nextChoice;
