@@ -71,7 +71,7 @@ public class AvailableDay {
 
         for(int i=0; i < availability.size() ;i++){
 
-            String Details[] = availability.get(i).split(" ",5);
+            String Details[] = availability.get(i).split(",",6);
             bID = Details[0];
             eID = Details[1];
             day = Details[2];
