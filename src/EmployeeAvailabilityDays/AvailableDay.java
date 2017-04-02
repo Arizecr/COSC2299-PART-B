@@ -105,7 +105,7 @@ public class AvailableDay {
             String Details[] = availability.get(i).split(" ",5);
             bID = Details[0];
             empid = Details[1];
-            day = Details[2];
+            day = Details[2].toLowerCase();
             start = Details[3];
             end = Details[4];
             if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){

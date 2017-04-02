@@ -279,7 +279,7 @@ public class Driver {
             // printing out each line in the file
             String Details[] = hours.get(i).split(" ", 5);
             String bId = Details[0];
-            String day = Details[2];
+            String day = Details[2].toLowerCase();
 
             if (!(b.equals(bId)&&d.equals(day))) {
 
@@ -307,7 +307,7 @@ public class Driver {
             String Details[] = hours.get(i).split(" ", 5);
             String bId = Details[0];
             String empID = Details[1];
-            String day = Details[2];
+            String day = Details[2].toLowerCase();
             String start = Details[3];
             String end = Details[4];
             if (b.equals(bId) && d.equals(day) && emp.equals(empID)) {
@@ -355,7 +355,7 @@ public class Driver {
             String Details[] = hours.get(i).split(" ",5);
 
             String e = Details[1];
-            String day = Details[2];
+            String day = Details[2].toLowerCase();
             String start = Details[3];
             String end = Details[4];
 

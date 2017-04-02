@@ -270,6 +270,7 @@ public class BusinessMenu {
 
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
+        day = day.toLowerCase();
         if( !timeCheck (starttime, endtime)){
             if( av.checkFile(bId,empId,day,starttime,endtime)){return true;}//check against current availability
             if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
