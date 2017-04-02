@@ -49,9 +49,9 @@ public class BusinessMenu {
             System.out.println("1. Add Employee");
             System.out.println("2. Add working days/times for Employee");
             System.out.println("3. Remove/edit working days/times for Employee");
-            System.out.println("4. View summaries of bookings (including new bookings)");
+            System.out.println("4. Show worker availability");
             System.out.println("5. Add new service");
-            System.out.println("6. Show worker availability");
+            System.out.println("6. View summaries of bookings (including new bookings)");
             System.out.println("7. Add Employee availability");
             System.out.println("8. View/Adjust business hours");
             System.out.println("9. Log out");
@@ -59,6 +59,7 @@ public class BusinessMenu {
             System.out.print("Enter choice: ");
             int choice = reader.nextInt();
 
+            //run choice of business owner
             switch(choice){
 
                 //add Employee
@@ -71,30 +72,36 @@ public class BusinessMenu {
                 case 3:
                     boolean valid = true;
 
+                    //infinite loop for validility
                     while(valid){
 
                         reader = new Scanner(System.in);
                         do{
                             System.out.println("Enter employee ID:");
                             empID = reader.nextLine();
-                        }while(!emp.checkEmployeeID(bId,empID));
+                        }while(!emp.checkEmployeeID(bId,empID)); //check validity of employee id
 
                         do {
                             System.out.println("Enter Day:");
                             day = reader.nextLine().toLowerCase();
                         }while(checkDay(day));
 
+                        //add/edit employee shifts
                         if(choice == 2) {
                             do {
-                                System.out.println("Enter shift start time:");
+                                System.out.println("Enter shift start time (hour:min):");
                                 starttime = reader.nextLine();
-                            }while(checktime(starttime));
+                            }while(checktime(starttime)); //check validity of start time
                             do {
-                                System.out.println("Enter shift end time:");
+                                System.out.println("Enter shift end time (hour:min):");
                                 endtime = reader.nextLine();
-                            }while(checktime(endtime));
+                            }while(checktime(endtime)); //check validity of end time
+                            //check validity of shift time
                             valid = Worktimes(bId, empID, day, starttime, endtime);
+
                         }
+
+                        //remove employee shifts
                         if(choice==3){
                             valid = false;
                             driver.deleteEmployeeWorktimes(bId,empID,day);
@@ -111,8 +118,6 @@ public class BusinessMenu {
                         System.out.println("Enter employee ID or 'all':");
                         empID = reader.nextLine();
                     }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));
-//                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the chosen employee
-                    //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
                     av.printFile(bId,empID);
                     continue;
 
