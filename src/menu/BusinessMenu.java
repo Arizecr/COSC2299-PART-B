@@ -30,7 +30,6 @@ public class BusinessMenu {
         Scanner reader = new Scanner(System.in);
         Scanner read = new Scanner(System.in);
         Scanner r = new Scanner(System.in);
-        Scanner eID = new Scanner(System.in);
         String starttime;
         String endtime;
         String day;
@@ -218,7 +217,10 @@ public class BusinessMenu {
     }
     public void addNewService(){}
 
-    public boolean checkD(String day){return checkDay(day);}
+    public boolean checkD(String day){
+        return checkDay(day);
+    }
+
     private boolean checkDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");
