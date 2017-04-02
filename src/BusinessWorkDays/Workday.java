@@ -166,6 +166,7 @@ public class Workday
                     day = Details[1];
                     starttime = Details[2];
                     endtime = Details[3];
+                    day = day.substring(0,1).toUpperCase() + day.substring(1);
                     if(realbId.equals(bId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
                 }
                 //prints error

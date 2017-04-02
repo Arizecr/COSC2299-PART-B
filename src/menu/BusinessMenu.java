@@ -170,6 +170,7 @@ public class BusinessMenu {
                             }
                             if(nextChoice.equals( "2")){ //choose to remove business hours
                                 w.removeDayFromFile(bId,day);
+                                day = day.substring(0,1).toUpperCase() + day.substring(1);
                                 System.out.print("Business Hours for "+ day + " removed");
                                 valid = false;
                             }
@@ -284,6 +285,7 @@ public class BusinessMenu {
 
             String name = emp.getEmployeeName(bId,empId);
             System.out.println("Employee: "+ name);
+            day = day.substring(0,1).toUpperCase() + day.substring(1);
             System.out.println("Added the working time of: " + day + ":  "+starttime+" - " + endtime);
             driver.addWorkdays(bId,empId,day,starttime,endtime);
             return false;
@@ -293,6 +295,7 @@ public class BusinessMenu {
 
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
+            day = day.substring(0,1).toUpperCase() + day.substring(1);
             System.out.println("The working hours of: " + day + ":  "+starttime+" - " + endtime);
             w.readFile(bId, day, starttime, endtime);
             return false;
@@ -304,9 +307,10 @@ public class BusinessMenu {
 
     private boolean ATimes(String empid, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
-            System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
             String combine = empid+" "+day + " "+starttime + " "+ endtime;
             filewriter.WriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
+            day = day.substring(0,1).toUpperCase() + day.substring(1).toLowerCase();
+            System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
             return false;
         }
         return true;
