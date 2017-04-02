@@ -51,8 +51,8 @@ public class BusinessMenu {
             System.out.println("3. Remove/edit working days/times for Employee");
             System.out.println("4. View summaries of bookings (including new bookings)");
             System.out.println("6. Show worker availability");
-            System.out.println("7. Add new availability");
-            System.out.println("8. View business hours");
+            System.out.println("7. Add Employee working time/days");
+            System.out.println("8. View/Adjust business hours");
             System.out.println("9. Log out");
 
             System.out.print("Enter choice: ");
