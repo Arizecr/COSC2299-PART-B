@@ -42,9 +42,9 @@ public class WorkingTimesTesting {
     }
     @Test
     public void correctWorkingTimesPM() {
-        day = "friday";
-        firsttime = "17:00";
-        endtime = "18:00";
+        day = "monday";
+        firsttime = "15:00";
+        endtime = "16:00";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
