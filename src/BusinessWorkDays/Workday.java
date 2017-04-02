@@ -138,7 +138,7 @@ public class Workday
                             return true;
                         }
                     } catch (ParseException e) {
-                        System.out.println("Invalid Time");
+                        System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
                         return true;
                     }
                 }
