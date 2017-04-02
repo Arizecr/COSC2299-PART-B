@@ -271,9 +271,11 @@ public class BusinessMenu {
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         if( !timeCheck (starttime, endtime)){
-            if( w.readWork(bId,day,starttime,endtime)){return true;}
-            if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
             if( av.checkFile(bId,empId,day,starttime,endtime)){return true;}//check against current availability
+            if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
+            if( w.readWork(bId,day,starttime,endtime)){return true;}
+
+
             String name = emp.getEmployeeName(bId,empId);
             System.out.println("Employee: "+ name);
             System.out.println("Added the working time of: " + day + ":  "+starttime+" - " + endtime);

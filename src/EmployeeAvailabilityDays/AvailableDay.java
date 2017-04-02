@@ -99,6 +99,7 @@ public class AvailableDay {
         String start ="";
         String end="";
         int count = 0;
+        int inFile = 0;
         for(int i=0; i < availability.size() ;i++){
 
             String Details[] = availability.get(i).split(" ",5);
@@ -109,7 +110,7 @@ public class AvailableDay {
             end = Details[4];
             if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){
                 DateFormat time = new SimpleDateFormat("HH:mm");
-
+                inFile++;
                 try {
                     Date sd = time.parse(st);
                     Date ed = time.parse(en);
@@ -126,7 +127,7 @@ public class AvailableDay {
                         count++;
 
                     }
-                    else {return false;}
+                 //   else {return false;}
                 } catch (ParseException e) {
                     System.out.println("Invalid Time");
                     count ++;
@@ -134,6 +135,7 @@ public class AvailableDay {
             }
 
         }
+        if(inFile==0){System.out.println("Employee unavailable");return true;};
         if(count>0){return true;}
         return false;
     }

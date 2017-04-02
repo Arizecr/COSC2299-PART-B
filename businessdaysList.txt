@@ -4,4 +4,4 @@ b1 saturday 8:00 17:00
 b1 thursday 9:00 17:00
 b1 friday 9:00 17:00
 b1 sunday 9:00 17:00
-b1 monday 2:00 17:00
+b1 monday 1:00 17:00
