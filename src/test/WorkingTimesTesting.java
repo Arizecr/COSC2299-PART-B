@@ -1,7 +1,9 @@
 package test;
 
 import coreFunctions.Driver;
+import coreFunctions.WriteToFile;
 import menu.BusinessMenu;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -10,7 +12,6 @@ import java.util.Calendar;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 
 /**
  * Created by yesmi on Monday.
@@ -24,6 +25,11 @@ public class WorkingTimesTesting {
     boolean verify;
     String bId = "b1";
     String empId ="e1";
+    @BeforeClass
+    public static void loadUsers(){
+        WriteToFile w = new WriteToFile();
+        w.reWriteToWorkingdayTXT("", "workdaysList.txt");
+    }
 
 
     @Test
@@ -36,9 +42,9 @@ public class WorkingTimesTesting {
     }
     @Test
     public void correctWorkingTimesPM() {
-        day = "monday";
-        firsttime = "13:00";
-        endtime = "19:00";
+        day = "friday";
+        firsttime = "17:00";
+        endtime = "18:00";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
