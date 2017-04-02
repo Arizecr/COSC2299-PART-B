@@ -274,7 +274,9 @@ public class BusinessMenu {
             if( w.readWork(bId,day,starttime,endtime)){return true;}
             if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
             if( av.checkFile(bId,empId,day,starttime,endtime)){return true;}//check against current availability
-            System.out.println("The working time of: " + day + ":  "+starttime+" - " + endtime);
+            String name = emp.getEmployeeName(bId,empId);
+            System.out.println("Employee: "+ name);
+            System.out.println("Added the working time of: " + day + ":  "+starttime+" - " + endtime);
             driver.addWorkdays(bId,empId,day,starttime,endtime);
             return false;
         }
