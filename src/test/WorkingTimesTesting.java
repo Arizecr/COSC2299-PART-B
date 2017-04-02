@@ -41,7 +41,7 @@ public class WorkingTimesTesting {
 
     }
     @Test
-    public void correctWorkingTimesPM() {
+    public void correctWorkingTimesPMOnSameDay() {
         day = "monday";
         firsttime = "15:00";
         endtime = "16:00";
