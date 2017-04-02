@@ -304,7 +304,7 @@ public class Driver {
         for (int i = 0; i < hours.size(); i++) {
 
             // printing out each line in the file
-            String Details[] = hours.get(i).split(" ", 5);
+            String Details[] = hours.get(i).split(",", 6);
             String bId = Details[0];
             String empID = Details[1];
             String day = Details[2];
@@ -352,7 +352,7 @@ public class Driver {
         for(int i=0; i < hours.size() ;i++) {
 
             // printing out each line in the file
-            String Details[] = hours.get(i).split(" ",5);
+            String Details[] = hours.get(i).split(",",6);
 
             String e = Details[1];
             String day = Details[2];

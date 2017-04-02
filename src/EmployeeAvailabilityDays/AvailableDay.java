@@ -64,20 +64,22 @@ public class AvailableDay {
         loadInfo();
         String bID= "" ;
         String eID= "" ;
+        String name= "" ;
         String day ="" ;
         String starttime ="";
         String endtime="";
 
         for(int i=0; i < availability.size() ;i++){
 
-            String Details[] = availability.get(i).split(" ",5);
+            String Details[] = availability.get(i).split(",",6);
             bID = Details[0];
             eID = Details[1];
             day = Details[2];
             starttime = Details[3];
             endtime = Details[4];
-            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
-            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+day+" " + starttime +" to  "+ endtime );}
+            name = Details[5];
+            if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
+            if((bID.equals(bId)&&eId.equals("all"))){System.out.println(eID +" "+name+" "+day+" " + starttime +" to "+ endtime );}
            // if(eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
           //  if(eId.equals("all")){System.out.println(eID +" "+day+" " + starttime +" to "+ endtime );}
         }
