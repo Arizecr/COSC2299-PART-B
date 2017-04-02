@@ -26,6 +26,10 @@ public class BusinessMenu {
     Employee emp = new Employee();
 
 
+    /*
+     * Print business menu and allows business owner to choose
+     * a business function
+     */
     public void printMenu(String bId){
         Scanner reader = new Scanner(System.in);
         Scanner read = new Scanner(System.in);
@@ -136,7 +140,7 @@ public class BusinessMenu {
                     System.out.println("|        Current Business          |");
                     System.out.println("|              Hours               |");
                     System.out.println("+----------------------------------+");
-                    w.printFile(bId);
+                    w.printFile(bId); //display current business hours
                     System.out.println("+----------------------------------+\n");
                     System.out.println("1. Add/Change Business Hours");
                     System.out.println("2. Remove Business Hours");
@@ -145,6 +149,7 @@ public class BusinessMenu {
                     String nextChoice;
                     nextChoice = r.nextLine();
 
+                    //user inputs choice
                     if(nextChoice.equals( "1")||nextChoice.equals("2")) {
                         valid = true;
                         while (valid) {
@@ -152,7 +157,7 @@ public class BusinessMenu {
                                 System.out.println("Enter Day:");
                                 day = read.nextLine().toLowerCase();
                             } while (checkDay(day));
-                            if(nextChoice.equals( "1")) {
+                            if(nextChoice.equals( "1")) { //choose to add/change business hours
                                 do {
                                     System.out.print("Enter opening time:");
                                     starttime = reader.nextLine();
@@ -163,7 +168,7 @@ public class BusinessMenu {
                                 } while (checktime(endtime));
                                 valid = BHours(bId, day, starttime, endtime);
                             }
-                            if(nextChoice.equals( "2")){
+                            if(nextChoice.equals( "2")){ //choose to remove business hours
                                 w.removeDayFromFile(bId,day);
                                 System.out.print("Business Hours for "+ day + " removed");
                                 valid = false;
