@@ -338,28 +338,32 @@ public class Driver {
         return false;
     }
 
-    public void printEmployeeWorktimes(String bId){
+    public void printEmployeeWorktimes(String bId, String employeeID){
         Employee emp = new Employee();
         Scanner eID = new Scanner(System.in);
-        String empID;
-        do{
-            System.out.print("Enter employee ID:");
-            empID = eID.nextLine();
-        }while(!emp.checkEmployeeID(bId,empID));
+        String empID = employeeID;
+
         loadInfo();
-        System.out.println("--------------CURRENT SHIFTS-------------");
-        int count = 0;
+        System.out.println("-----------------------------------------");
+        System.out.println("The current days this employee is working:");
         for(int i=0; i < hours.size() ;i++) {
 
             // printing out each line in the file
             String Details[] = hours.get(i).split(" ",5);
 
-            String e = Details[1];
+
+            String e = Details[0];
             String day = Details[2].toLowerCase();
             String start = Details[3];
             String end = Details[4];
 
-            if(empID.equals(e)){System.out.println(day + " " +start+ " -" + end);}
+            //change day to uppercase
+            day = day.substring(0,1).toUpperCase() + day.substring(1).toLowerCase();
+
+
+            if(bId.equals(e)){
+                System.out.println(day + " " +start+ " - " + end);
+            }
 
 
         }

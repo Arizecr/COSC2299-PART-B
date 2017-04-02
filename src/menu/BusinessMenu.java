@@ -83,6 +83,8 @@ public class BusinessMenu {
                             empID = reader.nextLine();
                         }while(!emp.checkEmployeeID(bId,empID)); //check validity of employee id
 
+                        driver.printEmployeeWorktimes(bId, empID);
+
                         do {
                             System.out.print("Enter Day: ");
                             day = reader.nextLine().toLowerCase();
