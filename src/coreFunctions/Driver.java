@@ -342,10 +342,10 @@ public class Driver {
         Employee emp = new Employee();
         Scanner eID = new Scanner(System.in);
         String empID = employeeID;
-
+        String name = emp.getEmployeeName(bId,empID);
         loadInfo();
         System.out.println("-----------------------------------------");
-        System.out.println("The current days this employee is working:");
+        System.out.println("The current times "+name+" is working:");
         for(int i=0; i < hours.size() ;i++) {
 
             // printing out each line in the file
