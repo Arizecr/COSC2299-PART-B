@@ -59,11 +59,17 @@ public class BusinessMenu {
             System.out.print("Enter choice: ");
             int choice = reader.nextInt();
 
+            //Add employee
             if(choice == 1){
                 driver.addEmployee(bId);
                 continue;
             }
+
+
+
             reader = new Scanner(System.in);
+
+            // Add/remove/Edit working times for Employee
             if(choice == 2||choice ==3){
                 boolean valid = true;
 
@@ -99,6 +105,27 @@ public class BusinessMenu {
                 }
                 continue;
             }
+
+            //Add services
+            if(choice == 5){
+                System.out.println("--------- New Service---------");
+                addNewService();
+                continue;
+            }
+
+            //show employee availibility
+            if(choice ==6){
+                do{
+                    System.out.println("Enter employee ID or 'all':");
+                    empID = reader.nextLine();
+                }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));
+//                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the chosen employee
+                //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
+                av.printFile(bId,empID);
+                continue;
+            }
+
+            //View/Adjust business hours
             else if(choice == 8){
                 System.out.println("\n+----------------------------------+");
                 System.out.println("|           Business               |");
@@ -141,22 +168,8 @@ public class BusinessMenu {
                 }
                 else{continue;}
             }
-            if(choice == 10){
-                System.out.println("--------- New Service---------");
-                addNewService();
-                continue;
-            }
 
-            if(choice ==6){
-                do{
-                    System.out.println("Enter employee ID or 'all':");
-                    empID = reader.nextLine();
-                }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));
-//                driver.printEmployeeWorktimes(bId);//this shows the current shifts of the chosen employee
-                //SHOULD DISPLAY ALL AVAILABLE WORKING TIMES OF EMPLOYEE that are not already that employees shifts
-                av.printFile(bId,empID);
-                continue;
-            }
+
             if(choice == 7){
                 boolean valid = true;
                 while(valid) {
@@ -169,11 +182,11 @@ public class BusinessMenu {
                         day = reader.nextLine();
                     } while (checkDay(day));
                     do {
-                        System.out.println("Enter start time: ");
+                        System.out.println("Enter start time (hour:minute): ");
                         starttime = reader.nextLine();
                     } while (checktime(starttime));
                     do {
-                        System.out.println("Enter end time: ");
+                        System.out.println("Enter end time (hour:minute): ");
                         endtime = reader.nextLine();
                     } while (checktime(endtime));
                     valid = ATimes(empID, day, starttime, endtime);
