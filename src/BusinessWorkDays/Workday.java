@@ -62,7 +62,7 @@ public class Workday
                     // printing out each line in the file
                     String Details[] = x.split(" ",4);
                     bId = Details[0];
-                    day = Details[1];
+                    day = Details[1].toLowerCase();
                     starttime = Details[2];
                     endtime = Details[3];
                     Workday n = new Workday(bId,day,starttime,endtime);
@@ -144,6 +144,7 @@ public class Workday
                 }
             }
         }
+
         if(count==0){System.out.println("Not Open on " + d);return true;}
         return false;
     }

@@ -28,35 +28,24 @@ public class WorkingTimesTesting {
 
     @Test
     public void correctWorkingTimesAM() {
-
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE,13);
-        DateFormat date = new SimpleDateFormat("EEEE");
-        day = date.format(c.getTime());
-        firsttime = "00:00";
+        firsttime = "02:00";
         endtime = "03:30";
-        verify = b.Workt(bId,empId, day, firsttime,endtime);
+        verify = b.Workt(bId,empId, "monday", firsttime,endtime);
         assertFalse(verify);
 
     }
     @Test
     public void correctWorkingTimesPM() {
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE,121);
-        DateFormat date = new SimpleDateFormat("EEEE");
-        day = date.format(c.getTime());
+        day = "monday";
         firsttime = "13:00";
-        endtime = "19:30";
+        endtime = "19:00";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
         assertFalse(verify);
 
     }
     @Test
     public void correctWorkingTimesMidday() {
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE,1);
-        DateFormat date = new SimpleDateFormat("EEEE");
-        day = date.format(c.getTime());
+        day ="tuesday";
         firsttime = "10:00";
         endtime = "12:30";
         verify = b.Workt(bId,empId, day, firsttime,endtime);
