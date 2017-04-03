@@ -44,22 +44,16 @@ public class AvailableDay {
         BufferedReader br;
         try {
 
-
             br = new BufferedReader(new FileReader("employeeAvailabilityList.txt"));
-
             try {
                 String x;
-
                 while ( (x = br.readLine()) != null ) {
                     availability.add(x);
-
                 }
                 //prints error
             } catch (IOException error) {
                 error.printStackTrace();
             }
-
-
             //file cannot be found
         } catch (FileNotFoundException error) {
             System.out.println(error);

@@ -45,7 +45,7 @@ public class WriteToFile {
         }
 
     }
-
+    //overwrites the current textfile
     public void reWriteToWorkingdayTXT(String chosenwork, String txtname){
 
 
