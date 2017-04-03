@@ -122,12 +122,13 @@ public class BusinessMenu {
                     do{
                         System.out.println("Enter employee ID or 'all':");
                         empID = reader.nextLine();
-                    }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));
+                    }while(!emp.checkEmployeeID(bId,empID)&&!empID.equals("all"));//check valid employee ID
 
+                    //print the employee availability
                     av.printFile(bId,empID);
                     continue;
 
-                    //Add services
+                    //Add services - not yet implemented
                 case 5:
                     addNewService();
 
@@ -235,6 +236,7 @@ public class BusinessMenu {
         //not needed until PART 2
         System.out.println("(FM01) Female haircut - $60");
         System.out.println("(BS02) Bleaching hair - $100");
+        //name of services and duration of services
 
         System.out.println("\n====================================");
         System.out.println("1. Add/Change Business Hours");
@@ -244,10 +246,10 @@ public class BusinessMenu {
 
     }
 
+
     public boolean checkD(String day){
         return checkDay(day);
     }
-
     private boolean checkDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");

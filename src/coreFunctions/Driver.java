@@ -139,18 +139,15 @@ public class Driver {
         return "e"+count;
     }
 
-
+    //adds the dates into workdaysList.txt
     public void addWorkdays(String bId, String empId, String day, String startTime, String endTime){
-        /*
-        Still needs to create a date class for now
-        All it does is currently write to txt file to save the work dates.
-         */
+
         String combinedData = bId+" "+empId + " " +day + " "+startTime + " "+ endTime;
         File file = new File("workdaysList.txt");
-        if(file.length()==0)
+        if(file.length()==0)// if file is empty data added to firt line
         {
             filewriter.reWriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
-        else{
+        else{// if not empty adds data to the nextline
             filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
     }
 
@@ -177,27 +174,21 @@ public class Driver {
         }
         return false;
     }
-
+    //reads textfile
     public void loadInfo(){
         hours = new ArrayList<>();
         BufferedReader br;
         try {
-
-
             br = new BufferedReader(new FileReader("workdaysList.txt"));
-
             try {
                 String x;
-
                 while ( (x = br.readLine()) != null ) {
                     hours.add(x);
-
                 }
                 //prints error
             } catch (IOException error) {
                 error.printStackTrace();
             }
-
 
             //file cannot be found
         } catch (FileNotFoundException error) {
@@ -206,6 +197,7 @@ public class Driver {
         }
 
     }
+    //new employee worktimes written to file
     public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
         loadInfo();
         int count = 1;
@@ -270,7 +262,7 @@ public class Driver {
     }
 
 
-
+    //remove all booking on this day
     public void removeWorktimes(String b,String d) {
         loadInfo();
         int count = 1;
@@ -298,6 +290,7 @@ public class Driver {
             }
         }
     }
+    //check if there is a shift already during this time
     public boolean checkWorktimes(String b, String emp, String d, String s , String e) {
         loadInfo();
         int count = 1;

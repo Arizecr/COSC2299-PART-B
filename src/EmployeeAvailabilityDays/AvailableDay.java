@@ -91,17 +91,14 @@ public class AvailableDay {
             name = e.getEmployeeName(bId,eID);
             if(bID.equals(bId)&&eID.equals(eId)){System.out.println(day+" " + starttime +" to  "+ endtime );}
             if((bID.equals(bId)&&eId.equals("all"))){System.out.println(name+" ("+ eID +"): "+day+" " + starttime +" to  "+ endtime );}
-            // if(eID.equals(eId)){System.out.println(day+" " + starttime +" to "+ endtime );}
-            //  if(eId.equals("all")){System.out.println(eID +" "+day+" " + starttime +" to "+ endtime );}
+
         }
-
-
-
     }
 
     /*
      *
      */
+    //check valid and not already existing
     public boolean checkFile(String b,String emp, String d,String st,String en)
     {
         loadInfo();
@@ -150,12 +147,12 @@ public class AvailableDay {
         if(inFile==0){
             System.out.println("Error: This employee is unavailable on this day & time");
             return true;
-        };
+        }
 
-        if(count>0){return true;}
+        if(count>0){return true;}//invalid availability exists
         return false;
     }
-
+    //rewrites all the new information to the textfile
     public void rewriteToFile(ArrayList availability){
         if(availability.size()>=0){write.reWriteToWorkingdayTXT(availability.get(0).toString(), "employeeAvailabilityList.txt");}
         for(int i=1; i < availability.size() ;i++){
