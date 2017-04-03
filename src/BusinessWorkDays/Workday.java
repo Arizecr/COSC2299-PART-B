@@ -78,8 +78,9 @@ public class Workday
             e.printStackTrace();
         }
     }
+
     public void readFile(String b,String d,String s,String end){
-        Details();
+        Details();    //read the business hours from file
         int num = 0;
         Workday n = new Workday(b,d,s,end);
         for(int i=0; i < workhours.size() ;i++){
@@ -87,12 +88,11 @@ public class Workday
                 if(d.equals(workhours.get(i).workD())){
                     num ++;
                     workhours.set(i, n);
-
-
                 }
             }
         }
         if (num>0){
+            //this removes the employee worktimes outside the business hours
             drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
         }
         else{ workhours.add(n);}

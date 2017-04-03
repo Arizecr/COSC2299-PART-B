@@ -69,7 +69,7 @@ public class BusinessMenu {
                     driver.addEmployee(bId);
                     continue;
 
-                    //Add/Remote/Edit working days/times of Employee
+                    //Add/Remove/Edit working days/times of Employee
                 case 2:
                 case 3:
                     boolean valid = true;
@@ -232,6 +232,7 @@ public class BusinessMenu {
 
         //hardcoded now- change later
         //for the future: grab from textfile
+        //not needed until PART 2
         System.out.println("(FM01) Female haircut - $60");
         System.out.println("(BS02) Bleaching hair - $100");
 
@@ -293,25 +294,26 @@ public class BusinessMenu {
     }
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
 
+    //check the time is valid given the constraints
     private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         day = day.toLowerCase();
         if( !timeCheck (starttime, endtime)){
             if( av.checkFile(bId,empId,day,starttime,endtime)){return true;}//check against current availability
             if( driver.checkWorktimes(bId,empId,day,starttime,endtime)){return true;}//check against current shifts on this day
-            if( w.readWork(bId,day,starttime,endtime)){return true;}
+            if( w.readWork(bId,day,starttime,endtime)){return true;}//checks based on business hours set
 
 
             String name = emp.getEmployeeName(bId,empId);
             System.out.println("Employee: "+ name);
             day = day.substring(0,1).toUpperCase() + day.substring(1);
             System.out.println("Added the working time of: " + day + ":  "+starttime+" - " + endtime);
-            driver.addWorkdays(bId,empId,day,starttime,endtime);
+            driver.addWorkdays(bId,empId,day,starttime,endtime);//adds the new employee shift into workdaysList.txt
             return false;
         }
         return true;
     }
-
+    //checks the business hours are valid and in the correct format
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
             day = day.substring(0,1).toUpperCase() + day.substring(1);
