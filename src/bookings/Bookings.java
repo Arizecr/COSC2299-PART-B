@@ -1,9 +1,9 @@
-package model;
+package bookings;
 
 /**
  * Created by xemorth on 4/04/2017.
  */
-public class Bookings {
+public abstract class Bookings {
 
     private String dayBooked;
     private String customer;

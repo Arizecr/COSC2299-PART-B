@@ -1,6 +1,8 @@
 package coreFunctions;
 
-import model.Bookings;
+import bookings.Bookings;
+import bookings.CurrentBookings;
+import bookings.PastBookings;
 import user.Employee;
 
 import java.io.*;
@@ -18,8 +20,9 @@ public class Driver {
     WriteToFile filewriter = new WriteToFile();
     public static ArrayList<String> hours = new ArrayList<>();
     public static ArrayList<Bookings> currentBookings = new ArrayList<>();
+    public static ArrayList<Bookings> pastBookings = new ArrayList<>();
 
-    public void loadBookingInformation() {
+    public void loadCurrentBookings() {
         BufferedReader br;
         try {
 
@@ -35,8 +38,42 @@ public class Driver {
                     String customer = Details[1];
                     String time = Details[2];
                     String service = Details[3];
-                    Bookings bookingInfo = new Bookings(day, customer, time, service);
+                    CurrentBookings bookingInfo = new CurrentBookings(day, customer, time, service);
                     currentBookings.add(bookingInfo);
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+    }
+
+    public void loadPastBookings() {
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("pastBookings.txt"));
+
+            try {
+                String x;
+                while ((x = br.readLine()) != null) {
+                    // printing out each line in the file
+                    String Details[] = x.split(",", 5);
+                    String day = Details[0];
+                    String customer = Details[1];
+                    String time = Details[2];
+                    String service = Details[3];
+                    String cancelled = Details[4];
+                    PastBookings bookingInfo = new PastBookings(day, customer, time, service, cancelled);
+                    pastBookings.add(bookingInfo);
                 }
                 //prints error
             } catch (IOException e) {
@@ -304,7 +341,8 @@ public class Driver {
      */
     public void viewBookings(){
         Scanner reader = new Scanner(System.in);
-        loadBookingInformation();
+        loadCurrentBookings();
+        loadPastBookings();
 
         System.out.println("\n+----------------------------------+");
         System.out.println("|               View               |");
@@ -338,7 +376,15 @@ public class Driver {
             }
 
             else if(choice ==2){ //view past bookings
+                for(int i=0; i<pastBookings.size();i++){
+                    System.out.println(pastBookings.get(i).getDayBooked());
+                    System.out.println(pastBookings.get(i).getTimeBooked());
+                    System.out.println(pastBookings.get(i).getCustomer());
+                    System.out.println(pastBookings.get(i).getServiceBooked());
+                    //also add cancelled status
 
+                }
+                break;
             }
 
             else {
