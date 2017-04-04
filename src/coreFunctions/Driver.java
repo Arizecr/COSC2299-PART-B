@@ -30,7 +30,7 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(":", 4);
+                    String Details[] = x.split(",", 4);
                     String day = Details[0];
                     String customer = Details[1];
                     String time = Details[2];
@@ -325,22 +325,25 @@ public class Driver {
 
         //infinite loop
         while(true){
-            if(choice == 1){
+            if(choice == 1){ //view current bookings
                 for(int i=0; i<currentBookings.size();i++){
                     System.out.println(currentBookings.get(i).getDayBooked());
+                    System.out.println(currentBookings.get(i).getTimeBooked());
                     System.out.println(currentBookings.get(i).getCustomer());
                     System.out.println(currentBookings.get(i).getServiceBooked());
-                    System.out.println(currentBookings.get(i).getTimeBooked());
+
                 }
                 break;
 
             }
 
-            else if(choice ==2){
+            else if(choice ==2){ //view past bookings
 
             }
 
             else {
+                System.out.println("Error."); //fix this later
+                break;
 
             }
         }
