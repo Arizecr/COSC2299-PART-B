@@ -58,7 +58,14 @@ public class BusinessMenu {
             System.out.println("7. View/Adjust business hours");
             System.out.println("8. Log out");
 
-            System.out.print("Enter choice: ");
+            System.out.print("Enter choice (1-8): ");
+
+            while(!reader.hasNextInt()) {
+                System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+                System.out.print("Enter choice (1-8): ");
+                reader.next();
+            }
+
             int choice = reader.nextInt();
 
             //run choice of business owner
@@ -131,9 +138,11 @@ public class BusinessMenu {
                     //Add services - not yet implemented
                 case 5:
                     addNewService();
+                    continue;
 
 
                 case 6:
+                    driver.viewBookings();
                     continue;
 
                     //Adjust business hours

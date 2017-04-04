@@ -113,6 +113,7 @@ public class Login {
         }
 
     }
+
     public void getOwnerinfo(){
         loadOwnerInformation();
     }

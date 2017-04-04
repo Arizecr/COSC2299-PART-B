@@ -1,5 +1,6 @@
 package coreFunctions;
 
+import model.Bookings;
 import user.Employee;
 
 import java.io.*;
@@ -16,6 +17,42 @@ import java.util.Scanner;
 public class Driver {
     WriteToFile filewriter = new WriteToFile();
     public static ArrayList<String> hours = new ArrayList<>();
+    public static ArrayList<Bookings> currentBookings = new ArrayList<>();
+
+    public void loadBookingInformation() {
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("currentBookings.txt"));
+
+            try {
+                String x;
+                while ((x = br.readLine()) != null) {
+                    // printing out each line in the file
+                    String Details[] = x.split(":", 4);
+                    String day = Details[0];
+                    String customer = Details[1];
+                    String time = Details[2];
+                    String service = Details[3];
+                    Bookings bookingInfo = new Bookings(day, customer, time, service);
+                    currentBookings.add(bookingInfo);
+                }
+                //prints error
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+    }
+
+
 
     public void addEmployee(String bId){
         Scanner reader = new Scanner(System.in);
@@ -174,7 +211,8 @@ public class Driver {
         }
         return false;
     }
-    //reads textfile
+
+    //loads employee work days
     public void loadInfo(){
         hours = new ArrayList<>();
         BufferedReader br;
@@ -261,6 +299,52 @@ public class Driver {
         }
     }
 
+    /*
+     * View current bookings including past bookings
+     */
+    public void viewBookings(){
+        Scanner reader = new Scanner(System.in);
+        loadBookingInformation();
+
+        System.out.println("\n+----------------------------------+");
+        System.out.println("|               View               |");
+        System.out.println("|             Bookings             |");
+        System.out.println("+----------------------------------+");
+
+        System.out.println("\n1. View Current Bookings");
+        System.out.println("2. View Past Bookings");
+        System.out.print("Choose option (1-2): ");
+
+        while(!reader.hasNextInt()) {
+            System.out.println("Error: entered a non integer. Enter a number between 1-3.");
+            System.out.print("Enter choice (1-3): ");
+            reader.next();
+        }
+
+        int choice = reader.nextInt();
+
+        //infinite loop
+        while(true){
+            if(choice == 1){
+                for(int i=0; i<currentBookings.size();i++){
+                    System.out.println(currentBookings.get(i).getDayBooked());
+                    System.out.println(currentBookings.get(i).getCustomer());
+                    System.out.println(currentBookings.get(i).getServiceBooked());
+                    System.out.println(currentBookings.get(i).getTimeBooked());
+                }
+                break;
+
+            }
+
+            else if(choice ==2){
+
+            }
+
+            else {
+
+            }
+        }
+    }
 
     //remove all booking on this day
     public void removeWorktimes(String b,String d) {
