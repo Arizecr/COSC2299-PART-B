@@ -285,7 +285,7 @@ public class Driver {
             String day = Details[2];
             String start = Details[3];
             String end = Details[4];
-            String combinedData = bId+" "+empID + " " +day + " "+s + " "+ e;
+
             if((b.equals(bId)&&d.equals(day))&&!timeCheck(start,end,s,e)) {
                 if(count ==1){filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                     count++;
@@ -416,7 +416,6 @@ public class Driver {
                 }
             }
             else {
-
                 if (count<= 1) {
                     filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
                 }

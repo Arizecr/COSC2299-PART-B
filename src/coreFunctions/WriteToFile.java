@@ -60,9 +60,7 @@ public class WriteToFile {
     }
     public void WriteToWorkingdayTXT(String chosenwork, String txtname){
 
-
         try{
-
             FileWriter fw = new FileWriter(txtname,true); //the true will append the new data
 
             fw.write("\n");
