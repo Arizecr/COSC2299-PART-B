@@ -1,6 +1,6 @@
 package coreFunctions;
 
-import user.Customer;
+import userBase.User;
 import user.Employee;
 
 import java.io.FileWriter;
@@ -12,7 +12,7 @@ import java.io.IOException;
 public class WriteToFile {
 
 
-    public void WriteToTXT(Customer person, String txtname){
+    public void WriteToTXT(User person, String txtname){
 
         try{
 
@@ -47,12 +47,8 @@ public class WriteToFile {
     }
     //overwrites the current textfile
     public void reWriteToWorkingdayTXT(String chosenwork, String txtname){
-
-
         try{
-
             FileWriter fw = new FileWriter(txtname,false); //the true will append the new data
-
             fw.write(chosenwork);//appends the string to the file
             fw.close();
         }
@@ -60,7 +56,6 @@ public class WriteToFile {
         {
             System.err.println("IOException: " + ioe.getMessage());
         }
-
 
     }
     public void WriteToWorkingdayTXT(String chosenwork, String txtname){
