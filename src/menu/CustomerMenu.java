@@ -53,7 +53,7 @@ public class CustomerMenu {
                 //from there, we grab the business id
 
 
-                int bID = getBusiness(); //hardcore for one because 1 business
+                int bID = getBusiness(); //hardcode for one because 1 business
                 System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
                 System.out.println("-----------------------------");
                 workday.printFile(login.businessList.get(bID).getUsername());
