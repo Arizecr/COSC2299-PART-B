@@ -579,7 +579,7 @@ public class Driver {
     }
 
 
-    private ArrayList<String> insertionSort(ArrayList<String> days){
+    public ArrayList<String> insertionSort(ArrayList<String> days){
 
         String temp;
 
