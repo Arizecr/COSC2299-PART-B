@@ -51,10 +51,12 @@ public class CustomerMenu {
                 //the customer will be presented with a menu with a list of business's using
                 //the system
                 //from there, we grab the business id
-                String bID ="b1";  //hardcore for one because 1 business
-                System.out.println("\nRay's Salon [opening hours]");
+
+
+                int bID = getBusiness();;  //hardcore for one because 1 business
+                System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
                 System.out.println("-----------------------------");
-                workday.printFile(bID);
+                workday.printFile(login.businessList.get(bID).getUsername());
                 System.out.println("\nThe business is open at the above times.");
                 System.exit(0);
 
@@ -83,6 +85,20 @@ public class CustomerMenu {
         }
 
 
+
+    }
+
+    public int getBusiness(){
+
+        Scanner reader = new Scanner(System.in);
+
+        System.out.println("\n\nWhich business would you like to view/book for?");
+        for(int i=1;i<login.businessList.size();i++){
+            System.out.println(i+". "+login.businessList.get(i).getName());
+        }
+        System.out.print("Choose option: ");
+        int id = reader.nextInt();
+        return id -1;
 
     }
 }

@@ -50,6 +50,7 @@ public class Login {
         BusinessMenu business = new BusinessMenu();
         //test if customer login is valid
         if(username.charAt(0) == 'c'){
+            loadOwnerInformation();
             if(verifyLoginDetails("customer",username, password)){
                 customer.printMenu(username);
 

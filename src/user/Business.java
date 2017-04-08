@@ -14,6 +14,10 @@ public class Business extends User{
         this.businessName = businessName;
     }
 
+    public String getBusinessName(){
+        return businessName;
+    }
+
 
 
 
