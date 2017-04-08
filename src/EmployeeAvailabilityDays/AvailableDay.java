@@ -122,11 +122,11 @@ public class AvailableDay {
 
                     // This makes sure scheduled employee shift is within operating availability of business
                     if (ed.after(Aed)) {
-                        System.out.println("Error: this shift is not within the operating hours of the business");
+                        System.out.println("Error: this shift is not within the employees availability");
                         count++;
 
                     } else if (sd.before(Asd)) {
-                        System.out.println("Error: this shift is not within the operating hours of the business");
+                        System.out.println("Error: this shift is not within the employees availability");
                         count++;
 
                     }

@@ -26,9 +26,17 @@ public class WorkingTimesTesting {
     String bId = "b1";
     String empId ="e1";
     @BeforeClass
-    public static void loadUsers(){
+    public static void loadUsers(){//test data initialised
         WriteToFile w = new WriteToFile();
         w.reWriteToWorkingdayTXT("", "workdaysList.txt");
+        w.reWriteToWorkingdayTXT("b1 monday 9:00 17:00", "businessdaysList.txt");
+        w.WriteToWorkingdayTXT("b1 tuesday 9:00 17:00", "businessdaysList.txt");
+        w.WriteToWorkingdayTXT("b1 wednesday 9:00 17:00", "businessdaysList.txt");
+        w.WriteToWorkingdayTXT("b1 friday 9:00 17:00", "businessdaysList.txt");
+        w.WriteToWorkingdayTXT("b1 thursday 9:00 17:00", "businessdaysList.txt");
+        w.reWriteToWorkingdayTXT("b1 e1 Friday 00:00 20:00", "employeeAvailabilityList.txt");
+        w.WriteToWorkingdayTXT("b1 e1 Monday 2:00 19:00", "employeeAvailabilityList.txt");
+        w.WriteToWorkingdayTXT("b1 e1 Tuesday 2:00 19:00", "employeeAvailabilityList.txt");
 
     }
 
@@ -119,9 +127,8 @@ public class WorkingTimesTesting {
     public void WorkingTimesStartAfterEnd() {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE,1);
-        DateFormat date = new SimpleDateFormat("EEEE");
         DateFormat time = new SimpleDateFormat("HH:mm");
-        day = date.format(c.getTime());
+        day = "friday";
         firsttime = time.format(c.getTime());
         c.add(Calendar.HOUR,-8);
         endtime = time.format(c.getTime());
@@ -131,12 +138,9 @@ public class WorkingTimesTesting {
     }
     @Test//length too long
     public void WorkingTimesStartEqualsEnd() {
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE,1);
-        DateFormat date = new SimpleDateFormat("EEEE");
-        DateFormat time = new SimpleDateFormat("HH:mm");
-        day = date.format(c.getTime());
-        firsttime = time.format(c.getTime());
+
+        day = "Tuesday";
+        firsttime = "12:00";
         verify = b.Workt(bId,empId, day, firsttime,firsttime);
         assertTrue(verify);
 
