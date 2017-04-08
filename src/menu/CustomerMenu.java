@@ -1,5 +1,5 @@
 package menu;
-
+import coreFunctions.Driver;
 import java.util.Scanner;
 
 /**
@@ -7,20 +7,12 @@ import java.util.Scanner;
  */
 public class CustomerMenu {
     Login login = new Login();
+    Driver driver = new Driver();
 
-    public void printMenu(){
+    public void printMenu(String username){
 
         Scanner reader = new Scanner(System.in);
 
-        //print customer menu
-        System.out.println("\n+----------------------------------+");
-        System.out.println("|           Customer               |");
-        System.out.println("|              menu                |");
-        System.out.println("+----------------------------------+");
-
-        System.out.println("\n1. Book appointment");
-        System.out.println("2. View Booking(s)");
-        System.out.println("3. Log out");
 
         /* debug purposes
         for(int i=0; i < login.customerList.size() ;i++){
@@ -32,12 +24,28 @@ public class CustomerMenu {
 
         //infinite loop
         while(true) {
+            //print customer menu
+            System.out.println("\n+----------------------------------+");
+            System.out.println("|           Customer               |");
+            System.out.println("|              menu                |");
+            System.out.println("+----------------------------------+");
+
+            System.out.println("\n1. Book appointment");
+            System.out.println("2. View Booking(s)");
+            System.out.println("3. Log out");
 
             System.out.print("Enter choice: ");
+
+            while(!reader.hasNextInt()) {
+                System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+                System.out.print("Enter choice (1-8): ");
+                reader.next();
+            }
+
             int choice = reader.nextInt();
             if(choice == 2){
                 System.out.println("Current Bookings: ");
-                System.out.println("TBA-PART2");
+                driver.viewBookingsCustomer(username); //view current bookings
                 System.exit(0);
 
             }

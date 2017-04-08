@@ -6,7 +6,6 @@ import bookings.PastBookings;
 import user.Employee;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,12 +33,13 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 4);
+                    String Details[] = x.split(",", 5);
                     String day = Details[0];
                     String customer = Details[1];
                     String time = Details[2];
                     String service = Details[3];
-                    CurrentBookings bookingInfo = new CurrentBookings(day, customer, time, service);
+                    String id = Details[4];
+                    CurrentBookings bookingInfo = new CurrentBookings(day, customer, time, service, id);
                     currentBookings.add(bookingInfo);
                 }
                 //prints error
@@ -67,13 +67,14 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 5);
+                    String Details[] = x.split(",", 6);
                     String day = Details[0];
                     String customer = Details[1];
                     String time = Details[2];
                     String service = Details[3];
                     String cancelled = Details[4];
-                    PastBookings bookingInfo = new PastBookings(day, customer, time, service, cancelled);
+                    String id = Details[5];
+                    PastBookings bookingInfo = new PastBookings(day, customer, time, service, cancelled,id);
                     pastBookings.add(bookingInfo);
                 }
                 //prints error
@@ -334,6 +335,19 @@ public class Driver {
                 }
                 System.out.println("Shifts of employee " + empID + " for " + day + " have been removed");
             }
+        }
+    }
+
+    public void viewBookingsCustomer(String username){
+        loadCurrentBookings();
+
+        for(int i=0;i<currentBookings.size();i++){
+            if(currentBookings.get(i).getCustomerID().equals(username)){
+                System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
+                System.out.println("Time: " + currentBookings.get(i).getTimeBooked()  );
+                System.out.println("Service: " + currentBookings.get(i).getServiceBooked());
+            }
+
         }
     }
 

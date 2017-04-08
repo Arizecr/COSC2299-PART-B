@@ -51,7 +51,7 @@ public class Login {
         //test if customer login is valid
         if(username.charAt(0) == 'c'){
             if(verifyLoginDetails("customer",username, password)){
-                customer.printMenu();
+                customer.printMenu(username);
 
             }
 

@@ -9,12 +9,14 @@ public abstract class Bookings {
     private String customer;
     private String timeBooked;
     private String serviceBooked;
+    private String customerID;
 
-    public Bookings(String dayBooked, String customer, String timeBooked, String serviceBooked) {
+    public Bookings(String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID) {
         this.dayBooked = dayBooked;
         this.customer = customer;
         this.timeBooked = timeBooked;
         this.serviceBooked = serviceBooked;
+        this.customerID = customerID;
     }
 
 
@@ -41,6 +43,11 @@ public abstract class Bookings {
     public String getServiceBooked() {
 
         return serviceBooked;
+    }
+
+    public String getCustomerID() {
+
+        return customerID;
     }
 
 
