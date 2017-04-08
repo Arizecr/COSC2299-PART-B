@@ -1,5 +1,6 @@
 package test;
 
+import coreFunctions.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,8 +9,9 @@ import org.junit.Test;
  * Created by yesmi on 8/04/2017.
  */
 public class viewBookingTesting {
+    Driver d =new Driver();
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
 
     }
 
@@ -18,9 +20,9 @@ public class viewBookingTesting {
 
     }
 
-    @Test
-    public void loadCurrentBookings() throws Exception {
-
+    @Test (timeout =100)
+    public void customerBookings() throws Exception {
+        d.viewBookingsCustomer("c1");
     }
 
     @Test
