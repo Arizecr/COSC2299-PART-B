@@ -1,5 +1,8 @@
 package menu;
+
+import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
+
 import java.util.Scanner;
 
 /**
@@ -8,6 +11,7 @@ import java.util.Scanner;
 public class CustomerMenu {
     Login login = new Login();
     Driver driver = new Driver();
+    Workday workday = new Workday();
 
     public void printMenu(String username){
 
@@ -30,7 +34,7 @@ public class CustomerMenu {
             System.out.println("|              menu                |");
             System.out.println("+----------------------------------+");
 
-            System.out.println("\n1. Book appointment");
+            System.out.println("\n1. Book appointment (view available days/times)");
             System.out.println("2. View Booking(s)");
             System.out.println("3. Log out");
 
@@ -43,6 +47,15 @@ public class CustomerMenu {
             }
 
             int choice = reader.nextInt();
+            if(choice == 1){
+                String bID ="b1";  //hardcore for one because 1 business
+                System.out.println("\nRay's Salon [opening hours]");
+                System.out.println("-----------------------------");
+                workday.printFile(bID);
+                System.out.println("\nThe business is open at the above times.");
+                System.exit(0);
+
+            }
             if(choice == 2){
                 System.out.println("Current Bookings: ");
                 driver.viewBookingsCustomer(username); //view current bookings
