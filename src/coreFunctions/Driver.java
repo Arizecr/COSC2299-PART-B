@@ -382,67 +382,14 @@ public class Driver {
 
         //infinite loop
         while(true){
-            ArrayList<String> days = new ArrayList<>();
-
             if(choice == 1){ //view current bookings
-
-                for(int i=0; i<currentBookings.size();i++){
-                   if(!days.contains(currentBookings.get(i).getDayBooked())){
-                        days.add(currentBookings.get(i).getDayBooked());
-                    }
-                }
-                days = insertionSort(days);
-                for(int i=0; i<days.size();i++){
-                    System.out.println("~~~~~~~~~~~~~" + days.get(i) + "~~~~~~~~~~~~~");
-                    for(int j=0; j<currentBookings.size();j++){
-
-                        if(currentBookings.get(j).getDayBooked().equals(days.get(i))){
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("|   " + currentBookings.get(j).getCustomer() );
-                            System.out.println("|   " + currentBookings.get(j).getTimeBooked()  );
-                            System.out.println("|   " + currentBookings.get(j).getServiceBooked() );
-                            System.out.println("----------------------------------------------------");
-                        }
-
-                    }
-                }
-                days.clear();
-                currentBookings.clear();
-                pastBookings.clear();
+                viewCurrentBookings();
                 break;
-
-
-
             }
-
             else if(choice ==2){ //view past bookings
-                ArrayList<String> daysZ = new ArrayList<>();
-                for(int i=0; i<pastBookings.size();i++){
-                    if(!daysZ.contains(pastBookings.get(i).getDayBooked())){
-                        daysZ.add(pastBookings.get(i).getDayBooked());
-                    }
-                }
-                daysZ = insertionSort(daysZ);
-                for(int i=0; i<daysZ.size();i++){
-                    System.out.println("~~~~~~~~~~~~~" + daysZ.get(i) + "~~~~~~~~~~~~~");
-                    for(int j=0; j<pastBookings.size();j++){
-
-                        if(pastBookings.get(j).getDayBooked().equals(daysZ.get(i))){
-                            System.out.println("----------------------------------------------------");
-                            System.out.println("|   " + pastBookings.get(j).getCustomer() );
-                            System.out.println("|   " + pastBookings.get(j).getTimeBooked()  );
-                            System.out.println("|   " + pastBookings.get(j).getServiceBooked() );
-                            System.out.println("----------------------------------------------------");
-                        }
-
-                    }
-                }
-                daysZ.clear();
-                currentBookings.clear();
-                pastBookings.clear();
+                viewPastBookings();
                 break;
             }
-
             else {
                 System.out.println("Error."); //fix this later
                 break;
@@ -450,7 +397,58 @@ public class Driver {
             }
         }
     }
+    public void viewCurrentBookings(){
+        ArrayList<String> days = new ArrayList<>();
+        for(int i=0; i<currentBookings.size();i++){
+            if(!days.contains(currentBookings.get(i).getDayBooked())){
+                days.add(currentBookings.get(i).getDayBooked());
+            }
+        }
+        days = insertionSort(days);
+        for(int i=0; i<days.size();i++){
+            System.out.println("~~~~~~~~~~~~~" + days.get(i) + "~~~~~~~~~~~~~");
+            for(int j=0; j<currentBookings.size();j++){
 
+                if(currentBookings.get(j).getDayBooked().equals(days.get(i))){
+                    System.out.println("----------------------------------------------------");
+                    System.out.println("|   " + currentBookings.get(j).getCustomer() );
+                    System.out.println("|   " + currentBookings.get(j).getTimeBooked()  );
+                    System.out.println("|   " + currentBookings.get(j).getServiceBooked() );
+                    System.out.println("----------------------------------------------------");
+                }
+
+            }
+        }
+        days.clear();
+        currentBookings.clear();
+        pastBookings.clear();
+    }
+    public void viewPastBookings(){
+        ArrayList<String> daysZ = new ArrayList<>();
+        for(int i=0; i<pastBookings.size();i++){
+            if(!daysZ.contains(pastBookings.get(i).getDayBooked())){
+                daysZ.add(pastBookings.get(i).getDayBooked());
+            }
+        }
+        daysZ = insertionSort(daysZ);
+        for(int i=0; i<daysZ.size();i++){
+            System.out.println("~~~~~~~~~~~~~" + daysZ.get(i) + "~~~~~~~~~~~~~");
+            for(int j=0; j<pastBookings.size();j++){
+
+                if(pastBookings.get(j).getDayBooked().equals(daysZ.get(i))){
+                    System.out.println("----------------------------------------------------");
+                    System.out.println("|   " + pastBookings.get(j).getCustomer() );
+                    System.out.println("|   " + pastBookings.get(j).getTimeBooked()  );
+                    System.out.println("|   " + pastBookings.get(j).getServiceBooked() );
+                    System.out.println("----------------------------------------------------");
+                }
+
+            }
+        }
+        daysZ.clear();
+        currentBookings.clear();
+        pastBookings.clear();
+    }
     //remove all booking on this day
     public void removeWorktimes(String b,String d) {
         loadInfo();
