@@ -12,32 +12,32 @@ public class viewBookingTesting {
     Driver d =new Driver();
     @Before
     public void setUp()  {
-
+        d.loadCurrentBookings();
+        d.loadPastBookings();
     }
 
     @After
     public void tearDown() throws Exception {
 
     }
-
+//--------customer booking
     @Test (timeout =100)
-    public void customerBookings() throws Exception {
+    public void customerBookings() {
         d.viewBookingsCustomer("c1");
     }
-
-    @Test
-    public void loadPastBookings() throws Exception {
-
+    @Test (timeout =100)
+    public void customerBookings2(){
+        d.viewBookingsCustomer("c2");
+    }
+//---------business owner
+    @Test(timeout =100)
+    public void PastBookings() {
+        d.viewPastBookings();
     }
 
-    @Test
-    public void viewBookingsCustomer() throws Exception {
-
-    }
-
-    @Test
-    public void viewBookings() throws Exception {
-
+    @Test (timeout =100)
+    public void viewCurrentBookings(){
+        d.viewCurrentBookings();
     }
 
 }

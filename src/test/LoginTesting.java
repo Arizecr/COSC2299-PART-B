@@ -59,13 +59,5 @@ public class LoginTesting {
         assertFalse(toVerify);
     }
 
-    /////////////////////////////////////////should fail once addressed in code
-    @Test (expected = StringIndexOutOfBoundsException.class)
-    public void errorTest1() {
-        login.testLogin("","fake");
-    }
-    @Test (expected = StringIndexOutOfBoundsException.class)
-    public void errorTest2() {
-        login.testLogin("","");
-    }
+
 }
