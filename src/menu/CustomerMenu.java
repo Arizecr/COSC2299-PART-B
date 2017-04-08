@@ -35,6 +35,13 @@ public class CustomerMenu {
 
             System.out.print("Enter choice: ");
             int choice = reader.nextInt();
+            if(choice == 2){
+                System.out.println("Current Bookings: ");
+                System.out.println("TBA-PART2");
+                System.exit(0);
+
+            }
+
 
             if(choice == 3){
                 System.out.println("Successfully logged out of the system!");

@@ -6,6 +6,7 @@ import bookings.PastBookings;
 import user.Employee;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -363,27 +364,64 @@ public class Driver {
 
         //infinite loop
         while(true){
-            if(choice == 1){ //view current bookings
-                for(int i=0; i<currentBookings.size();i++){
-                    System.out.println(currentBookings.get(i).getDayBooked());
-                    System.out.println(currentBookings.get(i).getTimeBooked());
-                    System.out.println(currentBookings.get(i).getCustomer());
-                    System.out.println(currentBookings.get(i).getServiceBooked());
+            ArrayList<String> days = new ArrayList<>();
 
+            if(choice == 1){ //view current bookings
+
+                for(int i=0; i<currentBookings.size();i++){
+                   if(!days.contains(currentBookings.get(i).getDayBooked())){
+                        days.add(currentBookings.get(i).getDayBooked());
+                    }
                 }
+                days = insertionSort(days);
+                for(int i=0; i<days.size();i++){
+                    System.out.println("~~~~~~~~~~~~~" + days.get(i) + "~~~~~~~~~~~~~");
+                    for(int j=0; j<currentBookings.size();j++){
+
+                        if(currentBookings.get(j).getDayBooked().equals(days.get(i))){
+                            System.out.println("----------------------------------------------------");
+                            System.out.println("|   " + currentBookings.get(j).getCustomer() );
+                            System.out.println("|   " + currentBookings.get(j).getTimeBooked()  );
+                            System.out.println("|   " + currentBookings.get(j).getServiceBooked() );
+                            System.out.println("----------------------------------------------------");
+                        }
+
+                    }
+                }
+                days.clear();
+                currentBookings.clear();
+                pastBookings.clear();
                 break;
+
+
 
             }
 
             else if(choice ==2){ //view past bookings
+                ArrayList<String> daysZ = new ArrayList<>();
                 for(int i=0; i<pastBookings.size();i++){
-                    System.out.println(pastBookings.get(i).getDayBooked());
-                    System.out.println(pastBookings.get(i).getTimeBooked());
-                    System.out.println(pastBookings.get(i).getCustomer());
-                    System.out.println(pastBookings.get(i).getServiceBooked());
-                    //also add cancelled status
-
+                    if(!daysZ.contains(pastBookings.get(i).getDayBooked())){
+                        daysZ.add(pastBookings.get(i).getDayBooked());
+                    }
                 }
+                daysZ = insertionSort(daysZ);
+                for(int i=0; i<daysZ.size();i++){
+                    System.out.println("~~~~~~~~~~~~~" + daysZ.get(i) + "~~~~~~~~~~~~~");
+                    for(int j=0; j<pastBookings.size();j++){
+
+                        if(pastBookings.get(j).getDayBooked().equals(daysZ.get(i))){
+                            System.out.println("----------------------------------------------------");
+                            System.out.println("|   " + pastBookings.get(j).getCustomer() );
+                            System.out.println("|   " + pastBookings.get(j).getTimeBooked()  );
+                            System.out.println("|   " + pastBookings.get(j).getServiceBooked() );
+                            System.out.println("----------------------------------------------------");
+                        }
+
+                    }
+                }
+                daysZ.clear();
+                currentBookings.clear();
+                pastBookings.clear();
                 break;
             }
 
@@ -501,4 +539,45 @@ public class Driver {
     public boolean isNumeric(String s) {
         return s.matches("[-+]?\\d*\\.?\\d+");
     }
+
+    private enum DayOfWeek {
+        Monday(1),Tuesday(2),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
+
+        private final int value;
+
+        DayOfWeek(int value) {
+
+            this.value = value;
+        }
+
+        public int getValue() {
+
+            return value;
+        }
+
+        @Override
+        public String toString() {
+
+            return value + "";
+        }
+    }
+
+
+    private ArrayList<String> insertionSort(ArrayList<String> days){
+
+        String temp;
+
+        for (int i = 1; i < days.size(); i++) {
+            for(int j = i ; j > 0 ; j--){
+                if(DayOfWeek.valueOf(days.get(j)).getValue() < DayOfWeek.valueOf(days.get(j-1)).getValue() ){
+                    temp = days.get(j);
+                    days.set(j, days.get(j-1));
+                    days.set(j-1, temp);
+                }
+            }
+        }
+        return days;
+    }
+
+
 }

@@ -1,1 +1,4 @@
+Tuesday,Elijah Doe,11:00-15:00,Bleach and tone
+Monday,Elijah Doe,11:00-15:00,Bleach and tone
+Wednesday,Elijah Doe,11:00-15:00,Bleach and tone
 Monday,Elijah Doe,11:00-15:00,Bleach and tone
