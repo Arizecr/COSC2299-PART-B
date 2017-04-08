@@ -29,6 +29,7 @@ public class WorkingTimesTesting {
     public static void loadUsers(){
         WriteToFile w = new WriteToFile();
         w.reWriteToWorkingdayTXT("", "workdaysList.txt");
+
     }
 
 
