@@ -48,6 +48,9 @@ public class CustomerMenu {
 
             int choice = reader.nextInt();
             if(choice == 1){
+                //the customer will be presented with a menu with a list of business's using
+                //the system
+                //from there, we grab the business id
                 String bID ="b1";  //hardcore for one because 1 business
                 System.out.println("\nRay's Salon [opening hours]");
                 System.out.println("-----------------------------");
