@@ -338,9 +338,13 @@ public class Driver {
         }
     }
 
+    /*
+     * Customer can see their current bookings
+     */
     public void viewBookingsCustomer(String username){
         loadCurrentBookings();
 
+        //print their current bookings
         for(int i=0;i<currentBookings.size();i++){
             if(currentBookings.get(i).getCustomerID().equals(username)){
                 System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
