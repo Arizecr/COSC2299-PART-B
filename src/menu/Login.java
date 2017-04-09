@@ -150,7 +150,7 @@ public class Login {
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+               // e.printStackTrace();
                  l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
@@ -158,8 +158,8 @@ public class Login {
 
             //file cannot be found
         } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
+          //  System.out.println(e);
+           // e.printStackTrace();
              l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }

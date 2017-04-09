@@ -95,7 +95,7 @@ public class Driver {
 
             //file cannot be found
         } catch (FileNotFoundException e) {
-            System.out.println(e);
+           // System.out.println(e);
             //e.printStackTrace();
             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
