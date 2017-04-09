@@ -88,18 +88,52 @@ public class CustomerMenu {
     }
 
     public int getBusiness(){
-
+        int count = 0;
         Scanner reader = new Scanner(System.in);
 
         System.out.println("\n\nWhich business would you like to view/book for?");
         for(int i=1;i<login.businessList.size();i++){
             System.out.println(i+". "+login.businessList.get(i).getName());
+            count++;
         }
         System.out.print("Choose option: ");
-        int id = reader.nextInt();
-        return id -1;
 
+        while(!reader.hasNextInt()) {
+            System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+            reader.next();
+        }
+
+
+        int id = reader.nextInt();
+
+        //check whether validity of option
+        while(!verifyBusinessID(id, count)){
+            System.out.println("Error: Invalid choice. Choose a number between 1-"+count);
+            System.out.print("Choose option: ");
+
+            while(!reader.hasNextInt()) {
+                System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+                System.out.print("Choose option: ");
+                reader.next();
+            }
+
+
+            id = reader.nextInt();
+
+        }
+
+
+        return id -1;
     }
+
+    public Boolean verifyBusinessID(int id, int count){
+        if(id > count){
+            return false;
+        }
+
+        return true;
+    }
+
     public void availableBookings(int bID){
 
         System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
