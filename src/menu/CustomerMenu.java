@@ -54,13 +54,9 @@ public class CustomerMenu {
                 //the customer will be presented with a menu with a list of business's using
                 //the system
                 //from there, we grab the business id
-
-
                 int bID = getBusiness(); //hardcode for one because 1 business
-                System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
-                System.out.println("-----------------------------");
-                workday.printFile(login.businessList.get(bID).getUsername());
-                System.out.println("\nThe business is open at the above times.");
+                availableBookings(bID);
+
                 System.exit(0);
 
             }
@@ -103,5 +99,12 @@ public class CustomerMenu {
         int id = reader.nextInt();
         return id -1;
 
+    }
+    public void availableBookings(int bID){
+
+        System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
+        System.out.println("-----------------------------");
+        workday.printFile(login.businessList.get(bID).getUsername());
+        System.out.println("\nThe business is open at the above times.");
     }
 }

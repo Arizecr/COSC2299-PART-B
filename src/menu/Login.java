@@ -128,11 +128,12 @@ public class Login {
 
     public void getOwnerinfo(){
         loadOwnerInformation();
-    }
+    }//for testing purposes
 
     /*
      * Load owner information
      */
+
     private void loadOwnerInformation(){
         BufferedReader br;
         try {

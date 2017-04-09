@@ -1,6 +1,8 @@
 package test;
 
 import coreFunctions.Driver;
+import menu.CustomerMenu;
+import menu.Login;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,6 +15,7 @@ import static org.junit.Assert.*;
  */
 public class viewBookingTesting {
     Driver d =new Driver();
+    CustomerMenu cm = new CustomerMenu();
     public static ArrayList<String> check1 = new ArrayList<>();
     public static ArrayList<String> check2 = new ArrayList<>();
     public static ArrayList<String> check3 = new ArrayList<>();
@@ -40,6 +43,25 @@ public class viewBookingTesting {
     @Test (timeout =100)
     public void customerBookings2(){
         d.viewBookingsCustomer("c2");
+    }
+    @Test (timeout =200)
+    public void customerAvailableBooking(){
+        Login login = new Login();
+        login.getOwnerinfo();
+        cm.availableBookings(0);
+    }
+
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void customerAvailableBooking2(){
+        Login login = new Login();
+        login.getOwnerinfo();
+        cm.availableBookings(2);
+    }
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void customerAvailableBooking3(){
+        Login login = new Login();
+        login.getOwnerinfo();
+        cm.availableBookings(22222222);
     }
     //---------business owner
     @Test(timeout =100)
