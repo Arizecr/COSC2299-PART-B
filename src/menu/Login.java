@@ -106,13 +106,19 @@ public class Login {
             } catch (IOException e) {
                 //e.printStackTrace();
                  l.Logging();
-                LOGGER.log(Level.WARNING,e.toString(),e);
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
             }
 
 
             //file cannot be found
         } catch (FileNotFoundException e) {
-           // System.out.println(e);
+            System.out.println("File not Found");
             //e.printStackTrace();
              l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
@@ -152,7 +158,13 @@ public class Login {
             } catch (IOException e) {
                // e.printStackTrace();
                  l.Logging();
-                LOGGER.log(Level.WARNING,e.toString(),e);
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
             }
 
 
@@ -160,6 +172,7 @@ public class Login {
         } catch (FileNotFoundException e) {
           //  System.out.println(e);
            // e.printStackTrace();
+            System.out.println("File not Found");
              l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }

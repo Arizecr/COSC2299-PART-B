@@ -78,6 +78,12 @@ public class Workday
                 l.Logging();
                 LOGGER.log(Level.SEVERE,e.toString(),e);
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
             //file cannot be found
         } catch (FileNotFoundException e) {
             //System.out.println(e);
