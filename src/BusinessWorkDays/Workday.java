@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class Workday
 {
-    private static final Logger LOGGER = Logger.getLogger( Workday.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger( Logging.class.getName() );
     Logging l =new Logging();
     public static ArrayList<Workday> workhours = new ArrayList<>();
     WriteToFile write = new WriteToFile();
@@ -180,12 +180,21 @@ public class Workday
                 //prints error
             } catch (IOException e) {
                 //e.printStackTrace();
-                LOGGER.log(Level.WARNING,e.toString(),e);
+                l.Logging();
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
             }
             //file cannot be found
         } catch (FileNotFoundException e) {
             //System.out.println(e);
             //e.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
     }

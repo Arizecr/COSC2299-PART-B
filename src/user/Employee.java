@@ -1,23 +1,27 @@
 package user;
 
+import test.Logging;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Created by Gabrielle on 24/03/2017.
  */
 public class Employee {
-    private static final Logger LOGGER = Logger.getLogger( Employee.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     private String employeeID;
     private String businessId;
     private String fullName;
     private String taxFileNo;
     private String phoneNo;
     public static ArrayList<Employee> employeeList = new ArrayList<>();
+    Logging l = new Logging();
 
     public Employee() {
     }
@@ -72,14 +76,17 @@ public class Employee {
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
 
             //file cannot be found
         } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
+            System.out.println("File not found");
+            //e.printStackTrace();
+            l.Logging();
+            LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
     }

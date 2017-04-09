@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class WriteToFile {
     Logging l =new Logging();
-    private static final Logger LOGGER = Logger.getLogger( WriteToFile.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
 
 
     public void WriteToTXT(User person, String txtname){

@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  */
 public class AvailableDay {
 
-    private static final Logger LOGGER = Logger.getLogger( AvailableDay.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();
 

@@ -4,6 +4,7 @@ import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import test.Logging;
 import user.Employee;
 
 import java.text.DateFormat;
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
  * test
  */
 public class BusinessMenu {
-    private static final Logger LOGGER = Logger.getLogger( BusinessMenu.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Login login = new Login();
     Workday w = new Workday();
     AvailableDay av = new AvailableDay();

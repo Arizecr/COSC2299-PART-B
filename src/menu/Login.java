@@ -15,7 +15,7 @@ import java.util.logging.*;
  * Created by Gabrielle on 5/03/2017.
  */
 public class Login {
-    private static final Logger LOGGER = Logger.getLogger( Login.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
     Logging l =new Logging();    public void loginMenu(){

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * Created by Gabrielle on 24/03/2017.
  */
 public class Driver {
-    private static final Logger LOGGER = Logger.getLogger(Driver.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     WriteToFile filewriter = new WriteToFile();
     public static ArrayList<String> hours = new ArrayList<>();
     public static ArrayList<Bookings> currentBookings = new ArrayList<>();
