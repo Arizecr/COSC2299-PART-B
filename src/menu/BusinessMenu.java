@@ -201,7 +201,7 @@ public class BusinessMenu {
             }
 
             /*
-            if(choice == 7){
+            if(choice == 7){ //function that add's employee availability
                 boolean valid = true;
                 while(valid) {
                     do {
@@ -236,6 +236,10 @@ public class BusinessMenu {
             } */
         }
     }
+
+    /*
+     * Add's new service for business
+     */
     public void addNewService(){
         System.out.println("\n+----------------------------------+");
         System.out.println("|        Current Services          |");
@@ -257,7 +261,7 @@ public class BusinessMenu {
 
     }
 
-
+    //checks validity of day
     public boolean checkD(String day){
         return checkDay(day);
     }
@@ -272,6 +276,7 @@ public class BusinessMenu {
         }
         return false;
     }
+
     //check general format
     private boolean checktime(String t){
         try{
@@ -285,6 +290,7 @@ public class BusinessMenu {
         if (!t.contains(":00")&&!t.contains(":30")){System.out.println("In the form HH:30 or HH:00 only");return true;}
         return false;
     }
+
     //check valid start and end time
     private boolean timeCheck (String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");

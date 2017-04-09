@@ -46,6 +46,7 @@ public class Login {
             testLogin(username,password);
         }
     }
+
     public void testLogin(String username, String password){
         CustomerMenu customer = new CustomerMenu();
         BusinessMenu business = new BusinessMenu();

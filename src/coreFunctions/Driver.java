@@ -26,6 +26,10 @@ public class Driver {
     public static ArrayList<Bookings> currentBookings = new ArrayList<>();
     public static ArrayList<Bookings> pastBookings = new ArrayList<>();
     Logging l =new Logging();
+
+    /*
+     * loads current booking information
+     */
     public void loadCurrentBookings() {
         BufferedReader br;
         try {
@@ -71,6 +75,9 @@ public class Driver {
 
     }
 
+    /*
+     * loads information for past bookings
+     */
     public void loadPastBookings() {
         BufferedReader br;
         try {
@@ -117,7 +124,9 @@ public class Driver {
     }
 
 
-
+    /*
+     * add's employee to the system
+     */
     public void addEmployee(String bId){
         Scanner reader = new Scanner(System.in);
 
@@ -256,7 +265,7 @@ public class Driver {
             filewriter.WriteToWorkingdayTXT(combinedData, "workdaysList.txt");}
     }
 
-
+    //checks the validiity of time entered
     public boolean timeCheck(String s,String end,String Bs,String Be){
         DateFormat time = new SimpleDateFormat("EEEE");
         try {
@@ -313,6 +322,7 @@ public class Driver {
         }
 
     }
+
     //new employee worktimes written to file
     public void loadandWriteNEmployeeWorktimes(String b,String d,String s,String e){
         loadInfo();
@@ -406,8 +416,9 @@ public class Driver {
         }
     }
 
+
     /*
-     * View current bookings including past bookings
+     * View current bookings and past bookings - choose which one
      */
     public void viewBookings(){
         Scanner reader = new Scanner(System.in);
@@ -448,6 +459,10 @@ public class Driver {
             }
         }
     }
+
+    /*
+     * View current bookings of a business
+     */
     public void viewCurrentBookings(){
         ArrayList<String> days = new ArrayList<>();
         for(int i=0; i<currentBookings.size();i++){
@@ -474,6 +489,10 @@ public class Driver {
         currentBookings.clear();
         pastBookings.clear();
     }
+
+    /*
+     * view past bookings
+     */
     public void viewPastBookings(){
         ArrayList<String> daysZ = new ArrayList<>();
         for(int i=0; i<pastBookings.size();i++){
@@ -569,6 +588,9 @@ public class Driver {
         return false;
     }
 
+    /*
+     * Print the worktimes of a specific employee or all employee's
+     */
     public void printEmployeeWorktimes(String bId, String employeeID){
         Employee emp = new Employee();
         Scanner eID = new Scanner(System.in);

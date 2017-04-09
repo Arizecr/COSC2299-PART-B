@@ -16,18 +16,14 @@ public class CustomerMenu {
     Driver driver = new Driver();
     Workday workday = new Workday();
 
+    /*
+     * Prints menu for business owner
+     * and runs all the functions
+     */
     public void printMenu(String username){
 
         Scanner reader = new Scanner(System.in);
 
-
-        /* debug purposes
-        for(int i=0; i < login.customerList.size() ;i++){
-            System.out.println(login.customerList.get(i).getName());
-            System.out.println(login.customerList.get(i).getAddress());
-            System.out.println(login.customerList.get(i).getPhoneNo());
-
-        } */
 
         //infinite loop
         while(true) {
@@ -43,6 +39,7 @@ public class CustomerMenu {
 
             System.out.print("Enter choice: ");
 
+            //user has entered a non integer input
             while(!reader.hasNextInt()) {
                 System.out.println("Error: entered a non integer. Enter a number between 1-8.");
                 System.out.print("Enter choice (1-8): ");
@@ -50,11 +47,9 @@ public class CustomerMenu {
             }
 
             int choice = reader.nextInt();
-            if(choice == 1){
-                //the customer will be presented with a menu with a list of business's using
-                //the system
-                //from there, we grab the business id
-                int bID = getBusiness(); //hardcode for one because 1 business
+
+            if(choice == 1){ //View available days/times (to book an appointment for a business)
+                int bID = getBusiness();
                 availableBookings(bID);
 
                 System.exit(0);
@@ -75,7 +70,7 @@ public class CustomerMenu {
             }
 
             else {
-                System.out.println("Will do these options later!");
+                System.out.println("Invalid numeric input! Will error check this later!");
                 System.exit(0);
 
             }
@@ -87,23 +82,29 @@ public class CustomerMenu {
 
     }
 
+    /*
+     * Asks user which business they would like to view the days/hours they are open
+     */
     public int getBusiness(){
         int count = 0;
         Scanner reader = new Scanner(System.in);
 
         System.out.println("\n\nWhich business would you like to view/book for?");
+
+        //gets all the names of all business's registered to the system
         for(int i=1;i<login.businessList.size();i++){
             System.out.println(i+". "+login.businessList.get(i).getName());
             count++;
         }
         System.out.print("Choose option: ");
 
+        //checks for non integer input
         while(!reader.hasNextInt()) {
             System.out.println("Error: entered a non integer. Enter a number between 1-8.");
             reader.next();
         }
 
-
+        //stores input
         int id = reader.nextInt();
 
         //check whether validity of option
@@ -111,8 +112,9 @@ public class CustomerMenu {
             System.out.println("Error: Invalid choice. Choose a number between 1-"+count);
             System.out.print("Choose option: ");
 
+            //checks again for non-integer input
             while(!reader.hasNextInt()) {
-                System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+                System.out.println("Error: entered a non integer. Try again.");
                 System.out.print("Choose option: ");
                 reader.next();
             }
@@ -126,14 +128,21 @@ public class CustomerMenu {
         return id -1;
     }
 
+    /*
+     * verifies that number entered is valid
+     */
     public Boolean verifyBusinessID(int id, int count){
-        if(id > count){
+        //checks that number entered is more than 0 and less than max
+        if(id > count || id <=0){
             return false;
         }
 
         return true;
     }
 
+    /*
+     * Prints the available booking hours of a given business
+     */
     public void availableBookings(int bID){
 
         System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");

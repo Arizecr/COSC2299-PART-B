@@ -24,9 +24,6 @@ public class Register {
 
         boolean loginSuccessful = false;
 
-
-
-
         // Logs user into the system
         System.out.println("\n\nRegister your details below. ");
         System.out.println("------------------------------------ \n");
@@ -74,6 +71,9 @@ public class Register {
     }
 
 
+    /*
+     * tests related to register function
+     */
     public int testReg(String password, String name, String address, String mobile){
         return testRegister(password, name, address, mobile);
     }

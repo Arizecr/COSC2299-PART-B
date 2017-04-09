@@ -14,9 +14,7 @@ public class Main {
         Login login = new Login();
         Register register = new Register();
 
-        login.loadCustomerInformation();
-
-
+        login.loadCustomerInformation(); //loads customer information
 
         //display main page
         System.out.println("\n+----------------------------------+");
