@@ -2,5 +2,3 @@ c1:123:Gabby:772 Clayton rd, 3123:0425001888
 c123:123:Martin:888 Noble Park, 3144:0411001998
 c12:2:Wei:193 Orange Lane, 3222:04871889
 c21:12345:Kelly:address:phone
-c21:12345:Kelly:address:phone
-c21:12345:Kelly:address:phone

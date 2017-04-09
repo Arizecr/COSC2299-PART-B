@@ -1,6 +1,7 @@
 package BusinessWorkDays;
 
 import coreFunctions.*;
+import test.Logging;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -21,6 +22,7 @@ import java.util.logging.Logger;
 public class Workday
 {
     private static final Logger LOGGER = Logger.getLogger( Workday.class.getName() );
+    Logging l =new Logging();
     public static ArrayList<Workday> workhours = new ArrayList<>();
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();
@@ -73,12 +75,14 @@ public class Workday
                 //prints error
             } catch (IOException e) {
                 //e.printStackTrace();
+                l.Logging();
                 LOGGER.log(Level.SEVERE,e.toString(),e);
             }
             //file cannot be found
         } catch (FileNotFoundException e) {
             //System.out.println(e);
             //e.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.SEVERE,e.toString(),e);
         }
     }

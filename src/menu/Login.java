@@ -1,5 +1,6 @@
 package menu;
 
+import test.*;
 import user.Business;
 import user.Customer;
 
@@ -17,8 +18,7 @@ public class Login {
     private static final Logger LOGGER = Logger.getLogger( Login.class.getName() );
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
-
-    public void loginMenu(){
+    Logging l =new Logging();    public void loginMenu(){
 
         loadOwnerInformation();
 
@@ -105,6 +105,7 @@ public class Login {
                 //prints error
             } catch (IOException e) {
                 //e.printStackTrace();
+                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
@@ -113,6 +114,7 @@ public class Login {
         } catch (FileNotFoundException e) {
            // System.out.println(e);
             //e.printStackTrace();
+             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
@@ -149,6 +151,7 @@ public class Login {
                 //prints error
             } catch (IOException e) {
                 e.printStackTrace();
+                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
@@ -157,6 +160,7 @@ public class Login {
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
+             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
 

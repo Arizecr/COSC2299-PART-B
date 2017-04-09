@@ -2,6 +2,7 @@ package EmployeeAvailabilityDays;
 
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import test.Logging;
 import user.Employee;
 
 import java.io.BufferedReader;
@@ -35,13 +36,14 @@ public class AvailableDay {
     Employee e = new Employee();
     //list for worker availability
     public static ArrayList<String> availability = new ArrayList<>();
-
+    Logging l =new Logging();
 
     /*
      * Load list for worker availability
      */
     public void loadInfo(){
         availability = new ArrayList<>();
+
 
         BufferedReader br;
         try {
@@ -54,13 +56,14 @@ public class AvailableDay {
                 }
                 //prints error
             } catch (IOException error) {
-                error.printStackTrace();
+                //error.printStackTrace();
+                l.Logging();
                 LOGGER.log(Level.WARNING,error.toString(),error);
             }
             //file cannot be found
         } catch (FileNotFoundException error) {
-            System.out.println(error);
-           // error.printStackTrace();
+            l.Logging();
+           // System.out.println(error);
             LOGGER.log(Level.WARNING,error.toString(),error);
         }
 

@@ -1,7 +1,8 @@
 package coreFunctions;
 
-import userBase.User;
+import test.Logging;
 import user.Employee;
+import userBase.User;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,8 +13,10 @@ import java.util.logging.Logger;
  * Created by Martin on 5/03/2017.
  */
 public class WriteToFile {
-
+    Logging l =new Logging();
     private static final Logger LOGGER = Logger.getLogger( WriteToFile.class.getName() );
+
+
     public void WriteToTXT(User person, String txtname){
 
         try{
@@ -27,6 +30,8 @@ public class WriteToFile {
         catch(IOException ioe)
         {
             //System.err.println("IOException: " + ioe.getMessage());
+
+             l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
 
@@ -45,6 +50,7 @@ public class WriteToFile {
         catch(IOException ioe)
         {
            // System.err.println("IOException: " + ioe.getMessage());
+             l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
 
@@ -58,6 +64,7 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
+             l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
            // System.err.println("IOException: " + ioe.getMessage());
         }
@@ -74,6 +81,7 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
+             l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
             //System.err.println("IOException: " + ioe.getMessage());
         }

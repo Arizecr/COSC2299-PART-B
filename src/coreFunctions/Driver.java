@@ -3,6 +3,7 @@ package coreFunctions;
 import bookings.Bookings;
 import bookings.CurrentBookings;
 import bookings.PastBookings;
+import test.Logging;
 import user.Employee;
 
 import java.io.*;
@@ -24,7 +25,7 @@ public class Driver {
     public static ArrayList<String> hours = new ArrayList<>();
     public static ArrayList<Bookings> currentBookings = new ArrayList<>();
     public static ArrayList<Bookings> pastBookings = new ArrayList<>();
-
+    Logging l =new Logging();
     public void loadCurrentBookings() {
         BufferedReader br;
         try {
@@ -48,6 +49,7 @@ public class Driver {
                 //prints error
             } catch (IOException e) {
                 //e.printStackTrace();
+                l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
@@ -56,6 +58,7 @@ public class Driver {
         } catch (FileNotFoundException e) {
             System.out.println(e);
             //e.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.SEVERE,e.toString(),e);
         }
 
@@ -84,7 +87,8 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException e) {
-                //e.printStackTrace();
+                //e.printStackTrace();\
+                l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
@@ -93,6 +97,7 @@ public class Driver {
         } catch (FileNotFoundException e) {
             System.out.println(e);
             //e.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
@@ -209,7 +214,8 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+               // e.printStackTrace();
+                l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
@@ -218,6 +224,7 @@ public class Driver {
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
@@ -273,14 +280,16 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException error) {
-                error.printStackTrace();
+                //error.printStackTrace();
+                l.Logging();
                 LOGGER.log(Level.WARNING,error.toString(),error);
             }
 
             //file cannot be found
         } catch (FileNotFoundException error) {
-            System.out.println(error);
-            error.printStackTrace();
+           // System.out.println(error);
+            //error.printStackTrace();
+            l.Logging();
             LOGGER.log(Level.WARNING,error.toString(),error);
         }
 
