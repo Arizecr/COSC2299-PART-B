@@ -52,6 +52,13 @@ public class Driver {
                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
+
 
 
             //file cannot be found
@@ -91,11 +98,17 @@ public class Driver {
                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
 
 
             //file cannot be found
         } catch (FileNotFoundException e) {
-           // System.out.println(e);
+            System.out.println("File not Found");
             //e.printStackTrace();
             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
@@ -214,7 +227,7 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException e) {
-               // e.printStackTrace();
+                // e.printStackTrace();
                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
@@ -284,10 +297,16 @@ public class Driver {
                 l.Logging();
                 LOGGER.log(Level.WARNING,error.toString(),error);
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
 
             //file cannot be found
         } catch (FileNotFoundException error) {
-           // System.out.println(error);
+            // System.out.println(error);
             //error.printStackTrace();
             l.Logging();
             LOGGER.log(Level.WARNING,error.toString(),error);
@@ -332,29 +351,41 @@ public class Driver {
     public void deleteEmployeeWorktimes(String b,String e,String d){
         loadInfo();
         int count = 1;
-        for(int i=0; i < hours.size() ;i++) {
+        String bId = null;
+        String empID = null;
+        String day = null;
+        try {
+            for(int i=0; i < hours.size() ;i++) {
 
-            // printing out each line in the file
-            String Details[] = hours.get(i).split(" ", 5);
-            String bId = Details[0];
-            String empID = Details[1];
-            String day = Details[2];
+                // printing out each line in the file
+                String Details[] = hours.get(i).split(" ", 5);
+                bId = Details[0];
+                empID = Details[1];
+                day = Details[2];
 
 
-            if (!(e.equals(empID) && b.equals(bId) && d.equals(day))) {
-                if (count == 1) {
-                    filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
-                    count++;
-                } else {
-                    filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                if (!(e.equals(empID) && b.equals(bId) && d.equals(day))) {
+                    if (count == 1) {
+                        filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                        count++;
+                    } else {
+                        filewriter.WriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
+                    }
+                }
+                else{
+                    if (count == 1) {
+                        filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
+                    }
+                    System.out.println("Shifts of employee " + empID + " for " + day + " have been removed");
                 }
             }
-            else{
-                if (count == 1) {
-                    filewriter.reWriteToWorkingdayTXT("", "workdaysList.txt");
-                }
-                System.out.println("Shifts of employee " + empID + " for " + day + " have been removed");
-            }
+        }            catch (ArrayIndexOutOfBoundsException ae) {
+            System.out.println("Error in storage file");
+
+            l.Logging();
+            LOGGER.log(Level.SEVERE,ae.toString(),ae);
+            return;
+
         }
     }
 
@@ -529,7 +560,7 @@ public class Driver {
                     }
                 } catch (ParseException ex) {
                     System.out.println("Invalid Time");
-                   // LOGGER.log(Level.FINEST,ex.toString(),ex); //for testing
+                    // LOGGER.log(Level.FINEST,ex.toString(),ex); //for testing
                     return true;
                 }
 
@@ -547,24 +578,30 @@ public class Driver {
         System.out.println("-----------------------------------------");
         System.out.println("The current times "+name+" is working:");
         for(int i=0; i < hours.size() ;i++) {
-
-            // printing out each line in the file
-            String Details[] = hours.get(i).split(" ",5);
-
-
-            String e = Details[0];
-            String day = Details[2].toLowerCase();
-            String start = Details[3];
-            String end = Details[4];
-
-            //change day to uppercase
-            day = day.substring(0,1).toUpperCase() + day.substring(1).toLowerCase();
+            try {
+                // printing out each line in the file
+                String Details[] = hours.get(i).split(" ", 5);
 
 
-            if(bId.equals(e)){
-                System.out.println(day + " " +start+ " - " + end);
+                String e = Details[0];
+                String day = Details[2].toLowerCase();
+                String start = Details[3];
+                String end = Details[4];
+
+                //change day to uppercase
+                day = day.substring(0, 1).toUpperCase() + day.substring(1).toLowerCase();
+
+
+                if (bId.equals(e)) {
+                    System.out.println(day + " " + start + " - " + end);
+                }
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
 
+            }
 
         }
         System.out.println("-----------------------------------------");

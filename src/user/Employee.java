@@ -79,6 +79,13 @@ public class Employee {
                 l.Logging();
                 LOGGER.log(Level.WARNING,e.toString(),e);
             }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                System.out.println("Error encountered");
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
 
 
             //file cannot be found
