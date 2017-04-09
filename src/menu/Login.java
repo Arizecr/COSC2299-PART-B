@@ -9,11 +9,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.logging.*;
 /**
  * Created by Gabrielle on 5/03/2017.
  */
 public class Login {
+    private static final Logger LOGGER = Logger.getLogger( Login.class.getName() );
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
 

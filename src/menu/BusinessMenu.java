@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-
+import java.util.logging.Logger;
 
 
 /**
@@ -19,6 +19,7 @@ import java.util.Scanner;
  * test
  */
 public class BusinessMenu {
+    private static final Logger LOGGER = Logger.getLogger( BusinessMenu.class.getName() );
     Login login = new Login();
     Workday w = new Workday();
     AvailableDay av = new AvailableDay();

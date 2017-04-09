@@ -5,13 +5,14 @@ import user.Employee;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * Created by Martin on 5/03/2017.
  */
 public class WriteToFile {
 
-
+    private static final Logger LOGGER = Logger.getLogger( WriteToFile.class.getName() );
     public void WriteToTXT(User person, String txtname){
 
         try{

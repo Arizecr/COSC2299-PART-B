@@ -13,13 +13,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Logger;
 
 /**
  * Created by asus on 30-Mar-17.
  */
 public class AvailableDay {
 
-
+    private static final Logger LOGGER = Logger.getLogger( AvailableDay.class.getName() );
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();
 

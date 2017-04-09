@@ -5,11 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * Created by Gabrielle on 24/03/2017.
  */
 public class Employee {
+    private static final Logger LOGGER = Logger.getLogger( Employee.class.getName() );
     private String employeeID;
     private String businessId;
     private String fullName;

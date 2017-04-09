@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Logger;
 
 
 /**
@@ -18,7 +19,7 @@ import java.util.Date;
  */
 public class Workday
 {
-
+    private static final Logger LOGGER = Logger.getLogger( Workday.class.getName() );
     public static ArrayList<Workday> workhours = new ArrayList<>();
     WriteToFile write = new WriteToFile();
     Driver drive = new Driver();

@@ -4,11 +4,13 @@ import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 /**
  * Created by Gabrielle on 5/03/2017.
  */
 public class CustomerMenu {
+    private static final Logger LOGGER = Logger.getLogger( CustomerMenu.class.getName() );
     Login login = new Login();
     Driver driver = new Driver();
     Workday workday = new Workday();

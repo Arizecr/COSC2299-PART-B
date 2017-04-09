@@ -4,12 +4,13 @@ import user.Customer;
 import coreFunctions.WriteToFile;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 /**
  * Created by Martin on 5/03/2017.
  */
 public class Register {
-
+    private static final Logger LOGGER = Logger.getLogger( Register.class.getName() );
 
 /*
  * Customer is presented with the registration menu
