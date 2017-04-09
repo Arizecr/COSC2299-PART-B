@@ -10,11 +10,13 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
+
 /**
  * Created by yesmi on 8/04/2017.
  */
 public class viewBookingTesting {
     Driver d =new Driver();
+    Login login = new Login();
     CustomerMenu cm = new CustomerMenu();
     public static ArrayList<String> check1 = new ArrayList<>();
     public static ArrayList<String> check2 = new ArrayList<>();
@@ -46,16 +48,53 @@ public class viewBookingTesting {
     }
     @Test (timeout =200)
     public void customerAvailableBooking(){
-        Login login = new Login();
+
         login.getOwnerinfo();
         cm.availableBookings(0);
     }
+    @Test
+    public void verifyBusiness(){
+        login.getOwnerinfo();
+        int count = 1;
+        //gets all the names of all business's registered to the system
+        for(int i=0;i<login.businessList.size();i++){
+             count++;
+            System.out.println(count);
+        }
+
+        boolean check = cm.verifyBusinessID(1, count);
+        assertTrue(check);
+    }
+
+    @Test
+    public void verifyBusiness2(){
+        login.getOwnerinfo();
+        int count = 0;
+        //gets all the names of all business's registered to the system
+        for(int i=1;i<login.businessList.size();i++){
+            count++;
+        }
+        boolean check = cm.verifyBusinessID(3, count);
+        assertFalse(check);
+    }
+    @Test
+    public void verifyBusiness3(){
+        login.getOwnerinfo();
+        int count = 0;
+        //gets all the names of all business's registered to the system
+        for(int i=1;i<login.businessList.size();i++){
+            count++;
+        }
+        boolean check = cm.verifyBusinessID(0, count);
+        assertFalse(check);
+    }
+
 
     @Test (expected = IndexOutOfBoundsException.class)
     public void customerAvailableBooking2(){
         Login login = new Login();
         login.getOwnerinfo();
-        cm.availableBookings(2);
+        cm.availableBookings(9);
     }
     @Test (expected = IndexOutOfBoundsException.class)
     public void customerAvailableBooking3(){
