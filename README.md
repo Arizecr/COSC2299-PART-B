@@ -20,3 +20,8 @@ Yesmi s3543729        25%
 Gabrielle s3605767    25%
 Martin s3607187       25%
 
+Important links:
+Trello: https://trello.com/b/6jQXB7yR/software-engineeringmycw
+Github: https://github.com/Arizecr/COSC-2299-Part-A
+Slack: sefparta.slack.com
+
