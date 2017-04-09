@@ -1,12 +1,10 @@
 package bookings;
 
-import java.util.logging.Logger;
-
 /**
  * Created by xemorth on 4/04/2017.
  */
 public abstract class Bookings {
-    private static final Logger LOGGER = Logger.getLogger( Bookings.class.getName() );
+
     private String dayBooked;
     private String customer;
     private String timeBooked;

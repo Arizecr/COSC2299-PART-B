@@ -5,6 +5,7 @@ import user.Employee;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -25,7 +26,8 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
-            System.err.println("IOException: " + ioe.getMessage());
+            //System.err.println("IOException: " + ioe.getMessage());
+            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
 
     }
@@ -42,7 +44,8 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
-            System.err.println("IOException: " + ioe.getMessage());
+           // System.err.println("IOException: " + ioe.getMessage());
+            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
 
     }
@@ -55,7 +58,8 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
-            System.err.println("IOException: " + ioe.getMessage());
+            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
+           // System.err.println("IOException: " + ioe.getMessage());
         }
 
     }
@@ -70,7 +74,8 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
-            System.err.println("IOException: " + ioe.getMessage());
+            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
+            //System.err.println("IOException: " + ioe.getMessage());
         }
 
 

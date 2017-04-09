@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -71,12 +72,14 @@ public class Workday
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                LOGGER.log(Level.SEVERE,e.toString(),e);
             }
             //file cannot be found
         } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
+            //System.out.println(e);
+            //e.printStackTrace();
+            LOGGER.log(Level.SEVERE,e.toString(),e);
         }
     }
 
@@ -172,12 +175,14 @@ public class Workday
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                LOGGER.log(Level.WARNING,e.toString(),e);
             }
             //file cannot be found
         } catch (FileNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
+            //System.out.println(e);
+            //e.printStackTrace();
+            LOGGER.log(Level.WARNING,e.toString(),e);
         }
     }
 

@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -46,14 +47,16 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
 
             //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
-            e.printStackTrace();
+            //e.printStackTrace();
+            LOGGER.log(Level.SEVERE,e.toString(),e);
         }
 
     }
@@ -81,14 +84,16 @@ public class Driver {
                 }
                 //prints error
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
 
             //file cannot be found
         } catch (FileNotFoundException e) {
             System.out.println(e);
-            e.printStackTrace();
+            //e.printStackTrace();
+            LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
     }
@@ -205,6 +210,7 @@ public class Driver {
                 //prints error
             } catch (IOException e) {
                 e.printStackTrace();
+                LOGGER.log(Level.WARNING,e.toString(),e);
             }
 
 
@@ -212,6 +218,7 @@ public class Driver {
         } catch (FileNotFoundException e) {
             System.out.println(e);
             e.printStackTrace();
+            LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
         return "e"+count;
@@ -267,12 +274,14 @@ public class Driver {
                 //prints error
             } catch (IOException error) {
                 error.printStackTrace();
+                LOGGER.log(Level.WARNING,error.toString(),error);
             }
 
             //file cannot be found
         } catch (FileNotFoundException error) {
             System.out.println(error);
             error.printStackTrace();
+            LOGGER.log(Level.WARNING,error.toString(),error);
         }
 
     }
@@ -511,6 +520,7 @@ public class Driver {
                     }
                 } catch (ParseException ex) {
                     System.out.println("Invalid Time");
+                   // LOGGER.log(Level.FINEST,ex.toString(),ex); //for testing
                     return true;
                 }
 

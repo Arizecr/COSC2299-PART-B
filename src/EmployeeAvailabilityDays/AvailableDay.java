@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -54,11 +55,13 @@ public class AvailableDay {
                 //prints error
             } catch (IOException error) {
                 error.printStackTrace();
+                LOGGER.log(Level.WARNING,error.toString(),error);
             }
             //file cannot be found
         } catch (FileNotFoundException error) {
             System.out.println(error);
-            error.printStackTrace();
+           // error.printStackTrace();
+            LOGGER.log(Level.WARNING,error.toString(),error);
         }
 
     }
