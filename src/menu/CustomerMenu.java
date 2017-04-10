@@ -52,13 +52,13 @@ public class CustomerMenu {
                 int bID = getBusiness();
                 availableBookings(bID);
 
-                System.exit(0);
+
 
             }
             if(choice == 2){
                 System.out.println("Current Bookings: ");
                 driver.viewBookingsCustomer(username); //view current bookings
-                System.exit(0);
+
 
             }
 
