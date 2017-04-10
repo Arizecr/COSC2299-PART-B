@@ -1,8 +1,7 @@
 package menu;
-
+import coreFunctions.WriteToFile;
 import test.Logging;
 import user.Customer;
-import coreFunctions.WriteToFile;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -46,7 +45,6 @@ public class Register {
                 //remember to append c to the start of username
             }
 
-
             String p;
             String password;
             do{
@@ -58,6 +56,7 @@ public class Register {
                 if(!p.equals(password)){ System.out.println("Passwords do not match");}
 
             }while(!p.equals(password));
+
 
             System.out.print("Name: ");
             String name = reader.nextLine();
