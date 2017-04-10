@@ -47,8 +47,17 @@ public class Register {
             }
 
 
-            System.out.print("Password: ");
-            String password = reader.nextLine();
+            String p;
+            String password;
+            do{
+                System.out.print("Password: ");
+                password = reader.nextLine();
+
+                System.out.print("re-enter Password: ");
+                p = reader.nextLine();
+                if(!p.equals(password)){ System.out.println("Passwords do not match");}
+
+            }while(!p.equals(password));
 
             System.out.print("Name: ");
             String name = reader.nextLine();
