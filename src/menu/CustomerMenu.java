@@ -70,8 +70,7 @@ public class CustomerMenu {
             }
 
             else {
-                System.out.println("Invalid numeric input! Will error check this later!");
-                System.exit(0);
+                System.out.println("Invalid numeric input!");
 
             }
 
