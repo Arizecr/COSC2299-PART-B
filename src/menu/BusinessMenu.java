@@ -139,7 +139,7 @@ public class BusinessMenu {
 
                     //Add services - not yet implemented
                 case 5:
-                    addNewService();
+                    addNewService(bId);
                     continue;
 
 
@@ -194,7 +194,7 @@ public class BusinessMenu {
                     else{continue;}
 
                     //Exit system
-                default:
+                case 8:
                     System.out.println("Logging out!");
                     System.exit(0);
 
@@ -240,25 +240,42 @@ public class BusinessMenu {
     /*
      * Add's new service for business
      */
-    public void addNewService(){
-        System.out.println("\n+----------------------------------+");
-        System.out.println("|        Current Services          |");
-        System.out.println("|              Available           |");
-        System.out.println("+----------------------------------+");
+    public void addNewService(String b){
 
-        //hardcoded now- change later
-        //for the future: grab from textfile
-        //not needed until PART 2
-        System.out.println("(FM01) Female haircut - $60");
-        System.out.println("(BS02) Bleaching hair - $100");
-        //name of services and duration of services
+        boolean loop = true;
+        while(loop) {
+            System.out.println("\n+----------------------------------+");
+            System.out.println("|        Current Services          |");
+            System.out.println("|              Available           |");
+            System.out.println("+----------------------------------+");
+            //printService(b)
+            Scanner reader = new Scanner(System.in);
+            System.out.println("\n====================================");
+            System.out.println("1. Add Service");//choose employees who can do this service
+            System.out.println("2. Remove Service");
+            System.out.println("3. Remove Service from employee");
+            System.out.println("4. Return to business menu");
+            System.out.println("======================================\n");
+            while (!reader.hasNextInt()) {
+                System.out.println("Error: entered a non integer. Enter a number between 1-8.");
+                System.out.print("Enter choice (1-8): ");
+                reader.next();
+            }
+            int choice = reader.nextInt();
+            switch (choice) {
 
-        System.out.println("\n====================================");
-        System.out.println("1. Add/Change Business Hours");
-        System.out.println("2. Remove Business Hours");
-        System.out.println("OR Any key to return to business menu");
-        System.out.println("======================================\n");
-
+                //add Service
+                case 1:
+                    continue;
+                case 2:
+                    continue;
+                case 3:
+                    continue;
+                case 4:
+                    loop = false;
+                        default:continue;
+            }
+        }
     }
 
     //checks validity of day
