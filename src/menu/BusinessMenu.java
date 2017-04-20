@@ -2,6 +2,7 @@ package menu;
 
 import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
+import bookings.Services;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import test.Logging;
@@ -248,7 +249,8 @@ public class BusinessMenu {
             System.out.println("|        Current Services          |");
             System.out.println("|              Available           |");
             System.out.println("+----------------------------------+");
-            //printService(b)
+            Services s = new Services();
+            s.printService(b);
             Scanner reader = new Scanner(System.in);
             System.out.println("\n====================================");
             System.out.println("1. Add Service");//choose employees who can do this service
@@ -266,6 +268,7 @@ public class BusinessMenu {
 
                 //add Service
                 case 1:
+                    s.addService(b);
                     continue;
                 case 2:
                     continue;
@@ -306,6 +309,9 @@ public class BusinessMenu {
         }
         if (!t.contains(":00")&&!t.contains(":30")){System.out.println("In the form HH:30 or HH:00 only");return true;}
         return false;
+    }
+    public boolean ctime(String t){
+        return checktime(t);
     }
 
     //check valid start and end time
