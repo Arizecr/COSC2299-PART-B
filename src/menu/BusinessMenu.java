@@ -271,6 +271,7 @@ public class BusinessMenu {
                     s.addService(b);
                     continue;
                 case 2:
+                    s.removeService(b);
                     continue;
                 case 3:
                     continue;

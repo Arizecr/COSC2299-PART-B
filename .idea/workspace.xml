@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10eac28f-f75e-451a-b1f2-c31af5c07e5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/Services.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/employeeServices" afterPath="$PROJECT_DIR$/employeeServices" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services.txt" afterPath="$PROJECT_DIR$/services.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bookings/Services.java" afterPath="$PROJECT_DIR$/src/bookings/Services.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
     </list>
     <ignored path="COSC-2299-Part-A.iws" />
@@ -46,49 +45,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="253" column="48" lean-forward="true" selection-start-line="253" selection-start-column="48" selection-end-line="253" selection-end-column="48" />
+            <state relative-caret-position="128">
+              <caret line="271" column="29" lean-forward="true" selection-start-line="271" selection-start-column="29" selection-end-line="271" selection-end-column="29" />
               <folding>
-                <element signature="e#12143#12144#0" expanded="true" />
-                <element signature="e#12178#12179#0" expanded="true" />
+                <element signature="e#12183#12184#0" expanded="true" />
+                <element signature="e#12218#12219#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Services.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="services.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Services.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bookings/Services.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="106" column="59" lean-forward="false" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
+            <state relative-caret-position="148">
+              <caret line="104" column="38" lean-forward="false" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3170#3171#0" expanded="true" />
-                <element signature="e#3194#3195#0" expanded="true" />
+                <element signature="e#4304#4305#0" expanded="true" />
+                <element signature="e#4328#4329#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Workday.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="212" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,7 +95,7 @@
       <file leaf-file-name="WriteToFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
+            <state relative-caret-position="1015">
               <caret line="72" column="71" lean-forward="true" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="71" />
               <folding />
             </state>
@@ -115,8 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>WriteToTXT(</find>
-      <find>WriteToE</find>
       <find>WriteToEmployee(</find>
       <find>loadcurrent</find>
       <find>loadpast</find>
@@ -144,6 +141,8 @@
       <find>generateEmployeeN</find>
       <find>generateN</find>
       <find>generate</find>
+      <find>workhours</find>
+      <find>workh</find>
       <find>checkti</find>
     </findStrings>
   </component>
@@ -198,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/menu/CustomerMenu.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/employeeServices" />
-        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/bookings/Services.java" />
+        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/services.txt" />
       </list>
     </option>
@@ -885,13 +884,6 @@
       <option name="presentableId" value="Default" />
       <updated>1490952939856</updated>
     </task>
-    <task id="LOCAL-00011" summary="fixed issue with shift both on same day">
-      <created>1491102656845</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1491102656845</updated>
-    </task>
     <task id="LOCAL-00012" summary="one line in a test fixed">
       <created>1491102748570</created>
       <option name="number" value="00012" />
@@ -1228,7 +1220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492416248076</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="add new service started">
+      <created>1492685839370</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1492685839372</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1310,7 +1309,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created pseudocode for add services function" />
     <MESSAGE value="slight format changes" />
     <MESSAGE value="this to name" />
     <MESSAGE value="comments to clarify code" />
@@ -1335,7 +1333,8 @@
     <MESSAGE value="register password" />
     <MESSAGE value="register password validation" />
     <MESSAGE value="add new service" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new service" />
+    <MESSAGE value="add new service started" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new service started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1452,13 +1451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="197" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1605,6 +1597,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1615,48 +1615,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="1015">
           <caret line="72" column="71" lean-forward="true" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        <state relative-caret-position="98">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="212" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="253" column="48" lean-forward="true" selection-start-line="253" selection-start-column="48" selection-end-line="253" selection-end-column="48" />
+        <state relative-caret-position="128">
+          <caret line="271" column="29" lean-forward="true" selection-start-line="271" selection-start-column="29" selection-end-line="271" selection-end-column="29" />
           <folding>
-            <element signature="e#12143#12144#0" expanded="true" />
-            <element signature="e#12178#12179#0" expanded="true" />
+            <element signature="e#12183#12184#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bookings/Services.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="106" column="59" lean-forward="false" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
+        <state relative-caret-position="148">
+          <caret line="104" column="38" lean-forward="false" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3170#3171#0" expanded="true" />
-            <element signature="e#3194#3195#0" expanded="true" />
+            <element signature="e#4304#4305#0" expanded="true" />
+            <element signature="e#4328#4329#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
