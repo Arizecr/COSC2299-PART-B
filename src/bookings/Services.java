@@ -23,13 +23,14 @@ public class Services {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
     private static ArrayList<Services> serviceList = new ArrayList<>();
-    private static ArrayList<String> EOserviceList = new ArrayList<>();
-    public Services(String bId,String sId,String name,String lengthT,ArrayList emp) {
+
+    private static ArrayList<String> emp ;
+    public Services(String bId,String sId,String name,String lengthT,ArrayList<String> emp) {
         this.bId = bId;
         this.sId = sId;
         this.name = name;
         this.lengthT = lengthT;
-        this.EOserviceList = emp;
+        this.emp = emp;
     }
     public Services() {
 
@@ -43,9 +44,10 @@ public class Services {
 
             try {
                 serviceList = new ArrayList<>();
-                EOserviceList = new ArrayList<>();
+                ArrayList<String> EOserviceList = new ArrayList<>();
                 String x;
                 while ((x = br.readLine()) != null) {
+                    EOserviceList = new ArrayList<>();
                     // printing out each line in the file
                     String Details[] = x.split(":", 5);
                     String bid = Details[0];
@@ -59,7 +61,6 @@ public class Services {
                     }
                     Services addS = new Services(bid,sid,n,l,EOserviceList);
                     serviceList.add(addS);
-                    EOserviceList.clear();
                     if(bid.equals(b)){System.out.println(sid + " | " + n + " | " + l+" | "+e);}
 
                 }
@@ -86,7 +87,7 @@ public class Services {
         }
     }
     public void addService(String b){//,String sId,String name, String time
-        EOserviceList = new ArrayList<>();
+        ArrayList<String> EOserviceList = new ArrayList<>();
        String s = generateServiceNo(); //generate user id
         int sSize = serviceList.size();
         WriteToFile w = new WriteToFile();
@@ -129,9 +130,8 @@ public class Services {
 
         serviceList.remove(index-1);
         rewriteToFile(serviceList,"services.txt");
-        System.out.print("Service added");
+        System.out.print("Service removed");
 
-        //add in code to add employees to the service
     }
 
     public void removeEmployee(String b){//,String sId,String name, String time
@@ -139,8 +139,8 @@ public class Services {
         ArrayList<String> eList = new ArrayList<>();
         String n = null;
         String nn = null;
-        int index;
-        int index2;
+        int index=0;
+        int index2=1;
         Scanner reader = new Scanner(System.in);
         do {
             System.out.print("Service ID: ");
@@ -150,10 +150,10 @@ public class Services {
         do {
             System.out.print("Employee ID: ");
             nn = reader.nextLine();
-            index2 = checkID(nn);//--------------------------check emp id
+            //index2 = checkID(nn);//--------------------------check emp id
         }while(index2==0);
-        serviceList.get(index-1).EOserviceList.remove(index2);
-        rewriteToFile(serviceList,"services.txt");
+        serviceList.get(index-1).emp.remove(index2);
+       // rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
         //add in code to add employees to the service
@@ -195,9 +195,10 @@ public class Services {
     }
     public String toString() {
         String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":" ;
-        for(int i=0; i < EOserviceList.size() ;i++){
-            part1+=EOserviceList.get(i);
-            if(i!=EOserviceList.size()-1){part1+=",";}
+        //System.out.println(emp.size());
+        for(int i=0; i < emp.size() ;i++){
+            part1+=emp.get(i);
+            if(i!=emp.size()-1){part1+=",";}
         }
         return part1;
     }

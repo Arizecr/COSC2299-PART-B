@@ -274,6 +274,7 @@ public class BusinessMenu {
                     s.removeService(b);
                     continue;
                 case 3:
+                    s.removeEmployee(b);
                     continue;
                 case 4:
                     loop = false;
