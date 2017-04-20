@@ -22,12 +22,14 @@ public class Services {
     private String lengthT;
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
-    public static ArrayList<Services> serviceList = new ArrayList<>();
-    public Services(String bId,String sId,String name,String lengthT) {
+    private static ArrayList<Services> serviceList = new ArrayList<>();
+    private static ArrayList<String> EOserviceList = new ArrayList<>();
+    public Services(String bId,String sId,String name,String lengthT,ArrayList emp) {
         this.bId = bId;
         this.sId = sId;
         this.name = name;
         this.lengthT = lengthT;
+        this.EOserviceList = emp;
     }
     public Services() {
 
@@ -40,17 +42,25 @@ public class Services {
             br = new BufferedReader(new FileReader("services.txt"));
 
             try {
+                serviceList = new ArrayList<>();
+                EOserviceList = new ArrayList<>();
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(":", 4);
+                    String Details[] = x.split(":", 5);
                     String bid = Details[0];
                     String sid = Details[1];
                     String n = Details[2];
                     String l = Details[3];
-                    Services addS = new Services(bid,sid,n,l);
+                    String e = Details[4];
+                    String empID[] = e.split(",");
+                    for(String emp:empID){
+                        EOserviceList.add(emp);
+                    }
+                    Services addS = new Services(bid,sid,n,l,EOserviceList);
                     serviceList.add(addS);
-                    if(bid.equals(b)){System.out.println(sid + " | " + n + " | " + l);}
+                    EOserviceList.clear();
+                    if(bid.equals(b)){System.out.println(sid + " | " + n + " | " + l+" | "+e);}
 
                 }
                 //prints error
@@ -76,19 +86,29 @@ public class Services {
         }
     }
     public void addService(String b){//,String sId,String name, String time
+        EOserviceList = new ArrayList<>();
        String s = generateServiceNo(); //generate user id
         int sSize = serviceList.size();
         WriteToFile w = new WriteToFile();
         String n = null;
         String len = null;
+        String employees = null;
         Scanner reader = new Scanner(System.in);
         do {
             System.out.print("Name of service: ");
             n = reader.nextLine();
             System.out.print("length in HH:mm ");
-            len = reader.nextLine();
+            len = reader.nextLine();//----------------------------------- checking boolean
         }while(!checkService(n,len));
-        Services addS = new Services(b,s,n,len);
+        do {
+            System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
+            employees = reader.nextLine();
+        }while(false);//------------------------------------------------write code
+        String empID[] = employees.split(",");
+        for(String emp:empID){
+            EOserviceList.add(emp);
+        }
+        Services addS = new Services(b,s,n,len,EOserviceList);
         serviceList.add(addS);
         w.WriteToWorkingdayTXT(serviceList.get(sSize).toString(),"services.txt");
         System.out.print("Service added");
@@ -113,6 +133,31 @@ public class Services {
 
         //add in code to add employees to the service
     }
+
+    public void removeEmployee(String b){//,String sId,String name, String time
+        WriteToFile w = new WriteToFile();
+        ArrayList<String> eList = new ArrayList<>();
+        String n = null;
+        String nn = null;
+        int index;
+        int index2;
+        Scanner reader = new Scanner(System.in);
+        do {
+            System.out.print("Service ID: ");
+            n = reader.nextLine();
+            index = checkID(n);
+        }while(index==0);
+        do {
+            System.out.print("Employee ID: ");
+            nn = reader.nextLine();
+            index2 = checkID(nn);//--------------------------check emp id
+        }while(index2==0);
+        serviceList.get(index-1).EOserviceList.remove(index2);
+        rewriteToFile(serviceList,"services.txt");
+        System.out.print("Employee Removed");
+
+        //add in code to add employees to the service
+    }
     public void rewriteToFile( ArrayList serviceList,String filename){
         WriteToFile w = new WriteToFile();
         if(serviceList.size()>=0){w.reWriteToWorkingdayTXT(serviceList.get(0).toString(), filename);}
@@ -130,6 +175,11 @@ public class Services {
         return 0;
     }
     public boolean checkService(String n, String l){
+        if(n.length()>15){
+            System.out.println("name is too long(must be less than 15 characters)");
+            return false;
+        }
+        //if(l)//not int or not correct format
      return true;
     }
     /*
@@ -144,8 +194,12 @@ public class Services {
         return "s"+count;
     }
     public String toString() {
-
-        return bId + ":" + sId + ":" + name + ":" + lengthT;
+        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":" ;
+        for(int i=0; i < EOserviceList.size() ;i++){
+            part1+=EOserviceList.get(i);
+            if(i!=EOserviceList.size()-1){part1+=",";}
+        }
+        return part1;
     }
 
 }

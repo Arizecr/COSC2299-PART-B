@@ -1,2 +1,2 @@
-b1:s1:name of service:30
-b1:s2:abc123:60
+b1:s1:name of service:30:e11
+b1:s3:e:e:e1,e2
