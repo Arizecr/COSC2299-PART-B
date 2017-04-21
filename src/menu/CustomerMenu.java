@@ -1,6 +1,7 @@
 package menu;
 
 import BusinessWorkDays.Workday;
+import bookings.Services;
 import coreFunctions.Driver;
 import test.Logging;
 
@@ -24,10 +25,11 @@ public class CustomerMenu {
 
         Scanner reader = new Scanner(System.in);
 
-
+        int bID = getBusiness();
         //infinite loop
         while(true) {
             //print customer menu
+
             System.out.println("\n+----------------------------------+");
             System.out.println("|           Customer               |");
             System.out.println("|              menu                |");
@@ -49,8 +51,9 @@ public class CustomerMenu {
             int choice = reader.nextInt();
 
             if(choice == 1){ //View available days/times (to book an appointment for a business)
-                int bID = getBusiness();
+
                 availableBookings(bID);
+
 
 
 
@@ -143,10 +146,22 @@ public class CustomerMenu {
      * Prints the available booking hours of a given business
      */
     public void availableBookings(int bID){
+        int index=0;
+        String n = null;
+        Services s = new Services();
 
         System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
         System.out.println("-----------------------------");
         workday.printFile(login.businessList.get(bID).getUsername());
         System.out.println("\nThe business is open at the above times.");
+        s.printService(login.businessList.get(bID).getUsername());
+
+        Scanner reader = new Scanner(System.in);
+        do {
+            System.out.print(" Enter Service ID: ");
+            n = reader.nextLine();
+            index = s.checkID(n);
+        }while(index==0);
+        //
     }
 }
