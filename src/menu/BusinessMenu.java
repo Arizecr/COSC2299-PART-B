@@ -255,8 +255,8 @@ public class BusinessMenu {
             System.out.println("\n======================================");
             System.out.println("1. Add Service");//choose employees who can do this service
             System.out.println("2. Remove Service");
-            System.out.println("3. Add Service to employee");
-            System.out.println("4. Remove Service from employee");
+            System.out.println("3. Add Employee to Service");
+            System.out.println("4. Remove Employee from Service");
             System.out.println("5. Return to business menu");
             System.out.println("======================================\n");
             System.out.println("Enter an option: ");
