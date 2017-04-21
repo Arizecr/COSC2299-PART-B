@@ -252,7 +252,7 @@ public class BusinessMenu {
             Services s = new Services();
             s.printService(b,"b");
             Scanner reader = new Scanner(System.in);
-            System.out.println("\n====================================");
+            System.out.println("\n======================================");
             System.out.println("1. Add Service");//choose employees who can do this service
             System.out.println("2. Remove Service");
             System.out.println("3. Remove Service from employee");
