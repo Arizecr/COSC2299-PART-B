@@ -67,6 +67,11 @@ public class ServicesTesting {
         String input = "valid name";
         assertTrue(s.checkName(input));
     }
+    @Test
+    public void checkNameTestBoundary() {
+        String input = "1234";//minimum length of name
+        assertTrue(s.checkName(input));
+    }
 
     @Test
     public void checkDurTest()  {
