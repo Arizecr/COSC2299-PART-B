@@ -64,7 +64,7 @@ public class Register {
             System.out.print("Address: ");
             String address = reader.nextLine();
 
-            System.out.print("Mobile: ");
+            System.out.print("Mobile: [04xxxxxxxx]");
             String mobile = reader.nextLine();
 
 
@@ -165,8 +165,17 @@ public class Register {
 
         }
 
-        if(mobile.isEmpty() || (mobile.length() != 10) ){
+        if(mobile.isEmpty() || (mobile.length() != 10)||mobile.charAt(0) != '0'||mobile.charAt(1) != '4' ){
+
             System.out.println("Invalid Mobile");
+            return ++valid;
+
+        }
+        int m;
+        try{
+            m = Integer.parseInt(mobile);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid Mobile number");
             return ++valid;
 
         }
@@ -177,15 +186,6 @@ public class Register {
             return ++valid;
         }
 
-            //Login details are not valid, try again
-        /*
-        else{
-
-
-        }
-        */
-
-        // if it makes it to this valid, register success :D
         return valid;
     }
 
