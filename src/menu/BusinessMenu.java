@@ -138,7 +138,7 @@ public class BusinessMenu {
                     av.printFile(bId,empID);
                     continue;
 
-                    //Add services - not yet implemented
+                    //Add services
                 case 5:
                     addNewService(bId);
                     continue;

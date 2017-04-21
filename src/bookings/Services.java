@@ -131,7 +131,7 @@ public class Services {
         }while(!checkName(n));
         do {
             System.out.print("length in HH-mm ");
-            len = reader.nextLine();//----------------------------------- checking boolean
+            len = reader.nextLine();
         }while(!checkDur(len));
         do {
             System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
@@ -196,10 +196,6 @@ public class Services {
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
-
-
-
-        //add in code to add employees to the service
     }
     public void addEmployee(String b){//,String sId,String name, String time
         WriteToFile w = new WriteToFile();
@@ -232,21 +228,6 @@ public class Services {
         //add in code to add employees to the service
     }
 
-    public void removeAllEmployeeServices(String b,String e){//when a employee is removed from the system
-        WriteToFile w = new WriteToFile();
-
-        for(int j=0; j < serviceList.size() ;j++){
-            boolean index =checkEID(j,e);
-            if(!index){
-                //     serviceList.get(j).emp.remove(index-1);
-
-            }
-        }
-        rewriteToFile(serviceList,"services.txt");
-
-
-    }
-
     public int checkID(String n){
         for(int i=0; i < serviceList.size() ;i++){
             if(n.equals(serviceList.get(i).sId)){
@@ -267,10 +248,7 @@ public class Services {
         for(int j=0; j < emplist.size() ;j++){
             if(e.equals(emplist.get(j))){
                 return true;
-                // ne = ne.replace(e+",","");
-                //ne = ne.replace(e,"");
             }
-
         }
         return false;
 
