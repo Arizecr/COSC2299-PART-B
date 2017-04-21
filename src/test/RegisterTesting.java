@@ -141,8 +141,8 @@ public class RegisterTesting {
 
     }
     @Test
-    public void passwordUppBound() {
-        String u = "c1";
+    public void allNull() {
+        String u = "";
         String p = "";
         int value = reg.testReg(p,name,a,m);
         assertNotEquals(correct,value);
@@ -151,7 +151,7 @@ public class RegisterTesting {
     @Test
     public void validMobile() {
 
-        String u = "ccccccc8910112";
+        String u = "cccc8910112";
         String p = "passwooord";
         int value = reg.testReg(p,name,a,m);
         assertEquals(correct,value);
@@ -202,6 +202,28 @@ public class RegisterTesting {
         String u = "ccccccc8910112";
         String p = "passwooord";
         int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void nullMobile() {
+        String m = "";
+        String u = "cccccc10112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidAddress() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,"",m);
         assertNotEquals(correct,value);
     }
 

@@ -175,7 +175,7 @@ public class Register {
         try{
             m = Integer.parseInt(mobile);
         } catch (NumberFormatException e) {
-            System.out.println("Invalid Mobile number");
+            System.out.println("Mobile number not numeric");
             return ++valid;
 
         }
