@@ -188,13 +188,11 @@ public class Services {
         }while(!index2);
 
         String ne = serviceList.get(index-1).e;
-        if(ne.contains(e+",")){ ne = ne.replace(e+",","");}
-        else if(ne.contains(e)){ ne = ne.replace(e,"");}
-        serviceList.get(index-1).e = ne;
-        for(int j=0; j < serviceList.size() ;j++){
 
-            System.out.println(serviceList.get(j).e);////////////
-        }
+        if(ne.contains(nn+",")){ ne = ne.replace(nn+",","");}
+        else if(ne.contains(nn)){ ne = ne.replace(","+nn,"");}
+        serviceList.get(index-1).e = ne;
+
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
