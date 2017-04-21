@@ -140,8 +140,8 @@ public class Services {
         ArrayList<String> eList = new ArrayList<>();
         String n = null;
         String nn = null;
-        int index=0;
-        int index2=1;
+        int index;
+        int index2;
         Scanner reader = new Scanner(System.in);
         do {
             System.out.print("Service ID: ");
@@ -151,10 +151,10 @@ public class Services {
         do {
             System.out.print("Employee ID: ");
             nn = reader.nextLine();
-            //index2 = checkID(nn);//--------------------------check emp id
+            index2 = checkEID(index-1,nn);//checks the employee is valid
         }while(index2==0);
-        serviceList.get(index-1).emp.remove(index2);
-       // rewriteToFile(serviceList,"services.txt");
+        serviceList.get(index-1).emp.remove(index2-1);
+        rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
         //add in code to add employees to the service
@@ -171,6 +171,18 @@ public class Services {
             if(n.equals(serviceList.get(i).sId)){
               return i+1;
             }
+        }
+
+        return 0;
+    }
+    public int checkEID(int s,String e){
+
+            ArrayList<String> emplist = serviceList.get(s).emp;
+            for(int j=0; j < emplist.size() ;j++){
+                if(e.equals(emplist.get(j))){
+                    return j+1;//never returns zero
+                }
+
         }
 
         return 0;
