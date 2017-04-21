@@ -2,7 +2,6 @@ package test;
 
 import bookings.Services;
 import coreFunctions.WriteToFile;
-import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,11 +25,7 @@ public class ServicesTesting {
         s.printService("b1","b");
     }
 
-    @After
-    public void tearDown() throws Exception {
-
-    }
-    //service ID checking
+    //------------------------------------------------------------------service ID checking
     @Test
     public void checkIDTest(){
         String n = "s1";
@@ -38,8 +33,9 @@ public class ServicesTesting {
     assertNotEquals(index,0);
 
     }
-    //write other test cases with different service nnumber formats
-
+    //write other test cases with different service number formats
+    //--------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------employee ID checking----
     @Test
     public void checkEIDTest() {
         int index = 0;//first line of text file
@@ -64,7 +60,8 @@ public class ServicesTesting {
         String b = "b1";
         assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
     }
-
+    //-------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------service details checking-----------
     @Test
     public void checkNameTest() {
         String input = "valid name";
