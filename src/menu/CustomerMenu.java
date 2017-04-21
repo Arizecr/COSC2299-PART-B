@@ -49,35 +49,22 @@ public class CustomerMenu {
             }
 
             int choice = reader.nextInt();
-
-            if(choice == 1){ //View available days/times (to book an appointment for a business)
-
-                availableBookings(bID);
-
-
-
-
+            switch (choice) {
+                case 1: //View available days/times (to book an appointment for a business)
+                    availableBookings(bID);
+                    continue;
+                case 2:
+                    System.out.println("Current Bookings: ");
+                    driver.viewBookingsCustomer(username); //view current bookings
+                    continue;
+                case 3:
+                    System.out.println("Successfully logged out of the system!");
+                    System.exit(0);
+                    continue;
+                default:
+                    System.out.println("Invalid numeric input!");
+                    continue;
             }
-            if(choice == 2){
-                System.out.println("Current Bookings: ");
-                driver.viewBookingsCustomer(username); //view current bookings
-
-
-            }
-
-
-            if(choice == 3){
-                System.out.println("Successfully logged out of the system!");
-                System.exit(0);
-
-            }
-
-            else {
-                System.out.println("Invalid numeric input!");
-
-            }
-
-
         }
 
 
@@ -153,15 +140,16 @@ public class CustomerMenu {
         System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
         System.out.println("-----------------------------");
         workday.printFile(login.businessList.get(bID).getUsername());
-        System.out.println("\nThe business is open at the above times.");
-        s.printService(login.businessList.get(bID).getUsername());
+        System.out.println("-----------------------------");
+        System.out.println("\nSelect a Service.");
+        s.printService(login.businessList.get(bID).getUsername(),"c");
 
         Scanner reader = new Scanner(System.in);
         do {
-            System.out.print(" Enter Service ID: ");
+            System.out.print("Enter Service ID: ");
             n = reader.nextLine();
             index = s.checkID(n);
         }while(index==0);
-        //
+
     }
 }

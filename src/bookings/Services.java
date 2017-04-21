@@ -35,7 +35,7 @@ public class Services {
     public Services() {
 
     }
-    public void printService(String b) {
+    public void printService(String b,String type) {
         BufferedReader br;
         try {
 
@@ -61,7 +61,8 @@ public class Services {
                     }
                     Services addS = new Services(bid,sid,n,l,EOserviceList);
                     serviceList.add(addS);
-                    if(bid.equals(b)){System.out.println(sid + " | " + n + " | " + l+" | "+e);}
+                    if(bid.equals(b)&&type.equals("b")){System.out.println(sid + " | " + n + " | " + l+" | "+e);}
+                    if(bid.equals(b)&&type.equals("c")){System.out.println(sid + " | " + n + " | " + l);}
 
                 }
                 //prints error
