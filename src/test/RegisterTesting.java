@@ -173,6 +173,7 @@ public class RegisterTesting {
         assertNotEquals(correct,value);
     }
     @Test
+    //--------------------------------------------------------------Boundary testing
     public void invalidMobileSize2() {
         String m = "041234567890";
         String u = "ccccccc8910112";
@@ -188,6 +189,7 @@ public class RegisterTesting {
         int value = reg.testReg(p,name,a,m);
         assertNotEquals(correct,value);
     }
+    //-----------------------------------------------------------------------------
     @Test
     public void invalidMobileformat() {
         String m = "0312345678";
