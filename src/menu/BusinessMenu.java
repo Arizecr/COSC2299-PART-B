@@ -255,8 +255,9 @@ public class BusinessMenu {
             System.out.println("\n====================================");
             System.out.println("1. Add Service");//choose employees who can do this service
             System.out.println("2. Remove Service");
-            System.out.println("3. Remove Service from employee");
-            System.out.println("4. Return to business menu");
+            System.out.println("3. Add Service to employee");
+            System.out.println("4. Remove Service from employee");
+            System.out.println("5. Return to business menu");
             System.out.println("======================================\n");
             System.out.println("Enter an option: ");
             while (!reader.hasNextInt()) {
@@ -275,9 +276,12 @@ public class BusinessMenu {
                     s.removeService(b);
                     continue;
                 case 3:
-                    s.removeEmployee(b);
+                    s.addEmployee(b);
                     continue;
                 case 4:
+                    s.removeEmployee(b);
+                    continue;
+                case 5:
                     loop = false;
                         default:continue;
             }

@@ -2,6 +2,7 @@ package bookings;
 
 import coreFunctions.WriteToFile;
 import test.Logging;
+import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -19,19 +20,23 @@ public class Services {
     private String bId;
     private String sId;
     private String name;
+    private String e;
     private String lengthT;
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
     private static ArrayList<Services> serviceList = new ArrayList<>();
+    private static ArrayList<String> emp = new ArrayList<>();
 
-    private static ArrayList<String> emp ;
-    public Services(String bId,String sId,String name,String lengthT,ArrayList<String> emp) {
+    public Services(String bId,String sId,String name,String lengthT,String e) {
+        emp = new ArrayList<>();
         this.bId = bId;
         this.sId = sId;
         this.name = name;
         this.lengthT = lengthT;
-        this.emp = emp;
+        this.e = e ;
+
     }
+    public ArrayList<String> getE(){ return this.emp;}
     public Services() {
 
     }
@@ -46,7 +51,13 @@ public class Services {
                 serviceList = new ArrayList<>();
                 ArrayList<String> EOserviceList = new ArrayList<>();
                 String x;
-                String line = "|Service ID|Name of Service | length: in Hours and Minutes" ;
+                String line = null;
+                if(type.equals("c")){
+                    line = "|Service ID|Name of Service | length: in Hours and Minutes";
+                }
+                if(type.equals("b")){
+                    line = "|Service ID|Name of Service | length: in Hours and Minutes | Employees ";
+                }
                 System.out.println(line);
 
 
@@ -62,16 +73,19 @@ public class Services {
                     String Time[] = l.split("-", 2);
                     String hours = Time[0];
                     String min = Time[1];
-                    String empID[] = e.split(",");
+                  /*  String empID[] = e.split(",");
                     for(String emp:empID){
                         EOserviceList.add(emp);
-                    }
-                    Services addS = new Services(bid,sid,n,l,EOserviceList);
+                    }*/
+                    Services addS = new Services(bid,sid,n,l,e);
                     serviceList.add(addS);
 
-                        line = "|"+ sid + " |" + n + " |" + hours+" +"+min;
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes" ,sid,n,hours,min);
-
+                    if(type.equals("c")) {
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes", sid, n, hours, min);
+                    }
+                    else if(type.equals("b")){
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes       | %s", sid, n, hours, min,e);
+                    }
                         System.out.println(line);
 
 
@@ -89,7 +103,10 @@ public class Services {
                 LOGGER.log(Level.SEVERE,ae.toString(),ae);
 
             }
+            for(int j=0; j < serviceList.size() ;j++){
 
+                System.out.println(serviceList.get(j).emp);////////////
+            }
 
             //file cannot be found
         } catch (FileNotFoundException e) {
@@ -119,14 +136,15 @@ public class Services {
         do {
             System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
             employees = reader.nextLine();
-        }while(false);//------------------------------------------------write code
-        String empID[] = employees.split(",");
+        }while(false);//----------------------------------------------------------- write code to check all these employee ids exist in the business and that none repeat
+    /*    String empID[] = employees.split(",");
         for(String emp:empID){
             EOserviceList.add(emp);
-        }
-        Services addS = new Services(b,s,n,len,EOserviceList);
+        }*/
+        Services addS = new Services(b,s,n,len,employees);
         serviceList.add(addS);
         w.WriteToWorkingdayTXT(serviceList.get(sSize).toString(),"services.txt");
+
         System.out.print("Service added");
 
         //add in code to add employees to the service
@@ -144,6 +162,7 @@ public class Services {
         }while(index==0);
 
         serviceList.remove(index-1);
+
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Service removed");
 
@@ -167,19 +186,67 @@ public class Services {
             nn = reader.nextLine();
             index2 = checkEID(index-1,nn);//checks the employee is valid
         }while(index2==0);
-        serviceList.get(index-1).emp.remove(index2-1);
+        eList = serviceList.get(index-1).emp;
+        System.out.println(eList);/////////////////////
+        eList.remove(index2-1);
+        serviceList.get(index-1).emp = eList;
+        for(int j=0; j < serviceList.size() ;j++){
+
+            System.out.println(serviceList.get(j).emp);////////////
+        }
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
 
+
+
+
         //add in code to add employees to the service
     }
-    public void rewriteToFile( ArrayList serviceList,String filename){
+    public void addEmployee(String b){//,String sId,String name, String time
         WriteToFile w = new WriteToFile();
-        if(serviceList.size()>=0){w.reWriteToWorkingdayTXT(serviceList.get(0).toString(), filename);}
-        for(int i=1; i < serviceList.size() ;i++){
-            w.WriteToWorkingdayTXT(serviceList.get(i).toString(), filename);
-        }
+        ArrayList<String> eList = new ArrayList<>();
+        Employee employee = new Employee();
+        String n = null;
+        String nn = null;
+        int index;
+        int index2;
+        Scanner reader = new Scanner(System.in);
+        do {
+            System.out.print("Service ID: ");
+            n = reader.nextLine();
+            index = checkID(n);
+        }while(index==0);
+        do {
+            System.out.print("Employee ID: ");
+            nn = reader.nextLine();
+            index2 = checkEID(index-1,nn);//checks the employee is not already present
+        }while(index2!=0&&!employee.checkEmployeeID(b,nn));
+        serviceList.get(index-1).emp.add(nn);
+
+        rewriteToFile(serviceList,"services.txt");
+        System.out.print("Employee Added to service");
+
+
+
+
+        //add in code to add employees to the service
     }
+
+    public void removeAllEmployeeServices(String b,String e){//when a employee is removed from the system
+        WriteToFile w = new WriteToFile();
+
+        for(int j=0; j < serviceList.size() ;j++){
+            int index =checkEID(j,e);
+           if(index!=0){
+               serviceList.get(j).emp.remove(index-1);
+
+           }
+        }
+        rewriteToFile(serviceList,"services.txt");
+
+
+    }
+
     public int checkID(String n){
         for(int i=0; i < serviceList.size() ;i++){
             if(n.equals(serviceList.get(i).sId)){
@@ -270,6 +337,14 @@ public class Services {
             if(i!=emp.size()-1){part1+=",";}
         }
         return part1;
+    }
+    public void rewriteToFile( ArrayList<Services> serviceList,String filename){
+        WriteToFile w = new WriteToFile();
+        if(serviceList.size()>=0){w.reWriteToWorkingdayTXT(serviceList.get(0).toString(), filename);}
+        for(int i=1; i < serviceList.size() ;i++){
+            emp.clear();
+            w.WriteToWorkingdayTXT(serviceList.get(i).toString(), filename);
+        }
     }
 
 }

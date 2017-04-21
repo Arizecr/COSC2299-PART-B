@@ -1,2 +1,2 @@
-b1:s1:Women's haircut:1-30:e1,e2
-b1:s3:Dye hair service:4-30:e1,e2
+b1:s4:shampooing:0-30:e1,e4,e2
+b1:s5:hair cut:2-00:e1,e3,e2
