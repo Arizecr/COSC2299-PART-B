@@ -25,10 +25,10 @@ public class Services {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
     private static ArrayList<Services> serviceList = new ArrayList<>();
-    private static ArrayList<String> emp = new ArrayList<>();
+
 
     public Services(String bId,String sId,String name,String lengthT,String e) {
-        emp = new ArrayList<>();
+
         this.bId = bId;
         this.sId = sId;
         this.name = name;
@@ -174,7 +174,7 @@ public class Services {
         String n = null;
         String nn = null;
         int index;
-        int index2;
+        boolean index2;
         Scanner reader = new Scanner(System.in);
         do {
             System.out.print("Service ID: ");
@@ -185,11 +185,13 @@ public class Services {
             System.out.print("Employee ID: ");
             nn = reader.nextLine();
             index2 = checkEID(index-1,nn);//checks the employee is valid
-        }while(index2==0);
+        }while(!index2);
         eList = serviceList.get(index-1).emp;
         System.out.println(eList);/////////////////////
-        eList.remove(index2-1);
-        serviceList.get(index-1).emp = eList;
+        String ne = serviceList.get(index-1).e;
+         ne = ne.replace(e+",","");
+        ne = ne.replace(e,"");
+        serviceList.get(index-1).e = ne;
         for(int j=0; j < serviceList.size() ;j++){
 
             System.out.println(serviceList.get(j).emp);////////////
@@ -219,8 +221,9 @@ public class Services {
         do {
             System.out.print("Employee ID: ");
             nn = reader.nextLine();
-            index2 = checkEID(index-1,nn);//checks the employee is not already present
-        }while(index2!=0&&!employee.checkEmployeeID(b,nn));
+
+        }while(!checkEID(index-1,nn)&&!employee.checkEmployeeID(b,nn));
+
         serviceList.get(index-1).emp.add(nn);
 
         rewriteToFile(serviceList,"services.txt");
@@ -236,8 +239,8 @@ public class Services {
         WriteToFile w = new WriteToFile();
 
         for(int j=0; j < serviceList.size() ;j++){
-            int index =checkEID(j,e);
-           if(index!=0){
+            boolean index =checkEID(j,e);
+           if(!index){
                serviceList.get(j).emp.remove(index-1);
 
            }
@@ -256,17 +259,24 @@ public class Services {
 
         return 0;
     }
-    public int checkEID(int s,String e){
-
-        ArrayList<String> emplist = serviceList.get(s).emp;
+    public boolean checkEID(int s,String e){
+        ArrayList<String> EOserviceList = new ArrayList<>();
+        String ne = serviceList.get(s).e;
+  String empID[] = ne.split(",");
+                    for(String emp:empID){
+                        EOserviceList.add(emp);
+                    }
+        ArrayList<String> emplist = EOserviceList;
         for(int j=0; j < emplist.size() ;j++){
             if(e.equals(emplist.get(j))){
-                return j+1;//never returns zero
+                return true;
+               // ne = ne.replace(e+",","");
+                //ne = ne.replace(e,"");
             }
 
         }
+        return false;
 
-        return 0;
     }
     public boolean checkName(String n){
         if(n.length()>16){
