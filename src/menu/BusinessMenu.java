@@ -247,7 +247,7 @@ public class BusinessMenu {
         while(loop) {
             System.out.println("\n+----------------------------------+");
             System.out.println("|        Current Services          |");
-            System.out.println("|              Available           |");
+            System.out.println("|            Available             |");
             System.out.println("+----------------------------------+");
             Services s = new Services();
             s.printService(b,"b");
@@ -258,6 +258,7 @@ public class BusinessMenu {
             System.out.println("3. Remove Service from employee");
             System.out.println("4. Return to business menu");
             System.out.println("======================================\n");
+            System.out.println("Enter an option: ");
             while (!reader.hasNextInt()) {
                 System.out.println("Error: entered a non integer. Enter a number between 1-8.");
                 System.out.print("Enter choice (1-8): ");
