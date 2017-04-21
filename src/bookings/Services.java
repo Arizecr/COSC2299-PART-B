@@ -36,7 +36,7 @@ public class Services {
         this.e = e ;
 
     }
-    public ArrayList<String> getE(){ return this.emp;}
+
     public Services() {
 
     }
@@ -86,7 +86,7 @@ public class Services {
                     else if(type.equals("b")){
                         line = String.format("|%10s|%16s|%2s hours and %s minutes       | %s", sid, n, hours, min,e);
                     }
-                        System.out.println(line);
+                    System.out.println(line);
 
 
 
@@ -105,7 +105,7 @@ public class Services {
             }
             for(int j=0; j < serviceList.size() ;j++){
 
-                System.out.println(serviceList.get(j).emp);////////////
+                System.out.println(serviceList.get(j).e);////////////
             }
 
             //file cannot be found
@@ -186,15 +186,14 @@ public class Services {
             nn = reader.nextLine();
             index2 = checkEID(index-1,nn);//checks the employee is valid
         }while(!index2);
-        eList = serviceList.get(index-1).emp;
-        System.out.println(eList);/////////////////////
+
         String ne = serviceList.get(index-1).e;
-         ne = ne.replace(e+",","");
+        ne = ne.replace(e+",","");
         ne = ne.replace(e,"");
         serviceList.get(index-1).e = ne;
         for(int j=0; j < serviceList.size() ;j++){
 
-            System.out.println(serviceList.get(j).emp);////////////
+            System.out.println(serviceList.get(j).e);////////////
         }
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Removed");
@@ -224,7 +223,7 @@ public class Services {
 
         }while(!checkEID(index-1,nn)&&!employee.checkEmployeeID(b,nn));
 
-        serviceList.get(index-1).emp.add(nn);
+        // serviceList.get(index-1).e.add(nn);
 
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Added to service");
@@ -240,10 +239,10 @@ public class Services {
 
         for(int j=0; j < serviceList.size() ;j++){
             boolean index =checkEID(j,e);
-           if(!index){
-               serviceList.get(j).emp.remove(index-1);
+            if(!index){
+                //     serviceList.get(j).emp.remove(index-1);
 
-           }
+            }
         }
         rewriteToFile(serviceList,"services.txt");
 
@@ -262,15 +261,15 @@ public class Services {
     public boolean checkEID(int s,String e){
         ArrayList<String> EOserviceList = new ArrayList<>();
         String ne = serviceList.get(s).e;
-  String empID[] = ne.split(",");
-                    for(String emp:empID){
-                        EOserviceList.add(emp);
-                    }
+        String empID[] = ne.split(",");
+        for(String emp:empID){
+            EOserviceList.add(emp);
+        }
         ArrayList<String> emplist = EOserviceList;
         for(int j=0; j < emplist.size() ;j++){
             if(e.equals(emplist.get(j))){
                 return true;
-               // ne = ne.replace(e+",","");
+                // ne = ne.replace(e+",","");
                 //ne = ne.replace(e,"");
             }
 
@@ -340,19 +339,16 @@ public class Services {
         return "s"+count;
     }
     public String toString() {
-        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":" ;
+        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ e ;
         //System.out.println(emp.size());
-        for(int i=0; i < emp.size() ;i++){
-            part1+=emp.get(i);
-            if(i!=emp.size()-1){part1+=",";}
-        }
+
         return part1;
     }
     public void rewriteToFile( ArrayList<Services> serviceList,String filename){
         WriteToFile w = new WriteToFile();
         if(serviceList.size()>=0){w.reWriteToWorkingdayTXT(serviceList.get(0).toString(), filename);}
         for(int i=1; i < serviceList.size() ;i++){
-            emp.clear();
+
             w.WriteToWorkingdayTXT(serviceList.get(i).toString(), filename);
         }
     }
