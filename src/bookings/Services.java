@@ -136,7 +136,7 @@ public class Services {
         do {
             System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
             employees = reader.nextLine();
-        }while(false);//----------------------------------------------------------- write code to check all these employee ids exist in the business and that none repeat
+        }while(checkEmployees(b,employees)||checkEqualEmployees(b,employees));//checks the employee works at the business
     /*    String empID[] = employees.split(",");
         for(String emp:empID){
             EOserviceList.add(emp);
@@ -215,7 +215,9 @@ public class Services {
             System.out.print("Employee ID: ");
             nn = reader.nextLine();
 
-        }while(!checkEID(index-1,nn)&&!employee.checkEmployeeID(b,nn));
+        }while(checkEID(index-1,nn)||!employee.checkEmployeeID(b,nn));
+        // checks if the id is in the list and that it is a real employee id
+
         String currentE = serviceList.get(index-1).e;
         currentE += "," + nn;
         serviceList.get(index-1).e = currentE;
@@ -237,7 +239,7 @@ public class Services {
 
         return 0;
     }
-    public boolean checkEID(int s,String e){
+    public boolean checkEID(int s,String e){//checks if the employee does this service
         ArrayList<String> EOserviceList = new ArrayList<>();
         String ne = serviceList.get(s).e;
         String empID[] = ne.split(",");
@@ -247,7 +249,42 @@ public class Services {
         ArrayList<String> emplist = EOserviceList;
         for(int j=0; j < emplist.size() ;j++){
             if(e.equals(emplist.get(j))){
-                return true;
+                return true;//employee found
+            }
+        }
+        return false;//employee not found
+
+    }
+    public boolean checkEmployees(String b,String e){
+        ArrayList<String> EOserviceList = new ArrayList<>();
+        Employee employee = new Employee();
+        String empID[] = e.split(",");
+        for(String emp:empID){
+            EOserviceList.add(emp);
+        }
+        ArrayList<String> emplist = EOserviceList;
+        for(int j=0; j < emplist.size() ;j++){
+
+            if(!employee.checkEmployeeID(b,emplist.get(j))){
+                return true;//not a employee of this business
+            }
+        }
+        return false;
+
+    }
+    public boolean checkEqualEmployees(String b,String e){
+        ArrayList<String> EOserviceList = new ArrayList<>();
+        Employee employee = new Employee();
+        String empID[] = e.split(",");
+        for(String emp:empID){
+            EOserviceList.add(emp);
+        }
+        ArrayList<String> emplist = EOserviceList;
+        for(int i=0; i < emplist.size() ;i++){
+            for(int j=0; j < emplist.size() ;j++){
+                if(emplist.get(i).equals(emplist.get(j))&&i!=j){
+                    return true;
+                }
             }
         }
         return false;
