@@ -180,7 +180,6 @@ public class Register {
 
         }
 
-
         if( password.isEmpty()) {
             System.out.println("Invalid Password");
             return ++valid;
