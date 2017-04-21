@@ -188,8 +188,8 @@ public class Services {
         }while(!index2);
 
         String ne = serviceList.get(index-1).e;
-        ne = ne.replace(e+",","");
-        ne = ne.replace(e,"");
+        if(ne.contains(e+",")){ ne = ne.replace(e+",","");}
+        else if(ne.contains(e)){ ne = ne.replace(e,"");}
         serviceList.get(index-1).e = ne;
         for(int j=0; j < serviceList.size() ;j++){
 
@@ -222,9 +222,9 @@ public class Services {
             nn = reader.nextLine();
 
         }while(!checkEID(index-1,nn)&&!employee.checkEmployeeID(b,nn));
-
-        // serviceList.get(index-1).e.add(nn);
-
+        String currentE = serviceList.get(index-1).e;
+        currentE += "," + nn;
+        serviceList.get(index-1).e = currentE;
         rewriteToFile(serviceList,"services.txt");
         System.out.print("Employee Added to service");
 
@@ -339,7 +339,7 @@ public class Services {
         return "s"+count;
     }
     public String toString() {
-        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ e ;
+        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+e ;
         //System.out.println(emp.size());
 
         return part1;
