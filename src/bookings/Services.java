@@ -103,10 +103,7 @@ public class Services {
                 LOGGER.log(Level.SEVERE,ae.toString(),ae);
 
             }
-            for(int j=0; j < serviceList.size() ;j++){
 
-                System.out.println(serviceList.get(j).e);////////////
-            }
 
             //file cannot be found
         } catch (FileNotFoundException e) {
@@ -295,8 +292,8 @@ public class Services {
             System.out.println("name is too long(must be less than 16 characters)");
             return false;
         }
-        if(n.length()<=5){
-            System.out.println("name is too short(must be more than 5 characters)");
+        if(n.length()<=3){
+            System.out.println("name is too short(must be more than 3 characters)");
             return false;
         }
 

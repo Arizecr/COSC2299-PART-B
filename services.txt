@@ -1,3 +1,5 @@
-b1:s4:shampooing:0-30:e4,e2
-b1:s5:hair cut:2-00:e1,e3,eo
-b1:s7:asdfghjkl:1-30:e1,e2,e3
+b1:s1:shampooing:0-30:e5,e2
+b1:s2:hair cut:0-30:e1,e2
+b1:s3:shave:0-30:e3,e5
+b1:s4:Women's haircut:0-30:e2
+b1:s5:Dye hair service:6-30:e1,e2
