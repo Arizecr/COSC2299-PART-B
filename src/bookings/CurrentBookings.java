@@ -5,7 +5,7 @@ package bookings;
  */
 public class CurrentBookings extends Bookings{
 
-    public CurrentBookings(String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID){
-        super(dayBooked, customer, timeBooked, serviceBooked, customerID);
+    public CurrentBookings(String business,String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID){
+        super(business,dayBooked, customer, timeBooked, serviceBooked, customerID);
     }
 }

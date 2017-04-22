@@ -10,13 +10,15 @@ public abstract class Bookings {
     private String timeBooked;
     private String serviceBooked;
     private String customerID;
+    private String business;
 
-    public Bookings(String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID) {
+    public Bookings(String business,String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID) {
         this.dayBooked = dayBooked;
         this.customer = customer;
         this.timeBooked = timeBooked;
         this.serviceBooked = serviceBooked;
         this.customerID = customerID;
+        this.business = business;
     }
 
 

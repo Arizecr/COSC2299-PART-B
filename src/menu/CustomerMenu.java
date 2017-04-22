@@ -55,7 +55,9 @@ public class CustomerMenu {
                     continue;
                 case 2:
                     System.out.println("Current Bookings: ");
-                    driver.viewBookingsCustomer(username); //view current bookings
+                    String b = "b"+Integer.toString(bID+1);
+                   // System.out.println(b);
+                    driver.viewBookingsCustomer(username,b); //view current bookings
                     continue;
                 case 3:
                     System.out.println("Successfully logged out of the system!");

@@ -61,7 +61,6 @@ public class ServicesTesting {
         assertEquals(index,0);
 
     }
-    //write other test cases with different service number formats
 
     //-------------------------------------------------------------------employee ID checking----
     //---------------------------------if employee does this service
@@ -186,21 +185,94 @@ public class ServicesTesting {
     }//MORE OF THIS TYPE
     @Test
     public void checkNameMAXBoundary() {
-        String input = "1234567890QWERTY";//minimum length of name
+        String input = "1234567890QWERTY";//max length of name
         assertTrue(s.checkName(input));
     }
     @Test
     public void checkNameAboveMAXBoundary() {
-        String input = "123456789099WERTY";//minimum length of name
+        String input = "123456789099WERTY";//above max length of name
         assertFalse(s.checkName(input));
-    }//MORE OF THIS TYPE
-    // ADD MORE HERE
+    }
+    @Test
+    public void checkNameAboveMAXBoundary2() {
+        String input = "123456789099WER0TY";//above max length of name
+        assertFalse(s.checkName(input));
+    }
+    @Test
+    public void checkNameAboveMAXBoundary3() {
+        String input = "123456789099WERT3Y";//above max length of name
+        assertFalse(s.checkName(input));
+    }
     //---------------------------------------time taken format check
     @Test
     public void checkDurTest()  {
         String input = "2-00";
         assertTrue(s.checkDur(input));
     }
-    //ADD MORE HERE
+    @Test
+    public void checkDurTest2()  {
+        String input = "2-0";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMin()  {
+        String input = "0-30";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMinBound()  {
+        String input = "0-10";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMinBound2()  {
+        String input = "0-1";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMinBound0()  {
+        String input = "0-0";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestAlmostMax()  {
+        String input = "7-30";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMax()  {
+        String input = "8-00";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMax2()  {
+        String input = "8-0";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMax3()  {
+        String input = "08-0";
+        assertTrue(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMaxBound()  {
+        String input = "08-01";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMaxBound2()  {
+        String input = "8-30";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMaxBound3()  {
+        String input = "8-3";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestMaxBoundLARGE()  {
+        String input = "998-30";
+        assertFalse(s.checkDur(input));
+    }
 
 }

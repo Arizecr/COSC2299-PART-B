@@ -24,8 +24,8 @@ public class viewBookingTesting {
     public static ArrayList<String> expected = new ArrayList<>();
     @Before
     public void setUp()  {
-        d.loadCurrentBookings();
-        d.loadPastBookings();
+        d.loadCurrentBookings("b1");
+        d.loadPastBookings("b1");
         expected.clear();
         check1.clear();
         expected.add("Monday");
@@ -40,11 +40,11 @@ public class viewBookingTesting {
 //--------customer booking
     @Test (timeout =100)
     public void customerBookings() {
-        d.viewBookingsCustomer("c1");
+        d.viewBookingsCustomer("c1","b1");
     }
     @Test (timeout =100)
     public void customerBookings2(){
-        d.viewBookingsCustomer("c2");
+        d.viewBookingsCustomer("c2","b1");
     }
     @Test (timeout =200)
     public void customerAvailableBooking(){

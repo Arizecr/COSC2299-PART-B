@@ -30,7 +30,7 @@ public class Driver {
     /*
      * loads current booking information
      */
-    public void loadCurrentBookings() {
+    public void loadCurrentBookings(String b) {
         BufferedReader br;
         try {
 
@@ -41,14 +41,15 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 5);
-                    String day = Details[0];
-                    String customer = Details[1];
-                    String time = Details[2];
-                    String service = Details[3];
-                    String id = Details[4];
-                    CurrentBookings bookingInfo = new CurrentBookings(day, customer, time, service, id);
-                    currentBookings.add(bookingInfo);
+                    String Details[] = x.split(",", 6);
+                    String business = Details[0];
+                    String day = Details[1];
+                    String customer = Details[2];
+                    String time = Details[3];
+                    String service = Details[4];
+                    String id = Details[5];
+                    CurrentBookings bookingInfo = new CurrentBookings(business,day, customer, time, service, id);
+                    if(b.equals(business))  currentBookings.add(bookingInfo);
                 }
                 //prints error
             } catch (IOException e) {
@@ -78,7 +79,7 @@ public class Driver {
     /*
      * loads information for past bookings
      */
-    public void loadPastBookings() {
+    public void loadPastBookings(String b) {
         BufferedReader br;
         try {
 
@@ -89,15 +90,16 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 6);
-                    String day = Details[0];
-                    String customer = Details[1];
-                    String time = Details[2];
-                    String service = Details[3];
-                    String cancelled = Details[4];
-                    String id = Details[5];
-                    PastBookings bookingInfo = new PastBookings(day, customer, time, service, cancelled,id);
-                    pastBookings.add(bookingInfo);
+                    String Details[] = x.split(",", 7);
+                    String business = Details[0];
+                    String day = Details[1];
+                    String customer = Details[2];
+                    String time = Details[3];
+                    String service = Details[4];
+                    String cancelled = Details[5];
+                    String id = Details[6];
+                    PastBookings bookingInfo = new PastBookings(business,day, customer, time, service, cancelled,id);
+                    if(b.equals(business)) pastBookings.add(bookingInfo);
                 }
                 //prints error
             } catch (IOException e) {
@@ -402,8 +404,8 @@ public class Driver {
     /*
      * Customer can see their current bookings
      */
-    public void viewBookingsCustomer(String username){
-        loadCurrentBookings();
+    public void viewBookingsCustomer(String username,String b){
+        loadCurrentBookings(b);
 
         //print their current bookings
         for(int i=0;i<currentBookings.size();i++){
@@ -420,10 +422,10 @@ public class Driver {
     /*
      * View current bookings and past bookings - choose which one
      */
-    public void viewBookings(){
+    public void viewBookings(String b){
         Scanner reader = new Scanner(System.in);
-        loadCurrentBookings();
-        loadPastBookings();
+        loadCurrentBookings(b);
+        loadPastBookings(b);
 
         System.out.println("\n+----------------------------------+");
         System.out.println("|               View               |");
@@ -432,7 +434,8 @@ public class Driver {
 
         System.out.println("\n1. View Current Bookings");
         System.out.println("2. View Past Bookings");
-        System.out.print("Choose option (1-2): ");
+        System.out.println("3. Return to Business menu");
+        System.out.print("Choose option (1-3): ");
 
         while(!reader.hasNextInt()) {
             System.out.println("Error: entered a non integer. Enter a number between 1-3.");
@@ -450,6 +453,10 @@ public class Driver {
             }
             else if(choice ==2){ //view past bookings
                 viewPastBookings();
+                break;
+            }
+            else if(choice ==3){ //view past bookings
+
                 break;
             }
             else {
