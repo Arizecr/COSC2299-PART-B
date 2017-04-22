@@ -212,7 +212,7 @@ public class Driver {
             return true;
         }
         if(!isNumeric(phone)) {
-            System.out.println("Error: entered a non integer as tfn.");
+            System.out.println("Error: entered a non integer as phone number.");
             return true;
         }
         return false;
