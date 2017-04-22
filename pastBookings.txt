@@ -1,1 +1,2 @@
 b1,Tuesday,Ramona Winters,11:00-13:00,Standard womens cut,no,c1
+b2,Tuesday,Ramona Winters,11:00-13:00,Standard womens cut,no,c1

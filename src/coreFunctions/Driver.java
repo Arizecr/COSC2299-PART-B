@@ -41,7 +41,7 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 5);
+                    String Details[] = x.split(",", 6);
                     String business = Details[0];
                     String day = Details[1];
                     String customer = Details[2];
@@ -90,7 +90,7 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 6);
+                    String Details[] = x.split(",", 7);
                     String business = Details[0];
                     String day = Details[1];
                     String customer = Details[2];
