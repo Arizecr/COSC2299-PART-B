@@ -22,18 +22,20 @@ public class Services {
     private String name;
     private String e;
     private String lengthT;
+    private String cost;
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
     private static ArrayList<Services> serviceList = new ArrayList<>();
 
 
-    public Services(String bId,String sId,String name,String lengthT,String e) {
+    public Services(String bId,String sId,String name,String lengthT,String cost,String e) {
 
         this.bId = bId;
         this.sId = sId;
         this.name = name;
         this.lengthT = lengthT;
         this.e = e ;
+        this.cost= cost;
 
     }
 
@@ -53,10 +55,10 @@ public class Services {
                 String x;
                 String line = null;
                 if(type.equals("c")){
-                    line = "|Service ID|Name of Service | length: in Hours and Minutes";
+                    line = "|Service ID|Name of Service | length: in Hours and Minutes| Price ($)";
                 }
                 if(type.equals("b")){
-                    line = "|Service ID|Name of Service | length: in Hours and Minutes | Employees ";
+                    line = "|Service ID|Name of Service | length: in Hours and Minutes | Price ($)| Employees ";
                 }
                 System.out.println(line);
 
@@ -64,12 +66,13 @@ public class Services {
                 while ((x = br.readLine()) != null) {
                     EOserviceList = new ArrayList<>();
                     // printing out each line in the file
-                    String Details[] = x.split(":", 5);
+                    String Details[] = x.split(":", 6);
                     String bid = Details[0];
                     String sid = Details[1];
                     String n = Details[2];
                     String l = Details[3];
-                    String e = Details[4];
+                    String cost = Details[4];
+                    String e = Details[5];
                     String Time[] = l.split("-", 2);
                     String hours = Time[0];
                     String min = Time[1];
@@ -77,14 +80,14 @@ public class Services {
                     for(String emp:empID){
                         EOserviceList.add(emp);
                     }*/
-                    Services addS = new Services(bid,sid,n,l,e);
+                    Services addS = new Services(bid,sid,n,l,cost,e);
                     serviceList.add(addS);
 
                     if(type.equals("c")) {
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes", sid, n, hours, min);
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes|%3$s", sid, n, hours, min,cost);
                     }
                     else if(type.equals("b")){
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes       | %s", sid, n, hours, min,e);
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%3$s |%s", sid, n, hours, min,cost,e);
                     }
                     System.out.println(line);
 
@@ -131,6 +134,10 @@ public class Services {
             len = reader.nextLine();
         }while(!checkDur(len));
         do {
+            System.out.print("enter cost in $ ");
+            cost = reader.nextLine();
+        }while(!checkCost(cost));
+        do {
             System.out.println("employee IDs in the form[eX,eX,eX,...]: ");
             employees = reader.nextLine();
         }while(checkEmployees(b,employees)||checkEqualEmployees(b,employees));//checks the employee works at the business
@@ -138,7 +145,7 @@ public class Services {
         for(String emp:empID){
             EOserviceList.add(emp);
         }*/
-        Services addS = new Services(b,s,n,len,employees);
+        Services addS = new Services(b,s,n,len,cost,employees);
         serviceList.add(addS);
         w.WriteToWorkingdayTXT(serviceList.get(sSize).toString(),"services.txt");
 
@@ -346,6 +353,25 @@ public class Services {
 
         return true;
     }
+    public boolean checkCost(String n){
+        int c = 0;
+
+        try{
+            c = Integer.parseInt(n);
+        } catch (NumberFormatException e) {
+            System.out.println("invalid cost entered");
+            return false;
+        }
+        if (n.contains(".")){ System.out.println("cost must be dollars(no cents)");
+            return false;}
+
+        if (c>500){ System.out.println("cost too high");
+            return false;}
+        if (c<=1){ System.out.println("cost is to small");
+            return false;}
+
+        return true;
+    }
     /*
     * Generate employee ID
     */
@@ -358,7 +384,7 @@ public class Services {
         return "s"+count;
     }
     public String toString() {
-        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+e ;
+        String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ cost+":"+e ;
         //System.out.println(emp.size());
 
         return part1;
