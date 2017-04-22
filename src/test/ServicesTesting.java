@@ -33,50 +33,174 @@ public class ServicesTesting {
     assertNotEquals(index,0);
 
     }
-    //write other test cases with different service number formats
-    //--------------------------------------------------------------------------------------------
-    //-------------------------------------------------------------------employee ID checking----
     @Test
-    public void checkEIDTest() {
+    public void checkIDFake(){
+        String n = "s001";
+        int index = s.checkID(n); //index = 0 indicates an incorrect service number
+        assertEquals(index,0);
+
+    }
+    @Test
+    public void checkIDFake2(){
+        String n = "001";
+        int index = s.checkID(n); //index = 0 indicates an incorrect service number
+        assertEquals(index,0);
+
+    }
+    @Test
+    public void checkIDFake3(){
+        String n = "asdfghjkl001";
+        int index = s.checkID(n); //index = 0 indicates an incorrect service number
+        assertEquals(index,0);
+
+    }
+    @Test
+    public void checkIDNull(){
+        String n = "";
+        int index = s.checkID(n); //index = 0 indicates an incorrect service number
+        assertEquals(index,0);
+
+    }
+    //write other test cases with different service number formats
+
+    //-------------------------------------------------------------------employee ID checking----
+    //---------------------------------if employee does this service
+    @Test
+    public void checkEIDTestS1() {
         int index = 0;//first line of text file
         String eID = "e5";
 
         assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
     }
-    //test employees not in the service and invalid eID values
+    @Test
+    public void checkEIDTestS2() {
+        int index = 1;//first line of text file
+        String eID = "e1";
 
+        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
+    }
+    @Test
+    public void checkEIDTestS3() {
+        int index = 2;//first line of text file
+        String eID = "e3";
 
+        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
+    }
+    @Test
+    public void checkEIDTestS4() {
+        int index = 3;//first line of text file
+        String eID = "e2";
+        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
+    }
+    @Test
+    public void checkEIDTestFakeS2() {
+        int index = 1;//first line of text file
+        String eID = "e5";
+
+        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
+    }
+    @Test
+    public void checkEIDTestFakeS3() {
+        int index = 2;//first line of text file
+        String eID = "e1";
+
+        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
+    }
+    @Test
+    public void checkEIDTestFakeS4() {
+        int index = 3;//first line of text file
+        String eID = "e1";
+        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
+    }
+   //-----------------------------------------invalid eID values
     @Test
     public void checkEmployeesTest() {
         String newEmployees = "e1,e2,e3"; //added into service
         String b = "b1";
         assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
-    //write cases which are false
+    @Test
+    public void checkEmployeesTest2() {
+        String newEmployees = "e,e2,e3"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput() {
+        String newEmployees = "ee2,e3"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput2() {
+        String newEmployees = "s4,e5,r,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput3() {
+        String newEmployees = " ,s4,e5,r,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
 
+    //ADD MORE WITH INVALID DATA FORMATS e.g. s4,e5,r, OR WITH SPACES AND EXTRA COMMAS ETC.
+    //----------------------------------------repeated Employee
     @Test
     public void checkEqualEmployeesTest() {
         String input = "e1,e3,e5,e3";//repeated value
         String b = "b1";
         assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
     }
-    //-------------------------------------------------------------------------------------------------------------
+    @Test
+    public void checkEqualEmployeesTest2() {
+        String input = "e1,e30,e5,e30";//repeated value
+        String b = "b1";
+        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
+    }
+    @Test
+    public void checkMultipleEqualEmployees() {
+        String input = "e1,e30,e5,e30,e5";//repeated value
+        String b = "b1";
+        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
+    }
+    @Test
+    public void checkMultipleEqualEmployees2() {
+        String input = "e1,e30,e5,e30,e5,e1,e1";//repeated value
+        String b = "b1";
+        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
+    }
+
+
     //--------------------------------------------------------------------------service details checking-----------
+    //--------------------------------------name checks
     @Test
     public void checkNameTest() {
         String input = "valid name";
         assertTrue(s.checkName(input));
     }
     @Test
-    public void checkNameTestBoundary() {
+    public void checkNameMINBoundary() {
         String input = "1234";//minimum length of name
         assertTrue(s.checkName(input));
+    }//MORE OF THIS TYPE
+    @Test
+    public void checkNameMAXBoundary() {
+        String input = "1234567890QWERTY";//minimum length of name
+        assertTrue(s.checkName(input));
     }
-
+    @Test
+    public void checkNameAboveMAXBoundary() {
+        String input = "123456789099WERTY";//minimum length of name
+        assertFalse(s.checkName(input));
+    }//MORE OF THIS TYPE
+    // ADD MORE HERE
+    //---------------------------------------time taken format check
     @Test
     public void checkDurTest()  {
         String input = "2-00";
         assertTrue(s.checkDur(input));
     }
+    //ADD MORE HERE
 
 }
