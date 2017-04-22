@@ -254,6 +254,7 @@ public class Services {
     }
 
     public boolean checkEmployees(String b,String e){
+        if(e.isEmpty()||e.equals("")||e.length()<=1||e.charAt(0)!='e'){ return true;}//fixes bug caused by starting with a comma
         ArrayList<String> EOserviceList = new ArrayList<>();
         Employee employee = new Employee();
         String empID[] = e.split(",");
@@ -266,7 +267,7 @@ public class Services {
             if(!employee.checkEmployeeID(b,emplist.get(j))){
                 return true;//not a employee of this business
             }
-            if(emplist.get(j)==""||emplist.get(j)==","||emplist.get(j).isEmpty()||emplist.size()==0){  return true;}//null employee
+            if(emplist.get(j)==""||emplist.get(j)==null||emplist.get(j).isEmpty()||emplist.size()==0){  return true;}//null employee
 
         }
         return false;

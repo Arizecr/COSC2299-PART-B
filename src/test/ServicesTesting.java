@@ -125,11 +125,18 @@ public class ServicesTesting {
         assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
     @Test
+    public void checkEmployee() {
+        String newEmployees = "e1"; //added into service
+        String b = "b1";
+        assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
     public void checkEmployeesTest2() {
         String newEmployees = "e,e2,e3"; //added into service
         String b = "b1";
         assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
+
     @Test
     public void checkEmployeesIncorrectInput() {
         String newEmployees = "ee2,e3"; //added into service
@@ -169,13 +176,25 @@ public class ServicesTesting {
 
     @Test
     public void checkEmployeesIncorrectInput7() {
-        String newEmployees = ""; //added into service
+        String newEmployees = " "; //added into service
         String b = "b1";
         assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
     @Test
     public void checkEmployeesIncorrectInput8() {
         String newEmployees = ",,,,,,,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput9() {
+        String newEmployees = ",#$%$*^(*((),,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput10() {
+        String newEmployees = ""; //added into service
         String b = "b1";
         assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
