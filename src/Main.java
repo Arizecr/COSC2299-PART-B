@@ -1,16 +1,23 @@
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.stage.Stage;
 import menu.Login;
 import menu.Register;
+import javafx.*;
 
 import java.util.Scanner;
+
 
 /**
  * Created by Gabrielle on 5/03/2017.
  */
-public class Main {
+public class Main  extends Application implements EventHandler<ActionEvent>{
     public static void main(String[] args){
+        launch(args);
 
-
-        Scanner reader = new Scanner(System.in);
+        /*Scanner reader = new Scanner(System.in);
         Login login = new Login();
         Register register = new Register();
 
@@ -67,12 +74,18 @@ public class Main {
                 System.out.println("Enter a number between 1-3\n");
 
             }
-        }
+        }*/
+
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+    }
 
 
-
-
-
+    @Override
+    public void handle(ActionEvent event) {
 
     }
 }
