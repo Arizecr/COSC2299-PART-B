@@ -158,7 +158,10 @@ public class Register {
 
 
         }
-
+        if(!name.matches("[a-zA-z' '-]+")){
+            System.out.println("name is invalid [cannot contain numbers]");
+            return ++valid;
+        }
         if(address.isEmpty() || (address.length() < 1)){
             System.out.println("Invalid Address");
             return ++valid;

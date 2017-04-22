@@ -84,10 +84,10 @@ public class Services {
                     serviceList.add(addS);
 
                     if(type.equals("c")) {
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes|%3$s", sid, n, hours, min,cost);
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%1s", sid, n, hours, min,cost);
                     }
                     else if(type.equals("b")){
-                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%3$s |%s", sid, n, hours, min,cost,e);
+                        line = String.format("|%10s|%16s|%2s hours and %s minutes       |%9s |%s", sid, n, hours, min,cost,e);
                     }
                     System.out.println(line);
 
@@ -307,7 +307,10 @@ public class Services {
             System.out.println("name is too short(must be more than 3 characters)");
             return false;
         }
-
+        if(!n.matches("[a-zA-z' '-]+")){
+            System.out.println("name is invalid [cannot contain numbers]");
+            return false;
+        }
         return true;
     }
 

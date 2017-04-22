@@ -214,6 +214,7 @@ public class RegisterTesting {
         int value = reg.testReg(p,name,a,m);
         assertNotEquals(correct,value);
     }
+    //------------------------------------------------------name
     @Test
     public void invalidName() {
         String u = "ccccccc8910112";
@@ -221,6 +222,42 @@ public class RegisterTesting {
         int value = reg.testReg(p,"",a,m);
         assertNotEquals(correct,value);
     }
+    @Test
+    public void validName() {
+        String u = "c10112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"Anne-marie",a,m);
+        assertEquals(correct,value);
+    }
+    @Test
+    public void validName2() {
+        String u = "c10112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"Aimee",a,m);
+        assertEquals(correct,value);
+    }
+    @Test
+    public void invalidName2() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"332",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName3() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"Claire8",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName4() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"33ijpow 2",a,m);
+        assertNotEquals(correct,value);
+    }
+    //---------------------------------------address can contain numbers and letters
     @Test
     public void invalidAddress() {
         String u = "ccccccc8910112";

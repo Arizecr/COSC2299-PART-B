@@ -235,29 +235,40 @@ public class ServicesTesting {
     }
     @Test
     public void checkNameMINBoundary() {
-        String input = "1234";//minimum length of name
+        String input = "abca";//minimum length of name
         assertTrue(s.checkName(input));
     }//MORE OF THIS TYPE
     @Test
     public void checkNameMAXBoundary() {
-        String input = "1234567890QWERTY";//max length of name
+        String input = "qwertyuiopQWERTY";//max length of name
         assertTrue(s.checkName(input));
     }
     @Test
     public void checkNameAboveMAXBoundary() {
-        String input = "123456789099WERTY";//above max length of name
+        String input = "qwertyuiopooWERTY";//above max length of name
         assertFalse(s.checkName(input));
     }
     @Test
     public void checkNameAboveMAXBoundary2() {
-        String input = "123456789099WER0TY";//above max length of name
+        String input = "qwertyuiopxxzER0TY";//above max length of name
         assertFalse(s.checkName(input));
     }
     @Test
     public void checkNameAboveMAXBoundary3() {
-        String input = "123456789099WERT3Y";//above max length of name
+        String input = "qwertyuiopoasxaxawWERT3Y";//above max length of name
         assertFalse(s.checkName(input));
     }
+    @Test
+    public void checkFakeName() {
+        String input = "val798id name";
+        assertFalse(s.checkName(input));
+    }
+    @Test
+    public void checkFakeName2() {
+        String input = "12345678901234567";
+        assertFalse(s.checkName(input));
+    }
+
     //---------------------------------------time taken format check
     @Test
     public void checkDurTest()  {
