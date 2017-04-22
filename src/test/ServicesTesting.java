@@ -268,6 +268,11 @@ public class ServicesTesting {
         String input = "12345678901234567";
         assertFalse(s.checkName(input));
     }
+    @Test
+    public void checkFakeName3() {
+        String input = "one,two";
+        assertFalse(s.checkName(input));
+    }
 
     //---------------------------------------time taken format check
     @Test

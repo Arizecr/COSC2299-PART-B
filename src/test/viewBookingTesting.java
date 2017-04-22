@@ -46,12 +46,7 @@ public class viewBookingTesting {
     public void customerBookings2(){
         d.viewBookingsCustomer("c2","b1");
     }
-    @Test (timeout =200)
-    public void customerAvailableBooking(){
 
-        login.getOwnerinfo();
-        cm.availableBookings(0);
-    }
     @Test
     public void verifyBusiness(){
         login.getOwnerinfo();

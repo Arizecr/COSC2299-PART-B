@@ -156,7 +156,6 @@ public class Register {
             System.out.println("Invalid Name");
             return ++valid;
 
-
         }
         if(!name.matches("[a-zA-z' '-]+")){
             System.out.println("name is invalid [cannot contain numbers]");
