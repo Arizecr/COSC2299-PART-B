@@ -145,7 +145,7 @@ public class BusinessMenu {
 
 
                 case 6:
-                    driver.viewBookings();
+                    driver.viewBookings(bId);
                     continue;
 
                     //Adjust business hours

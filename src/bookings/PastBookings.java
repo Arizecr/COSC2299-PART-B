@@ -5,8 +5,8 @@ package bookings;
  */
 public class PastBookings extends Bookings{
     private String cancelled;
-    public PastBookings(String dayBooked, String customer, String timeBooked, String serviceBooked, String cancelled, String customerID){
-        super(dayBooked, customer, timeBooked, serviceBooked, customerID);
+    public PastBookings(String business,String dayBooked, String customer, String timeBooked, String serviceBooked, String cancelled, String customerID){
+        super(business,dayBooked, customer, timeBooked, serviceBooked, customerID);
         this.cancelled = cancelled;
     }
 
