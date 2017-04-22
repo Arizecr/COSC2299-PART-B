@@ -111,10 +111,22 @@ public class ServicesTesting {
         String eID = "e1";
         assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
     }
+    @Test
+    public void checkEIDTestNull() {
+        int index = 3;//first line of text file
+        String eID = "";
+        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
+    }
    //-----------------------------------------invalid eID values
     @Test
     public void checkEmployeesTest() {
         String newEmployees = "e1,e2,e3"; //added into service
+        String b = "b1";
+        assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployee() {
+        String newEmployees = "e1"; //added into service
         String b = "b1";
         assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
@@ -124,6 +136,7 @@ public class ServicesTesting {
         String b = "b1";
         assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
+
     @Test
     public void checkEmployeesIncorrectInput() {
         String newEmployees = "ee2,e3"; //added into service
@@ -142,7 +155,49 @@ public class ServicesTesting {
         String b = "b1";
         assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
     }
+    @Test
+    public void checkEmployeesIncorrectInput4() {
+        String newEmployees = "s4,e 5,r,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput5() {
+        String newEmployees = "s4,e,5,r,,,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput6() {
+        String newEmployees = "e,,,,,,,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
 
+    @Test
+    public void checkEmployeesIncorrectInput7() {
+        String newEmployees = " "; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput8() {
+        String newEmployees = ",,,,,,,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput9() {
+        String newEmployees = ",#$%$*^(*((),,"; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
+    @Test
+    public void checkEmployeesIncorrectInput10() {
+        String newEmployees = ""; //added into service
+        String b = "b1";
+        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
+    }
     //ADD MORE WITH INVALID DATA FORMATS e.g. s4,e5,r, OR WITH SPACES AND EXTRA COMMAS ETC.
     //----------------------------------------repeated Employee
     @Test
@@ -272,6 +327,21 @@ public class ServicesTesting {
     @Test
     public void checkDurTestMaxBoundLARGE()  {
         String input = "998-30";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestNotInt()  {
+        String input = "0a-a1";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestNotIntWrongForm()  {
+        String input = "0aa1";
+        assertFalse(s.checkDur(input));
+    }
+    @Test
+    public void checkDurTestNotIntWrongForm2()  {
+        String input = "1";
         assertFalse(s.checkDur(input));
     }
 

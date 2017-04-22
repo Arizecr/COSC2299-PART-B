@@ -9,9 +9,9 @@ Gabrielle s3605767
 Martin s3607187
 
 Wei Zhi s3581263  - responsible for user documentation[user stories, acceptance testing] and employee availability
-Yesmi s3543729  - responsible for Testing and Add workhours, Add employee worktimes and Remove employee worktimes
-Gabrielle s3605767  - responsible for Coding and wireframes, code refractoring, Scrum Master
-Martin s3607187 - responsible for Coding and wireframes, code refractoring
+Yesmi s3543729  - responsible for Testing, Add employee worktimes and Remove employee worktimes code and add services code
+Gabrielle s3605767  - responsible for GUI, code refractoring, Scrum Master,booking coding
+Martin s3607187 - responsible for booking coding
 
 Team Contribution
 
