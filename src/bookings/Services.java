@@ -252,6 +252,7 @@ public class Services {
         return false;//employee not found
 
     }
+
     public boolean checkEmployees(String b,String e){
         ArrayList<String> EOserviceList = new ArrayList<>();
         Employee employee = new Employee();
@@ -265,6 +266,8 @@ public class Services {
             if(!employee.checkEmployeeID(b,emplist.get(j))){
                 return true;//not a employee of this business
             }
+            if(emplist.get(j)==""||emplist.get(j)==","||emplist.get(j).isEmpty()||emplist.size()==0){  return true;}//null employee
+
         }
         return false;
 
@@ -301,9 +304,14 @@ public class Services {
     }
 
     public boolean checkDur(String n){
-        String Details[] = n.split("-", 2);
-        String hours = Details[0];
-        String min = Details[1];
+        String hours = null;
+        String min = null;
+        try {
+            String Details[] = n.split("-", 2);
+            hours = Details[0];
+            min = Details[1];
+        } catch(ArrayIndexOutOfBoundsException e){System.out.println("invalid format( '-' expected)");
+            return false;}
         int h = 0;
         int m =0;
         try{
