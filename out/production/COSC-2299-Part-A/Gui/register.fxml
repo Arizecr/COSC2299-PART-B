@@ -10,9 +10,10 @@
    <children>
       <TextField fx:id="username" layoutX="95.0" layoutY="73.0" promptText="Username" />
       <PasswordField fx:id="password" layoutX="95.0" layoutY="121.0" promptText="Password" />
-      <TextField fx:id="name" layoutX="95.0" layoutY="166.0" promptText="Name" />
-      <TextField fx:id="address" layoutX="95.0" layoutY="211.0" promptText="Address" />
-      <TextField fx:id="mobile" layoutX="95.0" layoutY="256.0" promptText="Mobile" />
-      <Button fx:id="registerAccount" layoutX="144.0" layoutY="343.0" mnemonicParsing="false" onAction="#createAccount" text="Register" />
+      <PasswordField fx:id="p" layoutX="95.0" layoutY="166.0" promptText="Re-enter Password" />
+      <TextField fx:id="name" layoutX="95.0" layoutY="211.0" promptText="Name" />
+      <TextField fx:id="address" layoutX="95.0" layoutY="256.0" promptText="Address" />
+      <TextField fx:id="mobile" layoutX="95.0" layoutY="304.0" promptText="Mobile" />
+      <Button fx:id="registerAccount" layoutX="144.0" layoutY="340.0" mnemonicParsing="false" onAction="#createAccount" text="Register" />
    </children>
 </AnchorPane>

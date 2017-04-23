@@ -25,6 +25,8 @@ public class registerController {
 
     @FXML
     private PasswordField password;
+    @FXML
+    private PasswordField p;
 
     @FXML
     private TextField name;
@@ -42,7 +44,7 @@ public class registerController {
     void createAccount(ActionEvent event) throws IOException {
         if(registerMenu.testUser(username.getText())){
             int valid = registerMenu.testReg(password.getText(),name.getText(),address.getText(),mobile.getText());
-            if(valid == 0){
+            if(valid == 0&&p.getText().equals(password.getText())){
                 toTxt.WriteToTXT(new Customer(username.getText(), password.getText(), name.getText(), address.getText(), mobile.getText()), "customerinfo.txt");
                 switchToLogin(event);
             }
