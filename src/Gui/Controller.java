@@ -40,8 +40,8 @@ public class Controller {
     void startLogin(ActionEvent event) throws IOException {
 
         loginMenu.loadCustomerInformation();
-
-        if(username.getText().charAt(0) == 'c'){
+        if(username.getText().length() <1 || password.getText().length()<1){}
+        else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 switchToHomepage(event);
             }
