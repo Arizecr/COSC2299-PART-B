@@ -1,13 +1,8 @@
 package Gui;
 
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-
-import java.io.IOException;
-
 public class HomepageController {
+    /*
     @FXML
     private TextField input;
 
@@ -38,7 +33,7 @@ public class HomepageController {
 
         }
 
-    }
+    }*/
 
 
 }
