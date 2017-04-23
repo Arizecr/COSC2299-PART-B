@@ -55,6 +55,12 @@ public class Controller {
 
 
     }
+    @FXML
+    void startBooking(ActionEvent event) throws IOException {
+
+
+
+    }
 
     @FXML
     void startRegister(ActionEvent event) throws IOException {

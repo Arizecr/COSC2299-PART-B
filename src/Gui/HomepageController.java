@@ -1,14 +1,44 @@
 package Gui;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class HomepageController {
     @FXML
-    private TextField username;
+    private TextField input;
 
     @FXML
-    private PasswordField password;
+    void choice(ActionEvent event) throws IOException {
+        try{
+            int in = Integer.parseInt(input.getText());
+            switch (in) {
+                case 1: //View available days/times (to book an appointment for a business)
+                    availableBookings(bID);
+                    continue;
+                case 2:
+                    System.out.println("Current Bookings: ");
+                    String b = "b"+Integer.toString(bID+1);
+                    // System.out.println(b);
+                    driver.viewBookingsCustomer(username.getText(),b); //view current bookings
+                    continue;
+                case 3:
+                    System.out.println("Successfully logged out of the system!");
+                    System.exit(0);
+                    continue;
+                default:
+                    System.out.println("Invalid numeric input!");
+                    continue;
+            }
+        }
+        catch(NumberFormatException e){
+
+        }
+
+    }
+
+
 }
