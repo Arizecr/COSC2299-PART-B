@@ -92,9 +92,9 @@ public class Register {
     private boolean testUsername(String username){
         Login login = new Login();
         //isEmpty just checks for null
-        if(username.isEmpty() || (username.charAt(0) != 'c' )){
+        if(username.isEmpty() || (username.charAt(0) != 'c' ||username.length()> 15)){
 
-            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
+            System.out.println("Error: Username must start with a 'c' and cannot exceed 15 characters. Try again");
             return false;
 
         }
@@ -124,33 +124,7 @@ public class Register {
     private int testRegister(String password, String name, String address, String mobile){
         //Login login = new Login();
         int valid = 0;
-        //test if customer login is valid
 
-        /*
-        //isEmpty just checks for null
-        if(username.isEmpty() || username.charAt(0) != 'c' ){
-
-            System.out.println("Error: Username must start with a 'c'. Or length is over 15 characters. Try again");
-            return ++valid;
-
-        }
-
-
-        if((username.charAt(0) == 'c') && (username.length()<= 15) && (username.length()>1)){
-
-            for(int i = 0; i< login.customerList.size(); i++) {
-
-                if (login.customerList.get(i).getUsername().equals(username)) {
-                    System.out.println("Username already exists. Re-enter valid username");
-                    return ++valid;
-                }
-            }
-
-
-        }
-        else return ++valid;
-
-        */
         Driver d=new Driver();//maximising code reuse by using same error check used in add employee
 
         if(d.verifyEmployeeName(name)  ){//using checking function from driver
