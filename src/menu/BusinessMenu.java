@@ -51,7 +51,7 @@ public class BusinessMenu {
             System.out.println("|           Business               |");
             System.out.println("|              menu                |");
             System.out.println("+----------------------------------+");
-
+            emp.printEmployeeInformation(bId);
             System.out.println("1. Add Employee");
             System.out.println("2. Add working days/times for Employee(s)");
             System.out.println("3. Remove working days/times for Employee(s)");
