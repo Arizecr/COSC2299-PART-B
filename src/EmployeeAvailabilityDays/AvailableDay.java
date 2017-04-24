@@ -122,7 +122,7 @@ public class AvailableDay {
                 System.out.print("Enter shift end time (hour:min): ");
                 endtime = reader.nextLine();
             } while (b.ctime(endtime)); //check validity of end time
-        }while( w.readWork(bId,workday,starttime,endtime));
+        }while( w.readWork(bId,workday,starttime,endtime)||checkDay(bId,employeeID,workday));
         String x = bId+ " " +employeeID + " " + workday + " " + starttime + " " + endtime;
         availability.add(x);
         if(availability.size()==0){write.reWriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");}
@@ -130,7 +130,24 @@ public class AvailableDay {
             write.WriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");
         }
     }
+    private boolean checkDay(String b,String e,String d){
+        loadInfo();
+        String bID= "" ;
+        String eID= "" ;
+        String day ="" ;
 
+        for(int i=0; i < availability.size() ;i++){
+
+            String Details[] = availability.get(i).split(" ",5);
+            bID = Details[0];
+            eID = Details[1];
+            day = Details[2];
+
+            if(bID.equals(b)&&eID.equals(e)&&day.equals(d)){return true;}
+        }
+
+        return false;
+    }
 
     /*
      *
