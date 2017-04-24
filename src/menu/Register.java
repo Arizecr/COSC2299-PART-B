@@ -35,7 +35,7 @@ public class Register {
 
             while(true){
 
-                System.out.print("Username (must start with C): ");
+                System.out.print("Username (must start with c): ");
                 username = reader.nextLine();
                 if(testUsername(username)){
                     System.out.println("Username Valid\n");
