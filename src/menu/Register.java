@@ -1,4 +1,5 @@
 package menu;
+import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import test.Logging;
 import user.Customer;
@@ -150,41 +151,27 @@ public class Register {
         else return ++valid;
 
         */
+        Driver d=new Driver();//maximising code reuse by using same error check used in add employee
 
-        if(name.isEmpty() || (name.length() < 1)  ){
+        if(d.verifyEmployeeName(name)  ){//using checking function from driver
 
-            System.out.println("Invalid Name");
-            return ++valid;
-
-        }
-        if(!name.matches("[a-zA-z' '-]+")){
-            System.out.println("name is invalid [cannot contain numbers]");
             return ++valid;
         }
-        if(address.isEmpty() || (address.length() < 1)){
+
+        if(address.isEmpty() || (address.length() < 1)||!address.matches("[a-zA-z' '0-9]+")){
+            //empty input or    length or 1            or address thais not letters or numbers
             System.out.println("Invalid Address");
             return ++valid;
 
         }
-        if(!name.matches("[a-zA-z' ']+")){
-            System.out.println("name is invalid [cannot contain numbers or symbols]");
-            return ++valid;
-        }
 
-        if(mobile.isEmpty() || (mobile.length() != 10)||mobile.charAt(0) != '0'||mobile.charAt(1) != '4' ){
+        if(d.verifyEmployeeMobile(mobile)){//using checking function from driver
 
             System.out.println("Invalid Mobile");
             return ++valid;
 
         }
-        int m;
-        try{
-            m = Integer.parseInt(mobile);
-        } catch (NumberFormatException e) {
-            System.out.println("Mobile number not numeric");
-            return ++valid;
 
-        }
 
         if( password.isEmpty()) {
             System.out.println("Invalid Password");

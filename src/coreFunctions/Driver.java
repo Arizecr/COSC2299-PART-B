@@ -230,6 +230,12 @@ public class Driver {
             System.out.println("Error: entered a non integer as phone number.");
             return true;
         }
+        if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
+
+            System.out.println("Invalid Mobile");
+            return true;
+
+        }
         return false;
     }
 
