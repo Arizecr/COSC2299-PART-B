@@ -166,6 +166,10 @@ public class Register {
             return ++valid;
 
         }
+        if(!name.matches("[a-zA-z' ']+")){
+            System.out.println("name is invalid [cannot contain numbers or symbols]");
+            return ++valid;
+        }
 
         if(mobile.isEmpty() || (mobile.length() != 10)||mobile.charAt(0) != '0'||mobile.charAt(1) != '4' ){
 

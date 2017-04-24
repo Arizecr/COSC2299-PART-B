@@ -307,7 +307,7 @@ public class Services {
             System.out.println("name is too short(must be more than 3 characters)");
             return false;
         }
-        if(!n.matches("[a-zA-z' '-]+")){
+        if(!n.matches("[a-zA-z' ']+")){
             System.out.println("name is invalid [cannot contain numbers]");
             return false;
         }
