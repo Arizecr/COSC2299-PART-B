@@ -109,8 +109,9 @@ public class Employee {
 
         }
         System.out.println("_________________\n");
-                }
-                //prints error
+
+    }
+    //prints error
 
 
     public boolean checkEmployeeID(String bId, String empID) {

@@ -250,19 +250,17 @@ public class BusinessMenu {
             System.out.println("|            Available             |");
             System.out.println("+----------------------------------+");
             Services s = new Services();
-            s.printService(b,"b");
+            s.printService(b);
             Scanner reader = new Scanner(System.in);
             System.out.println("\n======================================");
             System.out.println("1. Add Service");//choose employees who can do this service
             System.out.println("2. Remove Service");
-            System.out.println("3. Add Employee to Service");
-            System.out.println("4. Remove Employee from Service");
-            System.out.println("5. Return to business menu");
+            System.out.println("3. Return to business menu");
             System.out.println("======================================\n");
             System.out.println("Enter an option: ");
             while (!reader.hasNextInt()) {
                 System.out.println("Error: entered a non integer. Enter a number between 1-8.");
-                System.out.print("Enter choice (1-8): ");
+                System.out.print("Enter choice (1-3): ");
                 reader.next();
             }
             int choice = reader.nextInt();
@@ -276,14 +274,8 @@ public class BusinessMenu {
                     s.removeService(b);
                     continue;
                 case 3:
-                    s.addEmployee(b);
-                    continue;
-                case 4:
-                    s.removeEmployee(b);
-                    continue;
-                case 5:
                     loop = false;
-                        default:continue;
+                default:continue;
             }
         }
     }
