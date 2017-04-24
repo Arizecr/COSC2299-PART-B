@@ -97,6 +97,7 @@ public class WriteToFile {
             WriteToWorkingdayTXT(List.get(i).toString(), filename);
         }
     }
+
     public void writeToFileToString(ArrayList list, String filename){
         if(list.size()==0){reWriteToWorkingdayTXT(list.get(list.size()-1).toString(), filename);}
         else{

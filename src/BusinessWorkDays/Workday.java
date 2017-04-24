@@ -110,9 +110,10 @@ public class Workday
             drive.loadandWriteNEmployeeWorktimes( b, d, s,end);
         }
         else{ workhours.add(n);}
-        rewriteToFile(workhours);
+        write.rewriteToFile(workhours,"businessdaysList.txt");
 
-    }
+
+        }
     public void removeDayFromFile(String b,String d){
         Details();
         for(int i=0; i < workhours.size() ;i++){
@@ -120,7 +121,7 @@ public class Workday
                 if(d.equals(workhours.get(i).workD())){
                     workhours.remove(i);
                     drive.removeWorktimes( b, d);
-                    rewriteToFile(workhours);
+                    write.rewriteToFile(workhours,"businessdaysList.txt");
                 }
             }
         }
@@ -205,12 +206,7 @@ public class Workday
         }
     }
 
-    public void rewriteToFile( ArrayList workhours){
-        if(workhours.size()>=0){write.reWriteToWorkingdayTXT(workhours.get(0).toString(), "businessdaysList.txt");}
-        for(int i=1; i < workhours.size() ;i++){
-            write.WriteToWorkingdayTXT(workhours.get(i).toString(), "businessdaysList.txt");
-        }
-    }
+
 
     public String toString(){
         String format = businessid + " " + workday + " " + starttime + " " + endtime;
