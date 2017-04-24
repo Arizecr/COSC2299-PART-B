@@ -17,11 +17,11 @@ public class ServicesTesting {
         //sample data used during testing
         WriteToFile w = new WriteToFile();
         Services s = new Services();
-        w.reWriteToWorkingdayTXT("b1:s1:shampooing:0-30:12:e5,e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s2:hair cut:0-30:40:e1,e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s3:shave:0-30:10:e3,e5", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s4:Women's haircut:0-30:50:e2", "services.txt");
-        w.WriteToWorkingdayTXT("b1:s5:Dye hair service:6-30:200:e1,e2", "services.txt");
+        w.reWriteToWorkingdayTXT("b1:s1:shampooing:0-30:12", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s2:hair cut:0-30:40", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s3:shave:0-30:10", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s4:Women's haircut:0-30:50", "services.txt");
+        w.WriteToWorkingdayTXT("b1:s5:Dye hair service:6-30:200", "services.txt");
         s.printService("b1");
     }
 
@@ -29,8 +29,8 @@ public class ServicesTesting {
     @Test
     public void checkIDTest(){
         String n = "s1";
-    int index = s.checkID(n); //index = 0 indicates an incorrect service number
-    assertNotEquals(index,0);
+        int index = s.checkID(n); //index = 0 indicates an incorrect service number
+        assertNotEquals(index,0);
 
     }
     @Test
@@ -62,169 +62,6 @@ public class ServicesTesting {
 
     }
 
-    //-------------------------------------------------------------------employee ID checking----
-    //---------------------------------if employee does this service
-   /* @Test
-    public void checkEIDTestS1() {
-        int index = 0;//first line of text file
-        String eID = "e5";
-
-        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
-    }
-    @Test
-    public void checkEIDTestS2() {
-        int index = 1;//first line of text file
-        String eID = "e1";
-
-        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
-    }
-    @Test
-    public void checkEIDTestS3() {
-        int index = 2;//first line of text file
-        String eID = "e3";
-
-        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
-    }
-    @Test
-    public void checkEIDTestS4() {
-        int index = 3;//first line of text file
-        String eID = "e2";
-        assertTrue(s.checkEID(index,eID)) ;//checks this employee can do this service
-    }
-    @Test
-    public void checkEIDTestFakeS2() {
-        int index = 1;//first line of text file
-        String eID = "e5";
-
-        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
-    }
-    @Test
-    public void checkEIDTestFakeS3() {
-        int index = 2;//first line of text file
-        String eID = "e1";
-
-        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
-    }
-    @Test
-    public void checkEIDTestFakeS4() {
-        int index = 3;//first line of text file
-        String eID = "e1";
-        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
-    }
-    @Test
-    public void checkEIDTestNull() {
-        int index = 3;//first line of text file
-        String eID = "";
-        assertFalse(s.checkEID(index,eID)) ;//checks this employee does not do this service
-    }
-   //-----------------------------------------invalid eID values
-    @Test
-    public void checkEmployeesTest() {
-        String newEmployees = "e1,e2,e3"; //added into service
-        String b = "b1";
-        assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployee() {
-        String newEmployees = "e1"; //added into service
-        String b = "b1";
-        assertFalse(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesTest2() {
-        String newEmployees = "e,e2,e3"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-
-    @Test
-    public void checkEmployeesIncorrectInput() {
-        String newEmployees = "ee2,e3"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput2() {
-        String newEmployees = "s4,e5,r,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput3() {
-        String newEmployees = " ,s4,e5,r,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput4() {
-        String newEmployees = "s4,e 5,r,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput5() {
-        String newEmployees = "s4,e,5,r,,,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput6() {
-        String newEmployees = "e,,,,,,,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-
-    @Test
-    public void checkEmployeesIncorrectInput7() {
-        String newEmployees = " "; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput8() {
-        String newEmployees = ",,,,,,,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput9() {
-        String newEmployees = ",#$%$*^(*((),,"; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    @Test
-    public void checkEmployeesIncorrectInput10() {
-        String newEmployees = ""; //added into service
-        String b = "b1";
-        assertTrue(s.checkEmployees(b,newEmployees));//if all employees wrk for the business return false;
-    }
-    //ADD MORE WITH INVALID DATA FORMATS e.g. s4,e5,r, OR WITH SPACES AND EXTRA COMMAS ETC.
-    //----------------------------------------repeated Employee
-    @Test
-    public void checkEqualEmployeesTest() {
-        String input = "e1,e3,e5,e3";//repeated value
-        String b = "b1";
-        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
-    }
-    @Test
-    public void checkEqualEmployeesTest2() {
-        String input = "e1,e30,e5,e30";//repeated value
-        String b = "b1";
-        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
-    }
-    @Test
-    public void checkMultipleEqualEmployees() {
-        String input = "e1,e30,e5,e30,e5";//repeated value
-        String b = "b1";
-        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
-    }
-    @Test
-    public void checkMultipleEqualEmployees2() {
-        String input = "e1,e30,e5,e30,e5,e1,e1";//repeated value
-        String b = "b1";
-        assertTrue(s.checkEqualEmployees(b,input)); // true if repeated ids
-    }
-*/
 
     //--------------------------------------------------------------------------service details checking-----------
     //--------------------------------------name checks
