@@ -108,7 +108,7 @@ public class Employee {
 
 
         }
-
+        System.out.println("_________________\n");
                 }
                 //prints error
 
