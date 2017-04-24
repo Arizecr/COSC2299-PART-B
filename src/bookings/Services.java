@@ -25,7 +25,7 @@ public class Services {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
     private static ArrayList<Services> serviceList = new ArrayList<>();
-
+    WriteToFile w = new WriteToFile();
 
     public Services(String bId,String sId,String name,String lengthT,String cost) {
 
@@ -158,7 +158,7 @@ public class Services {
 
         serviceList.remove(index-1);
 
-        rewriteToFile(serviceList,"services.txt");
+        w.rewriteToFile(serviceList,"services.txt");
         System.out.print("Service removed");
 
     }
@@ -384,13 +384,13 @@ public class Services {
 
         return part1;
     }
-    public void rewriteToFile( ArrayList<Services> serviceList,String filename){
-        WriteToFile w = new WriteToFile();
+  /*  public void rewriteToFile( ArrayList<Services> serviceList,String filename){
+
         if(serviceList.size()>=0){w.reWriteToWorkingdayTXT(serviceList.get(0).toString(), filename);}
         for(int i=1; i < serviceList.size() ;i++){
 
             w.WriteToWorkingdayTXT(serviceList.get(i).toString(), filename);
         }
-    }
+    }*/
 
 }

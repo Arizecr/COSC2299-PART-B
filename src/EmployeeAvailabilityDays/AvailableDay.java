@@ -125,10 +125,8 @@ public class AvailableDay {
         }while( w.readWork(bId,workday,starttime,endtime)||checkDay(bId,employeeID,workday));
         String x = bId+ " " +employeeID + " " + workday + " " + starttime + " " + endtime;
         availability.add(x);
-        if(availability.size()==0){write.reWriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");}
-        else{
-            write.WriteToWorkingdayTXT(x, "employeeAvailabilityList.txt");
-        }
+        write.writeToFileToString(availability, "employeeAvailabilityList.txt");
+
     }
     private boolean checkDay(String b,String e,String d){
         loadInfo();

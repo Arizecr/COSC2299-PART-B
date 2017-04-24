@@ -4,7 +4,6 @@ import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Services;
 import coreFunctions.Driver;
-import coreFunctions.WriteToFile;
 import test.Logging;
 import user.Employee;
 
@@ -365,17 +364,5 @@ public class BusinessMenu {
         return true;
     }
 
-    WriteToFile filewriter = new WriteToFile();
-
-    private boolean ATimes(String empid, String day,String starttime,String endtime){
-        if( !timeCheck (starttime, endtime)){
-            String combine = empid+" "+day + " "+starttime + " "+ endtime;
-            filewriter.WriteToWorkingdayTXT(combine, "employeeAvailabilityList.txt");
-            day = day.substring(0,1).toUpperCase() + day.substring(1).toLowerCase();
-            System.out.println("New availability time is: " + day + ": " + starttime + "-" + endtime);
-            return false;
-        }
-        return true;
-    }
 
 }

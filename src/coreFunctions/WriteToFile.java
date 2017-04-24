@@ -6,6 +6,7 @@ import userBase.User;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,6 +88,20 @@ public class WriteToFile {
         }
 
 
+    }
+    public void rewriteToFile(ArrayList List, String filename){
+        if(List.size()>=0){reWriteToWorkingdayTXT(
+                List.get(0).toString(), filename);}
+        for(int i=1; i < List.size() ;i++){
+
+            WriteToWorkingdayTXT(List.get(i).toString(), filename);
+        }
+    }
+    public void writeToFileToString(ArrayList list, String filename){
+        if(list.size()==0){reWriteToWorkingdayTXT(list.get(list.size()-1).toString(), filename);}
+        else{
+            WriteToWorkingdayTXT( list.get(list.size()-1).toString(),filename);
+        }
     }
 
 
