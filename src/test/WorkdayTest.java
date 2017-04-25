@@ -2,6 +2,7 @@ package test;
 
 import BusinessWorkDays.Workday;
 import coreFunctions.WriteToFile;
+import menu.BusinessMenu;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,6 +19,7 @@ public class WorkdayTest {
     String day;
     boolean verify;
     Workday w = new Workday();
+    BusinessMenu bm = new BusinessMenu();
     @BeforeClass
     public static void loadUsers(){//test data initialised
         WriteToFile w = new WriteToFile();
@@ -26,6 +28,16 @@ public class WorkdayTest {
         w.WriteToWorkingdayTXT("b1 wednesday 9:00 17:00", "businessdaysList.txt");
         w.WriteToWorkingdayTXT("b1 friday 9:00 17:00", "businessdaysList.txt");
         w.WriteToWorkingdayTXT("b1 thursday 9:00 17:00", "businessdaysList.txt");
+
+    }
+    @Test
+    public void BusinessOperationAdd()  {
+        w.Details();
+        day = "monday";
+        starttime = "9:00";
+        endtime = "18:00";
+        verify = bm.BH(bId, day,starttime,endtime);
+        assertFalse(verify);
 
     }
 

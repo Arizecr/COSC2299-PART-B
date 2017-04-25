@@ -352,6 +352,8 @@ public class BusinessMenu {
         }
         return true;
     }
+    public  boolean BH(String bId, String day,String starttime,String endtime){return BHours(bId,  day, starttime, endtime);}
+
     //checks the business hours are valid and in the correct format
     private boolean BHours(String bId, String day,String starttime,String endtime){
         if( !timeCheck (starttime, endtime)){
