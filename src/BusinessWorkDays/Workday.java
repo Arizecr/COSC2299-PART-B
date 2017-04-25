@@ -119,7 +119,7 @@ public class Workday
         Details();
         for(int i=0; i < workhours.size() ;i++){
             if(b.equals(workhours.get(i).getBId())){
-                if(d.equals(workhours.get(i).workD())){
+                if(d.equals(workhours.get(i).workD().toLowerCase())){
                     workhours.remove(i);
                     drive.removeWorktimes( b, d);
                     System.out.print("Business Hours for "+ d + " removed");
@@ -136,7 +136,7 @@ public class Workday
         int count = 0;
         for(int i=0; i < workhours.size() ;i++) {
             if (b.equals(workhours.get(i).getBId())) {
-                if (d.equals(workhours.get(i).workD())) {
+                if (d.equals(workhours.get(i).workD().toLowerCase())) {
                     DateFormat time = new SimpleDateFormat("HH:mm");
                     count++;
                     try {
