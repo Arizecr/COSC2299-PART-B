@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/AddEmployeeTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/AddEmployeeTesting.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/RegisterTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/RegisterTesting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/Employee.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/Employee.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/Register.java" afterPath="$PROJECT_DIR$/src/menu/Register.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RegisterTesting.java" afterPath="$PROJECT_DIR$/src/test/RegisterTesting.java" />
@@ -52,8 +50,8 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="192" column="38" lean-forward="false" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
+            <state relative-caret-position="87">
+              <caret line="191" column="44" lean-forward="false" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -62,8 +60,8 @@
       <file leaf-file-name="RegisterTesting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/RegisterTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+            <state relative-caret-position="73">
+              <caret line="148" column="64" lean-forward="true" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -107,8 +105,8 @@
       <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="134" column="90" lean-forward="false" selection-start-line="134" selection-start-column="90" selection-end-line="134" selection-end-column="90" />
+            <state relative-caret-position="56">
+              <caret line="134" column="89" lean-forward="false" selection-start-line="134" selection-start-column="89" selection-end-line="134" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -199,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/src/test/AddEmployeeTesting.java" />
         <option value="$PROJECT_DIR$/business.txt" />
-        <option value="$PROJECT_DIR$/src/menu/Register.java" />
         <option value="$PROJECT_DIR$/src/test/RegisterTesting.java" />
+        <option value="$PROJECT_DIR$/src/menu/Register.java" />
       </list>
     </option>
   </component>
@@ -323,6 +321,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coreFunctions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -330,33 +346,7 @@
       <pane id="Scratches" />
     </panes>
   </component>
-  <component name="RunManager" selected="JUnit.RegisterTesting.validUsernameBound">
-    <configuration default="false" name="ServicesTesting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="COSC-2299-Part-A" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.ServicesTesting" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.RegisterTesting">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -442,6 +432,32 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.RegisterTesting" />
       <option name="METHOD_NAME" value="validUsernameBound" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RegisterTesting.validMobile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="COSC-2299-Part-A" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.RegisterTesting" />
+      <option name="METHOD_NAME" value="validMobile" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -660,19 +676,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ServicesTesting" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validUsernameBound" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validUsernameBound" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validMobile" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validUsernameBound" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ServicesTesting" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.RegisterTesting" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validMobile" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegisterTesting.validUsernameBound" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AddEmployeeTesting" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -855,39 +871,46 @@
       <option name="project" value="LOCAL" />
       <updated>1493092364143</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added business">
+      <created>1493093233886</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1493093233886</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddEmployeeTesting - 2017.04.25 at 13h 23m 39s.xml">
-      <configuration name="AddEmployeeTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddEmployeeTesting - 2017.04.25 at 13h 25m 07s.xml">
-      <configuration name="AddEmployeeTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddEmployeeTesting - 2017.04.25 at 13h 42m 41s.xml">
-      <configuration name="AddEmployeeTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AddEmployeeTesting - 2017.04.25 at 13h 44m 47s.xml">
-      <configuration name="AddEmployeeTesting" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RegisterTesting - 2017.04.25 at 13h 47m 03s.xml">
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 07m 27s.xml">
       <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting - 2017.04.25 at 14h 02m 49s.xml">
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 08m 05s.xml">
       <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting_validUsernameBound - 2017.04.25 at 14h 03m 35s.xml">
-      <configuration name="RegisterTesting.validUsernameBound" configurationId="JUnit" />
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 09m 01s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterTesting_validUsernameBound - 2017.04.25 at 14h 04m 57s.xml">
-      <configuration name="RegisterTesting.validUsernameBound" configurationId="JUnit" />
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 12m 12s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WorkdayTest - 2017.04.24 at 17h 17m 45s.xml">
-      <configuration name="WorkdayTest" configurationId="JUnit" />
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 13m 38s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="viewBookingTesting - 2017.04.24 at 17h 17m 38s.xml">
-      <configuration name="viewBookingTesting" configurationId="JUnit" />
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 14m 27s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 14m 59s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting - 2017.04.25 at 14h 16m 29s.xml">
+      <configuration name="RegisterTesting" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting_validMobile - 2017.04.25 at 14h 15m 26s.xml">
+      <configuration name="RegisterTesting.validMobile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RegisterTesting_validMobile - 2017.04.25 at 14h 16m 09s.xml">
+      <configuration name="RegisterTesting.validMobile" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -903,7 +926,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42716858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42716858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33878887" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -974,7 +997,8 @@
     <MESSAGE value="small change" />
     <MESSAGE value="name format changed" />
     <MESSAGE value="added business" />
-    <option name="LAST_COMMIT_MESSAGE" value="added business" />
+    <MESSAGE value="fixed address" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed address" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1366,14 +1390,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="192" column="38" lean-forward="false" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/AddEmployeeTesting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -1390,6 +1406,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="191" column="44" lean-forward="false" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/user/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1400,16 +1424,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="134" column="90" lean-forward="false" selection-start-line="134" selection-start-column="90" selection-end-line="134" selection-end-column="90" />
+        <state relative-caret-position="56">
+          <caret line="134" column="89" lean-forward="false" selection-start-line="134" selection-start-column="89" selection-end-line="134" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/RegisterTesting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+        <state relative-caret-position="73">
+          <caret line="148" column="64" lean-forward="true" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
           <folding />
         </state>
       </provider>

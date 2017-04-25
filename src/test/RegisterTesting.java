@@ -13,13 +13,15 @@ public class RegisterTesting {
     Register reg = new Register();
     private int incorrect = 1; //
     private int correct = 0;
-    private String name = "test";
-    private String a = "123 l st";
+    private String name = "testing";
+    private String a = "123 lm st";
     private String m = "0434567890";
+
     @BeforeClass
     public static void loadUsers(){
         Login log = new Login();
         log.loadCustomerInformation();
+
     }
 
     @Test
@@ -105,9 +107,8 @@ public class RegisterTesting {
     public void validUsernameBound3() {
 
         String u = "ccccccc8910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
-        assertEquals(correct,value);
+        boolean value = reg.testUser(u);
+        assertTrue(value);
     }
     @Test // length 16
     public void invalidUsernameBound3() {
@@ -144,9 +145,8 @@ public class RegisterTesting {
     @Test
     public void validMobile() {
 
-        String u = "cccc8910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
+        String p = "passord";
+        int value = reg.testReg(p,"mary","abc 123","0456789098");
         assertEquals(correct,value);
     }
     @Test
