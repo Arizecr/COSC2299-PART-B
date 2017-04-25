@@ -68,6 +68,8 @@ public class Controller {
 
     }
 
+
+
     private void switchToHomepage(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("homepage.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -83,5 +85,6 @@ public class Controller {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
 
 }

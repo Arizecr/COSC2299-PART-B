@@ -19,6 +19,7 @@ import java.io.IOException;
 public class registerController {
     Register registerMenu = new Register();
     WriteToFile toTxt = new WriteToFile();
+    private Stage primaryStage;
 
     @FXML
     private TextField username;
@@ -56,6 +57,16 @@ public class registerController {
             // USER NAME INVALID IMPLEMENT ERROR LATER
         }
     }
+
+    @FXML
+    private void cancel(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
+
 
     private void switchToLogin(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
