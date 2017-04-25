@@ -25,7 +25,7 @@ public class RegisterTesting {
 
     @Test
     public void correctUsername() {
-        String u = "c123456";
+        String u = "c12345006";
         boolean value = reg.testUser(u);
         assertTrue(value);
     }
@@ -226,7 +226,7 @@ public class RegisterTesting {
     public void validName() {
         String u = "c10112";
         String p = "passwooord";
-        int value = reg.testReg(p,"Anne-marie",a,m);
+        int value = reg.testReg(p,"Anne  marie",a,m);
         assertEquals(correct,value);
     }
     @Test

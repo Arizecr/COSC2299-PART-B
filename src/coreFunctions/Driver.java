@@ -1,5 +1,6 @@
 package coreFunctions;
 
+import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Bookings;
 import bookings.CurrentBookings;
 import bookings.PastBookings;
@@ -31,6 +32,7 @@ public class Driver {
      * loads current booking information
      */
     public void loadCurrentBookings(String b) {
+        currentBookings = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -80,6 +82,7 @@ public class Driver {
      * loads information for past bookings
      */
     public void loadPastBookings(String b) {
+        pastBookings = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -138,6 +141,7 @@ public class Driver {
 
         //infinite loop
         while(true) {
+            AvailableDay av = new AvailableDay();
             String employeeID = generateEmployeeNo(); //generate user id
 
             System.out.println("Employee ID is " + employeeID);
@@ -165,6 +169,13 @@ public class Driver {
             String phoneNo = checkPhone;
 
             filewriter.WriteToEmployee(new Employee(bId,employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
+            System.out.println("Add the employees Availability: ");
+            String exitAv;
+            do{
+                av.addEmployeeAvailability(bId,employeeID);
+                System.out.println("Type 0 to add more times");
+                exitAv = reader.nextLine();
+            }while(exitAv.equals("0"));
             System.out.println("Successfully added a new employee");
             break;
 
@@ -180,6 +191,10 @@ public class Driver {
     public Boolean verifyEmployeeName(String name){
         if((name.length()< 3)||(name.length()>20)){
             System.out.println("Error: Name must be longer than 2 characters");
+            return true;
+        }
+        if(!name.matches("[a-zA-z' ']+")){
+            System.out.println("name is invalid [cannot contain numbers]");
             return true;
         }
         return false;
@@ -214,6 +229,12 @@ public class Driver {
         if(!isNumeric(phone)) {
             System.out.println("Error: entered a non integer as phone number.");
             return true;
+        }
+        if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
+
+            System.out.println("Invalid Mobile");
+            return true;
+
         }
         return false;
     }
@@ -410,6 +431,7 @@ public class Driver {
         //print their current bookings
         for(int i=0;i<currentBookings.size();i++){
             if(currentBookings.get(i).getCustomerID().equals(username)){
+                System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
                 System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
                 System.out.println("Time: " + currentBookings.get(i).getTimeBooked()  );
                 System.out.println("Service: " + currentBookings.get(i).getServiceBooked());
