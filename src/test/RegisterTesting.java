@@ -165,6 +165,14 @@ public class RegisterTesting {
         assertNotEquals(correct,value);
     }
     @Test
+    public void invalidMobile2() {
+        String m = "0000000000";
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
     public void invalidMobileSize() {
         String m = "04123456789";
         String u = "ccccccc8910112";
@@ -255,6 +263,27 @@ public class RegisterTesting {
         String u = "ccccccc8910112";
         String p = "passwooord";
         int value = reg.testReg(p,"33ijpow 2",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName5() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"jpow'",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName6() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"jpow-",a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidName7() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,"jpow^_",a,m);
         assertNotEquals(correct,value);
     }
     //---------------------------------------address can contain numbers and letters

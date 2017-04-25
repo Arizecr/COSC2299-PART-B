@@ -46,6 +46,41 @@ public class AddEmployeeTesting {
         details = driver.verifyEmployeeMobile("04sascgf");
         assertTrue(details);
     }
+    @Test //not 04xxxxxxxx
+    public void fakeNewEmployeeNO2() {
+        details = driver.verifyEmployeeMobile("0000000000");
+        assertTrue(details);
+    }
+    @Test //not 04xxxxxxxx
+    public void fakeNewEmployeeNO3() {
+        details = driver.verifyEmployeeMobile("0900000000");
+        assertTrue(details);
+    }
+    @Test //not 04xxxxxxxx
+    public void fakeNewEmployeeNO4() {
+        details = driver.verifyEmployeeMobile("9999999999");
+        assertTrue(details);
+    }
+    @Test
+    public void fakeName() {
+        details = driver.verifyEmployeeName("em'ployee");
+        assertTrue(details);
+    }
+    @Test
+    public void fakeName2() {
+        details = driver.verifyEmployeeName("e.'ployee");
+        assertTrue(details);
+    }
+    @Test
+    public void fakeName3() {
+        details = driver.verifyEmployeeName("e79ployee");
+        assertTrue(details);
+    }
+    @Test
+    public void fakeName4() {
+        details = driver.verifyEmployeeName("e'^_ployee");
+        assertTrue(details);
+    }
     /*----------------------------upper bound testing---------------------------------*/
 
     @Test
@@ -66,25 +101,25 @@ public class AddEmployeeTesting {
     }
     @Test
     public void UppBoundEmployeeNO() {
-        details = driver.verifyEmployeeMobile("12345678900");
+        details = driver.verifyEmployeeMobile("04345678900");
         assertTrue(details);
     }
 
     @Test
     public void UppBoundEmployeeNO2() {
-        details = driver.verifyEmployeeMobile("123456789002");
+        details = driver.verifyEmployeeMobile("043456789002");
         assertTrue(details);
     }
 
     @Test
     public void UppBoundEmployeeNO3() {
-        details = driver.verifyEmployeeMobile("1234567890023");
+        details = driver.verifyEmployeeMobile("0434567890023");
         assertTrue(details);
     }
 
     @Test
     public void UppBoundName1() {
-        details = driver.verifyEmployeeName("qwertyuiopasdfghjklzxcvbnm,qwertyuioasdfghjzxcvb");
+        details = driver.verifyEmployeeName("qwertyuiopasdfghjklzxcvbnmqwertyuioasdfghjzxcvb");
         assertTrue(details);
     }
     @Test

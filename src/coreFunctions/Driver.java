@@ -193,7 +193,7 @@ public class Driver {
             System.out.println("Error: Name must be longer than 2 characters");
             return true;
         }
-        if(!name.matches("[a-zA-z' ']+")){
+        if(!name.matches("^[a-zA-Z\\s]+$")){
             System.out.println("name is invalid [cannot contain numbers]");
             return true;
         }
