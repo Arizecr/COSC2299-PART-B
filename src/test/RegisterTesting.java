@@ -2,7 +2,6 @@ package test;
 import menu.Login;
 import menu.Register;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -51,13 +50,7 @@ public class RegisterTesting {
         boolean value = reg.testUser(u);
         assertFalse(value);
     }
-    @Test
-    public void invalidUsernameUppBound() {
 
-        String u = "abcdef0123456789";
-        boolean value = reg.testUser(u);
-        assertFalse(value);
-    }
     @Test
     public void sameUsername() {
         String u = "c12";
@@ -65,6 +58,13 @@ public class RegisterTesting {
         assertFalse(value);
     }
     //------------------------------------------------------Boundary testing Username
+    @Test
+    public void invalidUsernameUppBound() {
+
+        String u = "abcdef0123456789";
+        boolean value = reg.testUser(u);
+        assertFalse(value);
+    }
     @Test // length 16
     public void invalidUsernameBound() {
 
@@ -75,18 +75,17 @@ public class RegisterTesting {
     @Test // length 15
     public void validUsernameBound() {
 
-        String u = "c12345678910112";
+        String u = "c1234567812";
         String p = "password";
-        int value = reg.testReg(p,name,a,m);
-        assertEquals(correct,value);
+        boolean value = reg.testUser(u);
+        assertTrue(value);
     }
     @Test // length 14
     public void validUsernameBound2() {
 
         String u = "c1234978910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
-        assertEquals(correct,value);
+        boolean value = reg.testUser(u);
+        assertTrue(value);
     }
     @Test // length 16
     public void invalidUsernameBound2() {
@@ -116,14 +115,7 @@ public class RegisterTesting {
         String u = "bbc1234978910112";
         boolean value = reg.testUser(u);
         assertFalse(value);
-    }//--------------------------------------------------------------------------
-    @Ignore// (expected = NullPointerException.class)//searches and compares to current logins
-    public void errorTest2() {
-
-        String u = "";
-        String p = "password";
-        int value = reg.testReg(p,name,a,m);
-    }
+    }//-------------------------------------------------------------password testing
 
     @Test //fixed in code
     public void passwordNull() {
@@ -148,6 +140,7 @@ public class RegisterTesting {
         assertNotEquals(correct,value);
 
     }
+    //------------------------------------------------------------Mobile
     @Test
     public void validMobile() {
 
@@ -173,32 +166,6 @@ public class RegisterTesting {
         assertNotEquals(correct,value);
     }
     @Test
-    public void invalidMobileSize() {
-        String m = "04123456789";
-        String u = "ccccccc8910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
-        assertNotEquals(correct,value);
-    }
-    @Test
-    //--------------------------------------------------------------Boundary testing
-    public void invalidMobileSize2() {
-        String m = "041234567890";
-        String u = "ccccccc8910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
-        assertNotEquals(correct,value);
-    }
-    @Test
-    public void invalidMobileSize3() {
-        String m = "0412345678889";
-        String u = "ccccccc8910112";
-        String p = "passwooord";
-        int value = reg.testReg(p,name,a,m);
-        assertNotEquals(correct,value);
-    }
-    //-----------------------------------------------------------------------------
-    @Test
     public void invalidMobileformat() {
         String m = "0312345678";
         String u = "ccccccc8910112";
@@ -222,6 +189,34 @@ public class RegisterTesting {
         int value = reg.testReg(p,name,a,m);
         assertNotEquals(correct,value);
     }
+
+
+    //--------------------------------------------------------------Boundary testing Mobile
+    @Test
+    public void invalidMobileSize() {
+        String m = "04123456789";
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidMobileSize2() {
+        String m = "041234567890";
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidMobileSize3() {
+        String m = "0412345678889";
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,a,m);
+        assertNotEquals(correct,value);
+    }
+
     //------------------------------------------------------name
     @Test
     public void invalidName() {
@@ -292,6 +287,20 @@ public class RegisterTesting {
         String u = "ccccccc8910112";
         String p = "passwooord";
         int value = reg.testReg(p,name,"",m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidAddress2() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,"dfgh 78uji ';",m);
+        assertNotEquals(correct,value);
+    }
+    @Test
+    public void invalidAddress3() {
+        String u = "ccccccc8910112";
+        String p = "passwooord";
+        int value = reg.testReg(p,name,"dfgh 78uji _",m);
         assertNotEquals(correct,value);
     }
 
