@@ -122,6 +122,7 @@ public class Workday
                 if(d.equals(workhours.get(i).workD())){
                     workhours.remove(i);
                     drive.removeWorktimes( b, d);
+                    System.out.print("Business Hours for "+ d + " removed");
                     write.rewriteToFile(workhours,"businessdaysList.txt");
                 }
             }
