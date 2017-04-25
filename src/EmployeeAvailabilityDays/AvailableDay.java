@@ -91,6 +91,7 @@ public class AvailableDay {
             bID = Details[0];
             eID = Details[1];
             day = Details[2];
+            day = day.substring(0,1).toUpperCase() + day.substring(1);
             starttime = Details[3];
             endtime = Details[4];
             name = e.getEmployeeName(bId,eID);
@@ -169,7 +170,7 @@ public class AvailableDay {
             day = Details[2].toLowerCase();
             start = Details[3];
             end = Details[4];
-            if(bID.equals(b)&&empid.equals(emp)&&day.equals(d)){
+            if(bID.equals(b)&&empid.equals(emp)&&day.equals(d.toLowerCase())){
                 DateFormat time = new SimpleDateFormat("HH:mm");
                 inFile++;
                 try {
