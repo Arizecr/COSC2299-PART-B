@@ -12,20 +12,50 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.registerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.registerController">
    <children>
-      <TextField fx:id="username" layoutX="95.0" layoutY="73.0" promptText="Username" />
-      <PasswordField fx:id="password" layoutX="95.0" layoutY="121.0" promptText="Password" />
-      <PasswordField fx:id="p" layoutX="95.0" layoutY="166.0" promptText="Re-enter Password" />
-      <TextField fx:id="name" layoutX="95.0" layoutY="211.0" promptText="Name" />
-      <TextField fx:id="address" layoutX="95.0" layoutY="256.0" promptText="Address" />
-      <TextField fx:id="mobile" layoutX="95.0" layoutY="304.0" promptText="Mobile" />
-      <Button fx:id="registerAccount" layoutX="178.0" layoutY="348.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="27.0" prefWidth="84.0" text="Register" />
+      <TextField fx:id="username" layoutX="137.0" layoutY="71.0" promptText="Start with 'c' or 'b'" />
+      <PasswordField fx:id="password" layoutX="137.0" layoutY="119.0" promptText="Password" />
+      <PasswordField fx:id="p" layoutX="137.0" layoutY="166.0" promptText="Re-enter Password" />
+      <TextField fx:id="name" layoutX="137.0" layoutY="210.0" promptText="John Smith" />
+      <TextField fx:id="address" layoutX="137.0" layoutY="255.0" promptText="883, Glayde Avenue" />
+      <TextField fx:id="mobile" layoutX="137.0" layoutY="298.0" promptText="04xxxxxxxx " />
+      <Button fx:id="registerAccount" layoutX="213.0" layoutY="362.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="27.0" prefWidth="84.0" text="Register" />
       <Text layoutX="117.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <font>
             <Font name="American Typewriter" size="26.0" />
          </font>
       </Text>
-      <Button layoutX="95.0" layoutY="348.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="64.0" text="Cancel" textFill="#5171da" />
+      <Button layoutX="94.0" layoutY="362.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="64.0" text="Cancel" textFill="#5171da" />
+      <Text layoutX="42.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm password" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile" wrappingWidth="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

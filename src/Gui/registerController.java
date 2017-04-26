@@ -53,17 +53,10 @@ public class registerController {
                 switchToLogin(event);
             }
             else{
-                //SOMETHING (NAME, ADDRESS ETC ETC) IS INVALID IMPLEMENT LATER
-               /* Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("Error");
-                alert.setHeaderText(null);
-                alert.setContentText("Invalid details. Ensure:\nUsername starts with a 'c' or 'b'");
-
-                alert.showAndWait();*/
+                //it's invalid.
             }
 
         }else{
-            // USER NAME INVALID IMPLEMENT ERROR LATER
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
