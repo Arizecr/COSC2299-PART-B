@@ -20,8 +20,8 @@
             <Button layoutX="20.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToAddWorkingDay" prefHeight="27.0" prefWidth="330.0" text="Add working day/times for Employee" />
             <Button layoutX="20.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="330.0" text="Remove working days/times for Employee" />
             <Button layoutX="20.0" layoutY="206.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="330.0" text="Show worker availibility" />
-            <Button layoutX="20.0" layoutY="252.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="330.0" text="Add new service(s)" />
-            <Button layoutX="20.0" layoutY="300.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="330.0" text="View summaries of Bookings" />
+            <Button layoutX="20.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchToAddServices" prefHeight="27.0" prefWidth="330.0" text="Add new service(s)" />
+            <Button layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchToViewBookingSummary" prefHeight="27.0" prefWidth="330.0" text="View summaries of Bookings" />
             <Button layoutX="20.0" layoutY="347.0" mnemonicParsing="false" onAction="#switchToAdjustBusinessHours" prefHeight="27.0" prefWidth="330.0" text="View/adjust Business hours" />
             <Button layoutX="20.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="27.0" prefWidth="330.0" text="Exit System" />
             <Text layoutX="47.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Owner Menu">
