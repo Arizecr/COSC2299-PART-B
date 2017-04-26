@@ -40,6 +40,7 @@ public class Controller {
     void startLogin(ActionEvent event) throws IOException {
 
         loginMenu.loadCustomerInformation();
+        loginMenu.loadOwnerInformation();
         if(username.getText().length() <1 || password.getText().length()<1){}
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
@@ -48,7 +49,7 @@ public class Controller {
         }
         else if(username.getText().charAt(0) == 'b'){
             if(loginMenu.getVerification("owner",username.getText(),password.getText())){
-                System.out.println("OWNER ");
+                switchToBusinessMenu(event);
             }
         }
 
@@ -69,6 +70,14 @@ public class Controller {
     }
 
 
+
+    private void switchToBusinessMenu(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
 
     private void switchToHomepage(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("homepage.fxml"));

@@ -135,7 +135,7 @@ public class Login {
      * Load owner information
      */
 
-    private void loadOwnerInformation(){
+    public void loadOwnerInformation(){
         BufferedReader br;
         try {
 
