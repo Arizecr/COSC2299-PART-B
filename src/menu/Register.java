@@ -143,7 +143,6 @@ public class Register {
             alert.setContentText("Invalid Address. Please try again");
 
             alert.showAndWait();
-            System.out.println("Invalid Address");
             return ++valid;
 
         }

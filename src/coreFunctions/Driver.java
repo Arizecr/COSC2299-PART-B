@@ -192,11 +192,22 @@ public class Driver {
 
     public Boolean verifyEmployeeName(String name){
         if((name.length()< 3)||(name.length()>20)){
-            System.out.println("Error: Name must be longer than 2 characters");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Name entered must be longer than 2 characters. Try again.");
+
+            alert.showAndWait();
+
             return true;
         }
         if(!name.matches("^[a-zA-Z\\s]+$")){
-            System.out.println("name is invalid [cannot contain numbers]");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("A valid name does not contain any numbers. Try again.");
+
+            alert.showAndWait();
             return true;
         }
         return false;
@@ -225,7 +236,6 @@ public class Driver {
      */
     public Boolean verifyEmployeeMobile(String phone){
         if(phone.length() != 10){
-            System.out.println("Error: Phone no is 10 digits in length.");
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -236,7 +246,6 @@ public class Driver {
         }
 
         if(!isNumeric(phone)) {
-            System.out.println("Error: entered a non integer as phone number.");
 
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -254,7 +263,6 @@ public class Driver {
 
             alert.showAndWait();
 
-            System.out.println("Invalid Mobile");
             return true;
 
         }
