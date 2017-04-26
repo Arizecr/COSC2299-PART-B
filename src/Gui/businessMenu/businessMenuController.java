@@ -36,6 +36,24 @@ public class businessMenuController extends Controller {
     }
 
     @FXML
+    private void switchToShowWorkerAvailibility(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("showWorkerAvailibility.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
+
+    @FXML
+    private void removeWorkingDay(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("removeWorkingDay.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
+
+    @FXML
     private void switchToAdjustBusinessHours(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours.fxml"));
         Scene home_page_scene = new Scene(home_page);
