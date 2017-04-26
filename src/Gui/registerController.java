@@ -53,7 +53,12 @@ public class registerController {
                 switchToLogin(event);
             }
             else{
-                //it's invalid.
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Password does not match. Try again.");
+
+                alert.showAndWait();
             }
 
         }else{
