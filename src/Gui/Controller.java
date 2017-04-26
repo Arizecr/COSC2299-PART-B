@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -44,16 +46,48 @@ public class Controller {
 
         loginMenu.loadCustomerInformation();
         loginMenu.loadOwnerInformation();
-        if(username.getText().length() <1 || password.getText().length()<1){}
+        if(username.getText().length() <1 || password.getText().length()<1){
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid username/password combination. Try again.");
+
+            alert.showAndWait();
+
+        }
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 switchToHomepage(event);
+            }
+            else{
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid username/password combination. Try again.");
+
+                alert.showAndWait();
             }
         }
         else if(username.getText().charAt(0) == 'b'){
             if(loginMenu.getVerification("owner",username.getText(),password.getText())){
                 switchToBusinessMenu(event);
             }
+            else {
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid username/password combination. Try again.");
+
+                alert.showAndWait();
+            }
+        }
+        else {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid username/password combination. Try again.");
+
+            alert.showAndWait();
         }
 
 
