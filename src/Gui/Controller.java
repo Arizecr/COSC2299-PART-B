@@ -28,6 +28,9 @@ public class Controller {
     private Button login;
 
     @FXML
+    public Button closeButton;
+
+    @FXML
     private Button register;
 
     @FXML
@@ -94,6 +97,9 @@ public class Controller {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+
+
 
 
 }
