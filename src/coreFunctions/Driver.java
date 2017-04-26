@@ -4,6 +4,8 @@ import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Bookings;
 import bookings.CurrentBookings;
 import bookings.PastBookings;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import test.Logging;
 import user.Employee;
 
@@ -224,13 +226,33 @@ public class Driver {
     public Boolean verifyEmployeeMobile(String phone){
         if(phone.length() != 10){
             System.out.println("Error: Phone no is 10 digits in length.");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Phone number must be 10 digits in length. Try again.");
+
+            alert.showAndWait();
             return true;
         }
+
         if(!isNumeric(phone)) {
             System.out.println("Error: entered a non integer as phone number.");
+
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("A phone number consists of 10 digits. You have entered non-numeric characters.");
+
+            alert.showAndWait();
             return true;
         }
         if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Phone number must start with 04. Try again.");
+
+            alert.showAndWait();
 
             System.out.println("Invalid Mobile");
             return true;

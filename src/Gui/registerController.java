@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -45,16 +47,29 @@ public class registerController {
     void createAccount(ActionEvent event) throws IOException {
         if(registerMenu.testUser(username.getText())){
             int valid = registerMenu.testReg(password.getText(),name.getText(),address.getText(),mobile.getText());
+
             if(valid == 0&&p.getText().equals(password.getText())){
                 toTxt.WriteToTXT(new Customer(username.getText(), password.getText(), name.getText(), address.getText(), mobile.getText()), "customerinfo.txt");
                 switchToLogin(event);
             }
             else{
                 //SOMETHING (NAME, ADDRESS ETC ETC) IS INVALID IMPLEMENT LATER
+               /* Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid details. Ensure:\nUsername starts with a 'c' or 'b'");
+
+                alert.showAndWait();*/
             }
 
         }else{
             // USER NAME INVALID IMPLEMENT ERROR LATER
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Username entered is invalid. Try again.");
+
+            alert.showAndWait();
         }
     }
 
