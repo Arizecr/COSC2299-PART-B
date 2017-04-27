@@ -9,13 +9,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+import menu.Login;
 import java.io.IOException;
+
 
 /**
  * Created by xemorth on 26/04/2017.
  */
-public class businessMenuController extends Controller {
+
+public class businessMenuController extends Controller{
+    Login login = new Login();
+
 
     @FXML
     private void switchToAddEmployee(ActionEvent event) throws IOException {
@@ -24,6 +28,8 @@ public class businessMenuController extends Controller {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
         app_stage.show();
+
+        System.out.println(busId); //get Businessid
     }
 
     @FXML
@@ -93,4 +99,6 @@ public class businessMenuController extends Controller {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+
 }

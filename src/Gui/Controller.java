@@ -26,6 +26,7 @@ public class Controller {
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
 
+
     @FXML
     private Button login;
 
@@ -40,6 +41,9 @@ public class Controller {
 
     @FXML
     private TextField username;
+
+    public static String busId; //stores businessId
+
 
     @FXML
     void startLogin(ActionEvent event) throws IOException {
@@ -58,6 +62,7 @@ public class Controller {
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 switchToHomepage(event);
+                busId = username.getText();
             }
             else{
                 Alert alert = new Alert(AlertType.INFORMATION);
@@ -65,11 +70,13 @@ public class Controller {
                 alert.setHeaderText(null);
                 alert.setContentText("Invalid username/password combination. Try again.");
 
+
                 alert.showAndWait();
             }
         }
         else if(username.getText().charAt(0) == 'b'){
             if(loginMenu.getVerification("owner",username.getText(),password.getText())){
+                busId = username.getText();
                 switchToBusinessMenu(event);
             }
             else {
