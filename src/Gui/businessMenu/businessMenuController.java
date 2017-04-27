@@ -8,12 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import menu.Login;
+import coreFunctions.Driver;
 
 import java.io.IOException;
-
-
 
 
 /**
@@ -22,9 +22,20 @@ import java.io.IOException;
 
 public class businessMenuController extends Controller{
 
+    @FXML
+    private Label employeeID;
 
 
     Login login = new Login();
+    Driver driver = new Driver();
+
+
+
+    @FXML
+    public void initializing() {
+        employeeID.setText(driver.generateEmployeeNo());
+    }
+
 
 
     @FXML
@@ -34,8 +45,6 @@ public class businessMenuController extends Controller{
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
-        app_stage.show();
-
 
         //System.out.println(busId); //get Businessid
     }

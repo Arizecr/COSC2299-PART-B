@@ -274,7 +274,7 @@ public class Driver {
     /*
      * Generate employee ID
      */
-    private String generateEmployeeNo(){
+    public String generateEmployeeNo(){
         int count = 1;
         BufferedReader br;
         try {
