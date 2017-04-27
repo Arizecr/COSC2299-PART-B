@@ -8,9 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import menu.Login;
 import java.io.IOException;
+
+
 
 
 /**
@@ -18,6 +21,10 @@ import java.io.IOException;
  */
 
 public class businessMenuController extends Controller{
+
+    @FXML
+    private Label employeeID;
+
     Login login = new Login();
 
 
