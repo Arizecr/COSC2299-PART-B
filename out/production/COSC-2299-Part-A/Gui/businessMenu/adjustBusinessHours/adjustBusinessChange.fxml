@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="113.0" layoutY="111.0" />
+      <TextField layoutX="113.0" layoutY="161.0" />
+      <TextField layoutX="113.0" layoutY="197.0" />
+      <Label layoutX="43.0" layoutY="165.0" text="Start" />
+      <Label layoutX="42.0" layoutY="201.0" text="End" />
+      <Label layoutX="42.0" layoutY="115.0" text="Day" />
+      <Label layoutX="56.0" layoutY="44.0" prefHeight="45.0" prefWidth="307.0" text="Add/Change Business Hours">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

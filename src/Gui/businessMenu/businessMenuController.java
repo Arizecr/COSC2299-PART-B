@@ -4,23 +4,27 @@ import Gui.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
 import coreFunctions.Driver;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /**
  * Created by xemorth on 26/04/2017.
  */
 
-public class businessMenuController extends Controller{
+public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private Label employeeID;
@@ -28,23 +32,49 @@ public class businessMenuController extends Controller{
 
     Login login = new Login();
     Driver driver = new Driver();
+    public static String businessID;
+
+    public static void setBusinessID(String bid){
+        businessID = bid;
+
+    }
+
+    public String  getBusinessID(){
+        return businessID;
+
+    }
+
+
+    private void pass(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        addEmployeeController controller = loader.getController();
+        controller.setBusinessID(businessID);
+
+    }
+
 
 
 
     @FXML
-    public void initializing() {
-        employeeID.setText(driver.generateEmployeeNo());
+    public void initializing(ActionEvent event) {
+        System.out.println(businessID);
+        //employeeID.setText(driver.generateEmployeeNo());
     }
 
 
 
     @FXML
     private void switchToAddEmployee(ActionEvent event) throws IOException {
+        System.out.println(getBusinessID());
+        //Passes to addEmployeeController
 
+        pass("addEmployee.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("addEmployee.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
+
 
         //System.out.println(busId); //get Businessid
     }
@@ -78,7 +108,7 @@ public class businessMenuController extends Controller{
 
     @FXML
     private void switchToAdjustBusinessHours(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours/adjustBusinessMain.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
@@ -118,4 +148,8 @@ public class businessMenuController extends Controller{
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        getBusinessID();
+    }
 }

@@ -220,12 +220,23 @@ public class Driver {
         int length = tfn.length();
 
         if(length < 8 || length>9){
-            System.out.println("Error: TFN must be 8-9 digits in length.");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: TFN must be 8-9 digits in length.");
+
+            alert.showAndWait();
+
             return true;
         }
         if(!isNumeric(tfn)) {
-            System.out.println("Error: entered a non integer as tfn.");
-            // System.out.print("Enter tax file number: ");
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: entered a non integer as tfn.");
+
+            alert.showAndWait();
+
             return true;
         }
         return false;
