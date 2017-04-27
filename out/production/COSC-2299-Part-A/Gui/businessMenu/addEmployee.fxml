@@ -24,26 +24,28 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField layoutX="111.0" layoutY="56.0" prefHeight="27.0" prefWidth="180.0" promptText="John Smith" />
-            <TextField layoutX="111.0" layoutY="101.0" prefHeight="27.0" prefWidth="180.0" promptText="8-9 numbers" />
-            <Text layoutX="14.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name:" wrappingWidth="77.74755859375">
+            <TextField layoutX="111.0" layoutY="88.0" prefHeight="27.0" prefWidth="180.0" promptText="John Smith" />
+            <TextField layoutX="111.0" layoutY="140.0" prefHeight="27.0" prefWidth="180.0" promptText="8-9 numbers" />
+            <Text layoutX="14.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name:" wrappingWidth="77.74755859375">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TFN" wrappingWidth="77.74755859375">
+            <Text layoutX="14.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TFN" wrappingWidth="77.74755859375">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone no">
+            <Text layoutX="17.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone no">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField layoutX="111.0" layoutY="149.0" prefHeight="27.0" prefWidth="180.0" promptText="10 digits (0425001889)" />
-            <Button layoutX="81.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
-            <Button layoutX="184.0" layoutY="249.0" mnemonicParsing="false" text="Add Employee" />
+            <TextField layoutX="111.0" layoutY="188.0" prefHeight="27.0" prefWidth="180.0" promptText="10 digits (0425001889)" />
+            <Button layoutX="81.0" layoutY="263.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+            <Button layoutX="184.0" layoutY="263.0" mnemonicParsing="false" text="Add Employee" />
+            <Text layoutX="8.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID will be:" />
+            <Label fx:id="employeeID" layoutX="152.0" layoutY="49.0" text="Label" />
          </children>
         </Pane>
     </children>
