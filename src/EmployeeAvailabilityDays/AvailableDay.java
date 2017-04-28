@@ -71,7 +71,7 @@ public class AvailableDay {
             LOGGER.log(Level.WARNING,error.toString(),error);
         }
 
-        return null;
+        return availability;
     }
 
     /*
