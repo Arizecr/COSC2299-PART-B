@@ -53,6 +53,14 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    private void passToShowWorkerAvailibility(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        showWorkerAvailibilityController controller = loader.getController();
+        controller.setBusinessID(businessID);
+
+    }
+
 
 
 
@@ -90,6 +98,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private void switchToShowWorkerAvailibility(ActionEvent event) throws IOException {
+        passToShowWorkerAvailibility("showWorkerAvailibility.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("showWorkerAvailibility.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
