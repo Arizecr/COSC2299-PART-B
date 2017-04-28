@@ -282,7 +282,7 @@ public class BusinessMenu {
     public boolean checkD(String day){
         return checkDay(day);
     }
-    private boolean checkDay(String day){
+    public boolean checkDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");
             time.parse(day);
@@ -295,7 +295,7 @@ public class BusinessMenu {
     }
 
     //check general format
-    private boolean checktime(String t){
+    public boolean checktime(String t){
         try{
             DateFormat time = new SimpleDateFormat("HH:mm");
             time.parse(t);
@@ -312,7 +312,7 @@ public class BusinessMenu {
     }
 
     //check valid start and end time
-    private boolean timeCheck (String starttime,String endtime){
+    public boolean timeCheck (String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         try{
             Date st = time.parse(starttime);
@@ -334,7 +334,7 @@ public class BusinessMenu {
     public  boolean Workt(String bId,String empId, String day,String starttime,String endtime){return Worktimes(bId,empId,  day, starttime, endtime);}
 
     //check the time is valid given the constraints
-    private boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
+    public boolean Worktimes(String bId, String empId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         day = day.toLowerCase();
         if( !timeCheck (starttime, endtime)){
@@ -347,7 +347,7 @@ public class BusinessMenu {
             System.out.println("Employee: "+ name);
             day = day.substring(0,1).toUpperCase() + day.substring(1);
             System.out.println("Added the working time of: " + day + ":  "+starttime+" - " + endtime);
-            driver.addWorkdays(bId,empId,day,starttime,endtime);//adds the new employee shift into workdaysList.txt
+            //driver.addWorkdays(bId,empId,day,starttime,endtime);//adds the new employee shift into workdaysList.txt
             return false;
         }
         return true;
