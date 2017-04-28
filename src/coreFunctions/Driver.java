@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -445,7 +446,7 @@ public class Driver {
         Scanner reader = new Scanner(System.in);
         loadCurrentBookings(b);
         loadPastBookings(b);
-
+        checkBookings();//removes bookings that have occurred
         System.out.println("\n+----------------------------------+");
         System.out.println("|               View               |");
         System.out.println("|             Bookings             |");
@@ -485,7 +486,28 @@ public class Driver {
             }
         }
     }
+    public void checkBookings(){
+        currentBookings = insertionSortDate(currentBookings);
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,0);
 
+        Date current;
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        Date today = new Date();
+        try {today = date.parse(date.format(c.getTime()));}catch(ParseException e){}
+        for(int j=0; j<currentBookings.size();j++) {
+            try {
+                current = new SimpleDateFormat("dd/MM/yyyy").parse(currentBookings.get(j).getDate());
+
+                if ((current).before(today)) {
+                    pastBookings.add(currentBookings.get(j));
+                    currentBookings.remove(j);
+                }
+                else{j=currentBookings.size()-1;}
+                //ordered dates therefore do not nees to search through all
+            }catch(ParseException e){}
+        }
+        }
     /*
      * View current bookings of a business
      */
@@ -723,6 +745,8 @@ public class Driver {
         }
         return days;
     }
+
+
 
 
 }
