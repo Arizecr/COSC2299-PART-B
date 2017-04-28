@@ -52,7 +52,7 @@ public class customerMenuController {
     }
     @FXML
     private void switchToBookAppointment(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours/adjustBusinessMain.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
@@ -60,7 +60,7 @@ public class customerMenuController {
     }
     @FXML
     private void switchToViewCustomerBookings(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours/adjustBusinessMain.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
