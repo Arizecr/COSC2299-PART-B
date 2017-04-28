@@ -11,10 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -27,6 +24,7 @@ public class viewBusinessHours implements Initializable{
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
     public ArrayList<String> end = new ArrayList<>();
+    public ArrayList<String> days = new ArrayList<>();
 
     public static void setBusinessID(String busid){
         businessID = busid;
@@ -67,6 +65,12 @@ public class viewBusinessHours implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         printFile();
+        days.add("Monday");
+        days.add("Tuesday");
+        days.add("Wednesday");
+        days.add("Thursday");
+        days.add("Friday");
+
         mondayStart.setText(start.get(0));
         tuesdayStart.setText(start.get(1));
         wednesdayStart.setText(start.get(2));
@@ -141,6 +145,19 @@ public class viewBusinessHours implements Initializable{
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
         app_stage.show();
+    }
+
+    //to update business hours later
+    public void WriteToWorkingdayTXT(String chosenwork) {
+
+        try {
+            FileWriter fw = new FileWriter("businessdaysList.txt", true); //the true will append the new data
+
+            //replace b1 with businessid
+            fw.write("\n");
+            fw.close();
+        } catch (IOException ioe) {
+        }
     }
 
 }
