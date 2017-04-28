@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.BusinessMenu;
-import test.WorkingTimesTesting;
+import user.Employee;
 
 import java.io.IOException;
 import java.net.URL;
@@ -78,26 +78,29 @@ public class addWorkingDayController implements Initializable{
 
     }
 
-/********************************************************
+    /********************************************************
 
 
-                    KINDA NOT WORKING
+     KINDA NOT WORKING
 
 
-*********************************************************/
+     *********************************************************/
 
 
     @FXML
     void addShift(ActionEvent event) {
-
+        Employee emp = new Employee();
         if(b.checktime(start.getText())){
-            //alert
+            //alert incorrect time
         }
         else if(b.checktime(end.getText())){
             //alert
         }
-
-        if(!b.Worktimes(businessID, eid.getText(),day.getText(),start.getText(),end.getText())){
+        else if(!emp.checkEmployeeID(businessID,eid.getText()))
+        {//alert incorrect employee
+        }
+        else if(b.checkD(day.getText())){}
+        else if (!b.Worktimes(businessID, eid.getText(),day.getText(),start.getText(),end.getText())){
             driver.addWorkdays(businessID,eid.getText(),day.getText(),start.getText(),end.getText());
 
             // Dont worry about these
