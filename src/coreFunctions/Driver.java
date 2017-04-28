@@ -496,6 +496,8 @@ public class Driver {
                 days.add(currentBookings.get(i).getDayBooked());
             }
         }
+        //sort by date then get the next weeks dates
+        currentBookings = insertionSortDate(currentBookings);
         days = insertionSort(days);
         for(int i=0; i<days.size();i++){
             System.out.println("~~~~~~~~~~~~~" + days.get(i) + "~~~~~~~~~~~~~");
@@ -526,6 +528,8 @@ public class Driver {
                 daysZ.add(pastBookings.get(i).getDayBooked());
             }
         }
+        //sort by date then get the next week
+        pastBookings = insertionSortDate(pastBookings);
         daysZ = insertionSort(daysZ);
         for(int i=0; i<daysZ.size();i++){
             System.out.println("~~~~~~~~~~~~~" + daysZ.get(i) + "~~~~~~~~~~~~~");
@@ -696,6 +700,25 @@ public class Driver {
                     days.set(j, days.get(j-1));
                     days.set(j-1, temp);
                 }
+            }
+        }
+        return days;
+    }
+    public ArrayList<Bookings> insertionSortDate(ArrayList<Bookings> days){
+
+        Bookings temp;
+
+        for (int i = 1; i < days.size(); i++) {
+            for(int j = i ; j > 0 ; j--){
+                try {
+                    Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j-1).getDate());
+                    Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j).getDate());
+                    if ((date2).before(date1)) {
+                        temp = days.get(j);
+                        days.set(j, days.get(j - 1));
+                        days.set(j - 1, temp);
+                    }
+                }catch(ParseException e){}
             }
         }
         return days;
