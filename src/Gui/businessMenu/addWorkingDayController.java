@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.BusinessMenu;
+import test.WorkingTimesTesting;
 
 import java.io.IOException;
 import java.net.URL;
@@ -77,8 +78,18 @@ public class addWorkingDayController implements Initializable{
 
     }
 
+/********************************************************
+
+
+                    KINDA NOT WORKING
+
+
+*********************************************************/
+
+
     @FXML
     void addShift(ActionEvent event) {
+
         if(b.checktime(start.getText())){
             //alert
         }
@@ -94,6 +105,13 @@ public class addWorkingDayController implements Initializable{
             workday2list.setItems(FXCollections.observableArrayList(array2list));
         }
     }
+
+
+
+
+
+
+
 
 
     @Override
