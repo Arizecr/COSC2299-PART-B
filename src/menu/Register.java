@@ -135,7 +135,7 @@ public class Register {
             return ++valid;
         }
 
-        if(address.isEmpty() || (address.length() < 1)||!address.matches("[a-zA-Z\\s0-9]+")){
+        if(address.isEmpty() || (address.length() < 1)||!address.matches("^[a-zA-Z\\s0-9]+$")){
             //empty input or    length or 1            or address thais not letters or numbers
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");

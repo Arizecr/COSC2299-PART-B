@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addWorkingDayController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addWorkingDayController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/employeeAvailabilityList.txt" afterPath="$PROJECT_DIR$/employeeAvailabilityList.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customerinfo.txt" afterPath="$PROJECT_DIR$/customerinfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/registerController.java" afterPath="$PROJECT_DIR$/src/Gui/registerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/Register.java" afterPath="$PROJECT_DIR$/src/menu/Register.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employeeAvailabilityList.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employeeAvailabilityList.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/employeeAvailabilityList.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -41,34 +44,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/Controller.java">
+      <file leaf-file-name="viewBusinessHours.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/registerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="179" column="0" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+            <state relative-caret-position="267">
+              <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customerMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java">
+      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="84" column="9" lean-forward="false" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
+            <state relative-caret-position="282">
+              <caret line="142" column="58" lean-forward="false" selection-start-line="142" selection-start-column="58" selection-end-line="142" selection-end-column="58" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chooseBusinessController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -205,8 +209,6 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/adjustBusinessHours.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" />
-        <option value="$PROJECT_DIR$/src/menu/Register.java" />
-        <option value="$PROJECT_DIR$/src/Gui/registerController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addEmployee.fxml" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -234,6 +236,8 @@
         <option value="$PROJECT_DIR$/workdaysList.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDayController.java" />
         <option value="$PROJECT_DIR$/employeeAvailabilityList.txt" />
+        <option value="$PROJECT_DIR$/src/menu/Register.java" />
+        <option value="$PROJECT_DIR$/src/Gui/registerController.java" />
       </list>
     </option>
   </component>
@@ -337,50 +341,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="COSC2299-PART-B" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="COSC2299-PART-B" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customerMenu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="COSC2299-PART-B" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="COSC2299-PART-B" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="businessMenu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -832,13 +792,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00006" summary="duplication in booking fixed">
-      <created>1493016530003</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1493016530003</updated>
-    </task>
     <task id="LOCAL-00007" summary="fized add employee availability">
       <created>1493016987510</created>
       <option name="number" value="00007" />
@@ -1175,7 +1128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493368785688</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="work days fixed">
+      <created>1493368853276</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1493368853276</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1293,13 +1253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="13" selection-end-line="149" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1403,17 +1356,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibility.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1423,13 +1365,6 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/registerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="75" column="8" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="79" selection-end-column="25" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDay.fxml">
@@ -1636,6 +1571,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="142" column="58" lean-forward="false" selection-start-line="142" selection-start-column="58" selection-end-line="142" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/registerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
           <folding />
         </state>
       </provider>

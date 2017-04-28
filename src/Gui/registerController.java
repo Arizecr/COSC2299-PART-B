@@ -52,7 +52,7 @@ public class registerController {
                 toTxt.WriteToTXT(new Customer(username.getText(), password.getText(), name.getText(), address.getText(), mobile.getText()), "customerinfo.txt");
                 switchToLogin(event);
             }
-            else{
+            else if(!p.getText().equals(password.getText())){
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
