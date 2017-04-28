@@ -69,6 +69,14 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    private void passToAddWorkingDay(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        addWorkingDayController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
+
 
 
 
@@ -97,6 +105,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private void switchToAddWorkingDay(ActionEvent event) throws IOException {
+        passToAddWorkingDay("addWorkingDay.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("addWorkingDay.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
