@@ -1,6 +1,5 @@
 package Gui;
 
-import Gui.businessMenu.addEmployeeController;
 import Gui.businessMenu.businessMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,7 +14,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import menu.Login;
 import menu.Register;
 import user.Business;
@@ -81,6 +79,8 @@ public class Controller {
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 switchToHomepage(event);
                 busId = username.getText();
+                pass("businessMenu/businessMenu.fxml", busId);
+                switchToChooseBusiness(event);
             }
             else{
                 Alert alert = new Alert(AlertType.INFORMATION);
@@ -132,7 +132,13 @@ public class Controller {
         switchToRegister(event);
 
     }
-
+    private void switchToChooseBusiness(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/businessMenu.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu/businessMenu.fxml"));
