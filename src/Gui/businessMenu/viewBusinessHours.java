@@ -148,16 +148,30 @@ public class viewBusinessHours implements Initializable{
     }
 
     //to update business hours laters
-    public void WriteToWorkingdayTXT(String chosenwork) {
+    public void updateBusinessHours() {
 
         try {
-            FileWriter fw = new FileWriter("businessdaysList.txt", true); //the true will append the new data
+            FileWriter fw = new FileWriter("businessdaysList.txt"); //the true will append the new data
 
             //replace b1 with businessid
-            fw.write("\n");
+            fw.write("b1 Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
+            fw.write("b1 Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
+            fw.write("b1 Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
+            fw.write("b1 Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
+            fw.write("b1 Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
             fw.close();
         } catch (IOException ioe) {
         }
+    }
+
+    @FXML
+    void updateHours(ActionEvent event) throws IOException{
+            updateBusinessHours();
+            //Still need to add employee workday
+            pass("businessMenu.fxml", businessID);
+            switchToBusinessMenu(event);
+
+
     }
 
 }

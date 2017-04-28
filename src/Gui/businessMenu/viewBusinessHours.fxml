@@ -76,7 +76,7 @@
             <TextField fx:id="wednesdayEnd" layoutX="203.0" layoutY="129.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
             <TextField layoutX="119.0" layoutY="297.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
             <TextField layoutX="201.0" layoutY="297.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
-            <Button layoutX="215.0" layoutY="357.0" mnemonicParsing="false" text="Update" />
+            <Button layoutX="215.0" layoutY="357.0" mnemonicParsing="false" onAction="#updateHours" text="Update" />
             </children>
         </Pane>
     </children>
