@@ -44,14 +44,15 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 6);
+                    String Details[] = x.split(",", 7);
                     String business = Details[0];
                     String day = Details[1];
-                    String customer = Details[2];
-                    String time = Details[3];
-                    String service = Details[4];
-                    String id = Details[5];
-                    CurrentBookings bookingInfo = new CurrentBookings(business,day, customer, time, service, id);
+                    String date = Details[2];
+                    String customer = Details[3];
+                    String time = Details[4];
+                    String service = Details[5];
+                    String id = Details[6];
+                    CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id);
                     if(b.equals(business))  currentBookings.add(bookingInfo);
                 }
                 //prints error
@@ -94,15 +95,16 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 7);
+                    String Details[] = x.split(",", 8);
                     String business = Details[0];
                     String day = Details[1];
-                    String customer = Details[2];
-                    String time = Details[3];
-                    String service = Details[4];
-                    String cancelled = Details[5];
-                    String id = Details[6];
-                    PastBookings bookingInfo = new PastBookings(business,day, customer, time, service, cancelled,id);
+                    String date = Details[2];
+                    String customer = Details[3];
+                    String time = Details[4];
+                    String service = Details[5];
+                    String cancelled = Details[6];
+                    String id = Details[7];
+                    PastBookings bookingInfo = new PastBookings(business,day,date, customer, time, service, cancelled,id);
                     if(b.equals(business)) pastBookings.add(bookingInfo);
                 }
                 //prints error
