@@ -90,8 +90,8 @@ public class Controller {
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 switchToHomepage(event);
-                busId = username.getText();
-                passC("customerMenu/customerMenu.fxml", busId);
+                busId = username.getText();//is the customer
+                passC("customerMenu/chooseBusiness.fxml", busId);
                 switchToChooseBusiness(event);
             }
             else{
@@ -132,12 +132,7 @@ public class Controller {
 
 
     }
-    @FXML
-    void startBooking(ActionEvent event) throws IOException {
 
-
-
-    }
 
     @FXML
     void startRegister(ActionEvent event) throws IOException {
@@ -150,6 +145,13 @@ public class Controller {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
         app_stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("customerMenu/chooseBusiness.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        chooseBusinessController controller = loader.getController();
+
+        //function in the controller u go must contain this
+        controller.startChoose(event);
     }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {

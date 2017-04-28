@@ -19,7 +19,8 @@ public class Login {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
-    Logging l =new Logging();    public void loginMenu(){
+    Logging l =new Logging();
+    public void loginMenu(){
 
         loadOwnerInformation();
 
@@ -85,6 +86,7 @@ public class Login {
      */
 
     public void loadCustomerInformation(){
+        customerList = new ArrayList<>();
         BufferedReader br;
         try {
 
@@ -137,6 +139,7 @@ public class Login {
      */
 
     public void loadOwnerInformation(){
+        businessList = new ArrayList<>();
         BufferedReader br;
         try {
 
