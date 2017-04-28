@@ -36,6 +36,9 @@ public class addWorkingDayController implements Initializable{
     private ListView<String> workerList;
 
     @FXML
+    private ListView<String> workday2list;
+
+    @FXML
     private TextField start;
 
     @FXML
@@ -87,6 +90,8 @@ public class addWorkingDayController implements Initializable{
             driver.addWorkdays(businessID,eid.getText(),day.getText(),start.getText(),end.getText());
             ArrayList<String> array = ad.loadInfo();
             workerList.setItems(FXCollections.observableArrayList(array));
+            ArrayList<String> array2list = driver.loadInfo();
+            workday2list.setItems(FXCollections.observableArrayList(array2list));
         }
     }
 
@@ -95,6 +100,9 @@ public class addWorkingDayController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<String> array = ad.loadInfo();
         workerList.setItems(FXCollections.observableArrayList(array));
+
+        ArrayList<String> array2list = driver.loadInfo();
+        workday2list.setItems(FXCollections.observableArrayList(array2list));
 
         eid.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();
@@ -109,7 +117,26 @@ public class addWorkingDayController implements Initializable{
                 }
                 workerList.setItems(FXCollections.observableArrayList(array2));
             }
+
         });
+
+        eid.textProperty().addListener((obs, oldText, newText) -> {
+            ArrayList<String> array3 = new ArrayList<>();
+            if(!(eid.getText() == null)){
+                AvailableDay ad = new AvailableDay();
+                ArrayList<String> arrayzz = driver.loadInfo();
+                for(int i=0; i<arrayzz.size(); i++){
+                    if(arrayzz.get(i).toLowerCase().contains(newText.toLowerCase())){
+                        array3.add(arrayzz.get(i));
+
+                    }
+                }
+                workday2list.setItems(FXCollections.observableArrayList(array3));
+            }
+
+        });
+
+
     }
 
 
