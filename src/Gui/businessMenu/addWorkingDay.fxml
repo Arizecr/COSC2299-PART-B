@@ -28,7 +28,7 @@
                         <Font size="16.0" />
                     </font>
                 </Text>
-                <Button layoutX="336.0" layoutY="398.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+                <Button layoutX="367.0" layoutY="398.0" mnemonicParsing="false" onAction="#back" text="Back" textFill="#4465ab" />
                 <Button layoutX="91.0" layoutY="397.0" mnemonicParsing="false" onAction="#addShift" prefHeight="27.0" prefWidth="115.0" text="Add shift" />
             <Text layoutX="96.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
                <font>
