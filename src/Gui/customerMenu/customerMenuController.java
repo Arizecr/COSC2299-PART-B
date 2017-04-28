@@ -57,8 +57,13 @@ public class customerMenuController {
         Parent home_page = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("makeBooking.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        bookingController controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startMakeBook(app_stage);
     }
     @FXML
     private void switchToViewCustomerBookings(ActionEvent event) throws IOException {
@@ -66,8 +71,13 @@ public class customerMenuController {
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("viewBooking.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        bookingController controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startViewBook(app_stage);
     }
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {

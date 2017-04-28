@@ -32,7 +32,36 @@ public class bookingController {
         customerID = cid;
 
     }
+    public void startMakeBook(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
 
+
+        //ArrayList<Button> b = new ArrayList<>();
+       // AnchorPane root = new AnchorPane();
+
+       //     ((AnchorPane) rootNode).getChildren().add(gridButtons);
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+
+    }
+    public void startViewBook(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
+
+
+        //ArrayList<Button> b = new ArrayList<>();
+       // AnchorPane root = new AnchorPane();
+
+       // ((AnchorPane) rootNode).getChildren().add(gridButtons);
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+
+    }
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
