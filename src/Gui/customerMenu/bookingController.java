@@ -1,18 +1,38 @@
 package Gui.customerMenu;
 
+import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import menu.Login;
 
 import java.io.IOException;
 
 /**
  * Created by yesmi on 28/04/2017.
  */
+
 public class bookingController {
+    Login loginMenu = new Login();
+
+    Login login = new Login();
+    Driver driver = new Driver();
+    public static String businessID;
+    public static String customerID;
+    public static void setBusinessID(String bid){
+        businessID = bid;
+
+    }
+
+
+    public static void setCustomerID(String cid){
+        customerID = cid;
+
+    }
+
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);

@@ -33,15 +33,7 @@ public class chooseBusinessController {
     private Pane child;
 
 
-    public static void setBusinessID(String bid){
-        businessID = bid;
 
-    }
-
-    public String  getBusinessID(){
-        return businessID;
-
-    }
     public static void setCustomerID(String cid){
         customerID = cid;
 
@@ -107,7 +99,7 @@ public class chooseBusinessController {
     @FXML
     private void switchToMenu(ActionEvent event)  {
         try {
-
+            pass2("customerMenu.fxml");
             Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
             Scene home_page_scene = new Scene(home_page);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
