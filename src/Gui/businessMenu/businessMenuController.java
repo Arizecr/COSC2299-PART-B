@@ -49,7 +49,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        controller.setBusinessID(parameterToPass);
 
     }
 
@@ -57,7 +57,15 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         showWorkerAvailibilityController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        controller.setBusinessID(parameterToPass);
+
+    }
+
+    private void passToRemoveWorkingDay(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        removeWorkingDayController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
 
     }
 
@@ -108,6 +116,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private void removeWorkingDay(ActionEvent event) throws IOException {
+        passToRemoveWorkingDay("removeWorkingDay.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("removeWorkingDay.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
