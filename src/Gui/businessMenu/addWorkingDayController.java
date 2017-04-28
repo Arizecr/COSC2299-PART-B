@@ -104,8 +104,8 @@ public class addWorkingDayController implements Initializable{
             driver.addWorkdays(businessID,eid.getText(),day.getText(),start.getText(),end.getText());
 
             // Dont worry about these
-            ArrayList<String> array = ad.loadInfo();
-            workerList.setItems(FXCollections.observableArrayList(array));
+            /*ArrayList<String> array = ad.loadInfo();
+            workerList.setItems(FXCollections.observableArrayList(array));*/
             ArrayList<String> array2list = driver.loadInfo();
             workday2list.setItems(FXCollections.observableArrayList(array2list));
         }
