@@ -160,7 +160,7 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.show();
     }
 
-    @FXML //add services
+    @FXML //view summaries of booking
     private void switchToViewBookingSummary(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookingSummary.fxml"));
         Scene home_page_scene = new Scene(home_page);
