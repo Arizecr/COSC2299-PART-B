@@ -89,7 +89,6 @@ public class Controller {
         }
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
-                switchToHomepage(event);
                 busId = username.getText();//is the customer
                 passC("customerMenu/chooseBusiness.fxml", busId);
                 switchToChooseBusiness(event);
@@ -140,18 +139,18 @@ public class Controller {
 
     }
     private void switchToChooseBusiness(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/businessMenu.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/chooseBusiness.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+        //app_stage.setScene(home_page_scene);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("customerMenu/chooseBusiness.fxml"));
         Pane pane = loader.load();
         //MUST change classname to the file u want to pass the variable to
         chooseBusinessController controller = loader.getController();
-
         //function in the controller u go must contain this
-        controller.startChoose(event);
+        controller.startChoose(app_stage);
+
+
     }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
@@ -162,13 +161,7 @@ public class Controller {
         app_stage.show();
     }
 
-    private void switchToHomepage(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/customerMenu.fxml"));
-        Scene home_page_scene = new Scene(home_page);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
-    }
+
 
     private void switchToRegister(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("register.fxml"));
