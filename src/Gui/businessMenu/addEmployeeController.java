@@ -1,7 +1,6 @@
 package Gui.businessMenu;
 
 import EmployeeAvailabilityDays.AvailableDay;
-import com.sun.org.apache.xml.internal.security.Init;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import javafx.event.ActionEvent;
@@ -79,7 +78,7 @@ public class addEmployeeController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        employeeID.setText(driver.generateEmployeeNo());
+        employeeID.setText(driver.generateEmployeeNo(businessID));
     }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {

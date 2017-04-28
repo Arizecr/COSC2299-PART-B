@@ -108,7 +108,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private void switchToAdjustBusinessHours(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("adjustBusinessHours/adjustBusinessMain.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("viewBusinessHours.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);

@@ -1,6 +1,5 @@
 package coreFunctions;
 
-import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Bookings;
 import bookings.CurrentBookings;
 import bookings.PastBookings;
@@ -131,60 +130,6 @@ public class Driver {
     }
 
 
-    /*
-     * add's employee to the system
-     */
-    public void addEmployee(String bId){
-        Scanner reader = new Scanner(System.in);
-
-        boolean valid = true;
-        System.out.println("\nAdd Employee");
-        System.out.println("====================");
-
-        //infinite loop
-        while(true) {
-            AvailableDay av = new AvailableDay();
-            String employeeID = generateEmployeeNo(); //generate user id
-
-            System.out.println("Employee ID is " + employeeID);
-
-            String employeeName;
-            do {
-                System.out.print("Enter full name: ");
-                employeeName = reader.nextLine();
-            }while(verifyEmployeeName(employeeName)); //error check for length of name IN WHILE CONDITION
-
-
-            String checkTfn;
-            do{
-                System.out.print("Enter tax file number (8-9 digits): ");
-                checkTfn = reader.nextLine();
-            }while(verifyEmployeeTFN(checkTfn)); //checks if numbers are entered for tfn
-            String tfn = checkTfn;
-
-            String checkPhone;
-            do {
-                System.out.print("Enter phone number (10 digits): ");
-                checkPhone = reader.nextLine();
-            }while(verifyEmployeeMobile(checkPhone));//checks if numbers are entered for phone no
-
-            String phoneNo = checkPhone;
-
-            filewriter.WriteToEmployee(new Employee(bId,employeeID, employeeName, tfn, phoneNo), "employeeList.txt");
-            System.out.println("Add the employees Availability: ");
-            String exitAv;
-            do{
-                av.addEmployeeAvailability(bId,employeeID);
-                System.out.println("Type 0 to add more times");
-                exitAv = reader.nextLine();
-            }while(exitAv.equals("0"));
-            System.out.println("Successfully added a new employee");
-            break;
-
-
-        }
-
-    }
 
     /*
      * Checks validity of employee name (length)
@@ -285,7 +230,7 @@ public class Driver {
     /*
      * Generate employee ID
      */
-    public String generateEmployeeNo(){
+    public String generateEmployeeNo(String businessID){
         int count = 1;
         BufferedReader br;
         try {
@@ -296,7 +241,11 @@ public class Driver {
             try {
                 String x;
                 while ( (x = br.readLine()) != null ) {
-                    count++;
+                    String loginDetails[] = x.split(":",5);
+
+                    if(loginDetails[0].equals(businessID)){
+                        count++;
+                    }
                 }
                 //prints error
             } catch (IOException e) {

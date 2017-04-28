@@ -75,7 +75,7 @@ public class BusinessMenu {
 
                 //add Employee
                 case 1:
-                    driver.addEmployee(bId);
+
                     continue;
 
                     //Add/Remove/Edit working days/times of Employee
