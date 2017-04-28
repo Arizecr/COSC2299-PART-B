@@ -45,7 +45,7 @@ public class AvailableDay {
     /*
      * Load list for worker availability
      */
-    public void loadInfo(){
+    public ArrayList<String> loadInfo(){
         availability = new ArrayList<>();
 
 
@@ -71,6 +71,7 @@ public class AvailableDay {
             LOGGER.log(Level.WARNING,error.toString(),error);
         }
 
+        return null;
     }
 
     /*
