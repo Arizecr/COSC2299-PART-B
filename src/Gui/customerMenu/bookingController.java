@@ -35,11 +35,16 @@ public class bookingController {
     public void startMakeBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
-        Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
 
 
         //ArrayList<Button> b = new ArrayList<>();
        // AnchorPane root = new AnchorPane();
+
+
+        //print services service
+        //select date and time
+
 
        //     ((AnchorPane) rootNode).getChildren().add(gridButtons);
 
@@ -50,13 +55,16 @@ public class bookingController {
     public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
-        Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
 
 
         //ArrayList<Button> b = new ArrayList<>();
        // AnchorPane root = new AnchorPane();
 
+        //print the customers bookings by date
+
        // ((AnchorPane) rootNode).getChildren().add(gridButtons);
+
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
