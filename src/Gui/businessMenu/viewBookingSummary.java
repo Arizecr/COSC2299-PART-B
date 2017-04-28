@@ -74,6 +74,22 @@ public class viewBookingSummary extends Controller implements Initializable{
 
     }
 
+    private void passToShowCurrentBooking(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        showWorkerAvailibilityController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
+
+    private void passToShowPastBooking(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        showWorkerAvailibilityController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<String> array = d.loadInfo();
@@ -84,7 +100,7 @@ public class viewBookingSummary extends Controller implements Initializable{
 
     @FXML
     private void switchToPastBookings(ActionEvent event) throws IOException {
-        passToViewBookingSummary("pastBookings.fxml", businessID);
+        passToShowPastBooking("pastBookings.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("pastBookings.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,7 +110,7 @@ public class viewBookingSummary extends Controller implements Initializable{
 
     @FXML
     private void switchToCurrentBookings(ActionEvent event) throws IOException {
-        passToViewBookingSummary("currentBookings.fxml", businessID);
+        passToShowCurrentBooking("currentBookings.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("currentBookings.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

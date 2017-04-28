@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class currentBookings implements Initializable {
+public class pastBookings implements Initializable {
     Driver d = new Driver();
 
     public static String businessID;
