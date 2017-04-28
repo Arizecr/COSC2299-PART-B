@@ -147,7 +147,7 @@ public class viewBusinessHours implements Initializable{
         app_stage.show();
     }
 
-    //to update business hours later
+    //to update business hours laters
     public void WriteToWorkingdayTXT(String chosenwork) {
 
         try {
