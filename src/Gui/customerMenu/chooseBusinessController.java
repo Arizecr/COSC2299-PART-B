@@ -2,6 +2,7 @@ package Gui.customerMenu;
 
 import coreFunctions.Driver;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,13 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import menu.Login;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by yesmi on 28/04/2017.
@@ -29,7 +29,8 @@ public class chooseBusinessController {
     Driver driver = new Driver();
     public static String businessID;
     public static String customerID;
-
+    @FXML
+    private Pane child;
 
 
     public static void setBusinessID(String bid){
@@ -50,26 +51,73 @@ public class chooseBusinessController {
         return customerID;
 
     }
-    @FXML
-    public void startChoose(ActionEvent event) throws IOException {
+    private void pass(String fxmlFile, String parameterToPass1,String parameterToPass2) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Pane pane = loader.load();
 
-        loginMenu.loadOwnerInformation();
-        ArrayList<Button> b = new ArrayList<>();
-        //gets all the names of all business's registered to the system
-        for(int i=0;i<login.businessList.size();i++){
-            System.out.println(i+". "+login.businessList.get(i).getName());
-            Button gridButtons = new Button();
-            gridButtons.setText(login.businessList.get(i).getName());
-            gridButtons.minWidth(34.0);
-            gridButtons.setMnemonicParsing(false);
-            gridButtons.prefHeight(38.0);
-            gridButtons.prefWidth(41.0);
-            gridButtons.setTextAlignment(TextAlignment.CENTER);
-           b.add(gridButtons);
-        }
+            //MUST change classname to the file u want to pass the variable to
+            customerMenuController controller = loader.getController();
+
+            //function in the controller u go must contain this
+            controller.setBusinessID(parameterToPass1);
+            controller.setCustomerID(parameterToPass2);
+        }catch(IOException e){}
 
     }
-    private void pass(String fxmlFile) throws IOException {
+
+
+    public void startChoose(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
+
+        loginMenu.loadOwnerInformation();
+        //ArrayList<Button> b = new ArrayList<>();
+        AnchorPane root = new AnchorPane();
+        double count = 30;
+        //gets all the names of all business's registered to the system
+        for(int i=0;i<login.businessList.size();i++){
+            count+=40;
+            Button gridButtons = new Button();
+            gridButtons.setText(login.businessList.get(i).getName());
+            gridButtons.setMnemonicParsing(false);
+            gridButtons.prefHeight(27.0);
+            gridButtons.prefWidth(330.0);
+
+            gridButtons.setId(login.businessList.get(i).getUsername());
+            gridButtons.setLayoutX(20.0);
+            gridButtons.setLayoutY(count);
+
+            gridButtons.setOnAction( new EventHandler<ActionEvent>() {
+                public void handle(ActionEvent event) {
+                    pass("customerMenu.fxml",gridButtons.getId(),customerID) ;
+                    switchToMenu(event);
+                }
+            });
+
+
+            ((AnchorPane) rootNode).getChildren().add(gridButtons);
+        }
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+
+    }
+    @FXML
+    private void switchToMenu(ActionEvent event)  {
+        try {
+
+            Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+            Scene home_page_scene = new Scene(home_page);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(home_page_scene);
+            app_stage.show();
+        }
+        catch(IOException e){}
+
+    }
+    private void pass2(String fxmlFile) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         customerMenuController controller = loader.getController();
