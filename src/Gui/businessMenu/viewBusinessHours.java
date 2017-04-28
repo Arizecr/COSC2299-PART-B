@@ -23,6 +23,7 @@ import java.util.ResourceBundle;
  * Created by xemorth on 28/04/2017.
  */
 public class viewBusinessHours implements Initializable{
+    //
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
     public ArrayList<String> end = new ArrayList<>();
