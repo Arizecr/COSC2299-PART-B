@@ -1,7 +1,6 @@
 package Gui.customerMenu;
 
 
-import Gui.businessMenu.addEmployeeController;
 import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,13 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class customerMenuController {
     @FXML
@@ -49,15 +45,6 @@ public class customerMenuController {
     }
 
 
-    private void pass(String fxmlFile, String parameterToPass) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        Pane pane = loader.load();
-        addEmployeeController controller = loader.getController();
-        controller.setBusinessID(businessID);
-        controller.setCustomerID(customerID);
-
-    }
-
     @FXML
     public void initializing(ActionEvent event) {
         System.out.println(businessID);
@@ -86,18 +73,13 @@ public class customerMenuController {
 
     //go back to business menu
     public void cancel(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        getBusinessID();
-    }
 
     /*
     @FXML
