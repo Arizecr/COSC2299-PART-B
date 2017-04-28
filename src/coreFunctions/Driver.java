@@ -303,8 +303,9 @@ public class Driver {
     }
 
     //loads employee work days
-    public void loadInfo(){
+    public ArrayList<String> loadInfo(){
         hours = new ArrayList<>();
+
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader("workdaysList.txt"));
@@ -313,6 +314,7 @@ public class Driver {
                 while ( (x = br.readLine()) != null ) {
                     hours.add(x);
                 }
+                return hours;
                 //prints error
             } catch (IOException error) {
                 //error.printStackTrace();
@@ -325,6 +327,7 @@ public class Driver {
                 LOGGER.log(Level.SEVERE,ae.toString(),ae);
 
             }
+            return hours;
 
             //file cannot be found
         } catch (FileNotFoundException error) {
@@ -333,6 +336,8 @@ public class Driver {
             l.Logging();
             LOGGER.log(Level.WARNING,error.toString(),error);
         }
+
+        return hours;
 
     }
 
