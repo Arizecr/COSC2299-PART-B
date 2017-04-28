@@ -77,6 +77,14 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    private void passToViewBusinessHours(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        viewBusinessHours controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
+
 
 
 
@@ -135,6 +143,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML
     private void switchToAdjustBusinessHours(ActionEvent event) throws IOException {
+        passToViewBusinessHours("viewBusinessHours.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBusinessHours.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

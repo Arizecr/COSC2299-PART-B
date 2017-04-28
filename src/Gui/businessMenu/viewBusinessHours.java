@@ -154,11 +154,11 @@ public class viewBusinessHours implements Initializable{
             FileWriter fw = new FileWriter("businessdaysList.txt"); //the true will append the new data
 
             //replace b1 with businessid
-            fw.write("b1 Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
-            fw.write("b1 Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
-            fw.write("b1 Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
-            fw.write("b1 Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
-            fw.write("b1 Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
+            fw.write(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
+            fw.write(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
+            fw.write(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
+            fw.write(businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
+            fw.write(businessID + " Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
             fw.close();
         } catch (IOException ioe) {
         }
