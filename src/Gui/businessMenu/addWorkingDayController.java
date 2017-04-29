@@ -178,13 +178,13 @@ public class addWorkingDayController implements Initializable{
             if(!(eid.getText() == null)){
                 ArrayList<String> arrayz = ad.loadInfo();
                 clarityArrAD(arrayz);
-                /*for(int i=0; i<arrayz.size(); i++){
-                    if(arrayz.get(i).toLowerCase().contains(newText.toLowerCase())){
-                        array2.add(arrayz.get(i));
+                for(int i=0; i<clarityArrayAD.size(); i++){
+                    if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
+                        array2.add(clarityArrayAD.get(i));
 
                     }
-                }*/
-                workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
+                }
+                workerList.setItems(FXCollections.observableArrayList(array2));
             }
 
         });
@@ -196,13 +196,13 @@ public class addWorkingDayController implements Initializable{
                 AvailableDay ad = new AvailableDay();
                 ArrayList<String> arrayzz = driver.loadInfo();
                 clarityArrWD(arrayzz);
-                /*for(int i=0; i<arrayzz.size(); i++){
-                    if(arrayzz.get(i).toLowerCase().contains(newText.toLowerCase())){
-                        array3.add(arrayzz.get(i));
+                for(int i=0; i<clarityArrayWD.size(); i++){
+                    if(clarityArrayWD.get(i).toLowerCase().contains(newText.toLowerCase())){
+                        array3.add(clarityArrayWD.get(i));
 
                     }
-                }*/
-                workday2list.setItems(FXCollections.observableArrayList(clarityArrayWD));
+                }
+                workday2list.setItems(FXCollections.observableArrayList(array3));
             }
 
         });

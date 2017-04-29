@@ -112,13 +112,13 @@ public class removeWorkingDayController implements Initializable{
                 if(!(eid.getText() == null)){
                     ArrayList<String> arrayz = driver.loadInfo();
                     clarityArrWD(arrayz);
-                /*for(int i=0; i<arrayz.size(); i++){
-                    if(arrayz.get(i).toLowerCase().contains(newText.toLowerCase())){
-                        array2.add(arrayz.get(i));
+                    for(int i=0; i<clarityArrayWD.size(); i++){
+                        if(clarityArrayWD.get(i).toLowerCase().contains(newText.toLowerCase())){
+                            array2.add(clarityArrayWD.get(i));
 
+                        }
                     }
-                }*/
-                    workerList.setItems(FXCollections.observableArrayList(clarityArrayWD));
+                    workerList.setItems(FXCollections.observableArrayList(array2));
                 }
             });
         }

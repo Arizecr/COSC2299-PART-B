@@ -84,13 +84,13 @@ public class showWorkerAvailibilityController implements Initializable{
 
                 ArrayList<String> arrayz = ad.loadInfo();
                 clarityArrAD(arrayz);
-                /*for(int i=0; i<arrayz.size(); i++){
-                    if(arrayz.get(i).toLowerCase().contains(newText.toLowerCase())){
-                        array2.add(arrayz.get(i));
+                for(int i=0; i<clarityArrayAD.size(); i++){
+                    if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
+                        array2.add(clarityArrayAD.get(i));
 
                     }
-                }*/
-                workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
+                }
+                workerList.setItems(FXCollections.observableArrayList(array2));
             }
         });
 

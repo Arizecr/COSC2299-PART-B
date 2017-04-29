@@ -1,4 +1,2 @@
 b1 e1 Monday 15:00 16:00
 b1 e1 Friday 12:00 14:00
-b1 e1 Tuesday 13:00 15:00
-b1 e1 Tuesday 12:00 13:00
