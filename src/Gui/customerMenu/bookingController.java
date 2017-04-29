@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Created by yesmi on 28/04/2017.
@@ -103,36 +104,37 @@ public class bookingController {
         //select date and time
 
 
-        ((AnchorPane) rootNode).getChildren().addAll(new Pane(c));
+
         checkFile();
         Callback<DatePicker, DateCell> dayCellFactory= this.getDayCellFactory();
         bdate.setDayCellFactory(dayCellFactory);
-        ((AnchorPane) rootNode).getChildren().addAll(new Pane(bdate));
+        ((AnchorPane) rootNode).getChildren().add(bdate);
+        ((AnchorPane) rootNode).getChildren().addAll(c);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
     }
-   /* public enum DayOfWeek {
-        Monday(DayOfWeek.MONDAY),Tuesday(DayOfWeek.MONDAY),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
+    /* public enum DayOfWeek {
+         Monday(DayOfWeek.MONDAY),Tuesday(DayOfWeek.MONDAY),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
 
-        private final DayOfWeek value;
+         private final DayOfWeek value;
 
-        DayOfWeek(DayOfWeek value) {
+         DayOfWeek(DayOfWeek value) {
 
-            this.value = value;
-        }
+             this.value = value;
+         }
 
-        public DayOfWeek getValue() {
+         public DayOfWeek getValue() {
 
-            return value;
-        }
+             return value;
+         }
 
-        @Override
-        public String toString() {
+         @Override
+         public String toString() {
 
-            return value + "";
-        }
-    }*/
+             return value + "";
+         }
+     }*/
     public void checkFile(){
         days = new ArrayList<>();
         date = new ArrayList<>();
@@ -157,13 +159,13 @@ public class bookingController {
 
                 }
                 //this removes the days the business is not open from the calendar
-                if (!(day.contains("Monday"))){date.add(DayOfWeek.MONDAY);}
-                if (!(day.contains("Tuesday"))){date.add(DayOfWeek.TUESDAY);}
-                if (!(day.contains("Wednesday"))){date.add(DayOfWeek.WEDNESDAY);}
-                if (!(day.contains("Thursday"))){date.add(DayOfWeek.THURSDAY);}
-                if (!(day.contains("Friday"))){date.add(DayOfWeek.FRIDAY);}
-                if (!(day.contains("Saturday"))){date.add(DayOfWeek.SATURDAY);}
-                if (!(day.contains("Sunday"))){date.add(DayOfWeek.SUNDAY);}
+                if (!(days.contains("Monday"))){date.add(DayOfWeek.MONDAY);}
+                if (!(days.contains("Tuesday"))){date.add(DayOfWeek.TUESDAY);}
+                if (!(days.contains("Wednesday"))){date.add(DayOfWeek.WEDNESDAY);}
+                if (!(days.contains("Thursday"))){date.add(DayOfWeek.THURSDAY);}
+                if (!(days.contains("Friday"))){date.add(DayOfWeek.FRIDAY);}
+                if (!(days.contains("Saturday"))){date.add(DayOfWeek.SATURDAY);}
+                if (!(days.contains("Sunday"))){date.add(DayOfWeek.SUNDAY);}
                 //prints error
             } catch (IOException e) {
 
@@ -176,7 +178,9 @@ public class bookingController {
         }
     }
     private Callback<DatePicker, DateCell> getDayCellFactory() {
-
+        Calendar c = Calendar.getInstance();
+        int dayOfYear = c.get(Calendar.DAY_OF_YEAR);
+        int Year = c.get(Calendar.YEAR);
         final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
 
             @Override
@@ -187,6 +191,18 @@ public class bookingController {
                         super.updateItem(item, empty);
 
                         if (date.contains(item.getDayOfWeek())) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                        if (item.getDayOfYear()<dayOfYear||item.getDayOfYear()>(dayOfYear+30))
+                        {
+
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                        if (item.getYear()!=Year&&item.getDayOfYear()<=(dayOfYear+30))
+                        {
+
                             setDisable(true);
                             setStyle("-fx-background-color: #ffc0cb;");
                         }
