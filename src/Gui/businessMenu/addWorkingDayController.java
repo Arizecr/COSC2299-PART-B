@@ -17,6 +17,9 @@ import javafx.stage.Stage;
 import menu.BusinessMenu;
 import user.Employee;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,6 +29,9 @@ public class addWorkingDayController implements Initializable{
     BusinessMenu b = new BusinessMenu();
     Driver driver = new Driver();
     AvailableDay ad = new AvailableDay();
+    ArrayList<ArrayList<String>> employee = new ArrayList<ArrayList<String>>();
+    ArrayList<String> clarityArrayAD = new ArrayList<>();
+    ArrayList<String> clarityArrayWD = new ArrayList<>();
 
     public static String businessID;
 
@@ -107,12 +113,47 @@ public class addWorkingDayController implements Initializable{
             /*ArrayList<String> array = ad.loadInfo();
             workerList.setItems(FXCollections.observableArrayList(array));*/
             ArrayList<String> array2list = driver.loadInfo();
-            workday2list.setItems(FXCollections.observableArrayList(array2list));
+            clarityArrWD(array2list);
+            workday2list.setItems(FXCollections.observableArrayList(clarityArrayWD));
         }
     }
 
 
+    private ArrayList clarityArrAD(ArrayList<String> array){
+        clarityArrayAD.clear();
+        for(int i=0; i<array.size(); i++){
 
+            for(int j=0 ; j<employee.size(); j++){
+
+                if(array.get(i).contains(employee.get(j).get(0))){
+                    String[] arrayinfo = array.get(i).split(" ", 5);
+                    clarityArrayAD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
+                }
+            }
+
+        }
+
+
+        return clarityArrayAD;
+    }
+
+    private ArrayList clarityArrWD(ArrayList<String> array){
+        clarityArrayWD.clear();
+        for(int i=0; i<array.size(); i++){
+
+            for(int j=0 ; j<employee.size(); j++){
+
+                if(array.get(i).contains(employee.get(j).get(0))){
+                    String[] arrayinfo = array.get(i).split(" ", 5);
+                    clarityArrayWD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
+                }
+            }
+
+        }
+
+
+        return clarityArrayWD;
+    }
 
 
 
@@ -121,44 +162,87 @@ public class addWorkingDayController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        readEmployee();
         ArrayList<String> array = ad.loadInfo();
-        workerList.setItems(FXCollections.observableArrayList(array));
+        clarityArrAD(array);
+        workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
-        ArrayList<String> array2list = driver.loadInfo();
-        workday2list.setItems(FXCollections.observableArrayList(array2list));
+        /*ArrayList<String> array2list = driver.loadInfo();
+        workday2list.setItems(FXCollections.observableArrayList(array2list));*/
 
+
+        //AVAILABLE DAY
         eid.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();
             if(!(eid.getText() == null)){
-                AvailableDay ad = new AvailableDay();
                 ArrayList<String> arrayz = ad.loadInfo();
-                for(int i=0; i<arrayz.size(); i++){
+                clarityArrAD(arrayz);
+                /*for(int i=0; i<arrayz.size(); i++){
                     if(arrayz.get(i).toLowerCase().contains(newText.toLowerCase())){
                         array2.add(arrayz.get(i));
 
                     }
-                }
-                workerList.setItems(FXCollections.observableArrayList(array2));
+                }*/
+                workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
             }
 
         });
 
+        //WORKDAY
         eid.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array3 = new ArrayList<>();
             if(!(eid.getText() == null)){
                 AvailableDay ad = new AvailableDay();
                 ArrayList<String> arrayzz = driver.loadInfo();
-                for(int i=0; i<arrayzz.size(); i++){
+                clarityArrWD(arrayzz);
+                /*for(int i=0; i<arrayzz.size(); i++){
                     if(arrayzz.get(i).toLowerCase().contains(newText.toLowerCase())){
                         array3.add(arrayzz.get(i));
 
                     }
-                }
-                workday2list.setItems(FXCollections.observableArrayList(array3));
+                }*/
+                workday2list.setItems(FXCollections.observableArrayList(clarityArrayWD));
             }
 
         });
 
+
+    }
+
+    private ArrayList readEmployee(){
+
+
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("employeeList.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    String loginDetails[] = x.split(":",5);
+                    if(loginDetails[0].equals(businessID)){
+                        ArrayList<String> test = new ArrayList<>();
+                        test.add(loginDetails[1]);
+                        test.add(loginDetails[2]);
+                        employee.add(test);
+                    }
+
+
+                }
+
+                //prints error
+            } catch (IOException e) {
+                // e.printStackTrace();
+            }
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+
+        }
+
+        return employee;
 
     }
 
