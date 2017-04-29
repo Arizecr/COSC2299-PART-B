@@ -48,12 +48,15 @@ public class bookingController {
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
         for(int i=0;i<s.serviceList.size();i++){
-            if(driver.currentBookings.get(i).getCustomerID().equals(customerID)){
-                String s = "Date: " + driver.currentBookings.get(i).getDate();
-                s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
-                s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
-                s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
-                bookings.add(s);
+            if(s.serviceList.get(i).b().equals(businessID)){
+                String n = s.serviceList.get(i).getName() +" length: ";
+                String l = s.serviceList.get(i).getLengthT();
+                String Time[] = l.split("-", 2);
+                String hours = Time[0];
+                String min = Time[1];
+                n+= hours +" Hours and " +min +" Minutes ($" + s.serviceList.get(i).getCost()+")";
+
+
             }
 
         }

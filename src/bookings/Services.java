@@ -27,7 +27,23 @@ public class Services {
     public static ArrayList<Services> serviceList = new ArrayList<>();
     WriteToFile w = new WriteToFile();
 
-    public Services(String bId,String sId,String name,String lengthT,String cost) {
+    public String getName() {
+        return name;
+    }
+
+    public String getsId() {
+        return sId;
+    }
+
+    public String getLengthT() {
+        return lengthT;
+    }
+
+    public String getCost() {
+        return cost;
+    }
+
+    public Services(String bId, String sId, String name, String lengthT, String cost) {
 
         this.bId = bId;
         this.sId = sId;
@@ -37,6 +53,7 @@ public class Services {
         this.cost= cost;
 
     }
+    public String b(){return bId;}
 
     public Services() {
 
