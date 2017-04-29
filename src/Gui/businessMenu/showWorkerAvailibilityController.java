@@ -70,9 +70,13 @@ public class showWorkerAvailibilityController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        System.out.println("dwlo");
+        readEmployee();
         ArrayList<String> array = ad.loadInfo();
-        workerList.setItems(FXCollections.observableArrayList(array));
+        clarityArrAD(array);
+
+
+        workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
         name.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();

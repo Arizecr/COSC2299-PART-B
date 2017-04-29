@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="379.0" prefWidth="353.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="40.0" prefHeight="32.0" prefWidth="159.0" text="Past Bookings">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ListView layoutX="77.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="222.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Back" />
+         </children></Pane>
+   </children>
+</AnchorPane>

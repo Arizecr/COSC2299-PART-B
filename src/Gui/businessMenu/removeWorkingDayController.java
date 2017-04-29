@@ -100,6 +100,7 @@ public class removeWorkingDayController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("dwlo");
         readEmployee();
         ArrayList<String> array = driver.loadInfo();
         if(array!= null && employee!=null){
