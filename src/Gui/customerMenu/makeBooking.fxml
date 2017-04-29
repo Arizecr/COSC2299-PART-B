@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,7 +22,7 @@
                     </font>
                 </Text>
                 <Button layoutX="23.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
-            <DatePicker fx:id="bdate" layoutX="23.0" layoutY="201.0" prefHeight="25.0" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
+            <DatePicker fx:id="bdate" layoutX="21.0" layoutY="77.0" prefHeight="25.0" onAction="#checkDate" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
             <TextField fx:id="starttime" layoutX="170.0" layoutY="250.0" />
             <TextField fx:id="endtime" editable="false" layoutX="170.0" layoutY="329.0" />
                 <Text layoutX="60.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time">
@@ -33,12 +35,18 @@
                         <Font size="17.0" />
                     </font>
                 </Text>
+            <TableView layoutX="24.0" layoutY="113.0" prefHeight="50.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
 
             </children>
             <effect>
                 <DropShadow color="#9a9090" />
             </effect>
         </Pane>
-        <ChoiceBox fx:id="c" layoutX="50.0" layoutY="148.0" prefHeight="25.0" prefWidth="296.0" />
+        <ChoiceBox fx:id="c" layoutX="50.0" layoutY="56.0" prefHeight="25.0" prefWidth="296.0" />
     </children>
 </AnchorPane>

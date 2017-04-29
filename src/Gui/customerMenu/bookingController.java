@@ -147,4 +147,8 @@ public class bookingController {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+    public void checkDate(ActionEvent event) throws IOException {
+
+    }
 }
