@@ -2,6 +2,7 @@ package Gui.businessMenu;
 
 import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -29,6 +31,7 @@ public class addEmployeeAvailableDayController implements Initializable{
     ArrayList<ArrayList<String>> employee = new ArrayList<ArrayList<String>>();
     public static ArrayList<Workday> workhours = new ArrayList<>();
     public static ArrayList<String> availability = new ArrayList<>();
+    ArrayList<String> clarityArrayAD = new ArrayList<>();
     Workday w = new Workday();
     BusinessMenu b = new BusinessMenu();
     AvailableDay ad = new AvailableDay();
@@ -45,6 +48,9 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     @FXML
     private TextField day;
+
+    @FXML
+    private ListView<String> workerList;
 
 
     @FXML
@@ -73,19 +79,35 @@ public class addEmployeeAvailableDayController implements Initializable{
 
         }
         w.Details();
-        if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) || !ad.checkDay(businessID,eid.getText(),day.getText())){
-            System.out.println(day.getText());
+        if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) || ad.checkDay(businessID,eid.getText(),day.getText())){
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
+            ArrayList<String> array2list = ad.loadInfo();
+            clarityArrAD(array2list);
+            workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
         }
 
 
-
-
-
-
-
     }
+
+    private ArrayList clarityArrAD(ArrayList<String> array){
+        clarityArrayAD.clear();
+        for(int i=0; i<array.size(); i++){
+
+            for(int j=0 ; j<employee.size(); j++){
+
+                if(array.get(i).contains(employee.get(j).get(0))){
+                    String[] arrayinfo = array.get(i).split(" ", 5);
+                    clarityArrayAD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
+                }
+            }
+
+        }
+
+
+        return clarityArrayAD;
+    }
+
     private boolean checkEID(){
 
         for(int i=0; i<employee.size(); i++){
@@ -161,5 +183,29 @@ public class addEmployeeAvailableDayController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         readEmployee();
+        ArrayList<String> array = ad.loadInfo();
+        clarityArrAD(array);
+
+
+        workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
+
+        eid.textProperty().addListener((obs, oldText, newText) -> {
+            ArrayList<String> array2 = new ArrayList<>();
+            if(!(eid.getText() == null)){
+
+                ArrayList<String> arrayz = ad.loadInfo();
+                clarityArrAD(arrayz);
+                for(int i=0; i<clarityArrayAD.size(); i++){
+                    if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
+                        array2.add(clarityArrayAD.get(i));
+
+                    }
+                }
+                workerList.setItems(FXCollections.observableArrayList(array2));
+            }
+        });
+
     }
+
+
 }
