@@ -42,7 +42,8 @@ public class bookingController {
     Services s = new Services();
     Login login = new Login();
     Driver driver = new Driver();
-    Services selectedS = new Services(businessID,null,null,null,null);
+    Services selectedS = new Services(null,null,null,null,null);
+    Services not = new Services(null,null,null,null,null);
     public static String businessID;
     public static String customerID;
     public ArrayList<String> days = new ArrayList<>();
@@ -114,6 +115,7 @@ public class bookingController {
         starttime.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+
                 if(!newValue) {
                     if(bm.checktime(starttime.getText())){
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -122,7 +124,15 @@ public class bookingController {
                         alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
                         alert.showAndWait();
                     }
-                    else{
+                    else if(selectedS.toString().equals(not.toString())){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Please select Service.");
+                        alert.showAndWait();
+                    }
+                    else {//makes sure null error does not occur
+
                         //do end time
                         DateFormat time = new SimpleDateFormat("HH:mm");
                         Date start = Calendar.getInstance().getTime() ;
@@ -149,7 +159,7 @@ public class bookingController {
         });
         starttime.textProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if(!bm.checktime(starttime.getText()))
+                if(!bm.checktime(starttime.getText())&&(!selectedS.toString().equals(not.toString())))
                 {
                     //do end time
                     DateFormat time = new SimpleDateFormat("HH:mm");
@@ -180,32 +190,13 @@ public class bookingController {
         bdate.setDayCellFactory(dayCellFactory);
         ((AnchorPane) rootNode).getChildren().add(bdate);
         ((AnchorPane) rootNode).getChildren().add(starttime);
+        ((AnchorPane) rootNode).getChildren().add(endtime);
         ((AnchorPane) rootNode).getChildren().addAll(c);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
     }
-    /* public enum DayOfWeek {
-         Monday(DayOfWeek.MONDAY),Tuesday(DayOfWeek.MONDAY),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
 
-         private final DayOfWeek value;
-
-         DayOfWeek(DayOfWeek value) {
-
-             this.value = value;
-         }
-
-         public DayOfWeek getValue() {
-
-             return value;
-         }
-
-         @Override
-         public String toString() {
-
-             return value + "";
-         }
-     }*/
     public void checkFile(){
         days = new ArrayList<>();
         date = new ArrayList<>();
