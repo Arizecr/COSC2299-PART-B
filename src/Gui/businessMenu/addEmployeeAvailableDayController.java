@@ -74,6 +74,7 @@ public class addEmployeeAvailableDayController implements Initializable{
         }
         w.Details();
         if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) || !ad.checkDay(businessID,eid.getText(),day.getText())){
+            System.out.println(day.getText());
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
 
         }
