@@ -24,7 +24,7 @@
                   <Font name="American Typewriter" size="26.0" />
                </font>
             </Text>
-            <Button layoutX="6.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToAddAvailibility" prefHeight="27.0" prefWidth="330.0" text="Add Availibility for Employee" />
+            <Button layoutX="6.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToAddAvailability" prefHeight="27.0" prefWidth="330.0" text="Add Availibility for Employee" />
          </children>
          <effect>
             <DropShadow color="#9a9090" />

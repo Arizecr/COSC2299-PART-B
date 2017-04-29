@@ -101,36 +101,32 @@ public class AvailableDay {
 
         }
     }
-    public void addEmployeeAvailability(String bId,String employeeID){
+    public void addEmployeeAvailability(String busId,String eID, String day, String start, String end){
         loadInfo();
-        BusinessMenu b = new BusinessMenu();
-        String workday;
-        Workday w = new Workday();
-        Scanner reader = new Scanner(System.in);
-        do {
-            do {
-                System.out.print("Enter Day: ");
-                workday = reader.nextLine().toLowerCase();
-            } while (b.checkD(workday));
 
-            //add/edit employee shifts
-
-
-            do {
-                System.out.print("Enter shift start time (hour:min): ");
-                starttime = reader.nextLine();
-            } while (b.ctime(starttime)); //check validity of start time
-            do {
-                System.out.print("Enter shift end time (hour:min): ");
-                endtime = reader.nextLine();
-            } while (b.ctime(endtime)); //check validity of end time
-        }while( w.readWork(bId,workday,starttime,endtime)||checkDay(bId,employeeID,workday));
-        String x = bId+ " " +employeeID + " " + workday + " " + starttime + " " + endtime;
+        String x = busId + " " +eID + " " + day + " " + start + " " + end;
         availability.add(x);
+        if(!editAv(busId,eID,day,start,end,x)){
+            availability.add(x);
+        }
         write.writeToFileToString(availability, "employeeAvailabilityList.txt");
 
     }
-    private boolean checkDay(String b,String e,String d){
+
+
+    public boolean editAv(String busId,String eID, String day, String start, String end, String x){
+        for(int i=0; i<availability.size(); i++){
+            if(availability.get(i).contains(busId) && availability.get(i).contains(eID) && availability.get(i).contains(day)){
+                availability.remove(i);
+                availability.add(x);
+                return true;
+            }
+        }
+
+
+        return false;
+    }
+    public boolean checkDay(String b, String e, String d){
         loadInfo();
         String bID= "" ;
         String eID= "" ;
