@@ -70,15 +70,17 @@ public class chooseBusinessController {
         double count = 30;
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.businessList.size();i++){
-            count+=40;
+            count+=70;
             Button gridButtons = new Button();
             gridButtons.setText(login.businessList.get(i).getName());
             gridButtons.setMnemonicParsing(false);
-            gridButtons.prefHeight(27.0);
-            gridButtons.prefWidth(330.0);
+            gridButtons.prefHeight(50.0);
+            gridButtons.prefWidth(500.0);
 
             gridButtons.setId(login.businessList.get(i).getUsername());
             gridButtons.setLayoutX(20.0);
+            gridButtons.setMinWidth(370);
+            gridButtons.setMinHeight(60);
             gridButtons.setLayoutY(count);
 
             gridButtons.setOnAction( new EventHandler<ActionEvent>() {

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -11,12 +16,31 @@
     <children>
         <Pane id="Lolo" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
             <children>
-                <Text layoutX="47.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
+                <Text layoutX="124.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
                     <font>
                         <Font name="American Typewriter" size="26.0" />
                     </font>
                 </Text>
-                <Button layoutX="276.0" layoutY="425.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+                <Button layoutX="23.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+            <DatePicker layoutX="23.0" layoutY="201.0" prefHeight="25.0" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
+            <TextField layoutX="170.0" layoutY="250.0" />
+            <TextField editable="false" layoutX="170.0" layoutY="329.0" />
+                <Text layoutX="60.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Text>
+                <Text layoutX="57.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start time">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Text>
+            <ChoiceBox layoutX="23.0" layoutY="148.0" prefHeight="25.0" prefWidth="296.0" />
+            <SubScene height="102.0" layoutX="24.0" layoutY="35.0" width="296.0">
+              <root>
+                <Region />
+              </root>
+            </SubScene>
             </children>
             <effect>
                 <DropShadow color="#9a9090" />

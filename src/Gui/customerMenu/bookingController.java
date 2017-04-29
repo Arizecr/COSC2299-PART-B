@@ -74,7 +74,7 @@ public class bookingController {
         c.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                  //this service is saved to the class for use in adding end time of service
+                //this service is saved to the class for use in adding end time of service
                 selectedS = s.serviceList.get(newValue.intValue());
             }
         });
