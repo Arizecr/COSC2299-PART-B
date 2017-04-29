@@ -41,6 +41,7 @@
                         <TableColumn prefWidth="75.0" text="C2" />
                     </columns>
                 </TableView>
+            <Button layoutX="260.0" layoutY="415.0" mnemonicParsing="false" text="Book" />
 
             </children>
             <effect>
@@ -48,6 +49,6 @@
             </effect>
         </Pane>
         <ChoiceBox fx:id="c" layoutX="50.0" layoutY="56.0" prefHeight="25.0" prefWidth="296.0" />
-        <DatePicker fx:id="bdate" layoutX="50.0" layoutY="90.0" prefHeight="25.0" onAction="#checkDate" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
+        <DatePicker fx:id="bdate" layoutX="50.0" layoutY="90.0" prefHeight="25.0" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
     </children>
 </AnchorPane>

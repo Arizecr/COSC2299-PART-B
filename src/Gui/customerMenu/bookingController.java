@@ -17,16 +17,21 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import menu.BusinessMenu;
 import menu.Login;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by yesmi on 28/04/2017.
@@ -42,6 +47,7 @@ public class bookingController {
     public static String customerID;
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
+    BusinessMenu bm = new BusinessMenu();
 
     @FXML
     public DatePicker bdate;
@@ -103,12 +109,40 @@ public class bookingController {
         //print services service
         //select date and time
 
+        starttime.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if(!bm.checktime(starttime.getText()))
+                {
+                    //do end time
+                    DateFormat time = new SimpleDateFormat("HH:mm");
+                    String st = starttime.getText();
+                    try{
+                        Date start = time.parse(st);
 
-
+                    }catch(ParseException e){}
+                }
+            }
+        });
+        starttime.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if(!newValue) {
+                    if(bm.checktime(starttime.getText())){
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
+                        alert.showAndWait();
+                    }
+                }
+            }
+        });
         checkFile();
         Callback<DatePicker, DateCell> dayCellFactory= this.getDayCellFactory();
         bdate.setDayCellFactory(dayCellFactory);
         ((AnchorPane) rootNode).getChildren().add(bdate);
+        ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().addAll(c);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
@@ -258,7 +292,13 @@ public class bookingController {
         app_stage.show();
     }
 
-    public void checkDate(ActionEvent event) throws IOException {
-
-    }
+/*    public void checkStart(ActionEvent event) throws IOException {
+        if(bm.checktime(starttime.getText())){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
+            alert.showAndWait();
+        }
+    }*/
 }

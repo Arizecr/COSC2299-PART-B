@@ -301,10 +301,11 @@ public class BusinessMenu {
             time.parse(t);
         }
         catch(ParseException e){
-            System.out.println("Invalid time:");
+           // System.out.println("Invalid time:");
             return true;
         }
-        if (!t.contains(":00")&&!t.contains(":30")){System.out.println("In the form HH:30 or HH:00 only");return true;}
+        if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
+             return true;}
         return false;
     }
     public boolean ctime(String t){
