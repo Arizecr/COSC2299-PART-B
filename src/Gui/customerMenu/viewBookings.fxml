@@ -18,6 +18,7 @@
                     </font>
                 </Text>
                 <Button layoutX="270.0" layoutY="420.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="57.0" text="Back" textFill="#4465ab" />
+            <ListView layoutX="63.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" />
 
             </children>
             <effect>

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
 
@@ -65,6 +66,9 @@ public class bookingController {
         Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
         driver.loadCurrentBookings(businessID);
         ListView<String> list = new ListView<String>();
+        list.disabledProperty();
+        list.setLayoutX(63);
+        list.setLayoutY(110);
         ArrayList<String> bookings = new ArrayList<>();
 
         for(int i=0;i<driver.currentBookings.size();i++){
@@ -82,6 +86,7 @@ public class bookingController {
         // AnchorPane root = new AnchorPane();
 
         //print the customers bookings by date
+        ((AnchorPane) rootNode).getChildren().add(new Pane());
 
         ((AnchorPane) rootNode).getChildren().addAll(list);
 

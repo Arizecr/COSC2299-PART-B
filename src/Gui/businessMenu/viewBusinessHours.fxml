@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -14,30 +9,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.viewBusinessHours">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.viewBusinessHours">
     <children>
         <Pane layoutX="31.0" layoutY="26.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="26.0">
             <effect>
                 <DropShadow color="#b5adad" />
             </effect>
             <children>
-                <Text layoutX="38.0" layoutY="8.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Business hours">
+                <Text layoutX="53.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Business hours">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Text>
-                <Button layoutX="57.0" layoutY="370.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
-            <Label layoutX="-3.0" layoutY="50.0" text="Monday">
+                <Button layoutX="44.0" layoutY="363.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+            <Label layoutX="9.0" layoutY="50.0" text="Monday">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="-5.0" layoutY="91.0" text="Tuesday">
+            <Label layoutX="5.0" layoutY="91.0" text="Tuesday">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutY="127.0" text="Wednesday">
+            <Label layoutX="6.0" layoutY="127.0" text="Wednesday">
                <font>
                   <Font size="16.0" />
                </font>
@@ -47,17 +42,17 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="4.0" layoutY="208.0" text="Friday">
+            <Label layoutX="7.0" layoutY="208.0" text="Friday">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="3.0" layoutY="258.0" text="Saturday">
+            <Label layoutX="7.0" layoutY="258.0" text="Saturday">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="3.0" layoutY="168.0" text="Thursday">
+            <Label layoutX="5.0" layoutY="168.0" text="Thursday">
                <font>
                   <Font size="16.0" />
                </font>
@@ -76,7 +71,7 @@
             <TextField fx:id="wednesdayEnd" layoutX="203.0" layoutY="129.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
             <TextField layoutX="119.0" layoutY="297.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
             <TextField layoutX="201.0" layoutY="297.0" prefHeight="27.0" prefWidth="60.0" promptText="closed" />
-            <Button layoutX="215.0" layoutY="357.0" mnemonicParsing="false" onAction="#updateHours" text="Update" />
+            <Button layoutX="209.0" layoutY="361.0" mnemonicParsing="false" onAction="#updateHours" text="Update" />
             </children>
         </Pane>
     </children>
