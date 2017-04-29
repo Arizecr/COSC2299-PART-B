@@ -7,13 +7,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -34,6 +33,19 @@ public class bookingController {
     Services selectedS = new Services(businessID,null,null,null,null);
     public static String businessID;
     public static String customerID;
+
+    @FXML
+    public DatePicker bdate;
+
+    @FXML
+    private ChoiceBox c;
+
+    @FXML
+    private TextField starttime;
+
+    @FXML
+    private TextField endtime;
+
     public static void setBusinessID(String bid){
         businessID = bid;
 
@@ -49,14 +61,14 @@ public class bookingController {
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
         ArrayList<String> services = new ArrayList<>();
-        ChoiceBox c = new ChoiceBox();
+        //ChoiceBox c = new ChoiceBox();
         s.printService(businessID);
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
         for(int i=0;i<s.serviceList.size();i++){
             //makes sure the services of only the current business are displayed
             if(businessID.equals(s.serviceList.get(i).b())){
-                String n = s.serviceList.get(i).getName() +" length: ";
+                String n = s.serviceList.get(i).getName() +" - length: ";
                 String l = s.serviceList.get(i).getLengthT();
                 String Time[] = l.split("-", 2);
                 String hours = Time[0];
@@ -83,7 +95,7 @@ public class bookingController {
         //select date and time
 
 
-        //     ((AnchorPane) rootNode).getChildren().add(gridButtons);
+        ((AnchorPane) rootNode).getChildren().addAll(new Pane(c));
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
