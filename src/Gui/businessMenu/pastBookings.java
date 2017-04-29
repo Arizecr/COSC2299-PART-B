@@ -107,8 +107,14 @@ public class pastBookings implements Initializable {
 
     }
 
-    //go back to business menu
-    public void cancel(ActionEvent event) throws IOException {
+    @FXML
+    void cancel(ActionEvent event) throws IOException {
+        passToBusinessMenu("businessMenu.fxml", businessID);
+        switchToBusinessMenu(event);
+
+    }
+
+    private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -119,7 +125,7 @@ public class pastBookings implements Initializable {
     private void passToViewBookingSummary(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
-        viewBusinessHours controller = loader.getController();
+        viewBookingSummaryController controller = loader.getController();
         controller.setBusinessID(parameterToPass);
 
     }

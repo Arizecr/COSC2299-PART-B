@@ -38,9 +38,6 @@ public class viewBookingSummaryController extends Controller implements Initiali
 
     }
 
-
-
-
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController

@@ -120,10 +120,9 @@ public class currentBookings implements Initializable {
 
     }
 
-
     @FXML
     void cancel(ActionEvent event) throws IOException {
-        pass("businessMenu.fxml", businessID);
+        passToBusinessMenu("businessMenu.fxml", businessID);
         switchToBusinessMenu(event);
 
     }
