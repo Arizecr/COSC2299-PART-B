@@ -429,7 +429,7 @@ public class Driver {
         //print their current bookings
         for(int i=0;i<currentBookings.size();i++){
             if(currentBookings.get(i).getCustomerID().equals(username)){
-                System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
+                System.out.println("\nDate: " + currentBookings.get(i).getDate() );
                 System.out.println("\nDay: " + currentBookings.get(i).getDayBooked() );
                 System.out.println("Time: " + currentBookings.get(i).getTimeBooked()  );
                 System.out.println("Service: " + currentBookings.get(i).getServiceBooked());
