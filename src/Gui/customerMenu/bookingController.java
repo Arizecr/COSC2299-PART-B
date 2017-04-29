@@ -30,6 +30,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -50,6 +51,7 @@ public class bookingController {
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
     BusinessMenu bm = new BusinessMenu();
+    LocalDate dateinfo;
 
     @FXML
     public DatePicker bdate;
@@ -183,10 +185,11 @@ public class bookingController {
                     cal.add(Calendar.HOUR,h );
                     String newTime = time.format(cal.getTime());
                     endtime.setText(newTime);
-
+System.out.println(bdate.getValue());
                 }
             }
         });
+
         checkFile();
         Callback<DatePicker, DateCell> dayCellFactory= this.getDayCellFactory();
         bdate.setDayCellFactory(dayCellFactory);
@@ -326,9 +329,12 @@ public class bookingController {
         //check all valid
        //then do as below
        DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
-       SimpleDateFormat d = new SimpleDateFormat("EEEE");
+       SimpleDateFormat d = new SimpleDateFormat("EEE");
+       DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
        Date start = Calendar.getInstance().getTime() ;
-       String date = bdate.getAccessibleText();
+
+       String date = bdate.getValue().format(form);
+
        try{
            start = time.parse(date);
        }catch(ParseException e){}
@@ -339,7 +345,7 @@ public class bookingController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
+            alert.setContentText("This time is unavailable for booking.");
             alert.showAndWait();
         }
         else{
@@ -349,6 +355,12 @@ public class bookingController {
             s+= selectedS.getName()+","+ customerID;
             w.WriteToWorkingdayTXT(s,"currentBookings");
             //add to file
+            Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+            Scene home_page_scene = new Scene(home_page);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(home_page_scene);
+            app_stage.show();
         }
+
     }
 }
