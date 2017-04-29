@@ -72,7 +72,7 @@ public class customerMenuController {
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         //app_stage.setScene(home_page_scene);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("viewBooking.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("viewBookings.fxml"));
         Pane pane = loader.load();
         //MUST change classname to the file u want to pass the variable to
         bookingController controller = loader.getController();

@@ -53,6 +53,7 @@ public class Driver {
                     String time = Details[4];
                     String service = Details[5];
                     String id = Details[6];
+
                     CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id);
                     if(b.equals(business))  currentBookings.add(bookingInfo);
                 }

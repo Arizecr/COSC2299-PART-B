@@ -99,7 +99,7 @@ public class chooseBusinessController {
     @FXML
     private void switchToMenu(ActionEvent event)  {
         try {
-            pass2("customerMenu.fxml");
+
             Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
             Scene home_page_scene = new Scene(home_page);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -109,14 +109,7 @@ public class chooseBusinessController {
         catch(IOException e){}
 
     }
-    private void pass2(String fxmlFile) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        Pane pane = loader.load();
-        customerMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
-        controller.setCustomerID(customerID);
 
-    }
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
