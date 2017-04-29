@@ -16,9 +16,15 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import menu.Login;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -33,6 +39,8 @@ public class bookingController {
     Services selectedS = new Services(businessID,null,null,null,null);
     public static String businessID;
     public static String customerID;
+    public ArrayList<String> days = new ArrayList<>();
+    public ArrayList<DayOfWeek> date = new ArrayList<>();
 
     @FXML
     public DatePicker bdate;
@@ -96,12 +104,98 @@ public class bookingController {
 
 
         ((AnchorPane) rootNode).getChildren().addAll(new Pane(c));
-
+        checkFile();
+        Callback<DatePicker, DateCell> dayCellFactory= this.getDayCellFactory();
+        bdate.setDayCellFactory(dayCellFactory);
+        ((AnchorPane) rootNode).getChildren().addAll(new Pane(bdate));
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
     }
+   /* public enum DayOfWeek {
+        Monday(DayOfWeek.MONDAY),Tuesday(DayOfWeek.MONDAY),Wednesday(3),Thursday(4),Friday(5),Saturday(6),Sunday(7);
 
+        private final DayOfWeek value;
+
+        DayOfWeek(DayOfWeek value) {
+
+            this.value = value;
+        }
+
+        public DayOfWeek getValue() {
+
+            return value;
+        }
+
+        @Override
+        public String toString() {
+
+            return value + "";
+        }
+    }*/
+    public void checkFile(){
+        days = new ArrayList<>();
+        date = new ArrayList<>();
+        BufferedReader br;
+        String bId= "" ;
+        String day ="" ;
+
+        try {
+            br = new BufferedReader(new FileReader("businessdaysList.txt"));
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String Details[] = x.split(" ",4);
+                    bId = Details[0];
+                    day = Details[1];
+                    day = day.substring(0,1).toUpperCase() + day.substring(1);
+                    if(bId.equals(businessID)&& !days.contains(day)) {
+                        days.add(day);
+
+                    }
+
+                }
+                //this removes the days the business is not open from the calendar
+                if (!(day.contains("Monday"))){date.add(DayOfWeek.MONDAY);}
+                if (!(day.contains("Tuesday"))){date.add(DayOfWeek.TUESDAY);}
+                if (!(day.contains("Wednesday"))){date.add(DayOfWeek.WEDNESDAY);}
+                if (!(day.contains("Thursday"))){date.add(DayOfWeek.THURSDAY);}
+                if (!(day.contains("Friday"))){date.add(DayOfWeek.FRIDAY);}
+                if (!(day.contains("Saturday"))){date.add(DayOfWeek.SATURDAY);}
+                if (!(day.contains("Sunday"))){date.add(DayOfWeek.SUNDAY);}
+                //prints error
+            } catch (IOException e) {
+
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+
+            }
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+        }
+    }
+    private Callback<DatePicker, DateCell> getDayCellFactory() {
+
+        final Callback<DatePicker, DateCell> dayCellFactory = new Callback<DatePicker, DateCell>() {
+
+            @Override
+            public DateCell call(final DatePicker datePicker) {
+                return new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (date.contains(item.getDayOfWeek())) {
+                            setDisable(true);
+                            setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                    }
+                };
+            }
+        };
+        return dayCellFactory;
+    }
 
     public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
