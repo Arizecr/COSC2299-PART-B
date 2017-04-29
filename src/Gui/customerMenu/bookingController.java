@@ -2,6 +2,7 @@ package Gui.customerMenu;
 
 import bookings.Services;
 import coreFunctions.Driver;
+import coreFunctions.WriteToFile;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -342,9 +343,11 @@ public class bookingController {
             alert.showAndWait();
         }
         else{
+            WriteToFile w = new WriteToFile();
             String customername = "toset";//fix
             String s = businessID+","+day+","+date+","+customername+","+starttime.getText()+"-"+endtime.getText()+",";
             s+= selectedS.getName()+","+ customerID;
+            w.WriteToWorkingdayTXT(s,"currentBookings");
             //add to file
         }
     }
