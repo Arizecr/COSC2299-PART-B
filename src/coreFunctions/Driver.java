@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -44,14 +45,15 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 6);
+                    String Details[] = x.split(",", 7);
                     String business = Details[0];
                     String day = Details[1];
-                    String customer = Details[2];
-                    String time = Details[3];
-                    String service = Details[4];
-                    String id = Details[5];
-                    CurrentBookings bookingInfo = new CurrentBookings(business,day, customer, time, service, id);
+                    String date = Details[2];
+                    String customer = Details[3];
+                    String time = Details[4];
+                    String service = Details[5];
+                    String id = Details[6];
+                    CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id);
                     if(b.equals(business))  currentBookings.add(bookingInfo);
                 }
                 //prints error
@@ -94,15 +96,16 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 7);
+                    String Details[] = x.split(",", 8);
                     String business = Details[0];
                     String day = Details[1];
-                    String customer = Details[2];
-                    String time = Details[3];
-                    String service = Details[4];
-                    String cancelled = Details[5];
-                    String id = Details[6];
-                    PastBookings bookingInfo = new PastBookings(business,day, customer, time, service, cancelled,id);
+                    String date = Details[2];
+                    String customer = Details[3];
+                    String time = Details[4];
+                    String service = Details[5];
+                    String cancelled = Details[6];
+                    String id = Details[7];
+                    PastBookings bookingInfo = new PastBookings(business,day,date, customer, time, service, cancelled,id);
                     if(b.equals(business)) pastBookings.add(bookingInfo);
                 }
                 //prints error
@@ -443,7 +446,7 @@ public class Driver {
         Scanner reader = new Scanner(System.in);
         loadCurrentBookings(b);
         loadPastBookings(b);
-
+        checkBookings();//removes bookings that have occurred
         System.out.println("\n+----------------------------------+");
         System.out.println("|               View               |");
         System.out.println("|             Bookings             |");
@@ -483,7 +486,28 @@ public class Driver {
             }
         }
     }
+    public void checkBookings(){
+        currentBookings = insertionSortDate(currentBookings);
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,0);
 
+        Date current;
+        DateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        Date today = new Date();
+        try {today = date.parse(date.format(c.getTime()));}catch(ParseException e){}
+        for(int j=0; j<currentBookings.size();j++) {
+            try {
+                current = new SimpleDateFormat("dd/MM/yyyy").parse(currentBookings.get(j).getDate());
+
+                if ((current).before(today)) {
+                    pastBookings.add(currentBookings.get(j));
+                    currentBookings.remove(j);
+                }
+                else{j=currentBookings.size()-1;}
+                //ordered dates therefore do not nees to search through all
+            }catch(ParseException e){}
+        }
+        }
     /*
      * View current bookings of a business
      */
@@ -494,6 +518,8 @@ public class Driver {
                 days.add(currentBookings.get(i).getDayBooked());
             }
         }
+        //sort by date then get the next weeks dates
+        currentBookings = insertionSortDate(currentBookings);
         days = insertionSort(days);
         for(int i=0; i<days.size();i++){
             System.out.println("~~~~~~~~~~~~~" + days.get(i) + "~~~~~~~~~~~~~");
@@ -524,6 +550,8 @@ public class Driver {
                 daysZ.add(pastBookings.get(i).getDayBooked());
             }
         }
+        //sort by date then get the next week
+        pastBookings = insertionSortDate(pastBookings);
         daysZ = insertionSort(daysZ);
         for(int i=0; i<daysZ.size();i++){
             System.out.println("~~~~~~~~~~~~~" + daysZ.get(i) + "~~~~~~~~~~~~~");
@@ -698,6 +726,27 @@ public class Driver {
         }
         return days;
     }
+    public ArrayList<Bookings> insertionSortDate(ArrayList<Bookings> days){
+
+        Bookings temp;
+
+        for (int i = 1; i < days.size(); i++) {
+            for(int j = i ; j > 0 ; j--){
+                try {
+                    Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j-1).getDate());
+                    Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j).getDate());
+                    if ((date2).before(date1)) {
+                        temp = days.get(j);
+                        days.set(j, days.get(j - 1));
+                        days.set(j - 1, temp);
+                    }
+                }catch(ParseException e){}
+            }
+        }
+        return days;
+    }
+
+
 
 
 }

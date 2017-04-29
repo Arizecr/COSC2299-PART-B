@@ -6,19 +6,21 @@ package bookings;
 public abstract class Bookings {
 
     private String dayBooked;
+    private String date;
     private String customer;
     private String timeBooked;
     private String serviceBooked;
     private String customerID;
     private String business;
 
-    public Bookings(String business,String dayBooked, String customer, String timeBooked, String serviceBooked, String customerID) {
+    public Bookings(String business,String dayBooked,String date, String customer, String timeBooked, String serviceBooked, String customerID) {
         this.dayBooked = dayBooked;
         this.customer = customer;
         this.timeBooked = timeBooked;
         this.serviceBooked = serviceBooked;
         this.customerID = customerID;
         this.business = business;
+        this.date = date;
     }
 
 
@@ -30,6 +32,10 @@ public abstract class Bookings {
     public String getDayBooked() {
 
         return dayBooked;
+    }
+    public String getDate() {
+
+        return date;
     }
 
     public String getCustomer() {
