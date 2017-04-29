@@ -51,7 +51,8 @@ public class bookingController {
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
     BusinessMenu bm = new BusinessMenu();
-    LocalDate dateinfo;
+    public static LocalDate dateinfo;
+    public static String dateInfo;
 
     @FXML
     public DatePicker bdate;
@@ -108,6 +109,7 @@ public class bookingController {
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 //this service is saved to the class for use in adding end time of service
                 selectedS = s.serviceList.get(newValue.intValue());
+                System.out.println(bdate.getValue());
 
             }
         });
@@ -185,8 +187,25 @@ public class bookingController {
                     cal.add(Calendar.HOUR,h );
                     String newTime = time.format(cal.getTime());
                     endtime.setText(newTime);
-System.out.println(bdate.getValue());
+
                 }
+            }
+        });
+
+        bdate.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(
+                    ObservableValue<? extends LocalDate> observableValue,
+                    LocalDate oldValue, LocalDate newValue) {
+                System.out.println(oldValue + " -> " + newValue);
+                dateinfo = newValue;//sets the new date value for use
+     //           DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
+   //             SimpleDateFormat d = new SimpleDateFormat("EEE");
+                DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+ //               Date start = Calendar.getInstance().getTime() ;
+
+                String dateInfo = dateinfo.format(form);
+                System.out.println(dateInfo);
             }
         });
 
@@ -332,9 +351,8 @@ System.out.println(bdate.getValue());
        SimpleDateFormat d = new SimpleDateFormat("EEE");
        DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
        Date start = Calendar.getInstance().getTime() ;
-
-       String date = bdate.getValue().format(form);
-
+       String date = dateinfo.format(form);
+       System.out.println(businessID+" "+ dateinfo);
        try{
            start = time.parse(date);
        }catch(ParseException e){}

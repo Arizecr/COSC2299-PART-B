@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addEmployeeAvailableDayController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addEmployeeAvailableDayController">
    <children>
-      <Pane layoutX="-11.0" prefHeight="231.0" prefWidth="306.0" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="-11.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="34.0" layoutY="39.0" prefHeight="231.0" prefWidth="306.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="39.0">
          <children>
-            <TextField fx:id="eid" layoutX="112.0" layoutY="53.0" promptText="EID" />
-            <TextField fx:id="starttime" layoutX="112.0" layoutY="178.0" promptText="START" />
-            <TextField fx:id="endtime" layoutX="112.0" layoutY="210.0" promptText="END" />
-            <Button layoutX="158.0" layoutY="245.0" mnemonicParsing="false" onAction="#addAvailibility" text="Add" />
-            <TextField fx:id="day" layoutX="112.0" layoutY="101.0" promptText="DAY" />
+            <TextField fx:id="eid" layoutX="129.0" layoutY="177.0" promptText="e?" />
+            <TextField fx:id="starttime" layoutX="129.0" layoutY="261.0" promptText="0:00" />
+            <TextField fx:id="endtime" layoutX="129.0" layoutY="298.0" promptText="0:00" />
+            <Button layoutX="145.0" layoutY="366.0" mnemonicParsing="false" onAction="#addAvailibility" prefHeight="25.0" prefWidth="83.0" text="Add" />
+            <TextField fx:id="day" layoutX="129.0" layoutY="221.0" promptText="Monday" />
+            <ListView fx:id="workerList" layoutX="11.0" layoutY="14.0" prefHeight="120.0" prefWidth="299.0" />
+            <Button layoutX="237.0" layoutY="366.0" mnemonicParsing="false" onAction="#back" text="Back" />
+            <Label layoutX="54.0" layoutY="181.0" text="Employee ID" />
+            <Label layoutX="87.0" layoutY="225.0" text="Day" />
+            <Label layoutX="67.0" layoutY="265.0" text="Start Time" />
+            <Label layoutX="73.0" layoutY="302.0" text="End Time" />
          </children>
       </Pane>
    </children>
