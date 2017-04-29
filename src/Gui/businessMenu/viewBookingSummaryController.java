@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class viewBookingSummary extends Controller implements Initializable{
+public class viewBookingSummaryController extends Controller implements Initializable{
     Driver d = new Driver();
 
     public static String businessID;
@@ -77,7 +77,7 @@ public class viewBookingSummary extends Controller implements Initializable{
     private void passToShowCurrentBooking(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
-        showWorkerAvailibilityController controller = loader.getController();
+        currentBookings controller = loader.getController();
         controller.setBusinessID(parameterToPass);
 
     }
@@ -85,7 +85,7 @@ public class viewBookingSummary extends Controller implements Initializable{
     private void passToShowPastBooking(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
-        showWorkerAvailibilityController controller = loader.getController();
+        pastBookings controller = loader.getController();
         controller.setBusinessID(parameterToPass);
 
     }
@@ -118,13 +118,6 @@ public class viewBookingSummary extends Controller implements Initializable{
         app_stage.show();
     }
 
-    private void passToViewBookingSummary(String fxmlFile, String parameterToPass) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        Pane pane = loader.load();
-        viewBusinessHours controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
-
-    }
 
 
 }

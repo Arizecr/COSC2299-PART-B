@@ -17,6 +17,7 @@
                <font>
                   <Font size="22.0" />
                </font></Label>
+            <Button mnemonicParsing="false" text="Cancel" />
          </children></Pane>
    </children>
 </AnchorPane>

@@ -22,8 +22,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.IOError;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -51,6 +50,45 @@ public class pastBookings implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ArrayList<String> array = d.loadInfo();
+        printFile();
+    }
+
+    public void printFile(){
+        BufferedReader br;
+        String bId= "" ;
+        String day ="" ;
+        String name ="";
+        String time ="";
+        String service="";
+        String status ="";
+        String cID ="";
+        try {
+            br = new BufferedReader(new FileReader("pastBookings.txt"));
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String Details[] = x.split(" ",7);
+                    bId = Details[0];
+                    day = Details[1];
+                    name = Details[2];
+                    time = Details[3];
+                    service = Details[4];
+                    status = Details[5];
+                    cID = Details[6];
+                    day = day.substring(0,1).toUpperCase() + day.substring(1);
+
+                }
+                //prints error
+            } catch (IOException e) {
+
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+
+            }
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+        }
     }
 
 
