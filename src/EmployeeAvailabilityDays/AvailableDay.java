@@ -105,26 +105,27 @@ public class AvailableDay {
         loadInfo();
 
         String x = busId + " " +eID + " " + day + " " + start + " " + end;
-        availability.add(x);
-        if(!editAv(busId,eID,day,start,end,x)){
+        if(!editAv(busId,eID,day.toLowerCase(),start,end,x)){
             availability.add(x);
         }
-        write.writeToFileToString(availability, "employeeAvailabilityList.txt");
+        write.rewriteToFile(availability, "employeeAvailabilityList.txt");
 
     }
 
 
     public boolean editAv(String busId,String eID, String day, String start, String end, String x){
         for(int i=0; i<availability.size(); i++){
+            System.out.println(availability.get(i));
             if(availability.get(i).contains(busId) && availability.get(i).contains(eID) && availability.get(i).contains(day)){
+                System.out.println("S");
                 availability.remove(i);
                 availability.add(x);
-                return true;
+                return false;
             }
         }
 
 
-        return false;
+        return true;
     }
     public boolean checkDay(String b, String e, String d){
         loadInfo();
