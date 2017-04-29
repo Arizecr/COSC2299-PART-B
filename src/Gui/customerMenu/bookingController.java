@@ -103,27 +103,14 @@ public class bookingController {
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 //this service is saved to the class for use in adding end time of service
                 selectedS = s.serviceList.get(newValue.intValue());
+
             }
         });
         c.setTooltip(new Tooltip("Select the service"));
         //print services service
         //select date and time
 
-        starttime.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if(!bm.checktime(starttime.getText()))
-                {
-                    //do end time
-                    DateFormat time = new SimpleDateFormat("HH:mm");
-                    String st = starttime.getText();
-                    try{
-                        Date start = time.parse(st);
 
-                    }catch(ParseException e){}
-                }
-            }
-        });
         starttime.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -135,6 +122,56 @@ public class bookingController {
                         alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
                         alert.showAndWait();
                     }
+                    else{
+                        //do end time
+                        DateFormat time = new SimpleDateFormat("HH:mm");
+                        Date start = Calendar.getInstance().getTime() ;
+                        String st = starttime.getText();
+                        try{
+                            start = time.parse(st);
+                        }catch(ParseException e){}
+                        Calendar cal = Calendar.getInstance();
+                        cal.setTime(start);
+                        //gets the time of the service
+                        String toAdd = selectedS.getLengthT();
+                        String Time[] = toAdd.split("-", 2);
+                        String hours = Time[0];
+                        String min = Time[1];
+                        int h = Integer.parseInt(hours);
+                        int m = Integer.parseInt(min);
+                        cal.add(Calendar.MINUTE,m );
+                        cal.add(Calendar.HOUR,h );
+                        String newTime = time.format(cal.getTime());
+                        endtime.setText(newTime);
+                    }
+                }
+            }
+        });
+        starttime.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if(!bm.checktime(starttime.getText()))
+                {
+                    //do end time
+                    DateFormat time = new SimpleDateFormat("HH:mm");
+                    Date start = Calendar.getInstance().getTime() ;
+                    String st = starttime.getText();
+                    try{
+                        start = time.parse(st);
+                    }catch(ParseException e){}
+                    Calendar cal = Calendar.getInstance();
+                    cal.setTime(start);
+                    //gets the time of the service
+                    String toAdd = selectedS.getLengthT();
+                    String Time[] = toAdd.split("-", 2);
+                    String hours = Time[0];
+                    String min = Time[1];
+                    int h = Integer.parseInt(hours);
+                    int m = Integer.parseInt(min);
+                    cal.add(Calendar.MINUTE,m );
+                    cal.add(Calendar.HOUR,h );
+                    String newTime = time.format(cal.getTime());
+                    endtime.setText(newTime);
+
                 }
             }
         });
