@@ -67,8 +67,10 @@ public class bookingController {
         driver.loadCurrentBookings(businessID);
         ListView<String> list = new ListView<String>();
         list.disabledProperty();
-        list.setLayoutX(63);
-        list.setLayoutY(110);
+        list.setLayoutX(60);
+        list.setLayoutY(94);
+        list.setMaxHeight(298);
+        list.setMaxWidth(245);
         ArrayList<String> bookings = new ArrayList<>();
 
         for(int i=0;i<driver.currentBookings.size();i++){
