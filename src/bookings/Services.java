@@ -24,7 +24,7 @@ public class Services {
     private String cost;
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     Logging l =new Logging();
-    private static ArrayList<Services> serviceList = new ArrayList<>();
+    public static ArrayList<Services> serviceList = new ArrayList<>();
     WriteToFile w = new WriteToFile();
 
     public Services(String bId,String sId,String name,String lengthT,String cost) {
@@ -57,7 +57,7 @@ public class Services {
                 line = "|Service ID|Name of Service | length: in Hours and Minutes| Price ($)";
 
 
-                System.out.println(line);
+                //System.out.println(line);
 
 
                 while ((x = br.readLine()) != null) {
@@ -83,7 +83,7 @@ public class Services {
 
                     line = String.format("|%10s|%16s|%2s hours and %s minutes       |%1s", sid, n, hours, min,cost);
 
-                    System.out.println(line);
+                    //System.out.println(line);
 
 
 

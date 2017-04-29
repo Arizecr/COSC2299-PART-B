@@ -1,5 +1,6 @@
 package Gui.customerMenu;
 
+import bookings.Services;
 import coreFunctions.Driver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 public class bookingController {
     Login loginMenu = new Login();
-
+    Services s = new Services();
     Login login = new Login();
     Driver driver = new Driver();
     public static String businessID;
@@ -43,9 +44,19 @@ public class bookingController {
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
 
-
+        s.printService(businessID);
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
+        for(int i=0;i<s.serviceList.size();i++){
+            if(driver.currentBookings.get(i).getCustomerID().equals(customerID)){
+                String s = "Date: " + driver.currentBookings.get(i).getDate();
+                s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
+                s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
+                s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
+                bookings.add(s);
+            }
+
+        }
 
 
         //print services service
