@@ -147,22 +147,22 @@ public class Workday
 
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (et.after(Bet)) {
-                            System.out.println("Error: this shift is not within the operating hours of the business");
+                         //   System.out.println("Error: this shift is not within the operating hours of the business");
                             return true;
 
                         } else if (st.before(Bst)) {
-                            System.out.println("Error: this shift is not within the operating hours of the business");
+                         //   System.out.println("Error: this shift is not within the operating hours of the business");
                             return true;
                         }
                     } catch (ParseException e) {
-                        System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
+                     //   System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
                         return true;
                     }
                 }
             }
         }
 
-        if(count==0){System.out.println("Not Open on " + d);return true;}
+        if(count==0){return true;}
         return false;
     }
 

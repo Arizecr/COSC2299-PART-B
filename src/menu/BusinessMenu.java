@@ -353,6 +353,18 @@ public class BusinessMenu {
         }
         return true;
     }
+    public boolean UserBooking(String bId, String day,String starttime,String endtime){
+        DateFormat time = new SimpleDateFormat("HH:mm");
+        day = day.toLowerCase();
+        if( !timeCheck (starttime, endtime)){
+
+            if( driver.checkAllWorktimes(bId,day,starttime,endtime)){return true;}//check against current shifts on this day
+            if( w.readWork(bId,day,starttime,endtime)){return true;}//checks based on business hours set
+
+            return false;//correct booking time
+        }
+        return true;
+    }
     public  boolean BH(String bId, String day,String starttime,String endtime){return BHours(bId,  day, starttime, endtime);}
 
     //checks the business hours are valid and in the correct format
