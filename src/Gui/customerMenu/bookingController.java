@@ -72,6 +72,7 @@ public class bookingController {
         customerID = cid;
 
     }
+
     public void startMakeBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
@@ -320,13 +321,31 @@ public class bookingController {
         app_stage.show();
     }
 
-/*    public void checkStart(ActionEvent event) throws IOException {
-        if(bm.checktime(starttime.getText())){
+   public void checkBooking(ActionEvent event) throws IOException {
+        //check all valid
+       //then do as below
+       DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
+       SimpleDateFormat d = new SimpleDateFormat("EEEE");
+       Date start = Calendar.getInstance().getTime() ;
+       String date = bdate.getAccessibleText();
+       try{
+           start = time.parse(date);
+       }catch(ParseException e){}
+       String day = d.format(start);
+       //gets the time of the service
+
+        if(bm.UserBooking(businessID,day,starttime.getText(),endtime.getText())){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Invalid time format.In the form HH:30 or HH:00 only\n Try again.");
             alert.showAndWait();
         }
-    }*/
+        else{
+            String customername = "toset";//fix
+            String s = businessID+","+day+","+date+","+customername+","+starttime.getText()+"-"+endtime.getText()+",";
+            s+= selectedS.getName()+","+ customerID;
+            //add to file
+        }
+    }
 }

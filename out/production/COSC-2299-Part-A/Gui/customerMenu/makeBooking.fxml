@@ -23,14 +23,13 @@
                 </Text>
                 <Button layoutX="23.0" layoutY="415.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
 
-                <TextField fx:id="starttime" layoutX="170.0" layoutY="250.0" />
-                <TextField fx:id="endtime" editable="false" layoutX="170.0" layoutY="329.0" />
-                <Text layoutX="60.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time">
+
+                <Text layoutX="59.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </Text>
-                <Text layoutX="57.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start time">
+                <Text layoutX="56.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start time">
                     <font>
                         <Font size="17.0" />
                     </font>
@@ -41,7 +40,7 @@
                         <TableColumn prefWidth="75.0" text="C2" />
                     </columns>
                 </TableView>
-            <Button layoutX="260.0" layoutY="415.0" mnemonicParsing="false" text="Book" />
+                <Button layoutX="260.0" layoutY="415.0" mnemonicParsing="false" text="Book" />
 
             </children>
             <effect>
@@ -50,5 +49,7 @@
         </Pane>
         <ChoiceBox fx:id="c" layoutX="50.0" layoutY="56.0" prefHeight="25.0" prefWidth="296.0" />
         <DatePicker fx:id="bdate" layoutX="50.0" layoutY="90.0" prefHeight="25.0" prefWidth="296.0" promptText="Enter date in form dd/MM/yyyy" showWeekNumbers="true" />
+        <TextField fx:id="starttime" layoutX="170.0" layoutY="250.0" />
+        <TextField fx:id="endtime" editable="false" layoutX="170.0" layoutY="329.0" />
     </children>
 </AnchorPane>
