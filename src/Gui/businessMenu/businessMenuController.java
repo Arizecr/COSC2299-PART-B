@@ -122,7 +122,7 @@ public class businessMenuController extends Controller implements Initializable{
     @FXML
     void switchToAddAvailibility(ActionEvent event) throws IOException {
 
-        //passToAvailableDay("addEmployeeAvailableDay.fxml", businessID);
+        passToAvailableDay("addEmployeeAvailableDay.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("addEmployeeAvailableDay.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
