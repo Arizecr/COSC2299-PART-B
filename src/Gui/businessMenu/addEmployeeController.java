@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -43,6 +44,15 @@ public class addEmployeeController implements Initializable{
 
     @FXML
     private Label employeeID;
+
+    @FXML
+    private Label errorName;
+
+    @FXML
+    private Label errorTFN;
+
+    @FXML
+    private Label errorPho;
 
 
     @FXML
@@ -79,6 +89,108 @@ public class addEmployeeController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         employeeID.setText(driver.generateEmployeeNo(businessID));
+        errorName.setVisible(false);
+        errorPho.setVisible(false);
+        errorTFN.setVisible(false);
+
+        //Check Name
+        name.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerNameCheck(newText)){
+                    errorName.setVisible(false);
+                }else{
+                    errorName.setVisible(true);
+                }
+            }
+            else{
+                errorName.setVisible(false);
+            }
+        });
+
+        //CHECK TFN
+
+        tfn.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(!listenerTFNCheck(newText)){
+                    errorTFN.setVisible(false);
+                }else{
+                    errorTFN.setVisible(true);
+                }
+            }
+            else{
+                errorTFN.setVisible(false);
+            }
+        });
+
+
+        //CHECK PHONE
+        number.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(!listenerPhoCheck(newText)){
+                    errorPho.setVisible(false);
+                }else{
+                    errorPho.setVisible(true);
+                }
+            }
+            else{
+                errorPho.setVisible(false);
+            }
+        });
+
+    }
+
+    private boolean listenerNameCheck(String name){
+        if((name.length()< 3)||(name.length()>20)){
+
+
+            return false;
+        }
+        if(!name.matches("^[a-zA-Z\\s]+$")){
+
+
+            return false;
+        }
+        return true;
+    }
+
+    private boolean listenerTFNCheck(String tfn){
+        int length = tfn.length();
+
+        if(length < 8 || length>9){
+
+
+            return true;
+        }
+        if(!isNumeric(tfn)) {
+
+
+            return true;
+        }
+        return false;
+    }
+
+    private boolean listenerPhoCheck(String phone){
+        if(phone.length() != 10){
+
+            return true;
+        }
+
+        if(!isNumeric(phone)) {
+
+
+            return true;
+        }
+        if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
+
+
+            return true;
+
+        }
+        return false;
+    }
+
+    private boolean isNumeric(String s) {
+        return s.matches("[-+]?\\d*\\.?\\d+");
     }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addEmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addEmployeeController">
     <children>
         <Pane layoutX="31.0" layoutY="26.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="26.0">
             <effect>
@@ -39,10 +39,13 @@
                </font>
             </Text>
             <TextField fx:id="number" layoutX="111.0" layoutY="188.0" prefHeight="27.0" prefWidth="180.0" promptText="10 digits (0425001889)" />
-            <Button layoutX="239.0" layoutY="317.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+            <Button layoutX="239.0" layoutY="257.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
             <Label fx:id="employeeID" layoutX="152.0" layoutY="49.0" text="..." />
-            <Button layoutX="64.0" layoutY="317.0" mnemonicParsing="false" onAction="#addIsClicked" text="Add employee" />
+            <Button layoutX="136.0" layoutY="257.0" mnemonicParsing="false" onAction="#addIsClicked" text="Add employee" />
             <Label layoutX="58.0" layoutY="49.0" text="Employee ID" />
+            <Label fx:id="errorName" layoutX="166.0" layoutY="115.0" text="Invalid Name" textFill="RED" />
+            <Label fx:id="errorTFN" layoutX="98.0" layoutY="167.0" text="&quot;Error: TFN must be 8-9 digits in length.&quot;" textFill="RED" />
+            <Label fx:id="errorPho" layoutX="146.0" layoutY="215.0" text="Invalid Phone Number" textFill="RED" />
          </children>
         </Pane>
     </children>
