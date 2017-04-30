@@ -151,7 +151,7 @@ public class viewBusinessHours implements Initializable{
     }
 
     //to update business hours laters
-    public void updateBusinessHours() {
+    public boolean updateBusinessHours() {
         String[] start = {mondayStart.getText(), tuesdayStart.getText(),wednesdayStart.getText(),thursStart.getText(), friStart.getText()};
         String[] end = {mondayEnd.getText(), tuesdayEnd.getText(),wednesdayEnd.getText(),thursEnd.getText(), friEnd.getText()};
 
@@ -162,7 +162,7 @@ public class viewBusinessHours implements Initializable{
             }
 
             else{
-                System.out.println(valid);
+
                 valid++;
             }
 
@@ -182,17 +182,27 @@ public class viewBusinessHours implements Initializable{
                 fw.close();
             } catch (IOException ioe) {
             }
+            return true;
 
+        }
+        else {
+            return false;
         }
 
     }
 
     @FXML
     void updateHours(ActionEvent event) throws IOException{
-            updateBusinessHours();
-            //Still need to add employee workday
-            pass("businessMenu.fxml", businessID);
-            switchToBusinessMenu(event);
+            if(updateBusinessHours()){
+                pass("businessMenu.fxml", businessID);
+                switchToBusinessMenu(event);
+
+            }
+
+            else{
+
+            }
+
 
 
     }
