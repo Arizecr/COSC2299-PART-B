@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="services">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/removeServices.java" />
+    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -103,15 +102,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addServices.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addServices.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="183">
               <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#899#900#0" expanded="true" />
                 <element signature="e#933#934#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="servicesController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1237">
+              <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,18 +154,6 @@
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pastBookings.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -241,6 +242,7 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeServices.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java" />
       </list>
     </option>
   </component>
@@ -622,13 +624,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00058" summary="update employeeList">
-      <created>1493372470761</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1493372470761</updated>
-    </task>
     <task id="LOCAL-00059" summary="small change in booking">
       <created>1493374803042</created>
       <option name="number" value="00059" />
@@ -965,7 +960,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493540023749</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="services">
+      <created>1493540863101</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1493540863101</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1106,7 +1108,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eemployeeAvailabilityList.txt" />
     <entry file="file://$PROJECT_DIR$/src/Gui/login.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1509,12 +1510,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="183">
           <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#899#900#0" expanded="true" />
             <element signature="e#933#934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1237">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
           </folding>
         </state>
       </provider>
