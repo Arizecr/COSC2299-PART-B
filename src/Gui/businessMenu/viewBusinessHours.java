@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import menu.BusinessMenu;
 
 import java.io.*;
 import java.net.URL;
@@ -21,6 +22,8 @@ import java.util.ResourceBundle;
  */
 public class viewBusinessHours implements Initializable{
     //
+
+    BusinessMenu bMenu = new BusinessMenu();
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
     public ArrayList<String> end = new ArrayList<>();
@@ -148,28 +151,58 @@ public class viewBusinessHours implements Initializable{
     }
 
     //to update business hours laters
-    public void updateBusinessHours() {
+    public boolean updateBusinessHours() {
+        String[] start = {mondayStart.getText(), tuesdayStart.getText(),wednesdayStart.getText(),thursStart.getText(), friStart.getText()};
+        String[] end = {mondayEnd.getText(), tuesdayEnd.getText(),wednesdayEnd.getText(),thursEnd.getText(), friEnd.getText()};
 
-        try {
-            FileWriter fw = new FileWriter("businessdaysList.txt"); //the true will append the new data
+        int valid = 0;
+        for(int i=0; i<start.length; i++){
+            if(bMenu.timeCheck(start[i], end[i])){
 
-            //replace b1 with businessid
-            fw.write(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
-            fw.write(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
-            fw.write(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
-            fw.write(businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
-            fw.write(businessID + " Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
-            fw.close();
-        } catch (IOException ioe) {
+            }
+
+            else{
+
+                valid++;
+            }
+
+
         }
+
+        if(valid == start.length){
+            try {
+                FileWriter fw = new FileWriter("businessdaysList.txt"); //the true will append the new data
+
+                //replace b1 with businessid
+                fw.write(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
+                fw.write(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
+                fw.write(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
+                fw.write(businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
+                fw.write(businessID + " Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
+                fw.close();
+            } catch (IOException ioe) {
+            }
+            return true;
+
+        }
+        else {
+            return false;
+        }
+
     }
 
     @FXML
     void updateHours(ActionEvent event) throws IOException{
-            updateBusinessHours();
-            //Still need to add employee workday
-            pass("businessMenu.fxml", businessID);
-            switchToBusinessMenu(event);
+            if(updateBusinessHours()){
+                pass("businessMenu.fxml", businessID);
+                switchToBusinessMenu(event);
+
+            }
+
+            else{
+
+            }
+
 
 
     }
