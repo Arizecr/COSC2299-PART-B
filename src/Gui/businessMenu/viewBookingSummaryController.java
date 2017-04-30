@@ -5,9 +5,8 @@ package Gui.businessMenu;
  */
 
 import Gui.Controller;
+import Gui.customerMenu.bookingController;
 import coreFunctions.Driver;
-import EmployeeAvailabilityDays.AvailableDay;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,14 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -111,8 +105,13 @@ public class viewBookingSummaryController extends Controller implements Initiali
         Parent home_page = FXMLLoader.load(getClass().getResource("currentBookings.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("currentBookings.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+       currentBookings controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startViewBook(app_stage);
     }
 
 

@@ -4,28 +4,38 @@ package Gui.businessMenu;
  * Created by asus on 28-Apr-17.
  */
 
+import bookings.Services;
 import coreFunctions.Driver;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import menu.BusinessMenu;
+import menu.Login;
+import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-public class currentBookings implements Initializable {
+public class currentBookings  {
     Driver d = new Driver();
-
+    Login loginMenu = new Login();
+    Services s = new Services();
+    Login login = new Login();
+    Employee e = new Employee();
+    Driver driver = new Driver();
+    BusinessMenu bm = new BusinessMenu();
     public static String businessID;
 
     public static void setBusinessID(String bid){
@@ -55,11 +65,41 @@ public class currentBookings implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-        ArrayList<String> array = d.loadInfo();
-        printFile();
+    public void startViewBook(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("currentBookings.fxml"));
+        driver.loadCurrentBookings(businessID);
+        ListView<String> list = new ListView<String>();
+        list.disabledProperty();
+        list.setLayoutX(60);
+        list.setLayoutY(94);
+        list.setMaxHeight(230);
+        list.setMaxWidth(245);
+        ArrayList<String> bookings = new ArrayList<>();
+
+        for(int i=0;i<driver.currentBookings.size();i++){
+            if(driver.currentBookings.get(i).getBusiness().equals(businessID)){
+                String s = "Date: " + driver.currentBookings.get(i).getDate();
+                s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
+                s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
+                s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
+                if(e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID())!=null){
+                    s+="\nEmployee: " + e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID());
+                }
+                bookings.add(s);
+            }
+
+        }
+        ObservableList<String> data = FXCollections.observableArrayList(bookings);
+        ((AnchorPane) rootNode).getChildren().add(new Pane());
+
+        ((AnchorPane) rootNode).getChildren().addAll(list);
+
+        list.setItems(data);
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
 
 
     }
