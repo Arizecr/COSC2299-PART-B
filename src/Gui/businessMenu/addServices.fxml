@@ -20,8 +20,8 @@
             <Text layoutX="55.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of service:" />
             <Text layoutX="55.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Length in HH-mm:" />
             <Text layoutX="54.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cost:" />
-            <TextField layoutX="185.0" layoutY="303.0" promptText="Name of service" />
-            <TextField layoutX="185.0" layoutY="349.0" promptText="Length of service" />
+            <TextField  fx:id="name" layoutX="185.0" layoutY="303.0" promptText="Name of service" />
+            <TextField  fx:id="length" layoutX="185.0" layoutY="349.0" promptText="Length of service" />
             <ListView fx:id="serviceList" layoutX="27.0" layoutY="90.0" prefHeight="157.0" prefWidth="381.0" />
             <Text layoutX="68.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current services offered:" />
             <Text layoutX="65.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new service" wrappingWidth="188.73046875">
