@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import menu.BusinessMenu;
 import menu.Login;
+import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -42,9 +43,12 @@ public class businessBookingController {
     Services s = new Services();
     Login login = new Login();
     Driver driver = new Driver();
+    Employee e = new Employee();
     BusinessMenu bm = new BusinessMenu();
     public static Services selectedS = new Services(null,null,null,null,null);
+    public static Employee selectedE = new Employee(null,null,null,null,null);
     Services not = new Services(null,null,null,null,null);
+    Employee not2 = new Employee(null,null,null,null,null);
     public static String businessID;
     public static String customerID;
     public ArrayList<String> days = new ArrayList<>();
@@ -59,6 +63,9 @@ public class businessBookingController {
 
     @FXML
     private ChoiceBox c;
+
+    @FXML
+    private ChoiceBox c2;
 
     @FXML
     private TextField starttime;
@@ -87,6 +94,7 @@ public class businessBookingController {
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
         ArrayList<String> services = new ArrayList<>();
+        ArrayList<String> employees = new ArrayList<>();
         //ChoiceBox c = new ChoiceBox();
         s.printService(businessID);
         //ArrayList<Button> b = new ArrayList<>();
@@ -125,6 +133,28 @@ public class businessBookingController {
             }
         });
         c.setTooltip(new Tooltip("Select the service"));
+        for(int i=0;i<e.employeeList.size();i++){
+            //makes sure the services of only the current business are displayed
+            if(businessID.equals(e.employeeList.get(i).getbId())){
+                String n = e.employeeList.get(i).getName();
+
+                employees.add(n);
+
+
+            }
+
+        }
+        c2.setItems(FXCollections.observableArrayList(employees));
+        c2.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                //this service is saved to the class for use in adding end time of service
+                selectedE = e.employeeList.get(newValue.intValue());
+
+            }
+        });
+        c2.setTooltip(new Tooltip("Select the employee"));
+
         //print services service
         //select date and time
 
@@ -181,7 +211,9 @@ public class businessBookingController {
         ((AnchorPane) rootNode).getChildren().add(bdate);
         ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().add(endtime);
+        ((AnchorPane) rootNode).getChildren().add(c2);
         ((AnchorPane) rootNode).getChildren().addAll(c);
+
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
@@ -267,39 +299,39 @@ public class businessBookingController {
         return dayCellFactory;
     }
 
-   /* public void startViewBook(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
-        Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
-        driver.loadCurrentBookings(businessID);
-        ListView<String> list = new ListView<String>();
-        list.disabledProperty();
-        list.setLayoutX(60);
-        list.setLayoutY(94);
-        list.setMaxHeight(298);
-        list.setMaxWidth(245);
-        ArrayList<String> bookings = new ArrayList<>();
+    /* public void startViewBook(Stage stage) throws IOException {
+         FXMLLoader loader = new FXMLLoader();
+         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+         Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
+         driver.loadCurrentBookings(businessID);
+         ListView<String> list = new ListView<String>();
+         list.disabledProperty();
+         list.setLayoutX(60);
+         list.setLayoutY(94);
+         list.setMaxHeight(298);
+         list.setMaxWidth(245);
+         ArrayList<String> bookings = new ArrayList<>();
 
-        for(int i=0;i<driver.currentBookings.size();i++){
-            if(driver.currentBookings.get(i).getCustomerID().equals(customerID)){
-                String s = "Date: " + driver.currentBookings.get(i).getDate();
-                s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
-                s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
-                s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
-                bookings.add(s);
-            }
+         for(int i=0;i<driver.currentBookings.size();i++){
+             if(driver.currentBookings.get(i).getCustomerID().equals(customerID)){
+                 String s = "Date: " + driver.currentBookings.get(i).getDate();
+                 s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
+                 s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
+                 s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
+                 bookings.add(s);
+             }
 
-        }
-        ObservableList<String> data = FXCollections.observableArrayList(bookings);
-        ((AnchorPane) rootNode).getChildren().add(new Pane());
+         }
+         ObservableList<String> data = FXCollections.observableArrayList(bookings);
+         ((AnchorPane) rootNode).getChildren().add(new Pane());
 
-        ((AnchorPane) rootNode).getChildren().addAll(list);
+         ((AnchorPane) rootNode).getChildren().addAll(list);
 
-        list.setItems(data);
-        Scene scene = new Scene(rootNode);
-        stage.setScene(scene);
+         list.setItems(data);
+         Scene scene = new Scene(rootNode);
+         stage.setScene(scene);
 
-    }*/
+     }*/
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -330,12 +362,12 @@ public class businessBookingController {
     }
     public void checkBooking(ActionEvent event) throws IOException {//when button clicked
         if(addBooking()){
-        //add to file
-        Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
-        Scene home_page_scene = new Scene(home_page);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+            //add to file
+            Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
+            Scene home_page_scene = new Scene(home_page);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            app_stage.setScene(home_page_scene);
+            app_stage.show();
         }
     }
     public boolean addBooking(){
@@ -367,7 +399,7 @@ public class businessBookingController {
             DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             Date start = Calendar.getInstance().getTime();
             String date = dateinfo.format(form);
-           // System.out.println(startinfo + " " + endinfo);
+            // System.out.println(startinfo + " " + endinfo);
             try {
                 start = time.parse(date);
             } catch (ParseException e) {
@@ -386,8 +418,13 @@ public class businessBookingController {
             } else {
                 WriteToFile w = new WriteToFile();
                 String customername = loginMenu.findCName(customerID);
-                String s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
-                s += selectedS.getName() + "," + customerID;
+                String s;
+                if(selectedE.toString().equals(not2.toString())){
+                    s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
+                    s += selectedS.getName() + "," + customerID;}
+                else{
+                    s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
+                    s += selectedS.getName() + "," + customerID+","+selectedE.geteId();}
                 w.WriteToWorkingdayTXT(s, "currentBookings.txt");
                 return true;
 
