@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bookings/Bookings.java" afterPath="$PROJECT_DIR$/src/bookings/Bookings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreFunctions/Driver.java" afterPath="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="391" column="57" lean-forward="false" selection-start-line="391" selection-start-column="47" selection-end-line="391" selection-end-column="57" />
+            <state relative-caret-position="117">
+              <caret line="401" column="101" lean-forward="true" selection-start-line="401" selection-start-column="101" selection-end-line="401" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="690" column="0" lean-forward="true" selection-start-line="690" selection-start-column="0" selection-end-line="690" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="681" column="18" lean-forward="true" selection-start-line="681" selection-start-column="18" selection-end-line="681" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +102,10 @@
       <find>chec</find>
       <find>checkw</find>
       <find>read</find>
-      <find>[]</find>
       <find>currentboo</find>
+      <find>[]</find>
+      <find>count==</find>
+      <find>count=</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -551,13 +551,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00048" summary="starting construction of booking function">
-      <created>1493354835685</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1493354835685</updated>
-    </task>
     <task id="LOCAL-00049" summary="starting construction of booking function">
       <created>1493355801486</created>
       <option name="number" value="00049" />
@@ -894,7 +887,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493516429747</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="print to file">
+      <created>1493517796918</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1493517796918</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1476,20 +1476,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="690" column="0" lean-forward="true" selection-start-line="690" selection-start-column="0" selection-end-line="690" selection-end-column="0" />
+        <state relative-caret-position="117">
+          <caret line="401" column="101" lean-forward="true" selection-start-line="401" selection-start-column="101" selection-end-line="401" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="391" column="57" lean-forward="false" selection-start-line="391" selection-start-column="47" selection-end-line="391" selection-end-column="57" />
+        <state relative-caret-position="36">
+          <caret line="681" column="18" lean-forward="true" selection-start-line="681" selection-start-column="18" selection-end-line="681" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

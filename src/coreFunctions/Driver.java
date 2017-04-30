@@ -664,15 +664,15 @@ public class Driver {
 
                     // This makes sure scheduled employee shift is within operating hours of business
                     if (((Nst.after(Cst)&&Nst.before(Cet))||Nst.equals(Cst))) {
-                        System.out.println("employee has shift during this time");
+                       // System.out.println("employee has shift during this time");
                         count++;
 
                     } else if ((Net.before(Cet)&&Net.after(Cst))||Net.equals(Cet)) {
-                        System.out.println("employee has shift during this time");
+                     //   System.out.println("employee has shift during this time");
                         count++;
                     }
                 } catch (ParseException ex) {
-                    System.out.println("Invalid Time");
+                   // System.out.println("Invalid Time");
                     // LOGGER.log(Level.FINEST,ex.toString(),ex); //for testing
                     return true;
                 }
@@ -726,7 +726,7 @@ public class Driver {
 
             }
         }
-        if(count!=0){return false;}//false if no bookings suring this time
+        if(count==0){return false;}//false if no bookings during this time
         return true;
     }
 
