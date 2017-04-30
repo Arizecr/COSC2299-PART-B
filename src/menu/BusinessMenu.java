@@ -4,6 +4,7 @@ import BusinessWorkDays.Workday;
 import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Services;
 import coreFunctions.Driver;
+import javafx.scene.control.Alert;
 import test.Logging;
 import user.Employee;
 
@@ -320,10 +321,23 @@ public class BusinessMenu {
             Date et = time.parse(endtime);
             // This makes sure scheduled work day CANNOT be before the current time and date, Ending work time must not be before start time or equal.
             if(!et.after(st)){
-                System.out.println("Can't start after its ended");
+                //System.out.println("Can't start after its ended");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Error: End Time is Before Start Time");
+
+                alert.showAndWait();
                 return true;
             }else if(st.equals(et)){
-                System.out.println("Can't start and end at same time");
+                //System.out.println("Can't start and end at same time");
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Error: Invalid Start Time is the same as End Time");
+
+                alert.showAndWait();
                 return true;
             }
         }catch(ParseException e){

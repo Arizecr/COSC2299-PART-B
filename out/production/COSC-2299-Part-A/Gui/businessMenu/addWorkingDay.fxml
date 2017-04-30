@@ -10,39 +10,39 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addWorkingDayController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.addWorkingDayController">
     <children>
         <Pane layoutX="23.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="17.0">
             <effect>
                 <DropShadow color="#b5adad" />
             </effect>
             <children>
-                <TextField fx:id="start" layoutX="167.0" layoutY="406.0" prefHeight="27.0" prefWidth="241.0" promptText="hour:min" />
-                <TextField fx:id="end" layoutX="167.0" layoutY="443.0" prefHeight="27.0" prefWidth="241.0" promptText="hour:min" />
-                <Text layoutX="71.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start time" wrappingWidth="77.74755859375">
+                <TextField fx:id="start" layoutX="168.0" layoutY="392.0" prefHeight="27.0" prefWidth="241.0" promptText="hour:min" />
+                <TextField fx:id="end" layoutX="168.0" layoutY="437.0" prefHeight="27.0" prefWidth="241.0" promptText="hour:min" />
+                <Text layoutX="71.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start time" wrappingWidth="77.74755859375">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Text>
-                <Text layoutX="75.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time" wrappingWidth="77.74755859375">
+                <Text layoutX="71.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End time" wrappingWidth="77.74755859375">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Text>
                 <Button layoutX="408.0" layoutY="521.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="55.0" text="Back" textFill="#4465ab" />
                 <Button layoutX="288.0" layoutY="521.0" mnemonicParsing="false" onAction="#addShift" prefHeight="27.0" prefWidth="115.0" text="Add shift" />
-            <Text layoutX="96.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+            <Text layoutX="96.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField fx:id="day" layoutX="168.0" layoutY="371.0" prefHeight="27.0" prefWidth="241.0" promptText="Monday" />
-            <Text layoutX="75.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee">
+            <TextField fx:id="day" layoutX="167.0" layoutY="346.0" prefHeight="27.0" prefWidth="241.0" promptText="Monday" />
+            <Text layoutX="75.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField fx:id="eid" layoutX="167.0" layoutY="330.0" prefHeight="27.0" prefWidth="241.0" promptText="Employee id" />
+            <TextField fx:id="eid" layoutX="167.0" layoutY="302.0" prefHeight="27.0" prefWidth="241.0" promptText="Employee id" />
             <ListView fx:id="workerList" layoutX="153.0" layoutY="70.0" prefHeight="95.0" prefWidth="296.0" />
             <ListView fx:id="workday2list" layoutX="153.0" layoutY="186.0" prefHeight="95.0" prefWidth="296.0" />
             <Label layoutX="24.0" layoutY="109.0" text="Employee Available" />
@@ -52,6 +52,10 @@
                         <Font size="20.0" />
                     </font>
                 </Text>
+            <Label fx:id="eidError" layoutX="236.0" layoutY="329.0" text="Invalid Employee ID" textFill="RED" />
+            <Label fx:id="dayError" layoutX="258.0" layoutY="373.0" text="Invalid Day" textFill="RED" />
+            <Label fx:id="startError" layoutX="257.0" layoutY="420.0" text="Invalid Time" textFill="RED" />
+            <Label fx:id="endError" layoutX="255.0" layoutY="470.0" text="Invalid Time" textFill="RED" />
             </children>
         </Pane>
     </children>

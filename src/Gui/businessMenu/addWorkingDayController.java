@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -22,6 +23,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -56,6 +60,19 @@ public class addWorkingDayController implements Initializable{
 
     @FXML
     private TextField eid;
+
+    @FXML
+    private Label eidError;
+
+
+    @FXML
+    private Label dayError;
+
+    @FXML
+    private Label startError;
+
+    @FXML
+    private Label endError;
 
 
 
@@ -162,7 +179,10 @@ public class addWorkingDayController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("dwlo");
+        dayError.setVisible(false);
+        startError.setVisible(false);
+        endError.setVisible(false);
+        eidError.setVisible(false);
         readEmployee();
         ArrayList<String> array = ad.loadInfo();
         clarityArrAD(array);
@@ -207,8 +227,109 @@ public class addWorkingDayController implements Initializable{
 
         });
 
+        //CHeck Employee
+        eid.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerEIDCheck(newText)){
+                    eidError.setVisible(false);
+                }else{
+                    eidError.setVisible(true);
+                }
+            }
+            else{
+                eidError.setVisible(false);
+            }
+        });
+
+        //CHECK FOR DAY
+        day.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerCheckDay(newText)){
+                    dayError.setVisible(false);
+                }else{
+                    dayError.setVisible(true);
+                }
+            }
+            else{
+                dayError.setVisible(false);
+            }
+        });
+
+        //CHECK TIME
+        start.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(checkTime(newText)){
+                    startError.setVisible(false);
+                }else{
+                    startError.setVisible(true);
+                }
+            }
+            else{
+                startError.setVisible(false);
+            }
+        });
+
+        end.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(checkTime(newText)){
+                    endError.setVisible(false);
+                }else{
+                    endError.setVisible(true);
+                }
+            }
+            else{
+                endError.setVisible(false);
+            }
+        });
+
+
 
     }
+
+    private boolean listenerEIDCheck(String empeid){
+
+        for(int i=0; i<employee.size(); i++){
+            if(employee.get(i).get(0).equals(eid.getText())){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    private boolean listenerCheckDay(String day){
+        try{
+            DateFormat time = new SimpleDateFormat("EEEE");
+            time.parse(day);
+        }
+        catch(ParseException e){
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkTime(String t){
+
+        try{
+            DateFormat time = new SimpleDateFormat("HH:mm");
+            time.parse(t);
+        }
+        catch(ParseException e){
+            // System.out.println("Invalid time:");
+            return false;
+        }
+        if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
+            return false;}
+        return true;
+
+    }
+
+
+
+
+
+
 
     private ArrayList readEmployee(){
 

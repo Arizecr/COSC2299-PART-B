@@ -177,7 +177,7 @@ public class Workday
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Error");
                             alert.setHeaderText(null);
-                            alert.setContentText("Error: Invalid End Time");
+                            alert.setContentText("Error: End Time is Before Start Time");
 
                             alert.showAndWait();
                             return true;
@@ -189,7 +189,7 @@ public class Workday
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Error");
                             alert.setHeaderText(null);
-                            alert.setContentText("Error: Invalid Start and End Time");
+                            alert.setContentText("Error: Invalid Start Time is the same as End Time");
 
                             alert.showAndWait();
                             return true;

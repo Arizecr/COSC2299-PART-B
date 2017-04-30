@@ -3,6 +3,7 @@ package EmployeeAvailabilityDays;
 import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import javafx.scene.control.Alert;
 import menu.BusinessMenu;
 import test.Logging;
 import user.Employee;
@@ -178,28 +179,58 @@ public class AvailableDay {
 
                     // This makes sure scheduled employee shift is within operating availability of business
                     if (ed.after(Aed)) {
-                        System.out.println("Error: this shift is not within the employees availability");
+                        //System.out.println("Error: this shift is not within the employees availability");
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Error: this shift is not within the employees availability");
+
+                        alert.showAndWait();
                         count++;
 
                     } else if (sd.before(Asd)) {
-                        System.out.println("Error: this shift is not within the employees availability");
+                        //System.out.println("Error: this shift is not within the employees availability");
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Error: this shift is not within the employees availability");
+
+                        alert.showAndWait();
                         count++;
 
                     }
+
                     //   else {return false;}
                 } catch (ParseException e) {
-                    System.out.println("Invalid Time");
+                    //System.out.println("Invalid Time");
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Error: Invalid Time");
                     count ++;
                 }
             }
 
         }
         if(inFile==0){
-            System.out.println("Error: This employee is unavailable on this day & time");
+            //System.out.println("Error: This employee is unavailable on this day & time");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: This employee is unavailable on this day & time");
+
+            alert.showAndWait();
+
             return true;
         }
 
-        if(count>0){return true;}//invalid availability exists
+        if(count>0){
+            System.out.println("Some Error");
+            return true;}//invalid availability exists
         return false;
     }
 

@@ -623,11 +623,27 @@ public class Driver {
 
                     // This makes sure scheduled employee shift is within operating hours of business
                     if (((Nst.after(Cst)&&Nst.before(Cet))||Nst.equals(Cst))) {
-                        System.out.println("employee has shift during this time");
+                        //System.out.println("employee has shift during this time");
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Error: Employee has shift during this time");
+
+                        alert.showAndWait();
+
                         return true;
 
                     } else if ((Net.before(Cet)&&Net.after(Cst))||Net.equals(Cet)) {
-                        System.out.println("employee has shift during this time");
+                        //System.out.println("employee has shift during this time");
+
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Error");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Error: Employee has shift during this time");
+
+                        alert.showAndWait();
+                        
                         return true;
                     }
                 } catch (ParseException ex) {
