@@ -129,6 +129,15 @@ public class Login {
         }
 
     }
+    public String findCName(String username){
+        for(int i=0; i < customerList.size() ;i++){
+            if(username.equals(customerList.get(i).getUsername())){
+                return customerList.get(i).getName();
+            }
+
+        }
+        return null;
+    }
 
     public void getOwnerinfo(){
         loadOwnerInformation();

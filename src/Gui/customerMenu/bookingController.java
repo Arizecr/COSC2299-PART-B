@@ -408,7 +408,7 @@ public class bookingController {
                 alert.showAndWait();
             } else {
                 WriteToFile w = new WriteToFile();
-                String customername = "toset";//fix
+                String customername = loginMenu.findCName(customerID);
                 String s = businessID + "," + day + "," + date + "," + customername + "," + starttime.getText() + "-" + endtime.getText() + ",";
                 s += selectedS.getName() + "," + customerID;
                 w.WriteToWorkingdayTXT(s, "currentBookings");
