@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,21 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Workday.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
+      <file leaf-file-name="addEmployeeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1555">
-              <caret line="705" column="25" lean-forward="false" selection-start-line="705" selection-start-column="19" selection-end-line="705" selection-end-column="25" />
+            <state relative-caret-position="238">
+              <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -55,8 +46,8 @@
       <file leaf-file-name="viewBookingSummaryController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="-179">
+              <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -75,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="currentBookings.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="currentBookings.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="259" lean-forward="false" selection-start-line="9" selection-start-column="259" selection-end-line="9" selection-end-column="259" />
+            <state relative-caret-position="137">
+              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -88,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pastBookings.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pastBookings.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -98,6 +89,16 @@
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="currentBookings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -123,16 +124,6 @@
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/Employee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="134" column="34" lean-forward="false" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="46" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -176,8 +167,8 @@
       <find>dateCh</find>
       <find>checkc</find>
       <find>this sh</find>
-      <find>readw</find>
       <find>Userb</find>
+      <find>readw</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
         <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/services.fxml" />
@@ -233,8 +223,9 @@
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
       </list>
     </option>
   </component>
@@ -734,13 +725,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00082" summary="service list complete">
-      <created>1493455775967</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1493455775967</updated>
-    </task>
     <task id="LOCAL-00083" summary="service list complete">
       <created>1493456973599</created>
       <option name="number" value="00083" />
@@ -1077,7 +1061,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493553955715</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="fixed error">
+      <created>1493554016094</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1493554016094</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1261,13 +1252,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="128" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
@@ -1286,13 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4709">
           <caret line="305" column="4" lean-forward="false" selection-start-line="305" selection-start-column="4" selection-end-line="314" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1553,14 +1530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1568,14 +1537,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1600,12 +1561,15 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="256" lean-forward="false" selection-start-line="9" selection-start-column="256" selection-end-line="9" selection-end-column="256" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
@@ -1619,21 +1583,50 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
+    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="259" lean-forward="false" selection-start-line="9" selection-start-column="259" selection-end-line="9" selection-end-column="259" />
+        <state relative-caret-position="352">
+          <caret line="259" column="0" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="256" lean-forward="false" selection-start-line="9" selection-start-column="256" selection-end-line="9" selection-end-column="256" />
+        <state relative-caret-position="238">
+          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-179">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
