@@ -203,7 +203,9 @@ public class businessBookingController {
                     String Details[] = x.split(" ",4);
                     bId = Details[0];
                     day = Details[1];
+
                     day = day.substring(0,1).toUpperCase() + day.substring(1);
+
                     if(bId.equals(businessID)&& !days.contains(day)) {
                         days.add(day);
 
@@ -299,7 +301,7 @@ public class businessBookingController {
 
     }*/
     public void cancel(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
@@ -372,7 +374,7 @@ public class businessBookingController {
             }
             String day = d.format(start);
             //gets the time of the service
-            System.out.println(day);
+
             if (bm.UserBooking(businessID, day, startinfo, endinfo)||driver.checkCurrBookings(businessID, start, startinfo, endinfo))
             {
                 //checks there are employees working and that the business is open

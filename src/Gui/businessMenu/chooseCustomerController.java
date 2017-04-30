@@ -65,7 +65,7 @@ public class chooseCustomerController {
         double count = 30;
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.customerList.size();i++){
-            count+=70;
+            count+=30;
             Button gridButtons = new Button();
             gridButtons.setText(login.customerList.get(i).getUsername()+ " "+ login.customerList.get(i).getName());
             gridButtons.setMnemonicParsing(false);
@@ -75,12 +75,12 @@ public class chooseCustomerController {
             gridButtons.setId(login.customerList.get(i).getUsername());
             gridButtons.setLayoutX(20.0);
             gridButtons.setMinWidth(370);
-            gridButtons.setMinHeight(60);
+            gridButtons.setMinHeight(20);
             gridButtons.setLayoutY(count);
 
             gridButtons.setOnAction( new EventHandler<ActionEvent>() {
                 public void handle(ActionEvent event) {
-                    pass("businessMakeBooking.fxml",gridButtons.getId(),businessID) ;
+                    pass("businessMakeBooking.fxml",businessID,gridButtons.getId()) ;
                     switchToMenu(event);
                 }
             });
