@@ -44,7 +44,7 @@ public class bookingController {
     Services s = new Services();
     Login login = new Login();
     Driver driver = new Driver();
-    Services selectedS = new Services(null,null,null,null,null);
+    public static Services selectedS = new Services(null,null,null,null,null);
     Services not = new Services(null,null,null,null,null);
     public static String businessID;
     public static String customerID;
@@ -52,7 +52,8 @@ public class bookingController {
     public ArrayList<DayOfWeek> date = new ArrayList<>();
     BusinessMenu bm = new BusinessMenu();
     public static LocalDate dateinfo;
-    public static String dateInfo;
+    public static String startinfo;
+    public static String endinfo;
 
     @FXML
     public DatePicker bdate;
@@ -159,6 +160,8 @@ public class bookingController {
                         cal.add(Calendar.HOUR,h );
                         String newTime = time.format(cal.getTime());
                         endtime.setText(newTime);
+                        startinfo = starttime.getText();
+                        endinfo = newTime;
                     }
                 }
             }
@@ -363,6 +366,16 @@ public class bookingController {
         return false;
     }
     public void checkBooking(ActionEvent event) throws IOException {//when button clicked
+        if(addBooking()){
+        //add to file
+        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+        }
+    }
+    public boolean addBooking(){
         if(dateCheck()){//checks correct date entered
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -377,7 +390,7 @@ public class bookingController {
             alert.setContentText("Please select Service.");
             alert.showAndWait();
         }
-        else if(bm.checktime(starttime.getText())){//checks start time choosen
+        else if(bm.checktime(startinfo)){//checks start time choosen
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -387,19 +400,20 @@ public class bookingController {
         else {
 
             DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
-            SimpleDateFormat d = new SimpleDateFormat("EEE");
+            SimpleDateFormat d = new SimpleDateFormat("EEEE");
             DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             Date start = Calendar.getInstance().getTime();
             String date = dateinfo.format(form);
-            System.out.println(businessID + " " + dateinfo);
+            System.out.println(startinfo + " " + endinfo);
             try {
                 start = time.parse(date);
             } catch (ParseException e) {
             }
             String day = d.format(start);
             //gets the time of the service
-
-            if (bm.UserBooking(businessID, day, starttime.getText(), endtime.getText())||driver.checkCurrBookings(businessID, start, starttime.getText(), endtime.getText())) {
+            System.out.println(day);
+            if (bm.UserBooking(businessID, day, startinfo, endinfo))//||driver.checkCurrBookings(businessID, start, startinfo, endinfo))
+            {
                 //checks there are employees working and that the business is open
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error");
@@ -409,16 +423,13 @@ public class bookingController {
             } else {
                 WriteToFile w = new WriteToFile();
                 String customername = loginMenu.findCName(customerID);
-                String s = businessID + "," + day + "," + date + "," + customername + "," + starttime.getText() + "-" + endtime.getText() + ",";
+                String s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
                 s += selectedS.getName() + "," + customerID;
-                w.WriteToWorkingdayTXT(s, "currentBookings");
-                //add to file
-                Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
-                Scene home_page_scene = new Scene(home_page);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(home_page_scene);
-                app_stage.show();
+                w.WriteToWorkingdayTXT(s, "currentBookings.txt");
+                return true;
+
             }
         }
+        return false;
     }
 }

@@ -359,7 +359,7 @@ public class BusinessMenu {
         day = day.toLowerCase();
         if( !timeCheck (starttime, endtime)){
 //add a check against current bookings in system
-            if( driver.checkAllWorktimes(bId,day,starttime,endtime)){return true;}//check against current shifts on this day
+            //if( driver.checkAllWorktimes(bId,day,starttime,endtime)){return true;}//check against current shifts on this day
             if( w.readWork(bId,day,starttime,endtime)){return true;}//checks based on business hours set
 
             return false;//correct booking time
