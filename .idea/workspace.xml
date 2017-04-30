@@ -6,7 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,11 +62,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addServices.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addServices.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="249" lean-forward="false" selection-start-line="14" selection-start-column="249" selection-end-line="14" selection-end-column="249" />
+              <caret line="14" column="250" lean-forward="false" selection-start-line="14" selection-start-column="170" selection-end-line="14" selection-end-column="250" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="currentBookings.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="259" lean-forward="false" selection-start-line="9" selection-start-column="259" selection-end-line="9" selection-end-column="259" />
               <folding />
             </state>
           </provider>
@@ -120,16 +133,6 @@
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bookings.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bookings/Bookings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="63" column="25" lean-forward="false" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -205,7 +208,6 @@
         <option value="$PROJECT_DIR$/employeeList.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/services.fxml" />
@@ -231,6 +233,7 @@
         <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
       </list>
     </option>
   </component>
@@ -730,13 +733,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00080" summary="make booking(customer)">
-      <created>1493454279854</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1493454279854</updated>
-    </task>
     <task id="LOCAL-00081" summary="format change">
       <created>1493454438370</created>
       <option name="number" value="00081" />
@@ -1073,7 +1069,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493553669139</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="fixed error">
+      <created>1493553902219</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1493553902219</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1176,7 +1179,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="error encountered" />
     <MESSAGE value="issue found and fixed" />
     <MESSAGE value="view customer booking done" />
     <MESSAGE value="make booking(customer)" />
@@ -1201,7 +1203,8 @@
     <MESSAGE value="update to view business hours" />
     <MESSAGE value="fixing booking" />
     <MESSAGE value="retrieve bID" />
-    <option name="LAST_COMMIT_MESSAGE" value="retrieve bID" />
+    <MESSAGE value="fixed error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1250,17 +1253,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="134" lean-forward="false" selection-start-line="11" selection-start-column="134" selection-end-line="11" selection-end-column="134" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1629,7 +1621,18 @@
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="249" lean-forward="false" selection-start-line="14" selection-start-column="249" selection-end-line="14" selection-end-column="249" />
+          <caret line="14" column="250" lean-forward="false" selection-start-line="14" selection-start-column="170" selection-end-line="14" selection-end-column="250" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="259" lean-forward="false" selection-start-line="9" selection-start-column="259" selection-end-line="9" selection-end-column="259" />
           <folding />
         </state>
       </provider>
