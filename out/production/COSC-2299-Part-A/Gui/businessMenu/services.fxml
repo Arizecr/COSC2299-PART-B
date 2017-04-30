@@ -14,14 +14,20 @@
                 <DropShadow color="#b5adad" />
             </effect>
             <children>
-                <Text layoutX="119.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Services">
+                <Text layoutX="132.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Services">
                     <font>
                         <Font size="22.0" />
                     </font>
                 </Text>
                 <Button layoutX="224.0" layoutY="290.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
-                <Button layoutX="119.0" layoutY="84.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Add Services" />
-            <Button layoutX="119.0" layoutY="138.0" mnemonicParsing="false" text="Remove Services" />
+                <Button layoutX="83.0" layoutY="111.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="176.0" text="Add Services">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="83.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="176.0" text="Remove Services">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
             </children>
         </Pane>
     </children>
