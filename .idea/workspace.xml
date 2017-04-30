@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,13 +83,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="514">
               <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeBooking.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -159,7 +172,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/bookings/Services.java" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" />
         <option value="$PROJECT_DIR$/workdaysList.txt" />
         <option value="$PROJECT_DIR$/src/menu/Login.java" />
         <option value="$PROJECT_DIR$/src/bookings/Bookings.java" />
@@ -196,6 +208,7 @@
         <option value="$PROJECT_DIR$/currentBookings.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
+        <option value="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" />
       </list>
     </option>
   </component>
@@ -600,13 +613,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00067" summary="small change">
-      <created>1493388983509</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1493388983509</updated>
-    </task>
     <task id="LOCAL-00068" summary="small change">
       <created>1493389244034</created>
       <option name="number" value="00068" />
@@ -943,7 +949,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493547800604</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="add employee availibility - gui">
+      <created>1493548794304</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1493548794304</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1084,7 +1097,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/currentBookings" />
     <entry file="file://$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1481,6 +1493,17 @@
           <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>
