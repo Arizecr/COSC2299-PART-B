@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
     <children>
         <Pane id="Lolo" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
          <children>
@@ -25,6 +25,7 @@
                </font>
             </Text>
             <Button layoutX="6.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToAddAvailibility" prefHeight="27.0" prefWidth="330.0" text="Add Availibility for Employee" />
+            <Button layoutX="6.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToMakeBooking" prefHeight="25.0" prefWidth="330.0" text="Make Booking" />
          </children>
          <effect>
             <DropShadow color="#9a9090" />

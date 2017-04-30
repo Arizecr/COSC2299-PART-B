@@ -1,6 +1,7 @@
 package Gui.businessMenu;
 
 import Gui.Controller;
+import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
-import coreFunctions.Driver;
 
 import java.io.IOException;
 import java.net.URL;
@@ -89,6 +89,14 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeAvailableDayController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
+    private void passToChooseCustomer(String fxmlFile, String parameterToPass) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        chooseCustomerController controller = loader.getController();
         controller.setBusinessID(parameterToPass);
 
     }
@@ -186,6 +194,23 @@ public class businessMenuController extends Controller implements Initializable{
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
         app_stage.show();
+    }
+    @FXML //view summaries of booking
+    private void switchToMakeBooking(ActionEvent event) throws IOException {
+        passToChooseCustomer("chooseCustomer.fxml", businessID);
+        Parent home_page = FXMLLoader.load(getClass().getResource("chooseCustomer.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("chooseCustomer.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        chooseCustomerController controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startChoose(app_stage);
+
+
+
     }
 
     @FXML //exit system

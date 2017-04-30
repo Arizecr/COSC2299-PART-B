@@ -91,7 +91,7 @@ public class Controller {
         else if(username.getText().charAt(0) == 'c'){
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 busId = username.getText();//is the customer
-                passC("customerMenu/chooseBusiness.fxml", busId);
+                passC("customerMenu/chooseCustomer.fxml", busId);
                 switchToChooseBusiness(event);
             }
             else{
