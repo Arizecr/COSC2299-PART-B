@@ -4,10 +4,7 @@ package Gui.businessMenu;
  * Created by asus on 28-Apr-17.
  */
 
-import Gui.Controller;
 import coreFunctions.Driver;
-import EmployeeAvailabilityDays.AvailableDay;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,14 +12,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -90,22 +86,15 @@ public class pastBookings implements Initializable {
         } catch (FileNotFoundException e) {
         }
     }
-
-
     @FXML
-    void back(ActionEvent event) throws IOException {
-        //Passes to addEmployeeController
-
-        passToViewBookingSummary("viewBookingSummary.fxml", businessID);
+    public void switchToSummary(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookingSummary.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
-
-
-        //System.out.println(busId); //get Businessid
-
+        app_stage.show();
     }
+
 
 
     public void cancel(ActionEvent event) throws IOException {
