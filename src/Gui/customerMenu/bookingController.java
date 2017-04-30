@@ -79,6 +79,11 @@ public class bookingController {
 
     }
 
+    public static void setDateinfo(LocalDate d){
+        dateinfo = d;
+
+    }
+
     public void startMakeBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
@@ -362,7 +367,7 @@ public class bookingController {
             DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             Date start = Calendar.getInstance().getTime();
             String date = dateinfo.format(form);
-            System.out.println(startinfo + " " + endinfo);
+           // System.out.println(startinfo + " " + endinfo);
             try {
                 start = time.parse(date);
             } catch (ParseException e) {
