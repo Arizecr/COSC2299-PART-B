@@ -108,6 +108,14 @@ public class businessMenuController extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+    private void passToViewBookingSummary(String fxmlFile, String parameterToPass) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        viewBookingSummaryController controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
 
 
 
@@ -198,6 +206,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML //view summaries of booking
     private void switchToViewBookingSummary(ActionEvent event) throws IOException {
+        passToViewBookingSummary("viewBookingSummary.fxml",businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookingSummary.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
