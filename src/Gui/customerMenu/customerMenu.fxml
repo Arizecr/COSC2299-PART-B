@@ -14,7 +14,7 @@
                 <Button layoutX="6.0" layoutY="70.0" mnemonicParsing="false" onAction="#switchToBookAppointment" prefHeight="90.0" prefWidth="330.0" text="Book appointment (view available days/times)" />
                 <Button layoutX="6.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToViewCustomerBookings" prefHeight="89.0" prefWidth="330.0" text="View Booking(s)" />
                 <Button layoutX="6.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="90.0" prefWidth="330.0" text="Exit System" />
-                <Text layoutX="44.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Owner Menu">
+                <Text layoutX="79.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Menu">
                     <font>
                         <Font name="American Typewriter" size="26.0" />
                     </font>
