@@ -190,7 +190,7 @@ public class bookingController {
         });
         starttime.textProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if(!bm.checktime(starttime.getText())&&(!selectedS.toString().equals(not.toString())))
+                if((!bm.checktime(starttime.getText()))&&(!selectedS.toString().equals(not.toString())))
                 {
                     updateETime();
                 }
@@ -319,8 +319,8 @@ public class bookingController {
                 s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
                 s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
                 s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
-                if(driver.currentBookings.get(i).getEmployeeID()!=null){
-                    s+="\nEmployee: " + driver.currentBookings.get(i).getEmployeeID();
+                if(driver.currentBookings.get(i).getEmployeeID()!=""||!(driver.currentBookings.get(i).getEmployeeID().isEmpty())){
+                    s+="\nEmployee: " + e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID());
                 }
                 bookings.add(s);
             }

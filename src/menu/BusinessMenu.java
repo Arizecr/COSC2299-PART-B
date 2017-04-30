@@ -5,7 +5,6 @@ import EmployeeAvailabilityDays.AvailableDay;
 import bookings.Services;
 import coreFunctions.Driver;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import test.Logging;
 import user.Employee;
 
@@ -309,12 +308,7 @@ public class BusinessMenu {
         if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
              return true;}
 
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText("Invalid time. Try again.");
 
-        alert.showAndWait();
         return false;
     }
     public boolean ctime(String t){
