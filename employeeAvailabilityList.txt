@@ -5,3 +5,4 @@ b1 e2 Tuesday 2:00 19:00
 b1 e1 Friday 12:00 15:00
 b1 e1 dadwad 12:00 13:00
 b1 e1 Monday 10:30 11:00
+b1 e3 Monday 12:00 13:00

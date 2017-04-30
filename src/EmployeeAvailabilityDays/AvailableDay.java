@@ -127,6 +127,15 @@ public class AvailableDay {
 
         return false;
     }
+
+    public boolean checkFirstTimeEmployee(String eid){
+        loadInfo();
+        for(int i=0; i<availability.size(); i++){
+            availability.get(i).contains(eid);
+            return true;
+        }
+        return false;
+    }
     public boolean checkDay(String b, String e, String d){
         loadInfo();
         String bID= "" ;
