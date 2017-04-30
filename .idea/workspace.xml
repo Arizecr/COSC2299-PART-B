@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/bookingController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/bookingController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/currentBookings.txt" afterPath="$PROJECT_DIR$/currentBookings.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +65,8 @@
       <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="324" column="32" lean-forward="true" selection-start-line="324" selection-start-column="32" selection-end-line="324" selection-end-column="32" />
+            <state relative-caret-position="253">
+              <caret line="321" column="95" lean-forward="false" selection-start-line="321" selection-start-column="95" selection-end-line="321" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -119,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dayo</find>
       <find>che</find>
       <find>checktime(starttime)</find>
       <find>checktime(</find>
@@ -149,6 +146,7 @@
       <find>invali</find>
       <find>checkt</find>
       <find>invalid tim</find>
+      <find>system</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -686,13 +684,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00075" summary="issue found and fixed">
-      <created>1493446814767</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1493446814767</updated>
-    </task>
     <task id="LOCAL-00076" summary="issue found and fixed">
       <created>1493450586704</created>
       <option name="number" value="00076" />
@@ -1029,7 +1020,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493551387876</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="fixing booking">
+      <created>1493552493040</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1493552493040</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1584,8 +1582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="324" column="32" lean-forward="true" selection-start-line="324" selection-start-column="32" selection-end-line="324" selection-end-column="32" />
+        <state relative-caret-position="253">
+          <caret line="321" column="95" lean-forward="false" selection-start-line="321" selection-start-column="95" selection-end-line="321" selection-end-column="95" />
           <folding />
         </state>
       </provider>

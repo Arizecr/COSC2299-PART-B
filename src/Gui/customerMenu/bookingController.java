@@ -141,7 +141,7 @@ public class bookingController {
             if(businessID.equals(e.employeeList.get(i).getbId())){
                 emp.add(e.employeeList.get(i));
                 String n = e.employeeList.get(i).getName();
-                System.out.println(n);//checking
+
                 employees.add(n);
 
 
@@ -319,7 +319,7 @@ public class bookingController {
                 s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
                 s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
                 s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
-                if(driver.currentBookings.get(i).getEmployeeID()!=""||!(driver.currentBookings.get(i).getEmployeeID().isEmpty())){
+                if(e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID())!=null){
                     s+="\nEmployee: " + e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID());
                 }
                 bookings.add(s);
@@ -410,7 +410,8 @@ public class bookingController {
             }
             String day = d.format(start);
             //gets the time of the service
-            System.out.println(day);
+           //
+            // System.out.println(day);
             if (bm.UserBooking(businessID, day, startinfo, endinfo)||driver.checkCurrBookings(businessID, start, startinfo, endinfo))
             {
                 //checks there are employees working and that the business is open
