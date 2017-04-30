@@ -319,6 +319,9 @@ public class bookingController {
                 s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
                 s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
                 s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
+                if(driver.currentBookings.get(i).getEmployeeID()!=null){
+                    s+="\nEmployee: " + driver.currentBookings.get(i).getEmployeeID();
+                }
                 bookings.add(s);
             }
 

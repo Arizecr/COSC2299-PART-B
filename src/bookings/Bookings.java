@@ -59,6 +59,10 @@ public abstract class Bookings {
 
         return customerID;
     }
+    public String getEmployeeID() {
+
+        return employeeID;
+    }
 
 
     public String getBusiness() {

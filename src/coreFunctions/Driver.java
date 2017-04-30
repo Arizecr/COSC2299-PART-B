@@ -53,8 +53,9 @@ public class Driver {
                     String time = Details[4];
                     String service = Details[5];
                     String id = Details[6];
+                    String eid = Details[8];
 
-                    CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id);
+                    CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id,eid);
                     if(b.equals(business))  currentBookings.add(bookingInfo);
                 }
                 //prints error
@@ -97,7 +98,7 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 8);
+                    String Details[] = x.split(",", 9);
                     String business = Details[0];
                     String day = Details[1];
                     String date = Details[2];
@@ -106,7 +107,9 @@ public class Driver {
                     String service = Details[5];
                     String cancelled = Details[6];
                     String id = Details[7];
-                    PastBookings bookingInfo = new PastBookings(business,day,date, customer, time, service, cancelled,id);
+                    String eid = Details[8];
+
+                    PastBookings bookingInfo = new PastBookings(business,day,date, customer, time, service, cancelled,id,eid);
                     if(b.equals(business)) pastBookings.add(bookingInfo);
                 }
                 //prints error
