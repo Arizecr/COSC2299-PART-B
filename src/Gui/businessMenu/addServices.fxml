@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
     <children>
         <Pane layoutX="31.0" layoutY="26.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="26.0">
             <effect>
@@ -19,8 +19,9 @@
                         <Font size="22.0" />
                     </font>
                 </Text>
-                <Button layoutX="81.0" layoutY="249.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
-                <Button layoutX="184.0" layoutY="249.0" mnemonicParsing="false" text="Add" />
+                <Button layoutX="224.0" layoutY="290.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" textFill="#4465ab" />
+                <Button layoutX="119.0" layoutY="84.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Add Services" />
+            <Button layoutX="119.0" layoutY="138.0" mnemonicParsing="false" text="Remove Services" />
             </children>
         </Pane>
     </children>
