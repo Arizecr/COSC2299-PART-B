@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -20,6 +21,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -64,6 +68,12 @@ public class removeWorkingDayController implements Initializable{
     private TextField day;
 
     @FXML
+    private Label eidError;
+
+    @FXML
+    private Label dayError;
+
+    @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
 
@@ -100,7 +110,8 @@ public class removeWorkingDayController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("dwlo");
+        eidError.setVisible(false);
+        dayError.setVisible(false);
         readEmployee();
         ArrayList<String> array = driver.loadInfo();
         if(array!= null && employee!=null){
@@ -122,6 +133,34 @@ public class removeWorkingDayController implements Initializable{
                 }
             });
         }
+
+        //CHECK FOR Employee ID
+        eid.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerEIDCheck(newText)){
+                    eidError.setVisible(false);
+                }else{
+                    eidError.setVisible(true);
+                }
+            }
+            else{
+                eidError.setVisible(false);
+            }
+        });
+
+//CHECK FOR DAY
+        day.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerCheckDay(newText)){
+                    dayError.setVisible(false);
+                }else{
+                    dayError.setVisible(true);
+                }
+            }
+            else{
+                dayError.setVisible(false);
+            }
+        });
     }
 
     private ArrayList readEmployee(){
@@ -159,5 +198,27 @@ public class removeWorkingDayController implements Initializable{
 
         return employee;
 
+    }
+
+    private boolean listenerEIDCheck(String empeid){
+
+        for(int i=0; i<employee.size(); i++){
+            if(employee.get(i).get(0).equals(eid.getText())){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean listenerCheckDay(String day){
+        try{
+            DateFormat time = new SimpleDateFormat("EEEE");
+            time.parse(day);
+        }
+        catch(ParseException e){
+            return false;
+        }
+        return true;
     }
 }
