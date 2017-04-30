@@ -6,7 +6,6 @@ package Gui.businessMenu;
 
 import Gui.Controller;
 import bookings.Services;
-import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,11 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import user.Employee;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class servicesController extends Controller implements Initializable{
@@ -83,46 +80,12 @@ public class servicesController extends Controller implements Initializable{
 
     }
 
-    private void passToAddServices(String fxmlFile, String parameterToPass) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        Pane pane = loader.load();
-        addServices controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
-
-    }
-
-    private void passToRemoveServices(String fxmlFile, String parameterToPass) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-        Pane pane = loader.load();
-        removeServices controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
-
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        serviceID.setText(service.generateServiceNo());
     }
 
-    @FXML
-    private void switchToAddServices(ActionEvent event) throws IOException {
-        passToAddServices("addServices.fxml", businessID);
-        Parent home_page = FXMLLoader.load(getClass().getResource("addServices.fxml"));
-        Scene home_page_scene = new Scene(home_page);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
-    }
-
-    @FXML
-    private void switchToRemoveServices(ActionEvent event) throws IOException {
-        passToRemoveServices("removeServices.fxml", businessID);
-        Parent home_page = FXMLLoader.load(getClass().getResource("removeServices.fxml"));
-        Scene home_page_scene = new Scene(home_page);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
-    }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
