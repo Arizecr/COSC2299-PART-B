@@ -492,6 +492,7 @@ public class Driver {
     }
     public void checkBookings(){
         currentBookings = insertionSortDate(currentBookings);
+        pastBookings = insertionSortDate(pastBookings);
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE,0);
 
@@ -511,6 +512,8 @@ public class Driver {
                 //ordered dates therefore do not nees to search through all
             }catch(ParseException e){}
         }
+        currentBookings = insertionSortDate(currentBookings);
+        pastBookings = insertionSortDate(pastBookings);
         }
     /*
      * View current bookings of a business

@@ -71,11 +71,12 @@ public class currentBookings  {
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("currentBookings.fxml"));
         driver.loadCurrentBookings(businessID);
+        driver.checkBookings();
         ListView<String> list = new ListView<String>();
         list.disabledProperty();
         list.setLayoutX(60);
         list.setLayoutY(94);
-        list.setMaxHeight(230);
+        list.setMaxHeight(200);
         list.setMaxWidth(245);
         ArrayList<String> bookings = new ArrayList<>();
 

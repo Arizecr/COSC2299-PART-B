@@ -59,6 +59,7 @@ public class pastBookings{
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("pastBookings.fxml"));
         driver.loadPastBookings(businessID);
+        driver.checkBookings();
         ListView<String> list = new ListView<String>();
         list.disabledProperty();
         list.setLayoutX(60);

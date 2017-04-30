@@ -305,6 +305,7 @@ public class bookingController {
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
         driver.loadCurrentBookings(businessID);
+        driver.checkBookings();
         ListView<String> list = new ListView<String>();
         list.disabledProperty();
         list.setLayoutX(60);

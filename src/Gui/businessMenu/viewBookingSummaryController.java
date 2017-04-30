@@ -98,7 +98,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
         FXMLLoader loader = new FXMLLoader(getClass().getResource("pastBookings.fxml"));
         Pane pane = loader.load();
         //MUST change classname to the file u want to pass the variable to
-        currentBookings controller = loader.getController();
+       pastBookings controller = loader.getController();
         //function in the controller u go must contain this
         controller.startViewBook(app_stage);
     }
