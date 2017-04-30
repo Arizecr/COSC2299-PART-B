@@ -134,6 +134,7 @@ public class businessBookingController {
             }
         });
         c.setTooltip(new Tooltip("Select the service"));
+        e.loadEmployeeInformation();
         for(int i=0;i<e.employeeList.size();i++){
             //makes sure the services of only the current business are displayed
             if(businessID.equals(e.employeeList.get(i).getbId())){

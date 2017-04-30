@@ -135,6 +135,7 @@ public class bookingController {
             }
         });
         c.setTooltip(new Tooltip("Select the service"));
+        e.loadEmployeeInformation();
         for(int i=0;i<e.employeeList.size();i++){
             //makes sure the services of only the current business are displayed
             if(businessID.equals(e.employeeList.get(i).getbId())){
@@ -215,7 +216,7 @@ public class bookingController {
         ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().add(endtime);
         ((AnchorPane) rootNode).getChildren().add(c);
-        ((AnchorPane) rootNode).getChildren().addAll(c2);
+        ((AnchorPane) rootNode).getChildren().add(c2);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 

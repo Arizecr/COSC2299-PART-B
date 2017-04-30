@@ -6,3 +6,4 @@ b1,Friday,05/05/2017,Gabby,12:00-12:30,hair cut,c1
 b1,Wednesday,03/05/2017,Gabby,12:00-12:30,hair cut,c1
 b1,Friday,05/05/2017,Gabby,11:00-11:30,shave,c1
 b1,Thursday,04/05/2017,TOTORO,12:00-12:30,shave,c123456
+b1,Thursday,18/05/2017,Gabby,12:00-12:30,shave,c1,e3
