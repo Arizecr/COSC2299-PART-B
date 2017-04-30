@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +19,9 @@
       <file leaf-file-name="businessBookingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5865">
+            <state relative-caret-position="5175">
               <caret line="376" column="0" lean-forward="false" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -34,7 +29,7 @@
       <file leaf-file-name="currentBookings.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/currentBookings.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="105">
               <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding />
             </state>
@@ -44,7 +39,7 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="1080">
               <caret line="93" column="50" lean-forward="false" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
               <folding />
             </state>
@@ -54,18 +49,8 @@
       <file leaf-file-name="viewBookingSummaryController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="405">
               <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="businessdaysList.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,7 +59,7 @@
       <file leaf-file-name="businessMenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="2610">
               <caret line="174" column="36" lean-forward="false" selection-start-line="174" selection-start-column="36" selection-end-line="174" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,66 +68,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+            <state relative-caret-position="169">
+              <caret line="437" column="44" lean-forward="true" selection-start-line="437" selection-start-column="44" selection-end-line="437" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseCustomerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+      <file leaf-file-name="services.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/services.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="removeWorkingDay.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDay.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addServices.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addServices.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit4 Test Class" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>custo</find>
-      <find>load</find>
-      <find>loadin</find>
-      <find>dayo</find>
-      <find>che</find>
-      <find>checktime(starttime)</find>
-      <find>checktime(</find>
-      <find>check</find>
-      <find>checkwor</find>
-      <find>chec</find>
-      <find>checkw</find>
-      <find>read</find>
-      <find>currentboo</find>
-      <find>[]</find>
-      <find>count==</find>
-      <find>count=</find>
-      <find>user</find>
-      <find>Invalid</find>
-      <find>checkday</find>
-      <find>checkTime</find>
-      <find>Invalid Day</find>
-      <find>verify</find>
-      <find>isNumer</find>
-      <find>checkWork</find>
-      <find>Can't start after its ended</find>
-      <find>checkfIle</find>
-      <find>Sys</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -154,55 +139,10 @@
       <projects_view />
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/bookings/Services.java" />
-        <option value="$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" />
-        <option value="$PROJECT_DIR$/workdaysList.txt" />
-        <option value="$PROJECT_DIR$/src/menu/Login.java" />
-        <option value="$PROJECT_DIR$/src/bookings/Bookings.java" />
-        <option value="$PROJECT_DIR$/src/test/CustomerBookingTest.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDay.fxml" />
-        <option value="$PROJECT_DIR$/employeeAvailabilityList.txt" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addEmployee.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDayController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDayController.java" />
-        <option value="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
-        <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-        <option value="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
-        <option value="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
-        <option value="$PROJECT_DIR$/employeeList.txt" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/services.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeServices.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeServices.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseBusiness.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMakeBooking.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomer.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/Controller.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" />
-        <option value="$PROJECT_DIR$/currentBookings.txt" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="716" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -219,28 +159,26 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -250,29 +188,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -283,18 +203,14 @@
               <option name="myItemId" value="Gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customerMenu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BBB" />
+              <option name="myItemId" value="COSC2299-PART-B" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -302,138 +218,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="coreFunctions" />
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="businessMenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="production" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC-2299-Part-A" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PART-B" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Gui.businessMenu" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yesmi\IdeaProjects\BB\src\Gui\businessMenu" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Gui.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="COSC-2299-Part-A" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="CustomerBookingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="COSC-2299-Part-A" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.CustomerBookingTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -459,22 +299,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -494,52 +318,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="COSC-2299-Part-A" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -578,16 +356,6 @@
       <listeners />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CustomerBookingTest" />
-    </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CustomerBookingTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -599,13 +367,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
-    </task>
-    <task id="LOCAL-00067" summary="small change">
-      <created>1493388983509</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1493388983509</updated>
     </task>
     <task id="LOCAL-00068" summary="small change">
       <created>1493389244034</created>
@@ -943,43 +704,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493547800604</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="add employee availibility - gui">
+      <created>1493548899338</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1493548899338</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 44m 16s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 46m 25s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 54m 37s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 55m 14s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 56m 20s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 13h 56m 39s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 14h 00m 14s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 14h 01m 06s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 14h 02m 03s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CustomerBookingTest - 2017.04.30 at 15h 15m 32s.xml">
-      <configuration name="CustomerBookingTest" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -996,7 +732,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33549434" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3233909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1084,7 +820,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/currentBookings" />
     <entry file="file://$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1318,48 +1053,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/services.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeServices.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1417,7 +1114,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/businessdaysList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
@@ -1425,7 +1122,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
+        <state relative-caret-position="780">
           <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
           <folding />
         </state>
@@ -1433,17 +1130,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5865">
+        <state relative-caret-position="5175">
           <caret line="376" column="0" lean-forward="false" selection-start-line="376" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/currentBookings.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="105">
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding />
         </state>
@@ -1451,7 +1146,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
+        <state relative-caret-position="1080">
           <caret line="93" column="50" lean-forward="false" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
           <folding />
         </state>
@@ -1459,7 +1154,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="405">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
@@ -1467,7 +1162,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="2610">
           <caret line="174" column="36" lean-forward="false" selection-start-line="174" selection-start-column="36" selection-end-line="174" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1477,10 +1172,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="460" column="0" lean-forward="true" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+        <state relative-caret-position="169">
+          <caret line="437" column="44" lean-forward="true" selection-start-line="437" selection-start-column="44" selection-end-line="437" selection-end-column="44" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/services.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDay.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeServices.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>
