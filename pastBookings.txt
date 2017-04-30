@@ -1,2 +1,2 @@
-b1,Tuesday,25/04/2017,Ramona Winters,11:00-13:00,Standard womens cut,no,c1
-b1,Tuesday,25/04/2017,Ramona Winters,13:00-15:00,Standard womens cut,no,c1
+b1,Tuesday,25/04/2017,Ramona Winters,11:00-13:00,Standard womens cut,no,c1,
+b1,Tuesday,25/04/2017,Ramona Winters,13:00-15:00,Standard womens cut,no,c1,

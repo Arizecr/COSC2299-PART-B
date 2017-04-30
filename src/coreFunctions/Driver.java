@@ -45,7 +45,7 @@ public class Driver {
                 String x;
                 while ((x = br.readLine()) != null) {
                     // printing out each line in the file
-                    String Details[] = x.split(",", 7);
+                    String Details[] = x.split(",", 8);
                     String business = Details[0];
                     String day = Details[1];
                     String date = Details[2];
@@ -53,7 +53,7 @@ public class Driver {
                     String time = Details[4];
                     String service = Details[5];
                     String id = Details[6];
-                    String eid = Details[8];
+                    String eid = Details[7];
 
                     CurrentBookings bookingInfo = new CurrentBookings(business,day,date, customer, time, service, id,eid);
                     if(b.equals(business))  currentBookings.add(bookingInfo);
