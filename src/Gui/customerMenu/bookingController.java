@@ -51,9 +51,9 @@ public class bookingController {
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
     BusinessMenu bm = new BusinessMenu();
-    public static LocalDate dateinfo;
-    public static String startinfo;
-    public static String endinfo;
+    public static LocalDate dateinfo = null;
+    public static String startinfo = null;
+    public static String endinfo = null;
 
     @FXML
     public DatePicker bdate;
@@ -167,10 +167,7 @@ public class bookingController {
 
                 dateinfo = newValue;//sets the new date value for use
                 DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                //               Date start = Calendar.getInstance().getTime() ;
-
                 String dateInfo = dateinfo.format(form);
-                //        System.out.println(dateInfo);
             }
         });
 
@@ -288,10 +285,6 @@ public class bookingController {
 
         }
         ObservableList<String> data = FXCollections.observableArrayList(bookings);
-        //ArrayList<Button> b = new ArrayList<>();
-        // AnchorPane root = new AnchorPane();
-
-        //print the customers bookings by date
         ((AnchorPane) rootNode).getChildren().add(new Pane());
 
         ((AnchorPane) rootNode).getChildren().addAll(list);
@@ -312,6 +305,7 @@ public class bookingController {
         Calendar c = Calendar.getInstance();
         int dayOfYear = c.get(Calendar.DAY_OF_YEAR);
         int Year = c.get(Calendar.YEAR);
+        if(dateinfo ==null){return true;}
         if (date.contains(dateinfo.getDayOfWeek())) {
             return true;
         }
@@ -323,6 +317,7 @@ public class bookingController {
         {
             return true;
         }
+
 
 
         return false;
@@ -352,7 +347,7 @@ public class bookingController {
             alert.setContentText("Please select Service.");
             alert.showAndWait();
         }
-        else if(bm.checktime(startinfo)){//checks start time choosen
+        else if((startinfo ==null)||bm.checktime(startinfo)){//checks start time choosen
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
