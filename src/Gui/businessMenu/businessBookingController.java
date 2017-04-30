@@ -6,7 +6,6 @@ import coreFunctions.WriteToFile;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import menu.BusinessMenu;
@@ -267,7 +265,7 @@ public class businessBookingController {
         return dayCellFactory;
     }
 
-    public void startViewBook(Stage stage) throws IOException {
+   /* public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
@@ -299,7 +297,7 @@ public class businessBookingController {
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
-    }
+    }*/
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);

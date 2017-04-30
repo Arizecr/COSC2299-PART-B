@@ -37,15 +37,7 @@ public class chooseCustomerController {
 
     }
 
-    public static void setCustomerID(String cid){
-        customerID = cid;
 
-    }
-
-    public String  getCustomerID(){
-        return customerID;
-
-    }
     private void pass(String fxmlFile, String parameterToPass1,String parameterToPass2) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -88,7 +80,7 @@ public class chooseCustomerController {
 
             gridButtons.setOnAction( new EventHandler<ActionEvent>() {
                 public void handle(ActionEvent event) {
-                    pass("businessMakeBooking.fxml",gridButtons.getId(),customerID) ;
+                    pass("businessMakeBooking.fxml",gridButtons.getId(),businessID) ;
                     switchToMenu(event);
                 }
             });
@@ -104,12 +96,18 @@ public class chooseCustomerController {
     @FXML
     private void switchToMenu(ActionEvent event)  {
         try {
-
             Parent home_page = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
             Scene home_page_scene = new Scene(home_page);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(home_page_scene);
-            app_stage.show();
+            //app_stage.setScene(home_page_scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("businessMakeBooking.fxml"));
+            Pane pane = loader.load();
+            //MUST change classname to the file u want to pass the variable to
+            businessBookingController controller = loader.getController();
+            //function in the controller u go must contain this
+            controller.startMakeBook(app_stage);
+
+
         }
         catch(IOException e){}
 
