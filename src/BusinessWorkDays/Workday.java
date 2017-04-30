@@ -209,6 +209,59 @@ public class Workday
         }
         return false;
     }
+    public boolean readWork2(String b,String d,String s,String end){
+        Details();
+        //------------------------------------------------------check if date already exists
+        int count = 0;
+        for(int i=0; i < workhours.size() ;i++) {
+            if (b.equals(workhours.get(i).getBId())) {
+                if (d.equals(workhours.get(i).workD())) {
+                    DateFormat time = new SimpleDateFormat("HH:mm");
+                    count++;
+                    try {
+                        Date st = time.parse(s);
+                        Date et = time.parse(end);
+                        Date Bst = time.parse(workhours.get(i).getStarttime());
+                        Date Bet = time.parse(workhours.get(i).getEndtime());
+
+                        // This makes sure scheduled employee shift is within operating hours of business
+                        if (et.after(Bet)) {
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            return true;
+
+                        } else if (st.before(Bst)) {
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+
+                            return true;
+                        }
+                        else if(et.before(st)){
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            return true;
+                        }
+
+                        else if(et.equals(st)){
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            return true;
+                        }
+
+                    } catch (ParseException e) {
+                        //System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
+                        return true;
+                    }
+                }
+            }
+        }
+
+        if(count==0){
+
+            return true;
+        }
+        return false;
+    }
 
     public void printFile(String realbId){
         BufferedReader br;
