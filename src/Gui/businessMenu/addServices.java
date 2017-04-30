@@ -89,18 +89,24 @@ public class addServices extends Controller implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        serviceID.setText(service.generateServiceNo());
-        service.printService(businessID);
+
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
-        ArrayList<Services> array = service.printService(businessID);
-        serviceList.setItems(FXCollections.observableArrayList(test(array)));
+
+        ArrayList<Services> array = service.serviceList;
+
+        ArrayList<String> array2 = new ArrayList<>();
+        array2 = test(array);
+
+        serviceList.setItems(FXCollections.observableArrayList(array2));
     }
 
     private ArrayList test(ArrayList<Services> array){
+        service.printService(businessID);
         ArrayList<String> array2 = new ArrayList<>();
         for(int i=0;i<array.size();i++){
             //makes sure the services of only the current business are displayed
+
             if(businessID.equals(array.get(i).b())){
                 String n = array.get(i).getName() +" - length: ";
                 String l = array.get(i).getLengthT();

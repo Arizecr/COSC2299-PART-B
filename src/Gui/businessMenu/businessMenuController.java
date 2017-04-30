@@ -196,6 +196,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML //add services
     private void switchToAddServices(ActionEvent event) throws IOException {
+        System.out.println(businessID);
         passToAddServices("addServices.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("addServices.fxml"));
         Scene home_page_scene = new Scene(home_page);
