@@ -845,8 +845,15 @@ public class Driver {
         for (int i = 1; i < days.size(); i++) {
             for(int j = i ; j > 0 ; j--){
                 try {
-                    Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j-1).getDate());
-                    Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(days.get(j).getDate());
+                    String Details1[] = days.get(j-1).getTimeBooked().split("-", 2);
+                    String start1 = Details1[0];
+                    String end1 = Details1[1];
+                    String Details[] = days.get(j).getTimeBooked().split("-", 2);
+                    String start = Details1[0];
+                    String end = Details1[1];
+                    Date date1 = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(days.get(j-1).getDate()+" "+start1);
+                    Date date2 = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(days.get(j).getDate()+" "+start);
+
                     if ((date2).before(date1)) {
                         temp = days.get(j);
                         days.set(j, days.get(j - 1));

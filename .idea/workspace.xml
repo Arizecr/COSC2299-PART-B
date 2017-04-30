@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBookingSummaryController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBookingSummaryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver$DayOfWeek.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver$DayOfWeek.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/coreFunctions/Driver.java" afterPath="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,11 +25,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="307" column="31" lean-forward="false" selection-start-line="307" selection-start-column="31" selection-end-line="307" selection-end-column="31" />
+            <state relative-caret-position="4">
+              <caret line="313" column="30" lean-forward="true" selection-start-line="313" selection-start-column="30" selection-end-line="313" selection-end-column="30" />
               <folding>
                 <element signature="e#11734#11742#0" expanded="true" />
               </folding>
@@ -48,18 +50,18 @@
       <file leaf-file-name="currentBookings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="73" column="31" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="31" />
+            <state relative-caret-position="182">
+              <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="492" column="30" lean-forward="true" selection-start-line="492" selection-start-column="16" selection-end-line="492" selection-end-column="30" />
+            <state relative-caret-position="-2184">
+              <caret line="495" column="44" lean-forward="true" selection-start-line="495" selection-start-column="44" selection-end-line="495" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -123,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>count==</find>
-      <find>count=</find>
       <find>user</find>
       <find>Invalid</find>
       <find>checkday</find>
@@ -149,10 +149,12 @@
       <find>this sh</find>
       <find>Userb</find>
       <find>readw</find>
-      <find>view</find>
       <find>current</find>
       <find>load</find>
       <find>inser</find>
+      <find>view</find>
+      <find>time</find>
+      <find>checkb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,10 +209,10 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
-        <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
+        <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
       </list>
     </option>
   </component>
@@ -710,13 +712,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00087" summary="start time validation">
-      <created>1493468564713</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1493468564713</updated>
-    </task>
     <task id="LOCAL-00088" summary="start time validation">
       <created>1493469371964</created>
       <option name="number" value="00088" />
@@ -1053,7 +1048,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493555303230</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="current bookings">
+      <created>1493555877910</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1493555877910</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1552,14 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="79" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1590,22 +1584,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="492" column="30" lean-forward="true" selection-start-line="492" selection-start-column="16" selection-end-line="492" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="73" column="31" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1614,13 +1592,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="79" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="307" column="31" lean-forward="false" selection-start-line="307" selection-start-column="31" selection-end-line="307" selection-end-column="31" />
+        <state relative-caret-position="4">
+          <caret line="313" column="30" lean-forward="true" selection-start-line="313" selection-start-column="30" selection-end-line="313" selection-end-column="30" />
           <folding>
             <element signature="e#11734#11742#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coreFunctions/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2184">
+          <caret line="495" column="44" lean-forward="true" selection-start-line="495" selection-start-column="44" selection-end-line="495" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

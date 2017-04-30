@@ -18,7 +18,6 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <ListView layoutX="90.0" layoutY="81.0" prefHeight="200.0" prefWidth="200.0" />
          </children></Pane>
    </children>
 </AnchorPane>
