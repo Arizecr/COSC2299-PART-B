@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -7,25 +12,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.businessMenu.businessMenuController">
     <children>
         <Pane id="Lolo" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
          <children>
             <Button layoutX="6.0" layoutY="72.0" mnemonicParsing="false" onAction="#switchToAddEmployee" prefHeight="27.0" prefWidth="330.0" text="Add Employee" />
-            <Button layoutX="6.0" layoutY="142.0" mnemonicParsing="false" onAction="#switchToAddWorkingDay" prefHeight="27.0" prefWidth="330.0" text="Add working day/times for Employee" />
-            <Button layoutX="6.0" layoutY="176.0" mnemonicParsing="false" onAction="#removeWorkingDay" prefHeight="27.0" prefWidth="330.0" text="Remove working days/times for Employee" />
-            <Button layoutX="6.0" layoutY="212.0" mnemonicParsing="false" onAction="#switchToShowWorkerAvailibility" prefHeight="27.0" prefWidth="330.0" text="Show worker availibility" />
-            <Button layoutX="6.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchToAddServices" prefHeight="27.0" prefWidth="330.0" text="Add new service(s)" />
-            <Button layoutX="6.0" layoutY="284.0" mnemonicParsing="false" onAction="#switchToViewBookingSummary" prefHeight="27.0" prefWidth="330.0" text="View summaries of Bookings" />
-            <Button layoutX="6.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToAdjustBusinessHours" prefHeight="27.0" prefWidth="330.0" text="View/adjust Business hours" />
-            <Button layoutX="6.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="27.0" prefWidth="330.0" text="Exit System" />
+            <Button layoutX="6.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchToAddWorkingDay" prefHeight="27.0" prefWidth="330.0" text="Add working day/times for Employee" />
+            <Button layoutX="6.0" layoutY="194.0" mnemonicParsing="false" onAction="#removeWorkingDay" prefHeight="27.0" prefWidth="330.0" text="Remove working days/times for Employee" />
+            <Button layoutX="6.0" layoutY="236.0" mnemonicParsing="false" onAction="#switchToShowWorkerAvailibility" prefHeight="27.0" prefWidth="330.0" text="Show worker availibility" />
+            <Button layoutX="6.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToAddServices" prefHeight="27.0" prefWidth="330.0" text="Add new service(s)" />
+            <Button layoutX="6.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToViewBookingSummary" prefHeight="27.0" prefWidth="330.0" text="View summaries of Bookings" />
+            <Button layoutX="6.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToAdjustBusinessHours" prefHeight="27.0" prefWidth="330.0" text="View/adjust Business hours" />
+            <Button layoutX="6.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="27.0" prefWidth="330.0" text="Exit System" />
             <Text layoutX="44.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Owner Menu">
                <font>
                   <Font name="American Typewriter" size="26.0" />
                </font>
             </Text>
-            <Button layoutX="6.0" layoutY="106.0" mnemonicParsing="false" onAction="#switchToAddAvailibility" prefHeight="27.0" prefWidth="330.0" text="Add Availibility for Employee" />
-            <Button layoutX="6.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToMakeBooking" prefHeight="25.0" prefWidth="330.0" text="Make Booking" />
+            <Button layoutX="6.0" layoutY="113.0" mnemonicParsing="false" onAction="#switchToAddAvailibility" prefHeight="27.0" prefWidth="330.0" text="Add Availibility for Employee" />
+            <Button layoutX="6.0" layoutY="404.0" mnemonicParsing="false" onAction="#switchToMakeBooking" prefHeight="25.0" prefWidth="330.0" text="Make Booking" />
          </children>
          <effect>
             <DropShadow color="#9a9090" />
