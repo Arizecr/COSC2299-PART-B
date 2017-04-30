@@ -55,6 +55,8 @@ public class bookingController {
     public static String customerID;
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
+    public ArrayList<Employee> emp = new ArrayList<>();
+    public ArrayList<Services> ser = new ArrayList<>();
 
     public static LocalDate dateinfo = null;
     public static String startinfo = null;
@@ -109,7 +111,7 @@ public class bookingController {
                 String min = Time[1];
                 //final format of string in the list
                 n+= hours +" Hours and " +min +" Minutes ($" + s.serviceList.get(i).getCost()+")";
-
+                ser.add(s.serviceList.get(i));
                 services.add(n);
 
 
@@ -121,7 +123,7 @@ public class bookingController {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 //this service is saved to the class for use in adding end time of service
-                selectedS = s.serviceList.get(newValue.intValue());
+                selectedS = ser.get(newValue.intValue());
                 if(!bm.checktime(starttime.getText())&&(!selectedS.toString().equals(not.toString())))
                 {
                     //do end time
@@ -136,8 +138,9 @@ public class bookingController {
         for(int i=0;i<e.employeeList.size();i++){
             //makes sure the services of only the current business are displayed
             if(businessID.equals(e.employeeList.get(i).getbId())){
+                emp.add(e.employeeList.get(i));
                 String n = e.employeeList.get(i).getName();
-
+                System.out.println(n);//checking
                 employees.add(n);
 
 
@@ -149,7 +152,7 @@ public class bookingController {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 //this service is saved to the class for use in adding end time of service
-                selectedE = e.employeeList.get(newValue.intValue());
+                selectedE = emp.get(newValue.intValue());
 
             }
         });
@@ -211,7 +214,7 @@ public class bookingController {
         ((AnchorPane) rootNode).getChildren().add(bdate);
         ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().add(endtime);
-        ((AnchorPane) rootNode).getChildren().addAll(c);
+        ((AnchorPane) rootNode).getChildren().add(c);
         ((AnchorPane) rootNode).getChildren().addAll(c2);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
