@@ -58,7 +58,7 @@ public class Services {
     public Services() {
 
     }
-    public void printService(String b) {
+    public ArrayList printService(String b) {
         BufferedReader br;
         try {
 
@@ -105,6 +105,7 @@ public class Services {
 
 
                 }
+                return serviceList;
                 //prints error
             } catch (IOException e) {
                 //e.printStackTrace();\
@@ -126,6 +127,8 @@ public class Services {
             l.Logging();
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
+
+        return serviceList;
     }
     public void addService(String b){//,String sId,String name, String time
         ArrayList<String> EOserviceList = new ArrayList<>();

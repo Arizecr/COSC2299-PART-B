@@ -6,8 +6,8 @@ package Gui.businessMenu;
 
 import Gui.Controller;
 import bookings.Services;
-import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +16,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import user.Employee;
 
 import java.io.IOException;
 import java.net.URL;
@@ -49,6 +49,9 @@ public class addServices extends Controller implements Initializable{
     @FXML
     private Label serviceID;
 
+    @FXML
+    private ListView<String> serviceList;
+
 
 
     @FXML
@@ -65,6 +68,7 @@ public class addServices extends Controller implements Initializable{
             //alert
         }
         else if(!service.checkName(name.getText()) && !service.checkDur(length.getText()) &&  !service.checkCost(cost.getText())){
+
             filewriter.WriteToWorkingdayTXT((new Services(businessID,serviceID.getText(), name.getText(), length.getText(), cost.getText())).toString(), "services.txt");
 
             pass("businessMenu.fxml", businessID);
@@ -72,6 +76,8 @@ public class addServices extends Controller implements Initializable{
 
         }
     }
+
+
 
 
     @FXML
@@ -84,6 +90,33 @@ public class addServices extends Controller implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        serviceID.setText(service.generateServiceNo());
+        service.printService(businessID);
+        //ArrayList<Button> b = new ArrayList<>();
+        // AnchorPane root = new AnchorPane();
+        ArrayList<Services> array = service.printService(businessID);
+        serviceList.setItems(FXCollections.observableArrayList(test(array)));
+    }
+
+    private ArrayList test(ArrayList<Services> array){
+        ArrayList<String> array2 = new ArrayList<>();
+        for(int i=0;i<array.size();i++){
+            //makes sure the services of only the current business are displayed
+            if(businessID.equals(array.get(i).b())){
+                String n = array.get(i).getName() +" - length: ";
+                String l = array.get(i).getLengthT();
+                String Time[] = l.split("-", 2);
+                String hours = Time[0];
+                String min = Time[1];
+                //final format of string in the list
+                n+= hours +" Hours and " +min +" Minutes ($" + array.get(i).getCost()+")";
+                array2.add(n);
+
+
+            }
+
+        }
+
+        return array2;
     }
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
@@ -105,5 +138,6 @@ public class addServices extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+
 
 }
