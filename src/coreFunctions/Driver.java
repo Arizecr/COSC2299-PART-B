@@ -683,6 +683,53 @@ public class Driver {
         return true;
     }
 
+    //check if there is a shift already during this time
+    public boolean checkCurrBookings(String b, Date date, String s , String e) {
+        loadCurrentBookings(b);
+        int count = 0;
+        for (int i = 0; i < currentBookings.size(); i++) {
+
+         String te = currentBookings.get(i).getTimeBooked();
+            String Time[] = te.split("-", 2);
+            String start = Time[0];
+            String end = Time[1];
+            DateFormat timeform = new SimpleDateFormat("dd/MM/yyyy");
+            Date bookdate = Calendar.getInstance().getTime();
+            try {
+                bookdate = timeform.parse(currentBookings.get(i).getDate());
+            } catch (ParseException ex) {
+            }
+
+            if (b.equals(currentBookings.get(i).getBusiness()) && date.equals(bookdate)) {
+                DateFormat time = new SimpleDateFormat("HH:mm");
+
+                try {
+                    Date Nst = time.parse(s);//new start time
+                    Date Net = time.parse(e);
+                    Date Cst = time.parse(start);//current booking start time
+                    Date Cet = time.parse(end);
+
+                    // This makes sure booked time is not already taken
+                    if (((Nst.after(Cst)&&Nst.before(Cet))||Nst.equals(Cst))) {
+                      //  System.out.println("employee has shift during this time");
+                        count++;
+
+                    } else if ((Net.before(Cet)&&Net.after(Cst))||Net.equals(Cet)) {
+                   //     System.out.println("employee has shift during this time");
+                        count++;
+                    }
+                } catch (ParseException ex) {
+                    //System.out.println("Invalid Time");
+                    // LOGGER.log(Level.FINEST,ex.toString(),ex); //for testing
+                    return true;
+                }
+
+            }
+        }
+        if(count!=0){return false;}//false if no bookings suring this time
+        return true;
+    }
+
     /*
      * Print the worktimes of a specific employee or all employee's
      */

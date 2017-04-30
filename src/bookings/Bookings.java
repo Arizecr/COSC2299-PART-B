@@ -59,5 +59,7 @@ public abstract class Bookings {
     }
 
 
-
+    public String getBusiness() {
+        return business;
+    }
 }

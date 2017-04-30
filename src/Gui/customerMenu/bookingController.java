@@ -399,7 +399,7 @@ public class bookingController {
             String day = d.format(start);
             //gets the time of the service
 
-            if (bm.UserBooking(businessID, day, starttime.getText(), endtime.getText())) {
+            if (bm.UserBooking(businessID, day, starttime.getText(), endtime.getText())||driver.checkCurrBookings(businessID, start, starttime.getText(), endtime.getText())) {
                 //checks there are employees working and that the business is open
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Error");
