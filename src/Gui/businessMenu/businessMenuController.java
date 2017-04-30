@@ -100,6 +100,14 @@ public class businessMenuController extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+    private void passToAddServices(String fxmlFile, String parameterToPass) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        addServices controller = loader.getController();
+        controller.setBusinessID(parameterToPass);
+
+    }
 
 
 
@@ -180,6 +188,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML //add services
     private void switchToAddServices(ActionEvent event) throws IOException {
+        passToAddServices("addServices.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("addServices.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
