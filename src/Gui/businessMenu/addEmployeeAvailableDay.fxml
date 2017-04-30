@@ -11,17 +11,21 @@
    <children>
       <Pane layoutX="34.0" layoutY="39.0" prefHeight="231.0" prefWidth="306.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="39.0">
          <children>
-            <TextField fx:id="eid" layoutX="129.0" layoutY="177.0" promptText="e?" />
-            <TextField fx:id="starttime" layoutX="129.0" layoutY="261.0" promptText="0:00" />
-            <TextField fx:id="endtime" layoutX="129.0" layoutY="298.0" promptText="0:00" />
+            <TextField fx:id="eid" layoutX="129.0" layoutY="147.0" promptText="e?" />
+            <TextField fx:id="starttime" layoutX="129.0" layoutY="241.0" promptText="0:00" />
+            <TextField fx:id="endtime" layoutX="129.0" layoutY="283.0" promptText="0:00" />
             <Button layoutX="145.0" layoutY="366.0" mnemonicParsing="false" onAction="#addAvailibility" prefHeight="25.0" prefWidth="83.0" text="Add" />
-            <TextField fx:id="day" layoutX="129.0" layoutY="221.0" promptText="Monday" />
+            <TextField fx:id="day" layoutX="129.0" layoutY="194.0" promptText="Monday" />
             <ListView fx:id="workerList" layoutX="11.0" layoutY="14.0" prefHeight="120.0" prefWidth="299.0" />
             <Button layoutX="237.0" layoutY="366.0" mnemonicParsing="false" onAction="#back" text="Back" />
-            <Label layoutX="54.0" layoutY="181.0" text="Employee ID" />
-            <Label layoutX="87.0" layoutY="225.0" text="Day" />
-            <Label layoutX="67.0" layoutY="265.0" text="Start Time" />
-            <Label layoutX="73.0" layoutY="302.0" text="End Time" />
+            <Label layoutX="54.0" layoutY="151.0" text="Employee ID" />
+            <Label layoutX="83.0" layoutY="198.0" text="Day" />
+            <Label layoutX="66.0" layoutY="245.0" text="Start Time" />
+            <Label layoutX="68.0" layoutY="287.0" text="End Time" />
+            <Label fx:id="eidError" layoutX="145.0" layoutY="172.0" text="Employee Not Found" textFill="#f20303" />
+            <Label fx:id="dayError" layoutX="171.0" layoutY="219.0" text="Invalid Day" textFill="RED" />
+            <Label fx:id="endError" layoutX="157.0" layoutY="308.0" text="Invalid End Time" textFill="RED" />
+            <Label fx:id="startError" layoutX="157.0" layoutY="266.0" text="Invalid Start Time" textFill="RED" />
          </children>
       </Pane>
    </children>

@@ -1,6 +1,7 @@
 package BusinessWorkDays;
 
 import coreFunctions.*;
+import javafx.scene.control.Alert;
 import test.Logging;
 
 import java.io.BufferedReader;
@@ -136,7 +137,7 @@ public class Workday
         int count = 0;
         for(int i=0; i < workhours.size() ;i++) {
             if (b.equals(workhours.get(i).getBId())) {
-                if (d.equals(workhours.get(i).workD().toLowerCase())) {
+                if (d.equals(workhours.get(i).workD())) {
                     DateFormat time = new SimpleDateFormat("HH:mm");
                     count++;
                     try {
@@ -147,22 +148,65 @@ public class Workday
 
                         // This makes sure scheduled employee shift is within operating hours of business
                         if (et.after(Bet)) {
-                         //   System.out.println("Error: this shift is not within the operating hours of the business");
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Error: this shift is not within the operating hours of the business");
+
+                            alert.showAndWait();
                             return true;
 
                         } else if (st.before(Bst)) {
-                         //   System.out.println("Error: this shift is not within the operating hours of the business");
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Error: this shift is not within the operating hours of the business");
+
+                            alert.showAndWait();
+
+
                             return true;
                         }
+                        else if(et.before(st)){
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Error: Invalid End Time");
+
+                            alert.showAndWait();
+                            return true;
+                        }
+
+                        else if(et.equals(st)){
+                            //System.out.println("Error: this shift is not within the operating hours of the business");
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Error");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Error: Invalid Start and End Time");
+
+                            alert.showAndWait();
+                            return true;
+                        }
+
                     } catch (ParseException e) {
-                     //   System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
+                        //System.out.println("Error: Invalid Time. Example of valid time, 9:00 aka 9am");
                         return true;
                     }
                 }
             }
         }
 
-        if(count==0){return true;}
+        if(count==0){
+            System.out.println("Some error?");
+            return true;
+        }
         return false;
     }
 

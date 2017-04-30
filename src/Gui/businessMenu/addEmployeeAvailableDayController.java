@@ -24,6 +24,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -48,6 +51,19 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     @FXML
     private TextField day;
+
+    @FXML
+    private Label eidError;
+
+    @FXML
+    private Label dayError;
+
+    @FXML
+    private Label endError;
+
+    @FXML
+    private Label startError;
+
 
     @FXML
     private ListView<String> workerList;
@@ -79,7 +95,7 @@ public class addEmployeeAvailableDayController implements Initializable{
 
         }
         w.Details();
-        if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) || ad.checkDay(businessID,eid.getText(),day.getText())){
+        if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) && ad.checkDay(businessID,eid.getText(),day.getText())){
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
             ArrayList<String> array2list = ad.loadInfo();
             clarityArrAD(array2list);
@@ -186,6 +202,11 @@ public class addEmployeeAvailableDayController implements Initializable{
         ArrayList<String> array = ad.loadInfo();
         clarityArrAD(array);
 
+        eidError.setVisible(false);
+        dayError.setVisible(false);
+        endError.setVisible(false);
+        startError.setVisible(false);
+
 
         workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
@@ -204,6 +225,106 @@ public class addEmployeeAvailableDayController implements Initializable{
                 workerList.setItems(FXCollections.observableArrayList(array2));
             }
         });
+
+
+//CHECK FOR Employee ID
+        eid.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerEIDCheck(newText)){
+                    eidError.setVisible(false);
+                }else{
+                    eidError.setVisible(true);
+                }
+            }
+            else{
+                eidError.setVisible(false);
+            }
+        });
+
+//CHECK FOR DAY
+        day.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(listenerCheckDay(newText)){
+                    dayError.setVisible(false);
+                }else{
+                    dayError.setVisible(true);
+                }
+            }
+            else{
+                dayError.setVisible(false);
+            }
+        });
+
+        //CHECK TIME
+        starttime.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(checkTime(newText)){
+                    startError.setVisible(false);
+                }else{
+                    startError.setVisible(true);
+                }
+            }
+            else{
+                startError.setVisible(false);
+            }
+        });
+
+        endtime.textProperty().addListener((obs, oldText, newText) -> {
+            if(!(oldText == null)){
+                if(checkTime(newText)){
+                    endError.setVisible(false);
+                }else{
+                    endError.setVisible(true);
+                }
+            }
+            else{
+                endError.setVisible(false);
+            }
+        });
+
+
+
+    }
+
+
+
+
+
+    private boolean listenerEIDCheck(String empeid){
+
+        for(int i=0; i<employee.size(); i++){
+            if(employee.get(i).get(0).equals(eid.getText())){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean listenerCheckDay(String day){
+        try{
+            DateFormat time = new SimpleDateFormat("EEEE");
+            time.parse(day);
+        }
+        catch(ParseException e){
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkTime(String t){
+
+        try{
+            DateFormat time = new SimpleDateFormat("HH:mm");
+            time.parse(t);
+        }
+        catch(ParseException e){
+            // System.out.println("Invalid time:");
+            return false;
+        }
+        if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
+            return false;}
+        return true;
 
     }
 
