@@ -197,15 +197,15 @@ public class bookingController {
             public void changed(
                     ObservableValue<? extends LocalDate> observableValue,
                     LocalDate oldValue, LocalDate newValue) {
-                System.out.println(oldValue + " -> " + newValue);
+                // System.out.println(oldValue + " -> " + newValue);
                 dateinfo = newValue;//sets the new date value for use
-     //           DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
-   //             SimpleDateFormat d = new SimpleDateFormat("EEE");
+                //           DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
+                //             SimpleDateFormat d = new SimpleDateFormat("EEE");
                 DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
- //               Date start = Calendar.getInstance().getTime() ;
+                //               Date start = Calendar.getInstance().getTime() ;
 
                 String dateInfo = dateinfo.format(form);
-                System.out.println(dateInfo);
+                //        System.out.println(dateInfo);
             }
         });
 
@@ -343,42 +343,82 @@ public class bookingController {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+    public boolean dateCheck(){
+        Calendar c = Calendar.getInstance();
+        int dayOfYear = c.get(Calendar.DAY_OF_YEAR);
+        int Year = c.get(Calendar.YEAR);
+        if (date.contains(dateinfo.getDayOfWeek())) {
+            return true;
+        }
+        if (dateinfo.getDayOfYear()<dayOfYear||dateinfo.getDayOfYear()>(dayOfYear+30))
+        {
+            return true;
+        }
+        if (dateinfo.getYear()!=Year&&dateinfo.getDayOfYear()<=(dayOfYear+30))
+        {
+            return true;
+        }
 
-   public void checkBooking(ActionEvent event) throws IOException {
-        //check all valid
-       //then do as below
-       DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
-       SimpleDateFormat d = new SimpleDateFormat("EEE");
-       DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-       Date start = Calendar.getInstance().getTime() ;
-       String date = dateinfo.format(form);
-       System.out.println(businessID+" "+ dateinfo);
-       try{
-           start = time.parse(date);
-       }catch(ParseException e){}
-       String day = d.format(start);
-       //gets the time of the service
 
-        if(bm.UserBooking(businessID,day,starttime.getText(),endtime.getText())){
+        return false;
+    }
+    public void checkBooking(ActionEvent event) throws IOException {//when button clicked
+        if(dateCheck()){//checks correct date entered
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
-            alert.setContentText("This time is unavailable for booking.");
+            alert.setContentText("Invalid date entered.");
             alert.showAndWait();
         }
-        else{
-            WriteToFile w = new WriteToFile();
-            String customername = "toset";//fix
-            String s = businessID+","+day+","+date+","+customername+","+starttime.getText()+"-"+endtime.getText()+",";
-            s+= selectedS.getName()+","+ customerID;
-            w.WriteToWorkingdayTXT(s,"currentBookings");
-            //add to file
-            Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
-            Scene home_page_scene = new Scene(home_page);
-            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(home_page_scene);
-            app_stage.show();
+        else if(selectedS.toString().equals(not.toString())){//checks service selected
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select Service.");
+            alert.showAndWait();
         }
+        else if(bm.checktime(starttime.getText())){//checks start time choosen
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select Start time.");
+            alert.showAndWait();
+        }
+        else {
 
+            DateFormat time = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat d = new SimpleDateFormat("EEE");
+            DateTimeFormatter form = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            Date start = Calendar.getInstance().getTime();
+            String date = dateinfo.format(form);
+            System.out.println(businessID + " " + dateinfo);
+            try {
+                start = time.parse(date);
+            } catch (ParseException e) {
+            }
+            String day = d.format(start);
+            //gets the time of the service
+
+            if (bm.UserBooking(businessID, day, starttime.getText(), endtime.getText())) {
+                //checks there are employees working and that the business is open
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("This time is unavailable for booking.");
+                alert.showAndWait();
+            } else {
+                WriteToFile w = new WriteToFile();
+                String customername = "toset";//fix
+                String s = businessID + "," + day + "," + date + "," + customername + "," + starttime.getText() + "-" + endtime.getText() + ",";
+                s += selectedS.getName() + "," + customerID;
+                w.WriteToWorkingdayTXT(s, "currentBookings");
+                //add to file
+                Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+                Scene home_page_scene = new Scene(home_page);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(home_page_scene);
+                app_stage.show();
+            }
+        }
     }
 }

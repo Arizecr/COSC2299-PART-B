@@ -353,6 +353,7 @@ public class BusinessMenu {
         }
         return true;
     }
+
     public boolean UserBooking(String bId, String day,String starttime,String endtime){
         DateFormat time = new SimpleDateFormat("HH:mm");
         day = day.toLowerCase();
