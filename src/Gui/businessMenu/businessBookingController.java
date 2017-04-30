@@ -424,7 +424,7 @@ public class businessBookingController {
                 String s;
                 if(selectedE.toString().equals(not2.toString())){
                     s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
-                    s += selectedS.getName() + "," + customerID;}
+                    s += selectedS.getName() + "," + customerID+",";}
                 else{
                     s = businessID + "," + day + "," + date + "," + customername + "," + startinfo + "-" + endinfo + ",";
                     s += selectedS.getName() + "," + customerID+","+selectedE.geteId();}
