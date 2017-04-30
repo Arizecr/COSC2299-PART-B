@@ -44,13 +44,14 @@ public class bookingController {
     Services s = new Services();
     Login login = new Login();
     Driver driver = new Driver();
+    BusinessMenu bm = new BusinessMenu();
     public static Services selectedS = new Services(null,null,null,null,null);
     Services not = new Services(null,null,null,null,null);
     public static String businessID;
     public static String customerID;
     public ArrayList<String> days = new ArrayList<>();
     public ArrayList<DayOfWeek> date = new ArrayList<>();
-    BusinessMenu bm = new BusinessMenu();
+
     public static LocalDate dateinfo = null;
     public static String startinfo = null;
     public static String endinfo = null;
