@@ -103,7 +103,7 @@ public class viewBookingTesting {
         d.viewPastBookings();
     }
 
-    @Test (timeout =100)
+    @Test (timeout =300)
     public void viewCurrentBookings(){
         d.viewCurrentBookings();
     }
