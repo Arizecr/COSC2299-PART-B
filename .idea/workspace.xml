@@ -4,7 +4,6 @@
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,23 +19,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="businessBookingController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="businessBookingController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3715">
-              <caret line="299" column="7" lean-forward="false" selection-start-line="299" selection-start-column="7" selection-end-line="299" selection-end-column="7" />
+            <state relative-caret-position="-431">
+              <caret line="87" column="78" lean-forward="false" selection-start-line="87" selection-start-column="78" selection-end-line="87" selection-end-column="78" />
               <folding>
-                <marker date="1493544923166" expanded="false" signature="10207:10215" ph="&lt;~&gt;" />
+                <marker date="1493545253001" expanded="false" signature="10215:10223" ph="&lt;~&gt;" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseCustomerController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chooseCustomerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+            <state relative-caret-position="114">
+              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,8 +141,8 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMakeBooking.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomer.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" />
       </list>
     </option>
   </component>
@@ -563,13 +562,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00061" summary="small change in booking">
-      <created>1493388047282</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1493388047283</updated>
-    </task>
     <task id="LOCAL-00062" summary="small change in booking">
       <created>1493388081363</created>
       <option name="number" value="00062" />
@@ -906,7 +898,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493544693636</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="business owner booking">
+      <created>1493545126794</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1493545126794</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -943,7 +942,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1449,21 +1448,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3715">
-          <caret line="299" column="7" lean-forward="false" selection-start-line="299" selection-start-column="7" selection-end-line="299" selection-end-column="7" />
-          <folding>
-            <marker date="1493544923166" expanded="false" signature="10207:10215" ph="&lt;~&gt;" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java">
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="-431">
+          <caret line="87" column="78" lean-forward="false" selection-start-line="87" selection-start-column="78" selection-end-line="87" selection-end-column="78" />
+          <folding>
+            <marker date="1493545253001" expanded="false" signature="10215:10223" ph="&lt;~&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>

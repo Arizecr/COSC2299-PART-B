@@ -85,7 +85,7 @@ public class businessBookingController {
     public void startMakeBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
-        Parent rootNode = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
         ArrayList<String> services = new ArrayList<>();
         //ChoiceBox c = new ChoiceBox();
         s.printService(businessID);
