@@ -115,7 +115,7 @@ public class addServices extends Controller implements Initializable{
                 String min = Time[1];
                 //final format of string in the list
                 n+= hours +" Hours and " +min +" Minutes ($" + array.get(i).getCost()+")";
-                array2.add(n);
+                array2.add(array.get(i).getsId() + " " + n);
 
 
             }
