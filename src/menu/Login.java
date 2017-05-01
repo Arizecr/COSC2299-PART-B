@@ -2,6 +2,7 @@ package menu;
 
 import test.*;
 import user.Business;
+import user.BusinessOwner;
 import user.Customer;
 
 import java.io.BufferedReader;
@@ -19,6 +20,7 @@ public class Login {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
+    public static ArrayList<BusinessOwner> businessOwnerList = new ArrayList<>();
     Logging l =new Logging();
     public void loginMenu(){
 
@@ -64,11 +66,11 @@ public class Login {
 
         //test if customer login is valid
         if(username.charAt(0) == 'b'){
-            if(verifyLoginDetails("owner",username, password)){
+          /*  if(verifyLoginDetails("owner",username, password)){
                 System.out.println("owner login works!\n");
                 business.printMenu(username);
 
-            }
+            }*/
             System.out.println("Invalid login details. Details do not exist in system.");
 
         }
@@ -192,6 +194,52 @@ public class Login {
             LOGGER.log(Level.WARNING,e.toString(),e);
         }
 
+
+
+
+
+        businessOwnerList = new ArrayList<>();
+        BufferedReader br2;
+        try {
+
+
+            br2 = new BufferedReader(new FileReader("businesslogin.txt"));
+
+            try {
+                String x;
+                while ( (x = br2.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",6);
+                    String username = loginDetails[0];
+                    String password = loginDetails[1];
+                    String businessList = loginDetails[2];
+
+                    BusinessOwner ownerInfo = new BusinessOwner(username, password, businessList);
+                    businessOwnerList.add(ownerInfo);
+                }
+                //prints error
+            } catch (IOException e) {
+                // e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            //  System.out.println(e);
+            // e.printStackTrace();
+            System.out.println("File not Found");
+            l.Logging();
+            LOGGER.log(Level.WARNING,e.toString(),e);
+        }
+
     }
 
 
@@ -220,6 +268,36 @@ public class Login {
 
         }
 
+        else{ //verify business owner
+            for(int i=0; i < businessOwnerList.size() ;i++){
+                if(username.equals(businessOwnerList.get(i).getUsername())){
+                    if(password.equals(businessOwnerList.get(i).getPassword())){
+
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+            }
+
+            return false;
+
+        }
+
+
+
+    }
+
+    public boolean getBOVerification(String type, String username, String password){
+        return verifyBOLoginDetails(type,username,password);
+    }
+    private boolean verifyBOLoginDetails(String type, String username, String password) {
+
+        if (type.equals("customer")) {//verify customer
+            return false;
+        }
         else{ //verify business owner
             for(int i=0; i < businessList.size() ;i++){
                 if(username.equals(businessList.get(i).getUsername())){

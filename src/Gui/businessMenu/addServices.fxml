@@ -29,7 +29,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <TextField layoutX="185.0" layoutY="397.0" promptText="Cost" />
+            <TextField  fx:id="cost" layoutX="185.0" layoutY="397.0" promptText="Cost" />
             <Button layoutX="364.0" layoutY="398.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Add" />
             <Button layoutX="334.0" layoutY="528.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="98.0" text="Cancel" textFill="#6b6bb9" />
          </children>

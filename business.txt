@@ -1,2 +1,3 @@
 b1:123:Ray's Salon:Carlos Fernandez:778, Friendship rd:+98187782
-b2:1234:Ray's Salon2:B Fernandez:778, newFriendship rd:+98187782
+b2:123:Ray's Salon2:B Fernandez:778, newFriendship rd:+98187782
+b3:1234:Other:Bbib Fernandez:778, ndship rd:+98183782
