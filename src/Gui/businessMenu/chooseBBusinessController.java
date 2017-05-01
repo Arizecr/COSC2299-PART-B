@@ -102,6 +102,29 @@ public class chooseBBusinessController {
 
 
         }
+        count+=70;
+        Button gridButtons = new Button();
+        gridButtons.setText("Add another Business");
+        gridButtons.setMnemonicParsing(false);
+        gridButtons.prefHeight(50.0);
+        gridButtons.prefWidth(500.0);
+
+       //gridButtons.setId(login.businessList.get(i).getUsername());
+        gridButtons.setLayoutX(20.0);
+        gridButtons.setMinWidth(370);
+        gridButtons.setMinHeight(60);
+        gridButtons.setLayoutY(count);
+
+        gridButtons.setOnAction( new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+               // pass("businessMenu.fxml",gridButtons.getId()) ;
+               // switchToMenu(event);
+                // add new page to add and adjust GUI
+            }
+        });
+
+
+        ((AnchorPane) rootNode).getChildren().add(gridButtons);
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);

@@ -29,17 +29,19 @@ public class BusinessOwner{
         return username;
     }
     public ArrayList<Business> getAllB(){
+        System.out.println(allB);
         ArrayList<Business> bo = new ArrayList<>();
         String loginDetails[] = allB.split(",");
         for(String l:loginDetails){
+
             for(int i=0; i < b.businessList.size() ;i++){
                 if(l.equals(b.businessList.get(i).getUsername()))
                 {
                     bo.add(b.businessList.get(i));
-                    System.out.println(b.businessList.get(i).toString());
+
                 }
             }
-            return bo;
+
         }
         return bo;//null business owner
     }
