@@ -29,7 +29,7 @@ public class BusinessOwner{
         return username;
     }
     public ArrayList<Business> getAllB(){
-        System.out.println(allB);
+
         ArrayList<Business> bo = new ArrayList<>();
         String loginDetails[] = allB.split(",");
         for(String l:loginDetails){

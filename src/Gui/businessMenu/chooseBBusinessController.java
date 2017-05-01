@@ -104,7 +104,7 @@ public class chooseBBusinessController {
         }
         count+=70;
         Button gridButtons = new Button();
-        gridButtons.setText("Add another Business");
+        gridButtons.setText("Add another Business(Not Implemented)");
         gridButtons.setMnemonicParsing(false);
         gridButtons.prefHeight(50.0);
         gridButtons.prefWidth(500.0);
