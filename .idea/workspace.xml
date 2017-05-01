@@ -6,12 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
+    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="multiple business implementation">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/Controller.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business.txt" afterPath="$PROJECT_DIR$/business.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/Controller.java" afterPath="$PROJECT_DIR$/src/Gui/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBusinessHours.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBusinessHours.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/menu/Login.java" afterPath="$PROJECT_DIR$/src/menu/Login.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/user/BusinessOwner.java" afterPath="$PROJECT_DIR$/src/user/BusinessOwner.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseBBusinessController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chooseBBusinessController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="110" column="46" lean-forward="false" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+            <state relative-caret-position="70">
+              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,24 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chooseBBusiness.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusiness.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="269" lean-forward="false" selection-start-line="9" selection-start-column="269" selection-end-line="9" selection-end-column="269" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BusinessOwner.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BusinessOwner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/user/BusinessOwner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+            <state relative-caret-position="152">
+              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,8 +115,8 @@
       <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="211" column="57" lean-forward="false" selection-start-line="211" selection-start-column="57" selection-end-line="211" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -166,7 +156,6 @@
       <find>Userb</find>
       <find>readw</find>
       <find>current</find>
-      <find>load</find>
       <find>inser</find>
       <find>view</find>
       <find>time</find>
@@ -174,6 +163,7 @@
       <find>faken</find>
       <find>get</find>
       <find>pass</find>
+      <find>load</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,11 +225,11 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml" />
         <option value="$PROJECT_DIR$/business.txt" />
         <option value="$PROJECT_DIR$/businesslogin.txt" />
-        <option value="$PROJECT_DIR$/src/menu/Login.java" />
-        <option value="$PROJECT_DIR$/src/user/BusinessOwner.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusiness.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java" />
         <option value="$PROJECT_DIR$/src/Gui/Controller.java" />
+        <option value="$PROJECT_DIR$/src/menu/Login.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java" />
+        <option value="$PROJECT_DIR$/src/user/BusinessOwner.java" />
       </list>
     </option>
   </component>
@@ -790,13 +780,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00092" summary="issue  with date fixed">
-      <created>1493476881447</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1493476881447</updated>
-    </task>
     <task id="LOCAL-00093" summary="testing booking slots">
       <created>1493476973688</created>
       <option name="number" value="00093" />
@@ -1133,7 +1116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493595544504</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="multiple business implementation">
+      <created>1493602197759</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1493602197762</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1206,7 +1196,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="issue found and fixed" />
     <MESSAGE value="view customer booking done" />
     <MESSAGE value="make booking(customer)" />
     <MESSAGE value="format change" />
@@ -1231,7 +1220,8 @@
     <MESSAGE value="retrieve bID" />
     <MESSAGE value="fixed error" />
     <MESSAGE value="current bookings" />
-    <option name="LAST_COMMIT_MESSAGE" value="current bookings" />
+    <MESSAGE value="multiple business implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple business implementation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1600,22 +1590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="281" column="0" lean-forward="true" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/businesslogin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusiness.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1625,16 +1599,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/BusinessOwner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="37" column="45" lean-forward="false" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java">
@@ -1653,11 +1617,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="211" column="57" lean-forward="false" selection-start-line="211" selection-start-column="57" selection-end-line="211" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/chooseBBusinessController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="110" column="46" lean-forward="false" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+        <state relative-caret-position="70">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businesslogin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/BusinessOwner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

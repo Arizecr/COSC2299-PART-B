@@ -209,7 +209,7 @@ public class Login {
                 String x;
                 while ( (x = br2.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(":",6);
+                    String loginDetails[] = x.split(":",3);
                     String username = loginDetails[0];
                     String password = loginDetails[1];
                     String businessList = loginDetails[2];

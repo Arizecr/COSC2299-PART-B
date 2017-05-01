@@ -1,6 +1,5 @@
 package Gui.businessMenu;
 
-import Gui.customerMenu.customerMenuController;
 import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -50,7 +49,7 @@ public class chooseBBusinessController {
             Pane pane = loader.load();
 
             //MUST change classname to the file u want to pass the variable to
-            customerMenuController controller = loader.getController();
+            businessMenuController controller = loader.getController();
 
             //function in the controller u go must contain this
             controller.setBusinessID(parameterToPass1);
@@ -69,6 +68,7 @@ public class chooseBBusinessController {
         //ArrayList<Button> b = new ArrayList<>();
         AnchorPane root = new AnchorPane();
         double count = 30;
+
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.businessList.size();i++){
             for(int j=0;j<login.businessOwnerList.size();j++){

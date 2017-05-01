@@ -33,9 +33,10 @@ public class BusinessOwner{
         String loginDetails[] = allB.split(",");
         for(String l:loginDetails){
             for(int i=0; i < b.businessList.size() ;i++){
-                if(username.equals(b.businessList.get(i).getUsername()))
+                if(l.equals(b.businessList.get(i).getUsername()))
                 {
                     bo.add(b.businessList.get(i));
+                    System.out.println(b.businessList.get(i).toString());
                 }
             }
             return bo;
