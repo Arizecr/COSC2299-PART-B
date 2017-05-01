@@ -1,7 +1,7 @@
 package bookings;
 
 /**
- * Created by xemorth on 4/04/2017.
+ * Created by xemorth on 4/04/2017..
  */
 public class CurrentBookings extends Bookings{
 
