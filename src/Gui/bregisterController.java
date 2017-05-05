@@ -14,12 +14,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import menu.Register;
+import user.Business;
+import user.BusinessOwner;
 
 import java.io.IOException;
 
 public class bregisterController {
     Register registerMenu = new Register();
     WriteToFile toTxt = new WriteToFile();
+    BusinessOwner bo = new BusinessOwner(null,null,null);
     private Stage primaryStage;
 
     @FXML
@@ -48,11 +51,13 @@ public class bregisterController {
     @FXML
     void createAccount(ActionEvent event) throws IOException {
 
-        if(registerMenu.testUser(username.getText())){
-            int valid = registerMenu.testReg(password.getText(),name.getText(),address.getText(),mobile.getText());
+        if(registerMenu.testBUser(username.getText())){
+            int valid = registerMenu.testBReg(password.getText(),name.getText(),ownername.getText(),address.getText(),mobile.getText());
 
             if(valid == 0&&p.getText().equals(password.getText())){
-              //  toTxt.WriteToTXT(new Customer(username.getText(), password.getText(), name.getText(), address.getText(), mobile.getText()), "customerinfo.txt");
+                String blist =bo.gBN() ;
+                toTxt.WriteToWorkingdayTXT(username.getText()+":"+ password.getText()+":"+blist,"businesslogin.txt");
+                toTxt.WriteToTXT(new Business(blist, password.getText(), name.getText(),ownername.getText(), address.getText(), mobile.getText()), "business.txt");
                 switchToLogin(event);
             }
             else if(!p.getText().equals(password.getText())){

@@ -9,7 +9,7 @@ public class Business extends User{
     private String businessName;
 
 
-    public Business(String username, String password, String fullName, String address, String phoneNo, String businessName){
+    public Business(String username, String password, String businessName, String fullName, String address, String phoneNo){
         super(username, password, fullName, address, phoneNo);
         this.businessName = businessName;
     }
@@ -19,6 +19,9 @@ public class Business extends User{
     }
 
 
+    public String toString() {
 
+        return username + ":" + password + ":" + businessName + ":" + fullName + ":" + address + ":" + phoneNo;
+    }
 
 }

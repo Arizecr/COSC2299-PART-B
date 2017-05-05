@@ -89,6 +89,9 @@ public class Register {
     public int testReg(String password, String name, String address, String mobile){
         return testRegister(password, name, address, mobile);
     }
+    public int testBReg(String password, String name,String bname, String address, String mobile){
+        return testBRegister(password, name,bname, address, mobile);
+    }
     public boolean testUser(String username){
         return testUsername(username);
     }
@@ -140,9 +143,9 @@ public class Register {
 
         if((username.charAt(0) == 'b') &&(username.charAt(1) == 'l')&& (username.length()<= 15) && (username.length()>2)){
 
-            for(int i = 0; i< login.businessList.size(); i++) {
+            for(int i = 0; i< login.businessOwnerList.size(); i++) {
 
-                if (login.businessList.get(i).getUsername().equals(username)) {
+                if (login.businessOwnerList.get(i).getUsername().equals(username)) {
                     System.out.println("Username already exists. Re-enter valid username\n");
                     return false;
                 }
@@ -157,7 +160,20 @@ public class Register {
 
         return true;
     }
+    private boolean testAddress(String address){
+        if(address.isEmpty() || (address.length() <= 1)||!address.matches("^[a-zA-Z\\s0-9]+$")){
+            //empty input or    length or 1            or address thais not letters or numbers
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid Address. Please try again");
 
+            alert.showAndWait();
+            return true;
+
+        }
+        return false;
+    }
 
     private int testRegister(String password, String name, String address, String mobile){
         //Login login = new Login();
@@ -170,16 +186,9 @@ public class Register {
             return ++valid;
         }
 
-        if(address.isEmpty() || (address.length() < 1)||!address.matches("^[a-zA-Z\\s0-9]+$")){
-            //empty input or    length or 1            or address thais not letters or numbers
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Invalid Address. Please try again");
+        if(testAddress(address)){
 
-            alert.showAndWait();
             return ++valid;
-
         }
 
         if(d.verifyEmployeeMobile(mobile)){//using checking function from driver
@@ -198,6 +207,41 @@ public class Register {
         return valid;
     }
 
+    private int testBRegister(String password, String name,String bname, String address, String mobile){
+        //Login login = new Login();
+        int valid = 0;
+
+        Driver d=new Driver();//maximising code reuse by using same error check used in add employee
+
+        if(d.verifyEmployeeName(name)  ){//using checking function from driver
+
+            return ++valid;
+        }
+        if(d.verifyEmployeeName(bname)  ){//business owner name
+
+            return ++valid;
+        }
+
+        if(testAddress(address)){
+
+            return ++valid;
+        }
+
+        if(!name.matches("^0[0-8]\\d{8}$")&&d.verifyEmployeeMobile(mobile)){//using checking function from driver
+
+            System.out.println("Invalid Phone Number");
+            return ++valid;
+
+        }
+
+
+        if( password.isEmpty()) {
+            System.out.println("Invalid Password");
+            return ++valid;
+        }
+
+        return valid;
+    }
 
 
 }

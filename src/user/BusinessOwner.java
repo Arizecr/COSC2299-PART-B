@@ -45,7 +45,15 @@ public class BusinessOwner{
         }
         return bo;//null business owner
     }
-
+    public String gBN(){return generateBusinessNo();}
+    private String generateBusinessNo(){
+        int count = 1;
+        int largest = b.businessList.size()-1;//gets the last in the list
+        String c = b.businessList.get(largest).getUsername().substring(1);//gets the number
+        //due to deletion this may not be the same as the index of arraylist
+        count = Integer.parseInt(c)+1;
+        return "b"+count;
+    }
     public String getPassword(){
 
         return password;

@@ -76,7 +76,7 @@ public class chooseBBusinessController {
                  if(login.businessOwnerList.get(j).getAllB().contains(login.businessList.get(i))){
                      count+=70;
                      Button gridButtons = new Button();
-                     gridButtons.setText(login.businessList.get(i).getName());
+                     gridButtons.setText(login.businessList.get(i).getBusinessName());
                      gridButtons.setMnemonicParsing(false);
                      gridButtons.prefHeight(50.0);
                      gridButtons.prefWidth(500.0);
