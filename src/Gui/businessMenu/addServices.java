@@ -86,8 +86,8 @@ public class addServices extends Controller implements Initializable{
             alert.showAndWait();
         }
         else if(service.checkName(name.getText()) && service.checkDur(length.getText()) &&  service.checkCost(cost.getText())){
-
-            filewriter.WriteToWorkingdayTXT((new Services(businessID,serviceID.getText(), name.getText(), length.getText(), cost.getText())).toString(), "services.txt");
+            Services s = new Services(businessID,serviceID.getText(), name.getText(), length.getText(), cost.getText());
+            filewriter.WriteToWorkingdayTXT(s.toString(), "services.txt");
 
             pass("businessMenu.fxml", businessID);
             switchToBusinessMenu(event);
