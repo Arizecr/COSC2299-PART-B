@@ -132,7 +132,7 @@ public class Services {
     }
     public void addService(String b){//,String sId,String name, String time
         ArrayList<String> EOserviceList = new ArrayList<>();
-        String s = generateServiceNo(); //generate user id
+        String s = generateServiceNo(b); //generate user id
         int sSize = serviceList.size();
         WriteToFile w = new WriteToFile();
         String n = null;
@@ -390,10 +390,16 @@ public class Services {
     /*
     * Generate employee ID
     */
-    private String generateServiceNo(){
+    public String generateServiceNo(String b){
         int count = 1;
-        int largest = serviceList.size()-1;//gets the last in the list
-        String c = serviceList.get(largest).sId.substring(1);//gets the number
+        ArrayList<Services> subList = new ArrayList<>();
+        for(int i=0; i < serviceList.size() ;i++){
+            if(b.equals(serviceList.get(i).b())){
+                subList.add(serviceList.get(i));
+            }
+        }
+        int largest = subList.size()-1;//gets the last in the list
+        String c = subList.get(largest).sId.substring(1);//gets the number
         //due to deletion this may not be the same as the index of arraylist
         count = Integer.parseInt(c)+1;
         return "s"+count;
