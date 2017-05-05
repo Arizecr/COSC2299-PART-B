@@ -123,6 +123,41 @@ public class Register {
         return true;
     }
 
+    public boolean testBUser(String username){
+        return testBUsername(username);
+    }
+    private boolean testBUsername(String username){
+        Login login = new Login();
+        login.getOwnerinfo();
+        //isEmpty just checks for null
+        if(username.isEmpty() || username.length()<= 2||(username.charAt(0) != 'b'||(username.charAt(1) != 'l' )||username.length()> 15)){
+
+            System.out.println("Error: Username must start with a 'bl' and cannot exceed 15 characters. Try again");
+            return false;
+
+        }
+
+
+        if((username.charAt(0) == 'b') &&(username.charAt(1) == 'l')&& (username.length()<= 15) && (username.length()>2)){
+
+            for(int i = 0; i< login.businessList.size(); i++) {
+
+                if (login.businessList.get(i).getUsername().equals(username)) {
+                    System.out.println("Username already exists. Re-enter valid username\n");
+                    return false;
+                }
+            }
+
+
+        }
+        else{
+            return false;
+        }
+
+
+        return true;
+    }
+
 
     private int testRegister(String password, String name, String address, String mobile){
         //Login login = new Login();
