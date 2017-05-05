@@ -1,5 +1,6 @@
 package Gui.businessMenu;
 
+import coreFunctions.WriteToFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +23,13 @@ import java.util.ResourceBundle;
  */
 public class viewBusinessHours implements Initializable{
     //
-
+    WriteToFile w =new WriteToFile();
     BusinessMenu bMenu = new BusinessMenu();
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
     public ArrayList<String> end = new ArrayList<>();
     public ArrayList<String> days = new ArrayList<>();
+    public ArrayList<String> allbdays = new ArrayList<>();
 
     public static void setBusinessID(String busid){
         businessID = busid;
@@ -73,20 +75,20 @@ public class viewBusinessHours implements Initializable{
         days.add("Wednesday");
         days.add("Thursday");
         days.add("Friday");
-if(start.size()!=0) {
-    mondayStart.setText(start.get(0));
-    tuesdayStart.setText(start.get(1));
-    wednesdayStart.setText(start.get(2));
-    thursStart.setText(start.get(3));
-    friStart.setText(start.get(4));
-}
-if(end.size()!=0) {
-    mondayEnd.setText(end.get(0));
-    tuesdayEnd.setText(end.get(1));
-    wednesdayEnd.setText(end.get(2));
-    thursEnd.setText(end.get(3));
-    friEnd.setText(end.get(4));
-}
+        if(start.size()!=0) {
+            mondayStart.setText(start.get(0));
+            tuesdayStart.setText(start.get(1));
+            wednesdayStart.setText(start.get(2));
+            thursStart.setText(start.get(3));
+            friStart.setText(start.get(4));
+        }
+        if(end.size()!=0) {
+            mondayEnd.setText(end.get(0));
+            tuesdayEnd.setText(end.get(1));
+            wednesdayEnd.setText(end.get(2));
+            thursEnd.setText(end.get(3));
+            friEnd.setText(end.get(4));
+        }
 
 
     }
@@ -109,8 +111,12 @@ if(end.size()!=0) {
                     starttime = Details[2];
                     endtime = Details[3];
                     day = day.substring(0,1).toUpperCase() + day.substring(1);
-                   start.add(starttime);
-                   end.add(endtime);
+                    if(bId.equals(businessID))
+                    {
+                        start.add(starttime);
+                        end.add(endtime);
+                    }
+                    allbdays.add(x);
                 }
                 //prints error
             } catch (IOException e) {
@@ -134,6 +140,23 @@ if(end.size()!=0) {
         //function in the controller u go must contain this
         controller.setBusinessID(parameterToPass);
 
+    }
+
+    private void replaceDay(String s,String r){
+        for(int i=0; i < allbdays.size() ;i++){
+            if(allbdays.get(i).contains(s)){
+                allbdays.set(i,r);
+            }
+        }
+
+    }
+    private boolean bExists(){
+        for(int i=0; i < allbdays.size() ;i++){
+            if(allbdays.get(i).contains(businessID)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @FXML
@@ -173,16 +196,27 @@ if(end.size()!=0) {
         if(valid == start.length){
             try {
                 FileWriter fw = new FileWriter("businessdaysList.txt"); //the true will append the new data
+                if(bExists()){
+                    //replace b1 with businessid
+                    replaceDay((businessID + " Monday"),(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText()));
+                    replaceDay(businessID + " Tuesday",(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()));
+                    replaceDay(businessID + " Wednesday ",businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());
+                    replaceDay(businessID + " Thursday " ,businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText());
+                    replaceDay(businessID + " Friday ",businessID + " Friday " + friStart.getText()+ " " +friEnd.getText());
 
-                //replace b1 with businessid
-                fw.write(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText()+"\n");
-                fw.write(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText()+"\n");
-                fw.write(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText()+"\n");
-                fw.write(businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText()+"\n");
-                fw.write(businessID + " Friday " + friStart.getText()+ " " +friEnd.getText()+"\n");
+                }
+                else{//this is a new business
+                    allbdays.add(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText());
+                    allbdays.add(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText());
+                    allbdays.add(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());
+                    allbdays.add(businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText());
+                    allbdays.add(businessID + " Friday " + friStart.getText()+ " " +friEnd.getText());
+
+                }
                 fw.close();
             } catch (IOException ioe) {
             }
+            w.rewriteToFile(allbdays, "businessdaysList.txt");
             return true;
 
         }
@@ -194,15 +228,15 @@ if(end.size()!=0) {
 
     @FXML
     void updateHours(ActionEvent event) throws IOException{
-            if(updateBusinessHours()){
-                pass("businessMenu.fxml", businessID);
-                switchToBusinessMenu(event);
+        if(updateBusinessHours()){
+            pass("businessMenu.fxml", businessID);
+            switchToBusinessMenu(event);
 
-            }
+        }
 
-            else{
+        else{
 
-            }
+        }
 
 
 
