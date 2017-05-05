@@ -16,9 +16,9 @@ import java.util.logging.Logger;
 public class Register {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
 
-/*
- * Customer is presented with the registration menu
- */
+    /*
+     * Customer is presented with the registration menu
+     */
     public void registerMenu(){
         String username;
 
@@ -133,19 +133,19 @@ public class Register {
         Login login = new Login();
         login.getOwnerinfo();
         //isEmpty just checks for null
-        if(username.isEmpty() || username.length()<= 2||(username.charAt(0) != 'b'||(username.charAt(1) != 'l' )||username.length()> 15)){
+        if(username.isEmpty() || username.length()<= 1||(username.charAt(0) != 'b'||username.length()> 15)){
 
-            System.out.println("Error: Username must start with a 'bl' and cannot exceed 15 characters. Try again");
+            System.out.println("Error: Username must start with a 'b' and cannot exceed 15 characters. Try again");
             return false;
 
         }
 
 
-        if((username.charAt(0) == 'b') &&(username.charAt(1) == 'l')&& (username.length()<= 15) && (username.length()>2)){
+        if((username.charAt(0) == 'b') && (username.length()<= 15) && (username.length()>2)){
 
-            for(int i = 0; i< login.businessOwnerList.size(); i++) {
+            for(int i = 0; i< login.businessList.size(); i++) {
 
-                if (login.businessOwnerList.get(i).getUsername().equals(username)) {
+                if (login.businessList.get(i).getUsername().equals(username)) {
                     System.out.println("Username already exists. Re-enter valid username\n");
                     return false;
                 }
