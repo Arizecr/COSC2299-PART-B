@@ -97,7 +97,7 @@ public class addEmployeeAvailableDayController implements Initializable{
         if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) && ad.checkDay(businessID,eid.getText(),day.getText())){
 
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
-            ArrayList<String> array2list = ad.loadInfo(businessID);
+            ArrayList<String> array2list = ad.Bavailability;
             clarityArrAD(array2list);
             workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
@@ -107,7 +107,7 @@ public class addEmployeeAvailableDayController implements Initializable{
                 if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText())){
                     System.out.println("Check1");
                     ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
-                    ArrayList<String> array2list = ad.loadInfo(businessID);
+                    ArrayList<String> array2list = ad.Bavailability;
                     clarityArrAD(array2list);
                     workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
                 }
