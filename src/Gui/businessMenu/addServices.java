@@ -77,6 +77,11 @@ public class addServices extends Controller implements Initializable{
         }
     }
 
+    @FXML
+    void removeIsClicked(ActionEvent event) throws IOException{
+
+    }
+
 
 
 
