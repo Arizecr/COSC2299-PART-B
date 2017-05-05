@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -56,18 +57,35 @@ public class addServices extends Controller implements Initializable{
 
     @FXML
     void addIsClicked(ActionEvent event) throws IOException{
-        if(service.checkName(name.getText())){
+        if(!service.checkName(name.getText())){
             //alert
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Service name entered is invalid. Try again.");
+
+            alert.showAndWait();
+        }
+        else if(!service.checkDur(length.getText())){
+            //alert
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("length entered is invalid. Try again.");
+
+            alert.showAndWait();
 
         }
-        else if(service.checkDur(length.getText())){
-            //alert
+        else if(!service.checkCost(cost.getText())){
+            //
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("cost entered is invalid. Try again.");
 
+            alert.showAndWait();
         }
-        else if(service.checkCost(cost.getText())){
-            //alert
-        }
-        else if(!service.checkName(name.getText()) && !service.checkDur(length.getText()) &&  !service.checkCost(cost.getText())){
+        else if(service.checkName(name.getText()) && service.checkDur(length.getText()) &&  service.checkCost(cost.getText())){
 
             filewriter.WriteToWorkingdayTXT((new Services(businessID,serviceID.getText(), name.getText(), length.getText(), cost.getText())).toString(), "services.txt");
 
@@ -79,7 +97,13 @@ public class addServices extends Controller implements Initializable{
 
     @FXML
     void removeIsClicked(ActionEvent event) throws IOException{
+       int  index = service.checkID(serviceID.getText());
+        service.serviceList.remove(index-1);
 
+        filewriter.rewriteToFile(service.serviceList,"services.txt");
+        System.out.print("Service removed");
+        pass("businessMenu.fxml", businessID);
+        switchToBusinessMenu(event);
     }
 
 
