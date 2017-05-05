@@ -181,17 +181,17 @@ public class viewBusinessHours implements Initializable{
 
         int valid = 0;
         for(int i=0; i<start.length; i++){
-            if(bMenu.timeCheck(start[i], end[i])){
+           if(start[i]!=null&&end[i]!=null) {
+               if (bMenu.timeCheck(start[i], end[i])) {
 
-            }
+               } else {
 
-            else{
-
-                valid++;
-            }
-
+                   valid++;
+               }
+           }
 
         }
+
 
         if(valid == start.length){
             try {
