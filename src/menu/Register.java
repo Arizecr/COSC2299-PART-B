@@ -133,7 +133,7 @@ public class Register {
         Login login = new Login();
         login.getOwnerinfo();
         //isEmpty just checks for null
-        if(username.isEmpty() || username.length()<= 1||(username.charAt(0) != 'b'||username.length()> 15)){
+        if(username.isEmpty() || username.length()< 1||username.charAt(0) != 'b'||username.length()> 15){
 
             System.out.println("Error: Username must start with a 'b' and cannot exceed 15 characters. Try again");
             return false;
@@ -141,7 +141,7 @@ public class Register {
         }
 
 
-        if((username.charAt(0) == 'b') && (username.length()<= 15) && (username.length()>2)){
+        if((username.charAt(0) == 'b') && (username.length()<= 15) && (username.length()>1)){
 
             for(int i = 0; i< login.businessList.size(); i++) {
 

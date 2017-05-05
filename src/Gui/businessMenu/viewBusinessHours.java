@@ -73,19 +73,20 @@ public class viewBusinessHours implements Initializable{
         days.add("Wednesday");
         days.add("Thursday");
         days.add("Friday");
-
-        mondayStart.setText(start.get(0));
-        tuesdayStart.setText(start.get(1));
-        wednesdayStart.setText(start.get(2));
-        thursStart.setText(start.get(3));
-        friStart.setText(start.get(4));
-
-        mondayEnd.setText(end.get(0));
-        tuesdayEnd.setText(end.get(1));
-        wednesdayEnd.setText(end.get(2));
-        thursEnd.setText(end.get(3));
-        friEnd.setText(end.get(4));
-
+if(start.size()!=0) {
+    mondayStart.setText(start.get(0));
+    tuesdayStart.setText(start.get(1));
+    wednesdayStart.setText(start.get(2));
+    thursStart.setText(start.get(3));
+    friStart.setText(start.get(4));
+}
+if(end.size()!=0) {
+    mondayEnd.setText(end.get(0));
+    tuesdayEnd.setText(end.get(1));
+    wednesdayEnd.setText(end.get(2));
+    thursEnd.setText(end.get(3));
+    friEnd.setText(end.get(4));
+}
 
 
     }

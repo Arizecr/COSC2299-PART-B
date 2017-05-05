@@ -4,6 +4,7 @@ import test.Logging;
 import user.Employee;
 import userBase.User;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,11 +22,18 @@ public class WriteToFile {
     public void WriteToTXT(User person, String txtname){
 
         try{
-
             FileWriter fw = new FileWriter(txtname,true); //the true will append the new data
+            File file = new File(txtname);
+            if(file.length()==0)// if file is empty data added to firt line
+            {
+                fw.write(person.toString());//appends the string to the file
+                 }
+            else {// if not empty adds data to the nextline
 
-            fw.write("\n");
-            fw.write(person.toString());//appends the string to the file
+
+                fw.write("\n");
+                fw.write(person.toString());//appends the string to the file
+            }
             fw.close();
         }
         catch(IOException ioe)
@@ -39,22 +47,28 @@ public class WriteToFile {
     }
 
     public void WriteToEmployee(Employee person, String txtname){
-
         try{
-
             FileWriter fw = new FileWriter(txtname,true); //the true will append the new data
+            File file = new File(txtname);
+            if(file.length()==0)// if file is empty data added to firt line
+            {
+                fw.write(person.toString());//appends the string to the file
+            }
+            else {// if not empty adds data to the nextline
 
-            fw.write("\n");
-            fw.write(person.toString());//appends the string to the file
+
+                fw.write("\n");
+                fw.write(person.toString());//appends the string to the file
+            }
             fw.close();
         }
         catch(IOException ioe)
         {
-           // System.err.println("IOException: " + ioe.getMessage());
-             l.Logging();
+            //System.err.println("IOException: " + ioe.getMessage());
+
+            l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
-
     }
     //overwrites the current textfile
     public void reWriteToWorkingdayTXT(String chosenwork, String txtname){
@@ -72,21 +86,28 @@ public class WriteToFile {
 
     }
     public void WriteToWorkingdayTXT(String chosenwork, String txtname){
-
         try{
             FileWriter fw = new FileWriter(txtname,true); //the true will append the new data
+            File file = new File(txtname);
+            if(file.length()==0)// if file is empty data added to firt line
+            {
+                fw.write(chosenwork);//appends the string to the file
+            }
+            else {// if not empty adds data to the nextline
 
-            fw.write("\n");
-            fw.write(chosenwork);//appends the string to the file
+
+                fw.write("\n");
+                fw.write(chosenwork);//appends the string to the file
+            }
             fw.close();
         }
         catch(IOException ioe)
         {
-             l.Logging();
-            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
             //System.err.println("IOException: " + ioe.getMessage());
-        }
 
+            l.Logging();
+            LOGGER.log(Level.WARNING,ioe.toString(),ioe);
+        }
 
     }
     public void rewriteToFile(ArrayList List, String filename){

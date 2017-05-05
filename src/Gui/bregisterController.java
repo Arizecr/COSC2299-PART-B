@@ -55,9 +55,9 @@ public class bregisterController {
             int valid = registerMenu.testBReg(password.getText(),name.getText(),ownername.getText(),address.getText(),mobile.getText());
 
             if(valid == 0&&p.getText().equals(password.getText())){
-                String blist =bo.gBN() ;
-                toTxt.WriteToWorkingdayTXT(username.getText()+":"+ password.getText()+":"+blist,"businesslogin.txt");
-                toTxt.WriteToTXT(new Business(blist, password.getText(), name.getText(),ownername.getText(), address.getText(), mobile.getText()), "business.txt");
+
+
+                toTxt.WriteToTXT(new Business(username.getText(), password.getText(), name.getText(),ownername.getText(), address.getText(), mobile.getText()), "business.txt");
                 switchToLogin(event);
             }
             else if(!p.getText().equals(password.getText())){
