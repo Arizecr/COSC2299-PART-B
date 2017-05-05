@@ -184,7 +184,7 @@ public class addWorkingDayController implements Initializable{
         endError.setVisible(false);
         eidError.setVisible(false);
         readEmployee();
-        ArrayList<String> array = ad.loadInfo();
+        ArrayList<String> array = ad.loadInfo(businessID);
         clarityArrAD(array);
         workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
@@ -196,7 +196,8 @@ public class addWorkingDayController implements Initializable{
         eid.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();
             if(!(eid.getText() == null)){
-                ArrayList<String> arrayz = ad.loadInfo();
+                 ad.loadInfo(businessID);
+                ArrayList<String> arrayz = ad.Bavailability;
                 clarityArrAD(arrayz);
                 for(int i=0; i<clarityArrayAD.size(); i++){
                     if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){

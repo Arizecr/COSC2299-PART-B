@@ -1,10 +1,8 @@
 package EmployeeAvailabilityDays;
 
-import BusinessWorkDays.Workday;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import javafx.scene.control.Alert;
-import menu.BusinessMenu;
 import test.Logging;
 import user.Employee;
 
@@ -17,7 +15,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,12 +38,13 @@ public class AvailableDay {
     Employee e = new Employee();
     //list for worker availability
     public static ArrayList<String> availability = new ArrayList<>();
+    public static ArrayList<String> Bavailability = new ArrayList<>();
     Logging l =new Logging();
 
     /*
      * Load list for worker availability
      */
-    public ArrayList<String> loadInfo(){
+    public ArrayList<String> loadInfo(String b){
         availability = new ArrayList<>();
 
 
@@ -58,6 +56,11 @@ public class AvailableDay {
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     availability.add(x);
+                    String Details[] = x.split(" ",5);
+                    String bID = Details[0];
+                    if(bID.equals(b)){
+                        Bavailability.add(x);
+                    }
                 }
                 //prints error
             } catch (IOException error) {
@@ -79,7 +82,7 @@ public class AvailableDay {
      * Print worker availability
      */
     public void printFile(String bId,String eId){
-        loadInfo();
+        loadInfo(bId);
         String bID= "" ;
         String eID= "" ;
         String day ="" ;
@@ -103,7 +106,7 @@ public class AvailableDay {
         }
     }
     public void addEmployeeAvailability(String busId,String eID, String day, String start, String end){
-        loadInfo();
+        loadInfo(busId);
 
         String x = busId + " " +eID + " " + day + " " + start + " " + end;
         if(!editAv(busId,eID,day,start,end,x)){
@@ -128,8 +131,8 @@ public class AvailableDay {
         return false;
     }
 
-    public boolean checkFirstTimeEmployee(String eid){
-        loadInfo();
+    public boolean checkFirstTimeEmployee(String eid,String b){
+        loadInfo(b);
         for(int i=0; i<availability.size(); i++){
             availability.get(i).contains(eid);
             return true;
@@ -137,7 +140,7 @@ public class AvailableDay {
         return false;
     }
     public boolean checkDay(String b, String e, String d){
-        loadInfo();
+        loadInfo(b);
         String bID= "" ;
         String eID= "" ;
         String day ="" ;
@@ -161,7 +164,7 @@ public class AvailableDay {
     //check valid and not already existing
     public boolean checkFile(String b,String emp, String d,String st,String en)
     {
-        loadInfo();
+        loadInfo(b);
         String bID= "" ;
         String empid= "" ;
         String day ="" ;

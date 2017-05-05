@@ -75,7 +75,7 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     @FXML
     void addAvailibility(ActionEvent event) {
-        ad.loadInfo();
+        ad.loadInfo(businessID);
         if(checkEID()){
            //alert
 
@@ -97,17 +97,17 @@ public class addEmployeeAvailableDayController implements Initializable{
         if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) && ad.checkDay(businessID,eid.getText(),day.getText())){
 
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
-            ArrayList<String> array2list = ad.loadInfo();
+            ArrayList<String> array2list = ad.loadInfo(businessID);
             clarityArrAD(array2list);
             workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
         }
         if(!checkEID()){
-            if(ad.checkFirstTimeEmployee(eid.getText())){
+            if(ad.checkFirstTimeEmployee(eid.getText(),businessID)){
                 if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText())){
                     System.out.println("Check1");
                     ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
-                    ArrayList<String> array2list = ad.loadInfo();
+                    ArrayList<String> array2list = ad.loadInfo(businessID);
                     clarityArrAD(array2list);
                     workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
                 }
@@ -210,7 +210,8 @@ public class addEmployeeAvailableDayController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         readEmployee();
-        ArrayList<String> array = ad.loadInfo();
+        ad.loadInfo(businessID);
+        ArrayList<String> array =ad.Bavailability;
         clarityArrAD(array);
 
         eidError.setVisible(false);
@@ -225,7 +226,8 @@ public class addEmployeeAvailableDayController implements Initializable{
             ArrayList<String> array2 = new ArrayList<>();
             if(!(eid.getText() == null)){
 
-                ArrayList<String> arrayz = ad.loadInfo();
+                 ad.loadInfo(businessID);
+                ArrayList<String> arrayz = ad.Bavailability;
                 clarityArrAD(arrayz);
                 for(int i=0; i<clarityArrayAD.size(); i++){
                     if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){

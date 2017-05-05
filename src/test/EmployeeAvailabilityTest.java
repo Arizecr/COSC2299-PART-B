@@ -41,7 +41,7 @@ public class EmployeeAvailabilityTest {
 
     @Test
     public void validEmployeeAvailability()  {
-        e.loadInfo();
+        e.loadInfo("b1");
         day = "monday";
         starttime = "3:00";
         endtime = "19:00";
@@ -52,7 +52,7 @@ public class EmployeeAvailabilityTest {
 
     @Test
     public void invalidEmployeeStartTimeAfterBusinessHours()  {
-        e.loadInfo();
+        e.loadInfo("b1");
         day = "monday";
         starttime = "20:00";
         endtime = "22:00";
@@ -63,7 +63,7 @@ public class EmployeeAvailabilityTest {
 
     @Test
     public void invalidEmployeeStartTimeBeforeBusinessHours()  {
-        e.loadInfo();
+        e.loadInfo("b1");
         day = "monday";
         starttime = "0:00";
         endtime = "5:00";
@@ -74,7 +74,7 @@ public class EmployeeAvailabilityTest {
 
     @Test
     public void invalidEmployeeStartTimeBeforeAfterBusinessHours()  {
-        e.loadInfo();
+        e.loadInfo("b1");
         day = "monday";
         starttime = "0:00";
         endtime = "24:00";
@@ -154,7 +154,7 @@ public class EmployeeAvailabilityTest {
     //Should Return True
     @Ignore
     public void invalidEmployeeAvailability()  {
-        e.loadInfo();
+        e.loadInfo("b1");
         day = "monday";
         starttime = "3:00";
         endtime = "2:00";

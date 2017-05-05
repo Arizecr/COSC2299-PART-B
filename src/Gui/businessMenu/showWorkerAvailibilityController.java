@@ -11,12 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -72,7 +73,8 @@ public class showWorkerAvailibilityController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("dwlo");
         readEmployee();
-        ArrayList<String> array = ad.loadInfo();
+        ad.loadInfo(businessID);
+        ArrayList<String> array = ad.Bavailability;
         clarityArrAD(array);
 
 
@@ -82,7 +84,7 @@ public class showWorkerAvailibilityController implements Initializable{
             ArrayList<String> array2 = new ArrayList<>();
             if(!(name.getText() == null)){
 
-                ArrayList<String> arrayz = ad.loadInfo();
+                ArrayList<String> arrayz = ad.Bavailability;
                 clarityArrAD(arrayz);
                 for(int i=0; i<clarityArrayAD.size(); i++){
                     if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
