@@ -47,8 +47,11 @@ public class addServices extends Controller implements Initializable{
     @FXML
     private TextField cost;
 
+//    @FXML
+//    private Label serviceID;
+
     @FXML
-    private Label serviceID;
+    private TextField serviceID;
 
     @FXML
     private ListView<String> serviceList;
@@ -97,11 +100,14 @@ public class addServices extends Controller implements Initializable{
 
     @FXML
     void removeIsClicked(ActionEvent event) throws IOException{
-       int  index = service.checkID(serviceID.getText());
+
+        int index = service.checkID(serviceID.getText());
+//        System.out.println("index:");
         service.serviceList.remove(index-1);
 
         filewriter.rewriteToFile(service.serviceList,"services.txt");
         System.out.print("Service removed");
+
         pass("businessMenu.fxml", businessID);
         switchToBusinessMenu(event);
     }
