@@ -204,7 +204,10 @@ public class Workday
         }
 
         if(count==0){
-            System.out.println("Some error?");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: This business is not open. \nPlease check business hours");
             return true;
         }
         return false;

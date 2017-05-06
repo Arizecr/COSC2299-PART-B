@@ -127,8 +127,9 @@ public class Employee {
             }
 
         }
-        if(!empID.equals("all")){
-            System.out.println("employee ID invalid");}
+        if(!empID.equals("all")) {
+            // System.out.println("employee ID invalid");}
+        }
         return false;
 
     }

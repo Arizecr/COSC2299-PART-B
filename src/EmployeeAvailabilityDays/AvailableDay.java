@@ -46,6 +46,7 @@ public class AvailableDay {
      */
     public ArrayList<String> loadInfo(String b){
         availability = new ArrayList<>();
+        Bavailability = new ArrayList<>();
 
 
         BufferedReader br;

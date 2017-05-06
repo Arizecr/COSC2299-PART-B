@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.BusinessMenu;
+import user.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -36,6 +37,7 @@ public class addEmployeeAvailableDayController implements Initializable{
     Workday w = new Workday();
     BusinessMenu b = new BusinessMenu();
     AvailableDay ad = new AvailableDay();
+    Employee emp = new Employee();
 
     public static String businessID;
 
@@ -76,8 +78,8 @@ public class addEmployeeAvailableDayController implements Initializable{
     @FXML
     void addAvailibility(ActionEvent event) {
         ad.loadInfo(businessID);
-        if(checkEID()){
-           //alert
+        if(!emp.checkEmployeeID(businessID,eid.getText())){
+            //alert
 
         }
         else if(b.checktime(starttime.getText())){
@@ -98,17 +100,17 @@ public class addEmployeeAvailableDayController implements Initializable{
 
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
             ArrayList<String> array2list = ad.Bavailability;
-            clarityArrAD(array2list);
+            clarityArrAD(array2list,null);
             workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
         }
-        if(!checkEID()){
+        if(emp.checkEmployeeID(businessID,eid.getText())){
             if(ad.checkFirstTimeEmployee(eid.getText(),businessID)){
                 if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText())){
                     System.out.println("Check1");
                     ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
                     ArrayList<String> array2list = ad.Bavailability;
-                    clarityArrAD(array2list);
+                    clarityArrAD(array2list,null);
                     workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
                 }
             }
@@ -117,28 +119,36 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     }
 
-    private ArrayList clarityArrAD(ArrayList<String> array){
+    private ArrayList clarityArrAD(ArrayList<String> array, String e){
         clarityArrayAD.clear();
         for(int i=0; i<array.size(); i++){
+            String arrayinfo[] = array.get(i).split(" ",5);
+            String bID = arrayinfo[0];
+            String eID = arrayinfo[1];
+            if(e!=null && e.equals(eID)) {
+                String name = emp.getEmployeeName(bID, eID);
 
-            for(int j=0 ; j<employee.size(); j++){
-
-                if(array.get(i).contains(employee.get(j).get(0))){
-                    String[] arrayinfo = array.get(i).split(" ", 5);
-                    clarityArrayAD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
-                }
+                clarityArrayAD.add(name + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
             }
+            else if(e==null ) {
+                String name = emp.getEmployeeName(bID, eID);
 
+                clarityArrayAD.add(name + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
+            }
         }
+
+
 
 
         return clarityArrayAD;
     }
 
+
     private boolean checkEID(){
 
         for(int i=0; i<employee.size(); i++){
             if(employee.get(i).get(0).equals(eid.getText())){
+                System.out.println(employee.get(i).get(0));
                 return false;
             }
         }
@@ -212,7 +222,7 @@ public class addEmployeeAvailableDayController implements Initializable{
         readEmployee();
         ad.loadInfo(businessID);
         ArrayList<String> array =ad.Bavailability;
-        clarityArrAD(array);
+        clarityArrAD(array,null);
 
         eidError.setVisible(false);
         dayError.setVisible(false);
@@ -224,26 +234,30 @@ public class addEmployeeAvailableDayController implements Initializable{
 
         eid.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();
+            ad.loadInfo(businessID);
+            ArrayList<String> arrayz = ad.Bavailability;
             if(!(eid.getText() == null)){
-
-                 ad.loadInfo(businessID);
-                ArrayList<String> arrayz = ad.Bavailability;
-                clarityArrAD(arrayz);
-                for(int i=0; i<clarityArrayAD.size(); i++){
+                clarityArrAD(arrayz,eid.getText());
+           /*     for(int i=0; i<clarityArrayAD.size(); i++){
                     if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
                         array2.add(clarityArrayAD.get(i));
 
                     }
-                }
-                workerList.setItems(FXCollections.observableArrayList(array2));
+                }*/
+
             }
+            else{
+
+                clarityArrAD(arrayz,null);
+            }
+            workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
         });
 
 
 //CHECK FOR Employee ID
         eid.textProperty().addListener((obs, oldText, newText) -> {
             if(!(oldText == null)){
-                if(listenerEIDCheck(newText)){
+                if(emp.checkEmployeeID(businessID,newText)){
                     eidError.setVisible(false);
                 }else{
                     eidError.setVisible(true);
@@ -306,7 +320,7 @@ public class addEmployeeAvailableDayController implements Initializable{
     private boolean listenerEIDCheck(String empeid){
 
         for(int i=0; i<employee.size(); i++){
-            if(employee.get(i).get(0).equals(eid.getText())){
+            if(employee.get(i).get(0).equals(empeid)){
                 return true;
             }
         }
