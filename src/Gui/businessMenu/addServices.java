@@ -16,7 +16,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -26,7 +25,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 
 public class addServices extends Controller implements Initializable{
     Services service = new Services();
@@ -101,11 +99,11 @@ public class addServices extends Controller implements Initializable{
 
     @FXML
     void removeIsClicked(ActionEvent event) throws IOException{
-        String a=serviceID.getText();
+
         int index = service.checkID(serviceID.getText());
 
       try {
-          if (Integer.toString(index) != (a)) {
+          if (index==0) {
               System.out.println("1");
               Alert alert = new Alert(Alert.AlertType.INFORMATION);
               alert.setTitle("Error");
@@ -114,20 +112,21 @@ public class addServices extends Controller implements Initializable{
 
               alert.showAndWait();
           }
+          else{
+              service.serviceList.remove(index - 1);
+              filewriter.rewriteToFile(service.serviceList,"services.txt");
+              System.out.print("Service removed");
+
+              pass("businessMenu.fxml", businessID);
+              switchToBusinessMenu(event);
+          }
       }
         catch(ArrayIndexOutOfBoundsException ae){
               ae.printStackTrace();
           }
 
-        service.serviceList.remove(index - 1);
 
 
-        filewriter.rewriteToFile(service.serviceList,"services.txt");
-        System.out.print("Service removed");
-
-
-        pass("businessMenu.fxml", businessID);
-        switchToBusinessMenu(event);
     }
 
 
