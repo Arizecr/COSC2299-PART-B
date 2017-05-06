@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 public class addServices extends Controller implements Initializable{
     Services service = new Services();
@@ -100,13 +101,45 @@ public class addServices extends Controller implements Initializable{
 
     @FXML
     void removeIsClicked(ActionEvent event) throws IOException{
-
+        String a=serviceID.getText();
         int index = service.checkID(serviceID.getText());
+
 //        System.out.println("index:");
-        service.serviceList.remove(index-1);
+      try {
+          if (Integer.toString(index) != (a)) {
+              System.out.println("1");
+              Alert alert = new Alert(Alert.AlertType.INFORMATION);
+              alert.setTitle("Error");
+              alert.setHeaderText(null);
+              alert.setContentText("service ID entered is invalid. Try again.");
+
+              alert.showAndWait();
+          }
+      }
+        catch(ArrayIndexOutOfBoundsException ae){
+              ae.printStackTrace();
+          }
+
+        service.serviceList.remove(index - 1);
+
 
         filewriter.rewriteToFile(service.serviceList,"services.txt");
         System.out.print("Service removed");
+
+        //String a=serviceID.getText();
+
+     //   if(Integer.toString(index)==(a)){
+
+//        if(service.checkID(a).equals(serviceID.getText())){
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Error");
+//            alert.setHeaderText(null);
+//            alert.setContentText("service ID entered is invalid. Try again.");
+//
+//            alert.showAndWait();
+
+//        }
+
 
         pass("businessMenu.fxml", businessID);
         switchToBusinessMenu(event);
