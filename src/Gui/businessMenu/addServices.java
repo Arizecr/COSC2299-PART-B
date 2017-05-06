@@ -104,7 +104,6 @@ public class addServices extends Controller implements Initializable{
         String a=serviceID.getText();
         int index = service.checkID(serviceID.getText());
 
-//        System.out.println("index:");
       try {
           if (Integer.toString(index) != (a)) {
               System.out.println("1");
@@ -125,20 +124,6 @@ public class addServices extends Controller implements Initializable{
 
         filewriter.rewriteToFile(service.serviceList,"services.txt");
         System.out.print("Service removed");
-
-        //String a=serviceID.getText();
-
-     //   if(Integer.toString(index)==(a)){
-
-//        if(service.checkID(a).equals(serviceID.getText())){
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Error");
-//            alert.setHeaderText(null);
-//            alert.setContentText("service ID entered is invalid. Try again.");
-//
-//            alert.showAndWait();
-
-//        }
 
 
         pass("businessMenu.fxml", businessID);
