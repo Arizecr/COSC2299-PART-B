@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/chooseBusinessController$1.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/chooseBusinessController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/chooseBusinessController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/chooseBusinessController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/customerMenu.fxml" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/customerMenu.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customerMenu.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customerMenu.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
@@ -45,6 +48,29 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="166">
               <caret line="16" column="112" lean-forward="true" selection-start-line="16" selection-start-column="112" selection-end-line="16" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chooseBusinessController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="73" column="23" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chooseBusiness.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/chooseBusiness.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,7 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkb</find>
       <find>faken</find>
       <find>get</find>
       <find>pass</find>
@@ -105,6 +130,7 @@
       <find>employee</find>
       <find>details</find>
       <find>Exit</find>
+      <find>exi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
         <option value="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
         <option value="$PROJECT_DIR$/src/test/ServicesTesting.java" />
@@ -176,6 +201,7 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml" />
+        <option value="$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java" />
       </list>
     </option>
   </component>
@@ -263,28 +289,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="customerMenu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="C3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="C3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="businessMenu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -660,13 +664,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00124" summary="fixing booking">
-      <created>1493552493040</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1493552493040</updated>
-    </task>
     <task id="LOCAL-00125" summary="fixing booking">
       <created>1493552790175</created>
       <option name="number" value="00125" />
@@ -1003,7 +1000,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494198362368</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="logout">
+      <created>1494198706314</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1494198706314</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1094,7 +1098,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add booking complete" />
     <MESSAGE value="services" />
     <MESSAGE value="business owner booking" />
     <MESSAGE value="fixed small issue" />
@@ -1119,7 +1122,8 @@
     <MESSAGE value="Documentation for Login/Register- GUI functions" />
     <MESSAGE value="Documentation for viewBusinessHours/viewBookingSummaryController/showWorkerAvailibilityController- GUI functions" />
     <MESSAGE value="small changes to GUI aesthetic- make booking function" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes to GUI aesthetic- make booking function" />
+    <MESSAGE value="logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="logout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1132,14 +1136,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../C/businesslogin.txt" />
-    <entry file="file://$PROJECT_DIR$/src/user/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="117" column="23" lean-forward="false" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/user/Business.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1339,6 +1335,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-434">
           <caret line="123" column="28" lean-forward="true" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1452,17 +1449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/login.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1526,6 +1512,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="16" column="112" lean-forward="true" selection-start-line="16" selection-start-column="112" selection-end-line="16" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/login.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/chooseBusiness.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/customerMenu/chooseBusinessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="73" column="23" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
           <folding />
         </state>
       </provider>
