@@ -73,12 +73,16 @@ public class Controller {
 
 
 
-
+    /*
+     * Display login menu
+     */
     @FXML
     void startLogin(ActionEvent event) throws IOException {
 
-        loginMenu.loadCustomerInformation();
-        loginMenu.loadOwnerInformation();
+        loginMenu.loadCustomerInformation(); //load customer info
+        loginMenu.loadOwnerInformation(); //load owner info
+
+        //checks validity via length
         if(username.getText().length() <1 || password.getText().length()<1){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -88,13 +92,17 @@ public class Controller {
             alert.showAndWait();
 
         }
+
+        //customer account- check validity
         else if(username.getText().charAt(0) == 'c'){
+
+            //check if password/username combination exists in the system
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 busId = username.getText();//is the customer
                 passC("customerMenu/chooseBusiness.fxml", busId);
-                switchToChooseBusiness(event);
+                switchToChooseBusiness(event); //valid
             }
-            else{
+            else{ //invalid
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -104,6 +112,8 @@ public class Controller {
                 alert.showAndWait();
             }
         }
+
+        //business owner account - check validity
         else if(username.getText().charAt(0) == 'b'){
             if(loginMenu.getVerification("owner",username.getText(),password.getText())){
                 // passes parameter to business menu controller
@@ -111,7 +121,7 @@ public class Controller {
                 pass("businessMenu/businessMenu.fxml", busId);
                 switchToBusinessMenu(event);
             }
-            else {
+            else { //invalid
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -120,7 +130,7 @@ public class Controller {
                 alert.showAndWait();
             }
         }
-        else {
+        else { //invalid, username does not start with 'c' or 'b'
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);

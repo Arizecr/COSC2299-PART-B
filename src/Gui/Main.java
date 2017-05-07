@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    /*
+     * displays login screen
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -17,7 +20,7 @@ public class Main extends Application {
 
     }
 
-
+    //launch program
     public static void main(String[] args) {
         launch(args);
     }

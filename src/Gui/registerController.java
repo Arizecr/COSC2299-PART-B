@@ -43,15 +43,22 @@ public class registerController {
     @FXML
     private Button registerAccount;
 
+    /*
+     * Create a new account, customer/business
+     */
     @FXML
     void createAccount(ActionEvent event) throws IOException {
+
+        //checks validity of account information
         if(registerMenu.testUser(username.getText())){
             int valid = registerMenu.testReg(password.getText(),name.getText(),address.getText(),mobile.getText());
 
             if(valid == 0&&p.getText().equals(password.getText())){
                 toTxt.WriteToTXT(new Customer(username.getText(), password.getText(), name.getText(), address.getText(), mobile.getText()), "customerinfo.txt");
-                switchToLogin(event);
+                switchToLogin(event); //valid
             }
+
+            //passwords do not match
             else if(!p.getText().equals(password.getText())){
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Error");
@@ -61,7 +68,7 @@ public class registerController {
                 alert.showAndWait();
             }
 
-        }else{
+        }else{ //username is invalid, does not start with 'c' or 'b'
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -81,6 +88,9 @@ public class registerController {
     }
 
 
+    /*
+     * return to login
+     */
     private void switchToLogin(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene home_page_scene = new Scene(home_page);
