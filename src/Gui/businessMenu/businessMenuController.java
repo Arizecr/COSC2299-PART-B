@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -153,6 +154,19 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.setScene(home_page_scene);
     }
 
+    /*
+     * return to login
+     */
+    @FXML
+    private void switchToLogin(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
+
+
     @FXML
     private void switchToAddWorkingDay(ActionEvent event) throws IOException {
 
@@ -234,8 +248,11 @@ public class businessMenuController extends Controller implements Initializable{
 
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {
+
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
+
+
 
     //go back to business menu
     public void cancel(ActionEvent event) throws IOException {

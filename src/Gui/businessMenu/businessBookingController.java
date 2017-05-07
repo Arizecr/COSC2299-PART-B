@@ -74,12 +74,17 @@ public class businessBookingController {
     @FXML
     private TextField endtime;
 
+    /*
+     * grab business id
+     */
     public static void setBusinessID(String bid){
         businessID = bid;
 
     }
 
-
+    /*
+     * grab customer id
+     */
     public static void setCustomerID(String cid){
         customerID = cid;
 
@@ -90,16 +95,21 @@ public class businessBookingController {
 
     }
 
+    /*
+     * make a booking
+     */
     public void startMakeBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
-        ArrayList<String> services = new ArrayList<>();
-        ArrayList<String> employees = new ArrayList<>();
+        ArrayList<String> services = new ArrayList<>(); //load services
+        ArrayList<String> employees = new ArrayList<>(); //load employees
         //ChoiceBox c = new ChoiceBox();
         s.printService(businessID);
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
+
+        //load all services
         for(int i=0;i<s.serviceList.size();i++){
             //makes sure the services of only the current business are displayed
             if(businessID.equals(s.serviceList.get(i).b())){
