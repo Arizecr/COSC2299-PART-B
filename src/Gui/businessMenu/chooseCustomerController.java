@@ -69,10 +69,12 @@ public class chooseCustomerController {
         loginMenu.loadCustomerInformation();
         //ArrayList<Button> b = new ArrayList<>();
         AnchorPane root = new AnchorPane();
+        int h = 200/(login.customerList.size()+1);
+        int next = 200/(login.customerList.size()+1)+10;
         double count = 30;
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.customerList.size();i++){
-            count+=30;
+            count+=next;
             Button gridButtons = new Button();
             gridButtons.setText(login.customerList.get(i).getUsername()+ " "+ login.customerList.get(i).getName());
             gridButtons.setMnemonicParsing(false);
