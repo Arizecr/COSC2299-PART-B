@@ -35,17 +35,19 @@ public class businessMenuController extends Controller implements Initializable{
     Driver driver = new Driver();
     public static String businessID;
 
+    //set business id
     public static void setBusinessID(String bid){
         businessID = bid;
 
     }
 
+    //get business id
     public String  getBusinessID(){
         return businessID;
 
     }
 
-
+    //pass business id throughout functions/scenes
     private void pass(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -54,6 +56,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    //go to show worker availibility scene
     private void passToShowWorkerAvailibility(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -62,6 +65,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    //go to remove working day scene
     private void passToRemoveWorkingDay(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -70,6 +74,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    //go to add working day scene
     private void passToAddWorkingDay(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -78,6 +83,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    //go to view business hours scene
     private void passToViewBusinessHours(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -86,6 +92,7 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+    //go to view availible days scene (part of show worker availibility scene)
     private void passToAvailableDay(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -93,6 +100,8 @@ public class businessMenuController extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+
+    //go to choose customer scene (part of make booking function)
     private void passToChooseCustomer(String fxmlFile, String parameterToPass) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -101,6 +110,8 @@ public class businessMenuController extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+
+    //go to add services scene
     private void passToAddServices(String fxmlFile, String parameterToPass) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -109,6 +120,8 @@ public class businessMenuController extends Controller implements Initializable{
         controller.setBusinessID(parameterToPass);
 
     }
+
+    //go to view booking summary scene
     private void passToViewBookingSummary(String fxmlFile, String parameterToPass) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -128,7 +141,7 @@ public class businessMenuController extends Controller implements Initializable{
     }
 
 
-
+    //go to add employee scene
     @FXML
     private void switchToAddEmployee(ActionEvent event) throws IOException {
 
@@ -144,6 +157,7 @@ public class businessMenuController extends Controller implements Initializable{
         //System.out.println(busId); //get Businessid
     }
 
+    //go to add worker availibility scene
     @FXML
     void switchToAddAvailibility(ActionEvent event) throws IOException {
 
@@ -166,7 +180,7 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.show();
     }
 
-
+    //go to add working day scene
     @FXML
     private void switchToAddWorkingDay(ActionEvent event) throws IOException {
 
@@ -178,6 +192,7 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.show();
     }
 
+    //go to show worker availibility scene
     @FXML
     private void switchToShowWorkerAvailibility(ActionEvent event) throws IOException {
         passToShowWorkerAvailibility("showWorkerAvailibility.fxml", businessID);
@@ -188,6 +203,7 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.show();
     }
 
+    //go to remove working day scene
     @FXML
     private void removeWorkingDay(ActionEvent event) throws IOException {
         passToRemoveWorkingDay("removeWorkingDay.fxml", businessID);
@@ -198,6 +214,7 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.show();
     }
 
+    //go to adjust business hours scene
     @FXML
     private void switchToAdjustBusinessHours(ActionEvent event) throws IOException {
         passToViewBusinessHours("viewBusinessHours.fxml", businessID);

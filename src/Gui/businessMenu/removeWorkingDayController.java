@@ -1,6 +1,5 @@
 package Gui.businessMenu;
 
-import EmployeeAvailabilityDays.AvailableDay;
 import coreFunctions.Driver;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -42,6 +41,9 @@ public class removeWorkingDayController implements Initializable{
 
     Driver driver = new Driver();
 
+    /*
+     * get all days/times an employee is working
+     */
     private ArrayList clarityArrWD(ArrayList<String> array){
         clarityArrayWD.clear();
         for(int i=0; i<array.size(); i++){
@@ -73,6 +75,7 @@ public class removeWorkingDayController implements Initializable{
     @FXML
     private Label dayError;
 
+    //return to business menu
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
@@ -89,7 +92,7 @@ public class removeWorkingDayController implements Initializable{
     }
 
 
-
+    //go back to business menu, storing the business id
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -98,6 +101,7 @@ public class removeWorkingDayController implements Initializable{
 
     }
 
+    //remove all shifts for a given day that an employee is working
     @FXML
     void removeWorkday(ActionEvent event) {
         driver.deleteEmployeeWorktimes(businessID, eid.getText(), day.getText());
@@ -108,6 +112,7 @@ public class removeWorkingDayController implements Initializable{
 
     }
 
+    //function to initialise all information related to days/times an employee is working
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         eidError.setVisible(false);
@@ -148,7 +153,7 @@ public class removeWorkingDayController implements Initializable{
             }
         });
 
-//CHECK FOR DAY
+//CHECK FOR DAY validity
         day.textProperty().addListener((obs, oldText, newText) -> {
             if(!(oldText == null)){
                 if(listenerCheckDay(newText)){
@@ -163,6 +168,7 @@ public class removeWorkingDayController implements Initializable{
         });
     }
 
+    //load all employee information for a given business
     private ArrayList readEmployee(){
 
 
@@ -176,7 +182,7 @@ public class removeWorkingDayController implements Initializable{
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     String loginDetails[] = x.split(":",5);
-                    if(loginDetails[0].equals(businessID)){
+                    if(loginDetails[0].equals(businessID)){ //checks that the employee if of that business
                         System.out.println(businessID);
                         ArrayList<String> test = new ArrayList<>();
                         test.add(loginDetails[1]);
@@ -201,6 +207,7 @@ public class removeWorkingDayController implements Initializable{
 
     }
 
+    //check employee id validity
     private boolean listenerEIDCheck(String empeid){
 
         for(int i=0; i<employee.size(); i++){
@@ -212,6 +219,7 @@ public class removeWorkingDayController implements Initializable{
         return false;
     }
 
+    //checks the validity of a given day
     private boolean listenerCheckDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");

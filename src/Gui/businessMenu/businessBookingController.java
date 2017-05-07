@@ -1,5 +1,4 @@
 package Gui.businessMenu;
-
 import bookings.Services;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
@@ -143,6 +142,8 @@ public class businessBookingController {
 
             }
         });
+
+        //user selects service
         c.setTooltip(new Tooltip("Select the service"));
         e.loadEmployeeInformation();
         for(int i=0;i<e.employeeList.size();i++){

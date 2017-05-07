@@ -38,7 +38,7 @@ public class pastBookings{
     BusinessMenu bm = new BusinessMenu();
     public static String businessID;
 
-
+    //set business id
     public static void setBusinessID(String bid){
         businessID = bid;
 
@@ -54,6 +54,9 @@ public class pastBookings{
 
     }
 
+    /*
+     * view past bookings related to the business
+     */
     public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
@@ -68,6 +71,7 @@ public class pastBookings{
         list.setMaxWidth(245);
         ArrayList<String> bookings = new ArrayList<>();
 
+        //load in past booking information
         for(int i=0;i<driver.pastBookings.size();i++){
             if(driver.pastBookings.get(i).getBusiness().equals(businessID)){
                 String s = "Date: " + driver.pastBookings.get(i).getDate();
@@ -131,6 +135,8 @@ public class pastBookings{
         } catch (FileNotFoundException e) {
         }
     }
+
+    //go to view booking summary
     @FXML
     public void switchToSummary(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookingSummary.fxml"));
@@ -141,7 +147,7 @@ public class pastBookings{
     }
 
 
-
+    //cancel, go back to business menu
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);

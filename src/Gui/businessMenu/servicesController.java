@@ -49,7 +49,7 @@ public class servicesController extends Controller implements Initializable{
 
 
 
-
+    //cancel action, go back to business menu
     @FXML
     void cancel(ActionEvent event) throws IOException {
         pass("businessMenu.fxml", businessID);

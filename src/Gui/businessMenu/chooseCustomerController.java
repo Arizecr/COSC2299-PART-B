@@ -32,12 +32,16 @@ public class chooseCustomerController {
     @FXML
     private Pane child;
 
+    //set business id
     public static void setBusinessID(String cid){
         businessID = cid;
 
     }
 
 
+    /*
+     * pass business id throughout functions
+     */
     private void pass(String fxmlFile, String parameterToPass1,String parameterToPass2) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -54,6 +58,9 @@ public class chooseCustomerController {
     }
 
 
+    /*
+     * business chooses customer, when making a booking
+     */
     public void startChoose(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
@@ -93,6 +100,10 @@ public class chooseCustomerController {
         stage.setScene(scene);
 
     }
+
+    /*
+     * go to make booking scene
+     */
     @FXML
     private void switchToMenu(ActionEvent event)  {
         try {

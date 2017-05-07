@@ -349,7 +349,9 @@ public class addWorkingDayController implements Initializable{
 
 
 
-
+    /*
+     * load employee information
+     */
     private ArrayList readEmployee(){
 
 

@@ -38,6 +38,7 @@ public class currentBookings  {
     BusinessMenu bm = new BusinessMenu();
     public static String businessID;
 
+    //set business id
     public static void setBusinessID(String bid){
         businessID = bid;
 
@@ -66,6 +67,9 @@ public class currentBookings  {
     }
 
 
+    /*
+     * view/display current bookings
+     */
     public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
@@ -80,6 +84,7 @@ public class currentBookings  {
         list.setMaxWidth(245);
         ArrayList<String> bookings = new ArrayList<>();
 
+        //list all current bookings
         for(int i=0;i<driver.currentBookings.size();i++){
             if(driver.currentBookings.get(i).getBusiness().equals(businessID)){
                 String s = "Date: " + driver.currentBookings.get(i).getDate();
@@ -142,6 +147,7 @@ public class currentBookings  {
     }
 
 
+    //return to view booking summary controller
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
@@ -157,6 +163,7 @@ public class currentBookings  {
 
     }
 
+    //return to business menu
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -164,6 +171,8 @@ public class currentBookings  {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+    //go to view booking summary scene
     @FXML
     public void switchToSummary(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("viewBookingSummary.fxml"));
@@ -173,6 +182,7 @@ public class currentBookings  {
         app_stage.show();
     }
 
+    //go to view booking summary scene
     private void passToViewBookingSummary(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();

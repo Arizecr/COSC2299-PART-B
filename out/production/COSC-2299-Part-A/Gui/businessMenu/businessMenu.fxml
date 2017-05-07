@@ -23,7 +23,7 @@
             <Button layoutX="6.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToAddServices" prefHeight="27.0" prefWidth="330.0" text="Add new service(s)" />
             <Button layoutX="6.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToViewBookingSummary" prefHeight="27.0" prefWidth="330.0" text="View summaries of Bookings" />
             <Button layoutX="6.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToAdjustBusinessHours" prefHeight="27.0" prefWidth="330.0" text="View/adjust Business hours" />
-            <Button layoutX="6.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="27.0" prefWidth="330.0" text="Exit System" />
+            <Button layoutX="6.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="27.0" prefWidth="330.0" text="Exit System" />
             <Text layoutX="44.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Business Owner Menu">
                <font>
                   <Font name="American Typewriter" size="26.0" />
