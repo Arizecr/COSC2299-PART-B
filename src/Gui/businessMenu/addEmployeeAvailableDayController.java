@@ -75,27 +75,42 @@ public class addEmployeeAvailableDayController implements Initializable{
     @FXML
     private TextField endtime;
 
+
+    /*
+     * GUI function to add employee availbility
+     */
     @FXML
     void addAvailibility(ActionEvent event) {
         ad.loadInfo(businessID);
+
+        //check if employee id exirts
         if(!emp.checkEmployeeID(businessID,eid.getText())){
-            //alert
+            //alert if invalid
 
         }
+
+        //check if start time is valid
         else if(b.checktime(starttime.getText())){
-            //alert
+            //alert if invalid
 
         }
+
+        //check if end time is valid
         else if(b.checktime(endtime.getText())){
-            //alert
+            //alert if invalid
 
         }
+
+        //check if day is valid
         else if(b.checkD(day.getText())){
-            //alert
+            //alert if invalid
 
         }
+
+        //load in information pertaining to valid work days
         w.Details();
 
+        //check validity of availibility (day/time) entered
         if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText()) && ad.checkDay(businessID,eid.getText(),day.getText())){
 
             ad.addEmployeeAvailability(businessID, eid.getText(), day.getText(), starttime.getText(), endtime.getText());
@@ -105,7 +120,7 @@ public class addEmployeeAvailableDayController implements Initializable{
 
         }
 
-
+        //checks validity of assigning the availible day/time to employee
         if(emp.checkEmployeeID(businessID,eid.getText())){
             if(ad.checkFirstTimeEmployee(eid.getText(),businessID)){
                 if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText())){
@@ -146,6 +161,9 @@ public class addEmployeeAvailableDayController implements Initializable{
     }
 
 
+    /*
+     * checks if employee ID is valid
+     */
     private boolean checkEID(){
 
         for(int i=0; i<employee.size(); i++){
@@ -173,6 +191,9 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     }
 
+    /*
+     * go back to business menu, and pass business id
+     */
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -181,7 +202,9 @@ public class addEmployeeAvailableDayController implements Initializable{
 
     }
 
-
+    /*
+     * load employee information
+     */
     private ArrayList readEmployee(){
 
 
