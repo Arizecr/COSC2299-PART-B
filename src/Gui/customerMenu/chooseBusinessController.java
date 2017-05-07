@@ -63,14 +63,15 @@ public class chooseBusinessController {
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
-
+        int h = 200/(login.businessList.size()+1);
+        int next = 200/(login.businessList.size()+1)+10;
         loginMenu.loadOwnerInformation();
         //ArrayList<Button> b = new ArrayList<>();
         AnchorPane root = new AnchorPane();
         double count = 30;
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.businessList.size();i++){
-            count+=70;
+            count+=next;
             Button gridButtons = new Button();
             gridButtons.setText(login.businessList.get(i).getName());
             gridButtons.setMnemonicParsing(false);
@@ -80,7 +81,7 @@ public class chooseBusinessController {
             gridButtons.setId(login.businessList.get(i).getUsername());
             gridButtons.setLayoutX(20.0);
             gridButtons.setMinWidth(370);
-            gridButtons.setMinHeight(60);
+            gridButtons.setMinHeight(h);
             gridButtons.setLayoutY(count);
 
             gridButtons.setOnAction( new EventHandler<ActionEvent>() {
