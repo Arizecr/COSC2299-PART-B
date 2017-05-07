@@ -68,6 +68,9 @@ public class viewBusinessHours implements Initializable{
     @FXML
     private TextField friEnd;
 
+    /*
+     * initialise current opening hours
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         printFile();
@@ -94,6 +97,9 @@ public class viewBusinessHours implements Initializable{
 
     }
 
+    /*
+     * retrieve current opening hours information
+     */
     public void printFile(){
         BufferedReader br;
         String bId= "" ;
@@ -112,7 +118,8 @@ public class viewBusinessHours implements Initializable{
                     starttime = Details[2];
                     endtime = Details[3];
                     day = day.substring(0,1).toUpperCase() + day.substring(1);
-                    if(bId.equals(businessID))
+
+                    if(bId.equals(businessID)) //load in information for the current business
                     {
                         start.add(starttime);
                         end.add(endtime);
@@ -131,6 +138,9 @@ public class viewBusinessHours implements Initializable{
         }
     }
 
+    /*
+     * store current business id information
+     */
     private void pass(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -160,6 +170,9 @@ public class viewBusinessHours implements Initializable{
         return false;
     }
 
+    /*
+     * cancel function, go back to main menu
+     */
     @FXML
     void cancel(ActionEvent event) throws IOException {
         pass("businessMenu.fxml", businessID);
@@ -167,6 +180,9 @@ public class viewBusinessHours implements Initializable{
 
     }
 
+    /*
+     * go back to main menu
+     */
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -175,7 +191,7 @@ public class viewBusinessHours implements Initializable{
         app_stage.show();
     }
 
-    //to update business hours laters
+    //to update business hours
     public boolean updateBusinessHours() {
         String[] start = {mondayStart.getText(), tuesdayStart.getText(),wednesdayStart.getText(),thursStart.getText(), friStart.getText()};
         String[] end = {mondayEnd.getText(), tuesdayEnd.getText(),wednesdayEnd.getText(),thursEnd.getText(), friEnd.getText()};
@@ -227,6 +243,9 @@ public class viewBusinessHours implements Initializable{
 
     }
 
+    /*
+     * update hours
+     */
     @FXML
     void updateHours(ActionEvent event) throws IOException{
         if(updateBusinessHours()){

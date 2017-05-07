@@ -26,11 +26,17 @@ public class viewBookingSummaryController extends Controller implements Initiali
 
     public static String businessID;
 
+    /*
+     * set current business id
+     */
     public static void setBusinessID(String bid){
         businessID = bid;
 
     }
 
+    /*
+     * go back to main menu
+     */
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
@@ -56,27 +62,30 @@ public class viewBookingSummaryController extends Controller implements Initiali
     }
 
 
+    //go to business menu
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        controller.setBusinessID(businessID); //set business id
 
     }
 
+    //go to show current bookings
     private void passToShowCurrentBooking(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         currentBookings controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        controller.setBusinessID(parameterToPass); //pass in business id
 
     }
 
+    //go to show past bookings
     private void passToShowPastBooking(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         pastBookings controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        controller.setBusinessID(parameterToPass); //pass in business id
 
     }
 
@@ -87,7 +96,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
 
 
 
-
+    //switch scene to past bookings
     @FXML
     private void switchToPastBookings(ActionEvent event) throws IOException {
         passToShowPastBooking("pastBookings.fxml", businessID);
@@ -103,6 +112,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
         controller.startViewBook(app_stage);
     }
 
+    //switch to current bookings
     @FXML
     private void switchToCurrentBookings(ActionEvent event) throws IOException {
         passToShowCurrentBooking("currentBookings.fxml", businessID);

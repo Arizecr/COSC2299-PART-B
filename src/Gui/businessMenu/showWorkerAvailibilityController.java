@@ -25,12 +25,15 @@ import java.util.ResourceBundle;
 
 public class showWorkerAvailibilityController implements Initializable{
     AvailableDay ad = new AvailableDay();
-    ArrayList<ArrayList<String>> employee = new ArrayList<ArrayList<String>>();
+    ArrayList<ArrayList<String>> employee = new ArrayList<ArrayList<String>>(); //lists all current employees
     ArrayList<String> clarityArrayAD = new ArrayList<>();
     Employee emp = new Employee();
 
     public static String businessID;
 
+    /*
+     * sets current business id
+     */
     public static void setBusinessID(String bid){
         businessID = bid;
 
@@ -43,6 +46,9 @@ public class showWorkerAvailibilityController implements Initializable{
     @FXML
     private TextField name;
 
+    /*
+     * cancel, go back to business menu
+     */
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
@@ -59,7 +65,7 @@ public class showWorkerAvailibilityController implements Initializable{
     }
 
 
-
+ // go to business menu
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -70,7 +76,9 @@ public class showWorkerAvailibilityController implements Initializable{
 
 
 
-
+    /*
+     * retrieves current worker availibility
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("dwlo");
@@ -123,6 +131,8 @@ public class showWorkerAvailibilityController implements Initializable{
         return clarityArrayAD;
     }
 */
+
+   //formats current worker availibility information
    private ArrayList clarityArrAD(ArrayList<String> array, String e){
        clarityArrayAD.clear();
        for(int i=0; i<array.size(); i++){
@@ -147,6 +157,9 @@ public class showWorkerAvailibilityController implements Initializable{
        return clarityArrayAD;
    }
 
+   /*
+    * Retrieves a list of all workers in a business
+    */
     private ArrayList readEmployee(){
 
 
@@ -160,7 +173,8 @@ public class showWorkerAvailibilityController implements Initializable{
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     String loginDetails[] = x.split(":",5);
-                    if(loginDetails[0].equals(businessID)){
+
+                    if(loginDetails[0].equals(businessID)){ //checks if employee is associated to a business
                         ArrayList<String> test = new ArrayList<>();
                         test.add(loginDetails[1]);
                         test.add(loginDetails[2]);

@@ -8,9 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/Controller.java" afterPath="$PROJECT_DIR$/src/Gui/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/Main.java" afterPath="$PROJECT_DIR$/src/Gui/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/registerController.java" afterPath="$PROJECT_DIR$/src/Gui/registerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,36 +58,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Workday.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employeeAvailabilityList.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/employeeAvailabilityList.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="removeWorkingDayController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="50" column="100" lean-forward="false" selection-start-line="50" selection-start-column="90" selection-end-line="50" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="addWorkingDayController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDayController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -118,11 +88,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1530">
               <caret line="123" column="28" lean-forward="true" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewBusinessHours.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2837">
+              <caret line="246" column="19" lean-forward="false" selection-start-line="246" selection-start-column="19" selection-end-line="246" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewBookingSummaryController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="114" column="32" lean-forward="false" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showWorkerAvailibilityController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -191,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
         <option value="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
@@ -216,13 +215,11 @@
         <option value="$PROJECT_DIR$/currentBookings.txt" />
         <option value="$PROJECT_DIR$/customerinfo.txt" />
         <option value="$PROJECT_DIR$/pastBookings.txt" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" />
         <option value="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
         <option value="$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java" />
         <option value="$PROJECT_DIR$/src/bookings/Services.java" />
         <option value="$PROJECT_DIR$/services.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
-        <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" />
         <option value="$PROJECT_DIR$/business.txt" />
         <option value="$PROJECT_DIR$/workdaysList.txt" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" />
@@ -236,6 +233,9 @@
         <option value="$PROJECT_DIR$/src/Gui/registerController.java" />
         <option value="$PROJECT_DIR$/src/Gui/Main.java" />
         <option value="$PROJECT_DIR$/src/Gui/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
+        <option value="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" />
       </list>
     </option>
   </component>
@@ -751,13 +751,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00116" summary="add employee availibility - gui">
-      <created>1493548794304</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1493548794304</updated>
-    </task>
     <task id="LOCAL-00117" summary="booking add empl">
       <created>1493548829094</created>
       <option name="number" value="00117" />
@@ -1094,7 +1087,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494140700560</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="Documentation for Login/Register- GUI functions">
+      <created>1494141053900</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1494141053900</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1215,7 +1215,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="print to file" />
     <MESSAGE value="minor fix" />
     <MESSAGE value="fixxing" />
     <MESSAGE value="add booking complete" />
@@ -1240,7 +1239,8 @@
     <MESSAGE value="documentation for add employee availibility" />
     <MESSAGE value="documentaiton for addEmployeeController" />
     <MESSAGE value="Documentation for addServices/addWorkingDayController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentation for addServices/addWorkingDayController" />
+    <MESSAGE value="Documentation for Login/Register- GUI functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation for Login/Register- GUI functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1341,13 +1341,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/bregisterController.java" />
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coreFunctions/WriteToFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -1451,26 +1444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1622,6 +1599,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="123" column="28" lean-forward="true" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2837">
+          <caret line="246" column="19" lean-forward="false" selection-start-line="246" selection-start-column="19" selection-end-line="246" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="114" column="32" lean-forward="false" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
