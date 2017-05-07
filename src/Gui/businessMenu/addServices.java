@@ -56,9 +56,13 @@ public class addServices extends Controller implements Initializable{
     private ListView<String> serviceList;
 
 
-
+    /*
+     * add services function
+     */
     @FXML
     void addIsClicked(ActionEvent event) throws IOException{
+
+        //name of service validity
         if(!service.checkName(name.getText())){
             //alert
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -68,6 +72,8 @@ public class addServices extends Controller implements Initializable{
 
             alert.showAndWait();
         }
+
+        //duration for service length validity
         else if(!service.checkDur(length.getText())){
             //alert
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

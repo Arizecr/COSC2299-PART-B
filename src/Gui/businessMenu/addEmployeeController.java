@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -55,6 +54,9 @@ public class addEmployeeController implements Initializable{
     private Label errorPho;
 
 
+    /*
+     * Return to business menu, cancel action
+     */
     @FXML
     void cancel(ActionEvent event) throws IOException {
         pass("businessMenu.fxml", businessID);
@@ -62,20 +64,32 @@ public class addEmployeeController implements Initializable{
 
     }
 
+    /*
+     * Adds employee
+     */
     @FXML
     void addIsClicked(ActionEvent event) throws IOException{
+
+        //checks validity of employee name
         if(driver.verifyEmployeeName(name.getText())){
-            //alert
+            //alert - invalid employee name
 
         }
+
+        //checks validity of TFN
         else if(driver.verifyEmployeeTFN(tfn.getText())){
-            //alert
+            //alert - invalid tfn
 
         }
+
+        //checks validity of mobile no
         else if(driver.verifyEmployeeMobile(number.getText())){
-            //alert
+            //alert - invalid mobile
         }
+
+        //checks that every other employee info is valid
         else if(!driver.verifyEmployeeName(name.getText()) && !driver.verifyEmployeeTFN(tfn.getText()) &&  !driver.verifyEmployeeMobile(number.getText())){
+            //if valid, add employee
             filewriter.WriteToEmployee(new Employee(businessID,employeeID.getText(), name.getText(), tfn.getText(), number.getText()), "employeeList.txt");
 
             //Still need to add employee workday
@@ -93,13 +107,13 @@ public class addEmployeeController implements Initializable{
         errorPho.setVisible(false);
         errorTFN.setVisible(false);
 
-        //Check Name
+        //Check Name validity
         name.textProperty().addListener((obs, oldText, newText) -> {
             if(!(oldText == null)){
                 if(listenerNameCheck(newText)){
-                    errorName.setVisible(false);
+                    errorName.setVisible(false); //valid name
                 }else{
-                    errorName.setVisible(true);
+                    errorName.setVisible(true); //invalid name
                 }
             }
             else{
@@ -107,7 +121,7 @@ public class addEmployeeController implements Initializable{
             }
         });
 
-        //CHECK TFN
+        //CHECK TFN validity
 
         tfn.textProperty().addListener((obs, oldText, newText) -> {
             if(!(oldText == null)){
@@ -123,7 +137,7 @@ public class addEmployeeController implements Initializable{
         });
 
 
-        //CHECK PHONE
+        //CHECK PHONE validity
         number.textProperty().addListener((obs, oldText, newText) -> {
             if(!(oldText == null)){
                 if(!listenerPhoCheck(newText)){
@@ -140,52 +154,71 @@ public class addEmployeeController implements Initializable{
     }
 
 
-
+    /*
+     * check validity of employee name
+     */
     private boolean listenerNameCheck(String name){
+
+        //checks length validity
         if((name.length()< 3)||(name.length()>20)){
 
-
-            return false;
+            return false;  //invalid
         }
+
+        //checks format validity
         if(!name.matches("^[a-zA-Z\\s]+$")){
 
 
-            return false;
+            return false; //invalid
         }
         return true;
     }
 
+    /*
+     * checks for TFN validity
+     */
     private boolean listenerTFNCheck(String tfn){
         int length = tfn.length();
 
+        //checks length validity
         if(length < 8 || length>9){
 
 
-            return true;
+            return true; //invalid
         }
+
+        //checks format validity - all digits required
         if(!isNumeric(tfn)) {
 
 
-            return true;
+            return true; //invalid - non digit
         }
         return false;
     }
 
+    /*
+     * checks validity of phone number entered
+     */
     private boolean listenerPhoCheck(String phone){
+
+        //phone length validity
         if(phone.length() != 10){
 
-            return true;
+            return true; //invalid length
         }
 
+        //format validity
         if(!isNumeric(phone)) {
 
 
-            return true;
+            return true; //invalid - non numeric
         }
+
+        //mobile nomust start with 04
         if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
 
 
-            return true;
+            return true; //invalid
 
         }
         return false;
@@ -195,6 +228,9 @@ public class addEmployeeController implements Initializable{
         return s.matches("[-+]?\\d*\\.?\\d+");
     }
 
+    /*
+     * return to business menu
+     */
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -203,6 +239,9 @@ public class addEmployeeController implements Initializable{
         app_stage.show();
     }
 
+    /*
+     * function to store business ID
+     */
     private void pass(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
