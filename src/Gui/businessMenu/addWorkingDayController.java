@@ -75,7 +75,9 @@ public class addWorkingDayController implements Initializable{
     private Label endError;
 
 
-
+    /*
+     * return to business menu
+     */
     @FXML
     void back(ActionEvent event) throws IOException {
         //Passes to addEmployeeController
@@ -92,7 +94,9 @@ public class addWorkingDayController implements Initializable{
     }
 
 
-
+    /*
+     * store business id
+     */
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -102,20 +106,32 @@ public class addWorkingDayController implements Initializable{
     }
 
 
-
+    /*
+     * Add a new shift
+     */
     @FXML
     void addShift(ActionEvent event) {
         Employee emp = new Employee();
+
+        //check if valid start time
         if(b.checktime(start.getText())){
             //alert incorrect time
         }
+
+        //check if valid end time
         else if(b.checktime(end.getText())){
             //alert
         }
+
+        //check if employee exists
         else if(!emp.checkEmployeeID(businessID,eid.getText()))
         {//alert incorrect employee
         }
+
+        //check if valid day
         else if(b.checkD(day.getText())){}
+
+        //if valid, add the new shift
         else if (!b.Worktimes(businessID, eid.getText(),day.getText(),start.getText(),end.getText())){
             driver.addWorkdays(businessID,eid.getText(),day.getText(),start.getText(),end.getText());
 
@@ -280,18 +296,24 @@ public class addWorkingDayController implements Initializable{
 
     }
 
+    /*
+     * check if employee exists in the system
+     */
     private boolean listenerEIDCheck(String empeid){
 
         for(int i=0; i<employee.size(); i++){
             if(employee.get(i).get(0).equals(eid.getText())){
-                return true;
+                return true; //exists
             }
         }
 
-        return false;
+        return false; //does not exist
     }
 
 
+    /*
+     * Checks validity of day
+     */
     private boolean listenerCheckDay(String day){
         try{
             DateFormat time = new SimpleDateFormat("EEEE");
@@ -303,12 +325,15 @@ public class addWorkingDayController implements Initializable{
         return true;
     }
 
+
+    //checks validity of time
     private boolean checkTime(String t){
 
         try{
             DateFormat time = new SimpleDateFormat("HH:mm");
             time.parse(t);
         }
+
         catch(ParseException e){
             // System.out.println("Invalid time:");
             return false;

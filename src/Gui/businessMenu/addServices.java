@@ -84,6 +84,8 @@ public class addServices extends Controller implements Initializable{
             alert.showAndWait();
 
         }
+
+        //validity for cost of service
         else if(!service.checkCost(cost.getText())){
             //
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -93,6 +95,8 @@ public class addServices extends Controller implements Initializable{
 
             alert.showAndWait();
         }
+
+        //if everything is valid, add business
         else if(service.checkName(name.getText()) && service.checkDur(length.getText()) &&  service.checkCost(cost.getText())){
             Services s = new Services(businessID,service.generateServiceNo(businessID), name.getText(), length.getText(), cost.getText());
             filewriter.WriteToWorkingdayTXT(s.toString(), "services.txt");
@@ -103,13 +107,17 @@ public class addServices extends Controller implements Initializable{
         }
     }
 
+    /*
+     * Remove service
+     */
     @FXML
     void removeIsClicked(ActionEvent event) throws IOException{
 
+        //retrieve a list of services
         int index = service.checkID(serviceID.getText());
 
       try {
-          if (index==0) {
+          if (index==0) { //unable to remove service
               System.out.println("1");
               Alert alert = new Alert(Alert.AlertType.INFORMATION);
               alert.setTitle("Error");
@@ -118,7 +126,7 @@ public class addServices extends Controller implements Initializable{
 
               alert.showAndWait();
           }
-          else{
+          else{ //successfully removed service
               service.serviceList.remove(index - 1);
               filewriter.rewriteToFile(service.serviceList,"services.txt");
               System.out.print("Service removed");
@@ -137,7 +145,9 @@ public class addServices extends Controller implements Initializable{
 
 
 
-
+    /*
+     * cancel, go back to business menu
+     */
     @FXML
     void cancel(ActionEvent event) throws IOException {
         pass("businessMenu.fxml", businessID);
@@ -159,6 +169,9 @@ public class addServices extends Controller implements Initializable{
         serviceList.setItems(FXCollections.observableArrayList(array2));
     }
 
+    /*
+     * load service information
+     */
     private ArrayList test(ArrayList<Services> array){
         service.printService(businessID);
         ArrayList<String> array2 = new ArrayList<>();
@@ -183,6 +196,9 @@ public class addServices extends Controller implements Initializable{
         return array2;
     }
 
+    /*
+     * Go to business menu
+     */
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -191,6 +207,9 @@ public class addServices extends Controller implements Initializable{
         app_stage.show();
     }
 
+    /*
+     * function to store business ID
+     */
     private void pass(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
