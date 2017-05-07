@@ -101,13 +101,6 @@ public class addWorkingDayController implements Initializable{
 
     }
 
-    /********************************************************
-
-
-     KINDA NOT WORKING
-
-
-     *********************************************************/
 
 
     @FXML
@@ -142,7 +135,7 @@ public class addWorkingDayController implements Initializable{
 
             for(int j=0 ; j<employee.size(); j++){
 
-                if(array.get(i).contains(employee.get(j).get(0))){
+                if(array.get(i).contains(employee.get(j).get(0)) && array.get(i).contains(businessID)){
                     String[] arrayinfo = array.get(i).split(" ", 5);
                     clarityArrayAD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
                 }
@@ -160,7 +153,7 @@ public class addWorkingDayController implements Initializable{
 
             for(int j=0 ; j<employee.size(); j++){
 
-                if(array.get(i).contains(employee.get(j).get(0))){
+                if(array.get(i).contains(employee.get(j).get(0)) && array.get(i).contains(businessID)){
                     String[] arrayinfo = array.get(i).split(" ", 5);
                     clarityArrayWD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
                 }

@@ -48,7 +48,7 @@ public class removeWorkingDayController implements Initializable{
 
             for(int j=0 ; j<employee.size(); j++){
 
-                if(array.get(i).contains(employee.get(j).get(0))){
+                if(array.get(i).contains(employee.get(j).get(0)) && array.get(i).contains(businessID)){
                     String[] arrayinfo = array.get(i).split(" ", 5);
                     clarityArrayWD.add(employee.get(j).get(1) + "(" + arrayinfo[1] + ")" + " " + arrayinfo[2] + " Start: " + arrayinfo[3] + " End: " + arrayinfo[4]);
                 }
@@ -177,6 +177,7 @@ public class removeWorkingDayController implements Initializable{
                 while ( (x = br.readLine()) != null ) {
                     String loginDetails[] = x.split(":",5);
                     if(loginDetails[0].equals(businessID)){
+                        System.out.println(businessID);
                         ArrayList<String> test = new ArrayList<>();
                         test.add(loginDetails[1]);
                         test.add(loginDetails[2]);

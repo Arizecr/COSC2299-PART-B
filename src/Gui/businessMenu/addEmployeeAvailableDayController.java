@@ -104,6 +104,8 @@ public class addEmployeeAvailableDayController implements Initializable{
             workerList.setItems(FXCollections.observableArrayList(clarityArrayAD));
 
         }
+
+
         if(emp.checkEmployeeID(businessID,eid.getText())){
             if(ad.checkFirstTimeEmployee(eid.getText(),businessID)){
                 if(!w.readWork(businessID,day.getText().toLowerCase(),starttime.getText(),endtime.getText())){
