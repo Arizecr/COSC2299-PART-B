@@ -1,7 +1,7 @@
 package Gui;
 
 import Gui.businessMenu.businessMenuController;
-import Gui.customerMenu.chooseBusinessController;
+import Gui.customerMenu.customerMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,15 +59,17 @@ public class Controller {
         controller.setBusinessID(parameterToPass);
 
     }
-    private void passC(String fxmlFile, String parameterToPass) throws IOException {
+    private void passC(String fxmlFile, String parameterToPass,String businessId) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
 
         //MUST change classname to the file u want to pass the variable to
-        chooseBusinessController controller = loader.getController();
+        customerMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
         controller.setCustomerID(parameterToPass);
+        //function in the controller u go must contain this
+        controller.setBusinessID(businessId);
 
     }
 
@@ -99,8 +101,15 @@ public class Controller {
             //check if password/username combination exists in the system
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 busId = username.getText();//is the customer
-                passC("customerMenu/chooseBusiness.fxml", busId);
-                switchToChooseBusiness(event); //valid
+                String b = null;
+                for(int i=0; i < customerList.size() ;i++){
+                    if(username.equals(customerList.get(i).getUsername())){
+                       b = customerList.get(i).getBusiness();
+                    }
+
+                }
+                passC("customerMenu/customerMenu.fxml", busId,b);
+                switchToC(event); //valid
             }
             else{ //invalid
                 Alert alert = new Alert(AlertType.INFORMATION);
@@ -155,17 +164,12 @@ public class Controller {
         switchToBRegister(event);
 
     }
-    private void switchToChooseBusiness(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/chooseBusiness.fxml"));
+    private void switchToC(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        //app_stage.setScene(home_page_scene);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("customerMenu/chooseBusiness.fxml"));
-        Pane pane = loader.load();
-        //MUST change classname to the file u want to pass the variable to
-        chooseBusinessController controller = loader.getController();
-        //function in the controller u go must contain this
-        controller.startChoose(app_stage);
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
 
 
     }
