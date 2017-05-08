@@ -65,7 +65,7 @@ public class registerController {
         //gets all the names of all business's registered to the system
         for(int i=0;i<login.businessList.size();i++){
 
-            String n = login.businessList.get(i).getName();
+            String n = login.businessList.get(i).getBusinessName();
             bus.add(n);
 
         }
