@@ -97,13 +97,14 @@ public class Login {
                 String x;
                 while ( (x = br.readLine()) != null ) {
                     // printing out each line in the file
-                    String loginDetails[] = x.split(":",5);
-                    String username = loginDetails[0];
-                    String password = loginDetails[1];
-                    String fullName = loginDetails[2];
-                    String address = loginDetails[3];
-                    String phoneNo = loginDetails[4];
-                    Customer course = new Customer(username, password, fullName, address, phoneNo);
+                    String loginDetails[] = x.split(":",6);
+                    String b = loginDetails[0];
+                    String username = loginDetails[1];
+                    String password = loginDetails[2];
+                    String fullName = loginDetails[3];
+                    String address = loginDetails[4];
+                    String phoneNo = loginDetails[5];
+                    Customer course = new Customer(b,username, password, fullName, address, phoneNo);
                     customerList.add(course);
                 }
                 //prints error

@@ -74,7 +74,7 @@ public class Register {
 
             valid = testRegister(password, name, address, mobile);
             if(valid == 0){
-                toTxt.WriteToTXT(new Customer(username, password, name, address, mobile), "customerinfo.txt");
+                toTxt.WriteToTXT(new Customer("b1",username, password, name, address, mobile), "customerinfo.txt");
                 System.out.println("Succesfully Registered");
                 break;
             }

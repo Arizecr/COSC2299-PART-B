@@ -182,10 +182,16 @@ public class Controller {
 
     private void switchToRegister(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("register.fxml"));
+
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(home_page_scene);
-        app_stage.show();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        registerController controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startChoose(app_stage);
     }
 
 
