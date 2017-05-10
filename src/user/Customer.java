@@ -17,7 +17,7 @@ String businessID;
     }
     public String getBusiness(){
 
-        return businessID;
+        return this.businessID;
     }
 
 }

@@ -97,17 +97,20 @@ public class Controller {
 
         //customer account- check validity
         else if(username.getText().charAt(0) == 'c'){
-
+            loginMenu.loadCustomerInformation();
             //check if password/username combination exists in the system
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 busId = username.getText();//is the customer
                 String b = null;
-                for(int i=0; i < customerList.size() ;i++){
-                    if(username.equals(customerList.get(i).getUsername())){
-                       b = customerList.get(i).getBusiness();
+                for(int i=0; i < loginMenu.customerList.size() ;i++){
+
+                    if(username.getText().equals(loginMenu.customerList.get(i).getUsername())){
+                       b = loginMenu.customerList.get(i).getBusiness();
+
                     }
 
                 }
+
                 passC("customerMenu/customerMenu.fxml", busId,b);
                 switchToC(event); //valid
             }
@@ -164,7 +167,7 @@ public class Controller {
         switchToBRegister(event);
 
     }
-    private void switchToC(ActionEvent event) throws IOException {
+    private void switchToC(ActionEvent event) throws IOException {;
         Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

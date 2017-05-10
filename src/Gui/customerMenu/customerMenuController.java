@@ -90,6 +90,7 @@ public class customerMenuController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         bookingController controller = loader.getController();
+
         controller.setBusinessID(businessID);
         controller.setCustomerID(customerID);
 

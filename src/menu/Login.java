@@ -106,6 +106,7 @@ public class Login {
                     String phoneNo = loginDetails[5];
                     Customer course = new Customer(b,username, password, fullName, address, phoneNo);
                     customerList.add(course);
+
                 }
                 //prints error
             } catch (IOException e) {
