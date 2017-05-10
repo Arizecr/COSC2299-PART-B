@@ -142,6 +142,23 @@ public class Controller {
                 alert.showAndWait();
             }
         }
+        //super user - check validity
+        else if(username.getText().charAt(0) == 'a'){
+            if(loginMenu.getVerification("admin",username.getText(),password.getText())){
+                // passes parameter to business menu controller
+                busId = username.getText();
+                pass("businessMenu/businessMenu.fxml", busId);
+                switchToBusinessMenu(event);
+            }
+            else { //invalid
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Invalid username/password combination. Try again.");
+
+                alert.showAndWait();
+            }
+        }
         else { //invalid, username does not start with 'c' or 'b'
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error");

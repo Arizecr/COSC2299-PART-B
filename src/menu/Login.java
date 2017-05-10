@@ -1,5 +1,6 @@
 package menu;
 
+import coreFunctions.WriteToFile;
 import test.*;
 import user.Business;
 import user.Customer;
@@ -19,6 +20,8 @@ public class Login {
     private static final Logger LOGGER = Logger.getLogger(Logging.class.getName());
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
+    public static ArrayList<Business> adminList = new ArrayList<>();
+    WriteToFile toTxt = new WriteToFile();
     Logging l =new Logging();
     public void loginMenu(){
 
@@ -150,6 +153,7 @@ public class Login {
      */
 
     public void loadOwnerInformation(){
+        loadAdminInformation();
         businessList = new ArrayList<>();
         BufferedReader br;
         try {
@@ -168,8 +172,66 @@ public class Login {
                     String name = loginDetails[3];
                     String address = loginDetails[4];
                     String phone = loginDetails[5];
-                    Business ownerInfo = new Business(username, password, businessName, name, phone, address);
+                    Business ownerInfo = new Business(username, password, businessName, name, address,phone);
                     businessList.add(ownerInfo);
+                }
+                if(businessList.size()==0){
+                    Business ownerInfo = new Business("Admin","a","System Admin", "Owner", "n", "0422222222");
+                    businessList.add(ownerInfo);
+                    toTxt.WriteToTXT(ownerInfo,"Admin.txt");
+
+                }
+                //prints error
+            } catch (IOException e) {
+                // e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            //  System.out.println(e);
+            // e.printStackTrace();
+            System.out.println("File not Found");
+            l.Logging();
+            LOGGER.log(Level.WARNING,e.toString(),e);
+        }
+
+    }
+    public void loadAdminInformation(){
+        adminList = new ArrayList<>();
+        BufferedReader br;
+        try {
+
+
+            br = new BufferedReader(new FileReader("Admin.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",6);
+                    String username = loginDetails[0];
+                    String password = loginDetails[1];
+                    String businessName = loginDetails[2];
+                    String name = loginDetails[3];
+                    String address = loginDetails[4];
+                    String phone = loginDetails[5];
+                    Business ownerInfo = new Business(username, password, businessName, name, address,phone);
+                    adminList.add(ownerInfo);
+                }
+                if(adminList.size()==0){
+                    Business ownerInfo = new Business("admin","a","System Admin", "Owner", "n", "0422222222");
+                    adminList.add(ownerInfo);
+                    toTxt.WriteToTXT(ownerInfo,"Admin.txt");
+
                 }
                 //prints error
             } catch (IOException e) {
@@ -221,7 +283,23 @@ public class Login {
             return false;
 
         }
+        else if(type.equals("admin")){ //verify business owner
+            for(int i=0; i < adminList.size() ;i++){
+                if(username.equals(adminList.get(i).getUsername())){
+                    if(password.equals(adminList.get(i).getPassword())){
 
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+            }
+
+            return false;
+
+        }
         else{ //verify business owner
             for(int i=0; i < businessList.size() ;i++){
                 if(username.equals(businessList.get(i).getUsername())){
