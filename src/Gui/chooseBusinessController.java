@@ -106,8 +106,8 @@ public class chooseBusinessController {
 
     }
 
-    @FXML //exit system
-    public void handleCloseButtonAction(ActionEvent event) {
+    @FXML //admin verify new business details
+    public void switchToVerify(ActionEvent event) {
 
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
