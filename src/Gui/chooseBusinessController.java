@@ -1,6 +1,6 @@
 package Gui;
 
-import Gui.customerMenu.customerMenuController;
+import Gui.businessMenu.businessMenuController;
 import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -35,26 +35,18 @@ public class chooseBusinessController {
 
 
 
-    public static void setCustomerID(String cid){
-        customerID = cid;
 
-    }
-
-    public String  getCustomerID(){
-        return customerID;
-
-    }
-    private void pass(String fxmlFile, String parameterToPass1,String parameterToPass2) {
+    private void pass(String fxmlFile, String parameterToPass1) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
             Pane pane = loader.load();
 
             //MUST change classname to the file u want to pass the variable to
-            customerMenuController controller = loader.getController();
+            businessMenuController controller = loader.getController();
 
             //function in the controller u go must contain this
             controller.setBusinessID(parameterToPass1);
-            controller.setCustomerID(parameterToPass2);
+
         }catch(IOException e){}
 
     }
@@ -87,7 +79,7 @@ public class chooseBusinessController {
 
             gridButtons.setOnAction( new EventHandler<ActionEvent>() {
                 public void handle(ActionEvent event) {
-                    pass("customerMenu.fxml",gridButtons.getId(),customerID) ;
+                    pass("businessMenu/businessMenu.fxml",gridButtons.getId()) ;
                     switchToMenu(event);
                 }
             });
@@ -104,7 +96,7 @@ public class chooseBusinessController {
     private void switchToMenu(ActionEvent event)  {
         try {
 
-            Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu.fxml"));
+            Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu/businessMenu.fxml"));
             Scene home_page_scene = new Scene(home_page);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             app_stage.setScene(home_page_scene);
@@ -116,9 +108,10 @@ public class chooseBusinessController {
 
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {
+
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
     }
-    //go back to business menu
+    //go back to login
     public void cancel(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene home_page_scene = new Scene(home_page);
