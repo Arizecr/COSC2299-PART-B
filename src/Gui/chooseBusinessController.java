@@ -2,8 +2,10 @@ package Gui;
 
 import Gui.businessMenu.businessMenuController;
 import coreFunctions.Driver;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,12 +13,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import menu.Login;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by yesmi on 28/04/2017.
@@ -29,7 +33,7 @@ public class chooseBusinessController {
     Login login = new Login();
     Driver driver = new Driver();
     public static String businessID;
-    public static String customerID;
+    public static boolean selected;
     @FXML
     private Pane child;
 
@@ -53,17 +57,42 @@ public class chooseBusinessController {
 
 
     public void startChoose(Stage stage) throws IOException {
+        selected = false;
         FXMLLoader loader = new FXMLLoader();
-        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
-        int h = 200/(login.businessList.size()+1);
-        int next = 200/(login.businessList.size()+1)+10;
         loginMenu.loadOwnerInformation();
-        //ArrayList<Button> b = new ArrayList<>();
-        AnchorPane root = new AnchorPane();
-        double count = 30;
-        //gets all the names of all business's registered to the system
+        ArrayList<String> b = new ArrayList<>();
         for(int i=0;i<login.businessList.size();i++){
+            b.add(login.businessList.get(i).getBusinessName()+" ("+login.businessList.get(i).getUsername()+")");
+        }
+        ListView l = new ListView();
+        l.setItems(FXCollections.observableArrayList(b));
+        l.setLayoutX(20.0);
+        l.setLayoutY(50);
+        l.setMinWidth(370);
+       l.setMaxHeight(300);
+       l.prefHeight(100.0);
+        ((AnchorPane) rootNode).getChildren().add(l);
+        l.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+
+                for(int i=0;i<login.businessList.size();i++){
+                    if(newValue.equals(login.businessList.get(i).getBusinessName()+" ("+login.businessList.get(i).getUsername()+")")){
+                        pass("businessMenu/businessMenu.fxml",login.businessList.get(i).getUsername()) ;
+                        //System.out.println(login.businessList.get(i).getUsername());
+                        selected = true;
+                    }
+                }
+
+                //switchToMenu(event);
+            }
+        });
+
+
+        //gets all the names of all business's registered to the system
+    /*    for(int i=0;i<login.businessList.size();i++){
             count+=next;
             Button gridButtons = new Button();
             gridButtons.setText(login.businessList.get(i).getBusinessName());
@@ -86,7 +115,7 @@ public class chooseBusinessController {
 
 
             ((AnchorPane) rootNode).getChildren().add(gridButtons);
-        }
+        }*/
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
@@ -95,12 +124,13 @@ public class chooseBusinessController {
     @FXML
     private void switchToMenu(ActionEvent event)  {
         try {
-
-            Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu/businessMenu.fxml"));
-            Scene home_page_scene = new Scene(home_page);
-            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            app_stage.setScene(home_page_scene);
-            app_stage.show();
+if(selected) {
+    Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu/businessMenu.fxml"));
+    Scene home_page_scene = new Scene(home_page);
+    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    app_stage.setScene(home_page_scene);
+    app_stage.show();
+}
         }
         catch(IOException e){}
 

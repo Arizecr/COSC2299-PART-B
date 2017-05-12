@@ -11,6 +11,7 @@
     <children>
         <Pane id="child" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
             <children>
+                <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="27.0" prefWidth="328.0" text="Modify Selected Business" />
                 <Button layoutX="14.0" layoutY="388.0" mnemonicParsing="false" onAction="#switchToVerify" prefHeight="27.0" prefWidth="328.0" text="Verify new Business" />
                 <Button layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#cancel" prefHeight="27.0" prefWidth="328.0" text="Logout" />
                 <Text layoutX="47.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Select Business">
