@@ -1,5 +1,6 @@
-package Gui.customerMenu;
+package Gui;
 
+import Gui.customerMenu.customerMenuController;
 import coreFunctions.Driver;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -73,7 +74,7 @@ public class chooseBusinessController {
         for(int i=0;i<login.businessList.size();i++){
             count+=next;
             Button gridButtons = new Button();
-            gridButtons.setText(login.businessList.get(i).getName());
+            gridButtons.setText(login.businessList.get(i).getBusinessName());
             gridButtons.setMnemonicParsing(false);
             gridButtons.prefHeight(50.0);
             gridButtons.prefWidth(500.0);

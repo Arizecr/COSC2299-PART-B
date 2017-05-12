@@ -59,6 +59,7 @@ public class Controller {
         controller.setBusinessID(parameterToPass);
 
     }
+
     private void passC(String fxmlFile, String parameterToPass,String businessId) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
@@ -147,8 +148,18 @@ public class Controller {
             if(loginMenu.getVerification("admin",username.getText(),password.getText())){
                 // passes parameter to business menu controller
                 busId = username.getText();
-                pass("businessMenu/businessMenu.fxml", busId);
-                switchToBusinessMenu(event);
+                Parent home_page = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
+                Scene home_page_scene = new Scene(home_page);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                //app_stage.setScene(home_page_scene);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("chooseBusiness.fxml"));
+                Pane pane = loader.load();
+                //MUST change classname to the file u want to pass the variable to
+                chooseBusinessController controller = loader.getController();
+                //function in the controller u go must contain this
+                controller.startChoose(app_stage);
+               //pass("businessMenu/businessMenu.fxml", busId);
+                switchToChooseBusinessMenu(event);
             }
             else { //invalid
                 Alert alert = new Alert(AlertType.INFORMATION);
@@ -196,6 +207,13 @@ public class Controller {
 
     private void switchToBusinessMenu(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu/businessMenu.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
+    }
+    private void switchToChooseBusinessMenu(ActionEvent event) throws IOException {
+        Parent home_page = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
