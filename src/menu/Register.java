@@ -108,9 +108,9 @@ public class Register {
 
         if((username.charAt(0) == 'c') && (username.length()<= 15) && (username.length()>1)){
 
-            for(int i = 0; i< login.customerList.size(); i++) {
+            for(int i = 0; i< Login.customerList.size(); i++) {
 
-                if (login.customerList.get(i).getUsername().equals(username)) {
+                if (Login.customerList.get(i).getUsername().equals(username)) {
                     System.out.println("Username already exists. Re-enter valid username\n");
                     return false;
                 }
@@ -143,9 +143,9 @@ public class Register {
 
         if((username.charAt(0) == 'b') && (username.length()<= 15) && (username.length()>1)){
 
-            for(int i = 0; i< login.businessList.size(); i++) {
+            for(int i = 0; i< Login.businessList.size(); i++) {
 
-                if (login.businessList.get(i).getUsername().equals(username)) {
+                if (Login.businessList.get(i).getUsername().equals(username)) {
                     System.out.println("Username already exists. Re-enter valid username\n");
                     return false;
                 }

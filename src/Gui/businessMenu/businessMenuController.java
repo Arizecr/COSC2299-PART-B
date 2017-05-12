@@ -52,7 +52,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addEmployeeController.setBusinessID(parameterToPass);
 
     }
 
@@ -61,7 +61,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         showWorkerAvailibilityController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        showWorkerAvailibilityController.setBusinessID(parameterToPass);
 
     }
 
@@ -70,7 +70,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         removeWorkingDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        removeWorkingDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -79,7 +79,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addWorkingDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addWorkingDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -88,7 +88,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBusinessHours controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBusinessHours.setBusinessID(parameterToPass);
 
     }
 
@@ -97,7 +97,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeAvailableDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addEmployeeAvailableDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -107,7 +107,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         chooseCustomerController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        chooseCustomerController.setBusinessID(parameterToPass);
 
     }
 
@@ -117,7 +117,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addServices controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addServices.setBusinessID(parameterToPass);
 
     }
 
@@ -127,7 +127,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBookingSummaryController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBookingSummaryController.setBusinessID(parameterToPass);
 
     }
 

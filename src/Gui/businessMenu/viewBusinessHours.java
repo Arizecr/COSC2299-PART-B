@@ -149,7 +149,7 @@ public class viewBusinessHours implements Initializable{
         businessMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        businessMenuController.setBusinessID(parameterToPass);
 
     }
 

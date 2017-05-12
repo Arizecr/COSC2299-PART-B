@@ -34,10 +34,10 @@ public class BusinessOwner{
         String loginDetails[] = allB.split(",");
         for(String l:loginDetails){
 
-            for(int i=0; i < b.businessList.size() ;i++){
-                if(l.equals(b.businessList.get(i).getUsername()))
+            for(int i = 0; i < Login.businessList.size() ; i++){
+                if(l.equals(Login.businessList.get(i).getUsername()))
                 {
-                    bo.add(b.businessList.get(i));
+                    bo.add(Login.businessList.get(i));
 
                 }
             }
@@ -48,8 +48,8 @@ public class BusinessOwner{
     public String gBN(){return generateBusinessNo();}
     private String generateBusinessNo(){
         int count = 1;
-        int largest = b.businessList.size()-1;//gets the last in the list
-        String c = b.businessList.get(largest).getUsername().substring(1);//gets the number
+        int largest = Login.businessList.size()-1;//gets the last in the list
+        String c = Login.businessList.get(largest).getUsername().substring(1);//gets the number
         //due to deletion this may not be the same as the index of arraylist
         count = Integer.parseInt(c)+1;
         return "b"+count;

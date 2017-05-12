@@ -109,17 +109,17 @@ public class businessBookingController {
         // AnchorPane root = new AnchorPane();
 
         //load all services
-        for(int i=0;i<s.serviceList.size();i++){
+        for(int i = 0; i< Services.serviceList.size(); i++){
             //makes sure the services of only the current business are displayed
-            if(businessID.equals(s.serviceList.get(i).b())){
-                String n = s.serviceList.get(i).getName() +" - length: ";
-                String l = s.serviceList.get(i).getLengthT();
+            if(businessID.equals(Services.serviceList.get(i).b())){
+                String n = Services.serviceList.get(i).getName() +" - length: ";
+                String l = Services.serviceList.get(i).getLengthT();
                 String Time[] = l.split("-", 2);
                 String hours = Time[0];
                 String min = Time[1];
                 //final format of string in the list
-                n+= hours +" Hours and " +min +" Minutes ($" + s.serviceList.get(i).getCost()+")";
-                ser.add(s.serviceList.get(i));
+                n+= hours +" Hours and " +min +" Minutes ($" + Services.serviceList.get(i).getCost()+")";
+                ser.add(Services.serviceList.get(i));
                 services.add(n);
 
 
@@ -146,11 +146,11 @@ public class businessBookingController {
         //user selects service
         c.setTooltip(new Tooltip("Select the service"));
         e.loadEmployeeInformation();
-        for(int i=0;i<e.employeeList.size();i++){
+        for(int i = 0; i< Employee.employeeList.size(); i++){
             //makes sure the services of only the current business are displayed
-            if(businessID.equals(e.employeeList.get(i).getbId())){
-                emp.add(e.employeeList.get(i));
-                String n = e.employeeList.get(i).getName();
+            if(businessID.equals(Employee.employeeList.get(i).getbId())){
+                emp.add(Employee.employeeList.get(i));
+                String n = Employee.employeeList.get(i).getName();
 
                 employees.add(n);
 
@@ -365,14 +365,9 @@ public class businessBookingController {
         {
             return true;
         }
-        if (dateinfo.getYear()!=Year&&dateinfo.getDayOfYear()<=(dayOfYear+30))
-        {
-            return true;
-        }
+        return dateinfo.getYear() != Year && dateinfo.getDayOfYear() <= (dayOfYear + 30);
 
 
-
-        return false;
     }
     public void checkBooking(ActionEvent event) throws IOException {//when button clicked
         if(addBooking()){

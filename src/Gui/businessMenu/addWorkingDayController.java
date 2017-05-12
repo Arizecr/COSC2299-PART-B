@@ -101,7 +101,7 @@ public class addWorkingDayController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        businessMenuController.setBusinessID(businessID);
 
     }
 
@@ -206,7 +206,7 @@ public class addWorkingDayController implements Initializable{
             ArrayList<String> array2 = new ArrayList<>();
             if(!(eid.getText() == null)){
                  ad.loadInfo(businessID);
-                ArrayList<String> arrayz = ad.Bavailability;
+                ArrayList<String> arrayz = AvailableDay.Bavailability;
                 clarityArrAD(arrayz);
                 for(int i=0; i<clarityArrayAD.size(); i++){
                     if(clarityArrayAD.get(i).toLowerCase().contains(newText.toLowerCase())){
@@ -338,9 +338,7 @@ public class addWorkingDayController implements Initializable{
             // System.out.println("Invalid time:");
             return false;
         }
-        if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
-            return false;}
-        return true;
+        return !(!t.contains(":00") && !t.contains(":30"));
 
     }
 

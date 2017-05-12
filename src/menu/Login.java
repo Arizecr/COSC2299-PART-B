@@ -21,6 +21,7 @@ public class Login {
     public static ArrayList<Customer> customerList = new ArrayList<>();
     public static ArrayList<Business> businessList = new ArrayList<>();
     public static ArrayList<Business> adminList = new ArrayList<>();
+    public static ArrayList<Business> pendingList = new ArrayList<>();
     WriteToFile toTxt = new WriteToFile();
     Logging l =new Logging();
     public void loginMenu(){
@@ -154,6 +155,7 @@ public class Login {
 
     public void loadOwnerInformation(){
         loadAdminInformation();
+        loadPendingInformation();
         businessList = new ArrayList<>();
         BufferedReader br;
         try {
@@ -257,7 +259,58 @@ public class Login {
         }
 
     }
+    public void loadPendingInformation(){
+        pendingList = new ArrayList<>();
+        BufferedReader br;
+        try {
 
+
+            br = new BufferedReader(new FileReader("businessPending.txt"));
+
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    String loginDetails[] = x.split(":",6);
+                    String username = loginDetails[0];
+                    String password = loginDetails[1];
+                    String businessName = loginDetails[2];
+                    String name = loginDetails[3];
+                    String address = loginDetails[4];
+                    String phone = loginDetails[5];
+                    Business ownerInfo = new Business(username, password, businessName, name, address,phone);
+                    pendingList.add(ownerInfo);
+                }
+                if(adminList.size()==0){
+                    Business ownerInfo = new Business("admin","a","System Admin", "Owner", "n", "0422222222");
+                    adminList.add(ownerInfo);
+                    toTxt.WriteToTXT(ownerInfo,"Admin.txt");
+
+                }
+                //prints error
+            } catch (IOException e) {
+                // e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,e.toString(),e);
+            }
+            catch (ArrayIndexOutOfBoundsException ae) {
+                //e.printStackTrace();
+                l.Logging();
+                LOGGER.log(Level.SEVERE,ae.toString(),ae);
+
+            }
+
+
+            //file cannot be found
+        } catch (FileNotFoundException e) {
+            //  System.out.println(e);
+            // e.printStackTrace();
+            System.out.println("File not Found");
+            l.Logging();
+            LOGGER.log(Level.WARNING,e.toString(),e);
+        }
+
+    }
 
     /*
      * Tests whether customer login details are valid
@@ -270,12 +323,7 @@ public class Login {
         if (type.equals("customer")){//verify customer
             for(int i=0; i < customerList.size() ;i++){
                 if(username.equals(customerList.get(i).getUsername())){
-                    if(password.equals(customerList.get(i).getPassword())){
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
+                    return password.equals(customerList.get(i).getPassword());
                 }
 
             }
@@ -286,13 +334,7 @@ public class Login {
         else if(type.equals("admin")){ //verify business owner
             for(int i=0; i < adminList.size() ;i++){
                 if(username.equals(adminList.get(i).getUsername())){
-                    if(password.equals(adminList.get(i).getPassword())){
-
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
+                    return password.equals(adminList.get(i).getPassword());
                 }
 
             }
@@ -303,13 +345,7 @@ public class Login {
         else{ //verify business owner
             for(int i=0; i < businessList.size() ;i++){
                 if(username.equals(businessList.get(i).getUsername())){
-                    if(password.equals(businessList.get(i).getPassword())){
-
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
+                    return password.equals(businessList.get(i).getPassword());
                 }
 
             }

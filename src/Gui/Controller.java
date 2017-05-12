@@ -56,7 +56,7 @@ public class Controller {
         businessMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        businessMenuController.setBusinessID(parameterToPass);
 
     }
 
@@ -68,9 +68,9 @@ public class Controller {
         customerMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setCustomerID(parameterToPass);
+        customerMenuController.setCustomerID(parameterToPass);
         //function in the controller u go must contain this
-        controller.setBusinessID(businessId);
+        customerMenuController.setBusinessID(businessId);
 
     }
 
@@ -103,10 +103,10 @@ public class Controller {
             if(loginMenu.getVerification("customer",username.getText(),password.getText())){
                 busId = username.getText();//is the customer
                 String b = null;
-                for(int i=0; i < loginMenu.customerList.size() ;i++){
+                for(int i = 0; i < Login.customerList.size() ; i++){
 
-                    if(username.getText().equals(loginMenu.customerList.get(i).getUsername())){
-                        b = loginMenu.customerList.get(i).getBusiness();
+                    if(username.getText().equals(Login.customerList.get(i).getUsername())){
+                        b = Login.customerList.get(i).getBusiness();
 
                     }
 
@@ -184,7 +184,7 @@ public class Controller {
         switchToBRegister(event);
 
     }
-    private void switchToC(ActionEvent event) throws IOException {;
+    private void switchToC(ActionEvent event) throws IOException {
         Parent home_page = FXMLLoader.load(getClass().getResource("customerMenu/customerMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

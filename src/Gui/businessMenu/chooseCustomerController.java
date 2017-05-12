@@ -58,8 +58,8 @@ public class chooseCustomerController {
             businessBookingController controller = loader.getController();
 
             //function in the controller u go must contain this
-            controller.setBusinessID(parameterToPass1);
-            controller.setCustomerID(parameterToPass2);
+            businessBookingController.setBusinessID(parameterToPass1);
+            businessBookingController.setCustomerID(parameterToPass2);
         }catch(IOException e){}
 
     }
@@ -75,8 +75,8 @@ public class chooseCustomerController {
         selected = false;
         loginMenu.loadCustomerInformation();
         ArrayList<String> b = new ArrayList<>();
-        for(int i=0;i<login.customerList.size();i++){
-            b.add("("+login.customerList.get(i).getUsername()+ ") "+ login.customerList.get(i).getName());
+        for(int i = 0; i< Login.customerList.size(); i++){
+            b.add("("+ Login.customerList.get(i).getUsername()+ ") "+ Login.customerList.get(i).getName());
         }
 
         l.setItems(FXCollections.observableArrayList(b));
@@ -91,10 +91,10 @@ public class chooseCustomerController {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
 
-                for(int i=0;i<login.customerList.size();i++){
-                    if(newValue.equals("("+login.customerList.get(i).getUsername()+ ") "+ login.customerList.get(i).getName())){
-                        pass("businessMakeBooking.fxml",businessID,login.customerList.get(i).getUsername()) ;
-                        System.out.println(login.customerList.get(i).getUsername());
+                for(int i = 0; i< Login.customerList.size(); i++){
+                    if(newValue.equals("("+ Login.customerList.get(i).getUsername()+ ") "+ Login.customerList.get(i).getName())){
+                        pass("businessMakeBooking.fxml",businessID, Login.customerList.get(i).getUsername()) ;
+                        System.out.println(Login.customerList.get(i).getUsername());
 
                     }
                 }

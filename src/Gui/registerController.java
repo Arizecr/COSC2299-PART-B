@@ -63,9 +63,9 @@ public class registerController {
         AnchorPane root = new AnchorPane();
 
         //gets all the names of all business's registered to the system
-        for(int i=0;i<login.businessList.size();i++){
+        for(int i = 0; i< Login.businessList.size(); i++){
 
-            String n = login.businessList.get(i).getBusinessName();
+            String n = Login.businessList.get(i).getBusinessName();
             bus.add(n);
 
         }
@@ -74,7 +74,7 @@ public class registerController {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 //this service is saved to the class for use in adding end time of service
-                selectedB = login.businessList.get(newValue.intValue());
+                selectedB = Login.businessList.get(newValue.intValue());
 
             }
         });
@@ -147,5 +147,6 @@ public class registerController {
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
 
 }

@@ -27,7 +27,7 @@ public class WriteToFile {
             if(file.length()==0)// if file is empty data added to firt line
             {
                 fw.write(person.toString());//appends the string to the file
-                 }
+            }
             else {// if not empty adds data to the nextline
 
 
@@ -40,7 +40,7 @@ public class WriteToFile {
         {
             //System.err.println("IOException: " + ioe.getMessage());
 
-             l.Logging();
+            l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
         }
 
@@ -79,9 +79,9 @@ public class WriteToFile {
         }
         catch(IOException ioe)
         {
-             l.Logging();
+            l.Logging();
             LOGGER.log(Level.WARNING,ioe.toString(),ioe);
-           // System.err.println("IOException: " + ioe.getMessage());
+            // System.err.println("IOException: " + ioe.getMessage());
         }
 
     }
@@ -111,12 +111,16 @@ public class WriteToFile {
 
     }
     public void rewriteToFile(ArrayList List, String filename){
-        if(List.size()>=0){reWriteToWorkingdayTXT(
+        if(List.size()>0){reWriteToWorkingdayTXT(
                 List.get(0).toString(), filename);}
+        else{
+            reWriteToWorkingdayTXT("",filename);
+        }
         for(int i=1; i < List.size() ;i++){
 
             WriteToWorkingdayTXT(List.get(i).toString(), filename);
         }
+
     }
 
     public void writeToFileToString(ArrayList list, String filename){

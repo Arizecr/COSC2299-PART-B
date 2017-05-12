@@ -701,8 +701,7 @@ public class Driver {
 
             }
         }
-        if(count!=0){return false;}
-        return true;
+        return count == 0;
     }
 
     //check if there is a shift already during this time
@@ -748,8 +747,7 @@ public class Driver {
 
             }
         }
-        if(count==0){return false;}//false if no bookings during this time
-        return true;
+        return count != 0;
     }
 
     /*

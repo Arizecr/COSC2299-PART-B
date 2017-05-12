@@ -70,7 +70,7 @@ public class CustomerBookingTest
         dateinfo = "29/04/2017";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertTrue(bc.dateCheck());
     }
     @Test
@@ -78,7 +78,7 @@ public class CustomerBookingTest
         dateinfo = "30/04/2018";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertTrue(bc.dateCheck());
     }
     @Test
@@ -86,7 +86,7 @@ public class CustomerBookingTest
         dateinfo = "29/04/2016";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertTrue(bc.dateCheck());
     }
 
@@ -100,7 +100,7 @@ public class CustomerBookingTest
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
 
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertFalse(bc.dateCheck());
     }
     @Test
@@ -114,7 +114,7 @@ public class CustomerBookingTest
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
 
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertFalse(bc.dateCheck());
     }
     @Test
@@ -128,7 +128,7 @@ public class CustomerBookingTest
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = LocalDate.parse(dateinfo, formatter);
 
-        bc.setDateinfo(localDate);
+        bookingController.setDateinfo(localDate);
         assertTrue(bc.dateCheck());
     }
     //------------------------------------------------------------------------starttime check valid

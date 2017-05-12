@@ -11,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
@@ -49,7 +48,7 @@ public class chooseBusinessController {
             businessMenuController controller = loader.getController();
 
             //function in the controller u go must contain this
-            controller.setBusinessID(parameterToPass1);
+            businessMenuController.setBusinessID(parameterToPass1);
 
         }catch(IOException e){}
 
@@ -62,8 +61,8 @@ public class chooseBusinessController {
         Parent rootNode = FXMLLoader.load(getClass().getResource("chooseBusiness.fxml"));
         loginMenu.loadOwnerInformation();
         ArrayList<String> b = new ArrayList<>();
-        for(int i=0;i<login.businessList.size();i++){
-            b.add(login.businessList.get(i).getBusinessName()+" ("+login.businessList.get(i).getUsername()+")");
+        for(int i = 0; i< Login.businessList.size(); i++){
+            b.add(Login.businessList.get(i).getBusinessName()+" ("+ Login.businessList.get(i).getUsername()+")");
         }
         ListView l = new ListView();
         l.setItems(FXCollections.observableArrayList(b));
@@ -78,9 +77,9 @@ public class chooseBusinessController {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
 
-                for(int i=0;i<login.businessList.size();i++){
-                    if(newValue.equals(login.businessList.get(i).getBusinessName()+" ("+login.businessList.get(i).getUsername()+")")){
-                        pass("businessMenu/businessMenu.fxml",login.businessList.get(i).getUsername()) ;
+                for(int i = 0; i< Login.businessList.size(); i++){
+                    if(newValue.equals(Login.businessList.get(i).getBusinessName()+" ("+ Login.businessList.get(i).getUsername()+")")){
+                        pass("businessMenu/businessMenu.fxml", Login.businessList.get(i).getUsername()) ;
                         //System.out.println(login.businessList.get(i).getUsername());
                         selected = true;
                     }
@@ -137,9 +136,17 @@ if(selected) {
     }
 
     @FXML //admin verify new business details
-    public void switchToVerify(ActionEvent event) {
-
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public void switchToVerify(ActionEvent event) throws IOException{
+        Parent home_page = FXMLLoader.load(getClass().getResource("verifyBusiness.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        //app_stage.setScene(home_page_scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("verifyBusiness.fxml"));
+        Pane pane = loader.load();
+        //MUST change classname to the file u want to pass the variable to
+        verifyBusinessController controller = loader.getController();
+        //function in the controller u go must contain this
+        controller.startChoose(app_stage);
     }
     //go back to login
     public void cancel(ActionEvent event) throws IOException {

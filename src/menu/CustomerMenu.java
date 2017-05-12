@@ -83,8 +83,8 @@ public class CustomerMenu {
         System.out.println("\n\nWhich business would you like to view/book for?");
 
         //gets all the names of all business's registered to the system
-        for(int i=1;i<login.businessList.size();i++){
-            System.out.println(i+". "+login.businessList.get(i).getName());
+        for(int i = 1; i< Login.businessList.size(); i++){
+            System.out.println(i+". "+ Login.businessList.get(i).getName());
             count++;
         }
         System.out.print("Choose option: ");
@@ -124,11 +124,7 @@ public class CustomerMenu {
      */
     public Boolean verifyBusinessID(int id, int count){
         //checks that number entered is more than 0 and less than max
-        if(id > count || id <=0){
-            return false;
-        }
-
-        return true;
+        return !(id > count || id <= 0);
     }
 
     /*
@@ -139,12 +135,12 @@ public class CustomerMenu {
         String n = null;
         Services s = new Services();
 
-        System.out.println("\n"+login.businessList.get(bID).getName()+ " [opening hours]");
+        System.out.println("\n"+ Login.businessList.get(bID).getName()+ " [opening hours]");
         System.out.println("-----------------------------");
-        workday.printFile(login.businessList.get(bID).getUsername());
+        workday.printFile(Login.businessList.get(bID).getUsername());
         System.out.println("-----------------------------");
         System.out.println("\nSelect a Service.");
-        s.printService(login.businessList.get(bID).getUsername());
+        s.printService(Login.businessList.get(bID).getUsername());
 
         Scanner reader = new Scanner(System.in);
         do {

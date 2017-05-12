@@ -52,7 +52,7 @@ public class viewBookingTesting {
         login.getOwnerinfo();
         int count = 1;
         //gets all the names of all business's registered to the system
-        for(int i=0;i<login.businessList.size();i++){
+        for(int i = 0; i< Login.businessList.size(); i++){
              count++;
             System.out.println(count);
         }
@@ -66,7 +66,7 @@ public class viewBookingTesting {
         login.getOwnerinfo();
         int count = 0;
         //gets all the names of all business's registered to the system
-        for(int i=1;i<login.businessList.size();i++){
+        for(int i = 1; i< Login.businessList.size(); i++){
             count++;
         }
         boolean check = cm.verifyBusinessID(3, count);
@@ -77,7 +77,7 @@ public class viewBookingTesting {
         login.getOwnerinfo();
         int count = 0;
         //gets all the names of all business's registered to the system
-        for(int i=1;i<login.businessList.size();i++){
+        for(int i = 1; i< Login.businessList.size(); i++){
             count++;
         }
         boolean check = cm.verifyBusinessID(0, count);
