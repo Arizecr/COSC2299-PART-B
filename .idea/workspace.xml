@@ -5,38 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="verification">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/BusinessWorkDays/Workday.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/Controller.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addEmployeeAvailableDayController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addEmployeeAvailableDayController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addEmployeeController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addEmployeeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addWorkingDayController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/addWorkingDayController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessBookingController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessBookingController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/businessMenuController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/chooseCustomerController$1.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/chooseCustomerController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/chooseCustomerController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/chooseCustomerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/currentBookings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/pastBookings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/removeWorkingDayController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/removeWorkingDayController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/servicesController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/servicesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/showWorkerAvailibilityController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/showWorkerAvailibilityController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBookingSummaryController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBookingSummaryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBusinessHours.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/businessMenu/viewBusinessHours.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/bookingController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/bookingController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/customerMenuController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/customerMenu/customerMenuController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/registerController.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Gui/registerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/BusinessMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/Menu/Register.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver$DayOfWeek.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver$DayOfWeek.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/coreFunctions/Driver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/menu/CustomerMenu.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/menu/CustomerMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/CustomerBookingTest.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/CustomerBookingTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/viewBookingTesting.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/test/viewBookingTesting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/BusinessOwner.class" afterPath="$PROJECT_DIR$/out/production/COSC-2299-Part-A/user/BusinessOwner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customize.txt" afterPath="$PROJECT_DIR$/customize.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,16 +29,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Admin.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -104,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customizeMenuController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customizeMenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/customizeMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="484">
@@ -112,6 +71,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customize.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/customize.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="87" lean-forward="false" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -226,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pastBookings.txt" />
         <option value="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
         <option value="$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java" />
         <option value="$PROJECT_DIR$/src/bookings/Services.java" />
@@ -277,6 +245,7 @@
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenu.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
         <option value="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenuController.java" />
+        <option value="$PROJECT_DIR$/customize.txt" />
       </list>
     </option>
   </component>
@@ -1127,7 +1096,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25158563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25158563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1898527" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1208,13 +1177,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/BusinessWorkDays/Workday.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDayController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
@@ -1633,6 +1595,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customize.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="87" lean-forward="false" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
