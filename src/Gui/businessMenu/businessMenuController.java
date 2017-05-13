@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import menu.Login;
 
@@ -44,6 +45,30 @@ public class businessMenuController extends Controller implements Initializable{
     //get business id
     public String  getBusinessID(){
         return businessID;
+
+    }
+
+
+
+    @FXML
+    private Button customize;
+
+    @FXML
+    void customizeGui(ActionEvent event) {
+
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+            // Hide this current window (if this is what you want)
+            //((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -263,6 +288,9 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+
+
+
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {
 
@@ -279,6 +307,21 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+
+
+
+    ///////////////CUSTOMIZE\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    @FXML
+    private static Text businessName;
+
+    public static void setBusinessName(String abc){
+        businessName.setText(abc);
+    }
+
+
+
 
 
     @Override
