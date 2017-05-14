@@ -399,7 +399,7 @@ public class Driver {
                 day = Details[2];
 
 
-                if (!(e.equals(empID) && b.equals(bId) && d.equals(day))) {
+                if (!(e.equals(empID) && b.equals(bId) && d.toLowerCase().equals(day.toLowerCase()))) {
                     if (count == 1) {
                         filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                         count++;
