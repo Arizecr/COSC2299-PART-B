@@ -1,5 +1,6 @@
 package Gui.businessMenu;
 
+import BusinessWorkDays.Workday;
 import coreFunctions.WriteToFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ import java.util.ResourceBundle;
 public class viewBusinessHours implements Initializable{
     //
     WriteToFile w =new WriteToFile();
+    Workday work =new Workday();
     BusinessMenu bMenu = new BusinessMenu();
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
@@ -220,6 +222,11 @@ public class viewBusinessHours implements Initializable{
                     replaceDay(businessID + " Wednesday ",businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());
                     replaceDay(businessID + " Thursday " ,businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText());
                     replaceDay(businessID + " Friday ",businessID + " Friday " + friStart.getText()+ " " +friEnd.getText());
+                    work.readFile(businessID, "monday",mondayStart.getText(), mondayEnd.getText());
+                    work.readFile(businessID, "tuesday",tuesdayStart.getText(), tuesdayEnd.getText());
+                    work.readFile(businessID, "wednesday",wednesdayStart.getText(), wednesdayEnd.getText());
+                    work.readFile(businessID, "thursday",thursStart.getText(), thursEnd.getText());
+                    work.readFile(businessID, "friday",friStart.getText(), friEnd.getText());
 
                 }
                 else{//this is a new business
