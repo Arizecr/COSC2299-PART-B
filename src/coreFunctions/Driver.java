@@ -358,16 +358,16 @@ public class Driver {
             String Details[] = hours.get(i).split(" ",5);
             String bId = Details[0];
             String empID = Details[1];
-            String day = Details[2];
+            String day = Details[2].toLowerCase();
             String start = Details[3];
             String end = Details[4];
 
-            if((b.equals(bId)&&d.equals(day))&&!timeCheck(start,end,s,e)) {
+            if((b.equals(bId)&&d.toLowerCase().equals(day))&&!timeCheck(start,end,s,e)) {
                 if(count ==1){filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
                     count++;
                 }
             }
-            else if(!(b.equals(bId)&&d.equals(day))) {
+            else if(!(b.equals(bId))) {
 
                 if (count == 1) {
                     filewriter.reWriteToWorkingdayTXT(hours.get(i), "workdaysList.txt");
