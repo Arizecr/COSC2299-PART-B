@@ -230,6 +230,7 @@ public class viewBusinessHours implements Initializable{
 
                 }
                 else{//this is a new business
+
                     allbdays.add(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText());
                     allbdays.add(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText());
                     allbdays.add(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());
