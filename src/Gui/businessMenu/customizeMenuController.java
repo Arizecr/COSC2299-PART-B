@@ -53,16 +53,26 @@ public class customizeMenuController {
         Parent rootNode = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
         Customise instance = c.getCustom(businessID);
         System.out.println(instance);
-        if(instance!=null){
+        if(instance.getMenuName()!=null){
             title.setText(instance.getMenuName());
+        }
+        if(instance.getBooking()!=null){
             b.setText(instance.getBooking());
+        } if(instance.getViewing()!=null){
             viewb.setText(instance.getViewing());
         }
+
+
         title.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 Customise instance = c.getCustom(businessID);
-                instance.setMenuName(title.getText());
+                if(instance!=null){
+                    instance.setMenuName(title.getText());
+                }
+                else {
+                    instance = new Customise(businessID,title.getText(),null,null,null);
+                }
                 c.addCustom(businessID,instance);
 
             }
@@ -71,7 +81,12 @@ public class customizeMenuController {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 Customise instance = c.getCustom(businessID);
-                instance.setBooking(b.getText());
+                if(instance!=null){
+                    instance.setBooking(b.getText());
+                }
+                else {
+                    instance = new Customise(businessID,null,b.getText(),null,null);
+                }
                 c.addCustom(businessID,instance);
 
             }
@@ -80,7 +95,12 @@ public class customizeMenuController {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 Customise instance = c.getCustom(businessID);
-                instance.setViewing(viewb.getText());
+                if(instance!=null){
+                    instance.setViewing(viewb.getText());
+                }
+                else {
+                    instance = new Customise(businessID,null,null,viewb.getText(),null);
+                }
                 c.addCustom(businessID,instance);
 
             }

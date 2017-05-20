@@ -89,6 +89,11 @@ public class Customise {
 
                     // printing out each line in the file
                     String Details[] = x.split(":", 5);
+                    for(int i=1;i<4;i++){
+                        if(Details[i].equals("null")){
+                            Details[i]=null;
+                        }
+                    }
                     String bid = Details[0];
                     String t1 = Details[1];
                     String t2 = Details[2];
@@ -133,7 +138,7 @@ public class Customise {
         loadCustom();
         for(int i=0; i < customiseList.size() ;i++){
             if(b.equals(customiseList.get(i).getbId())){
-                System.out.println("res");
+               // System.out.println("res");
                 customiseList.set(i,c);
                 isNotFound = false;
 

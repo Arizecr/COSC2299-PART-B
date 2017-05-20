@@ -1,5 +1,6 @@
 package Gui.customerMenu;
 
+import bookings.Customise;
 import bookings.Services;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
@@ -75,6 +76,9 @@ public class bookingController {
     @FXML
     private TextField endtime;
 
+    @FXML
+    private javafx.scene.text.Text Heading;
+
     public static void setBusinessID(String bid){
         businessID = bid;
 
@@ -90,8 +94,30 @@ public class bookingController {
         dateinfo = d;
 
     }
-
+    public void setH1(){
+        Customise cust = new Customise();
+        Customise instance = cust.getCustom(businessID);
+        System.out.println(instance);
+        if(instance.getBooking()!=null){
+            Heading.setText(instance.getBooking());
+        }
+        else{
+            Heading.setText("Booking");
+        }
+    }
+    public void setH2(){
+        Customise cust = new Customise();
+        Customise instance = cust.getCustom(businessID);
+        System.out.println(instance);
+        if(instance.getViewing()!=null&& (!instance.getViewing().equals("null"))){
+            Heading.setText(instance.getViewing());
+        }
+        else{
+            Heading.setText("Current Bookings");
+        }
+    }
     public void startMakeBook(Stage stage) throws IOException {
+        setH1();
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
@@ -217,6 +243,7 @@ public class bookingController {
         ((AnchorPane) rootNode).getChildren().add(endtime);
         ((AnchorPane) rootNode).getChildren().add(c);
         ((AnchorPane) rootNode).getChildren().add(c2);
+        ((AnchorPane) rootNode).getChildren().add(Heading);
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
@@ -302,6 +329,7 @@ public class bookingController {
 
     public void startViewBook(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
+        setH2();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("viewBookings.fxml"));
         driver.loadCurrentBookings(businessID);
@@ -329,6 +357,7 @@ public class bookingController {
         }
         ObservableList<String> data = FXCollections.observableArrayList(bookings);
         ((AnchorPane) rootNode).getChildren().add(new Pane());
+        ((AnchorPane) rootNode).getChildren().add(Heading);
 
         ((AnchorPane) rootNode).getChildren().addAll(list);
 
