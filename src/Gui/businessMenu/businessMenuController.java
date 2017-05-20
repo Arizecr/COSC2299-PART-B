@@ -58,6 +58,7 @@ public class businessMenuController extends Controller implements Initializable{
 
         Parent root;
         try {
+            passToC("customizeMenu.fxml", businessID);
             root = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
             Stage stage = new Stage();
             stage.setTitle("My New Stage Title");
@@ -153,6 +154,15 @@ public class businessMenuController extends Controller implements Initializable{
         Pane pane = loader.load();
         viewBookingSummaryController controller = loader.getController();
         viewBookingSummaryController.setBusinessID(parameterToPass);
+
+    }
+
+    private void passToC(String fxmlFile, String parameterToPass) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        customizeMenuController controller = loader.getController();
+        customizeMenuController.setBusinessID(parameterToPass);
 
     }
 

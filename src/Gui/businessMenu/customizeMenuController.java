@@ -47,8 +47,7 @@ public class customizeMenuController {
    */
     @FXML
     void back(ActionEvent event) throws IOException {
-        //Passes to addEmployeeController
-
+        //Passes to business Menu
         passToBusinessMenu("businessMenu.fxml", businessID);
         Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
         Scene home_page_scene = new Scene(home_page);
@@ -56,7 +55,6 @@ public class customizeMenuController {
         app_stage.setScene(home_page_scene);
 
 
-        //System.out.println(busId); //get Businessid
 
     }
     private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
