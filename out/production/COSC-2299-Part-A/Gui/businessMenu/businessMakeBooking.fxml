@@ -14,7 +14,7 @@
     <children>
         <Pane id="Lolo" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
             <children>
-                <Text layoutX="124.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking">
+                <Text fx:id="Heading" layoutX="124.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="">
                     <font>
                         <Font name="American Typewriter" size="26.0" />
                     </font>

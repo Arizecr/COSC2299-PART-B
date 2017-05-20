@@ -97,23 +97,24 @@ public class bookingController {
     public void setH1(){
         Customise cust = new Customise();
         Customise instance = cust.getCustom(businessID);
-        System.out.println(instance);
-        if(instance.getBooking()!=null){
-            Heading.setText(instance.getBooking());
-        }
-        else{
-            Heading.setText("Booking");
+        if(instance!=null) {
+
+            if (instance.getBooking() != null && (!instance.getBooking().equals("null"))) {
+                Heading.setText(instance.getBooking());
+            } else {
+                Heading.setText("Booking");
+            }
         }
     }
     public void setH2(){
         Customise cust = new Customise();
         Customise instance = cust.getCustom(businessID);
-        System.out.println(instance);
-        if(instance.getViewing()!=null&& (!instance.getViewing().equals("null"))){
-            Heading.setText(instance.getViewing());
-        }
-        else{
-            Heading.setText("Current Bookings");
+        if(instance!=null) {
+            if (instance.getViewing() != null && (!instance.getViewing().equals("null"))) {
+                Heading.setText(instance.getViewing());
+            } else {
+                Heading.setText("Current Bookings");
+            }
         }
     }
     public void startMakeBook(Stage stage) throws IOException {

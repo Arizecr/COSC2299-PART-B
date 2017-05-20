@@ -1,4 +1,5 @@
 package Gui.businessMenu;
+import bookings.Customise;
 import bookings.Services;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
@@ -18,7 +19,7 @@ import javafx.util.Callback;
 import menu.BusinessMenu;
 import menu.Login;
 import user.Employee;
-
+import javafx.scene.text.Text;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -69,6 +70,8 @@ public class businessBookingController {
 
     @FXML
     private TextField starttime;
+    @FXML
+    private Text Heading;
 
     @FXML
     private TextField endtime;
@@ -98,6 +101,7 @@ public class businessBookingController {
      * make a booking
      */
     public void startMakeBook(Stage stage) throws IOException {
+        setH1();
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
@@ -226,13 +230,25 @@ public class businessBookingController {
         ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().add(endtime);
         ((AnchorPane) rootNode).getChildren().add(c2);
+        ((AnchorPane) rootNode).getChildren().add(Heading);
         ((AnchorPane) rootNode).getChildren().addAll(c);
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
     }
+    public void setH1(){
+        Customise cust = new Customise();
+        Customise instance = cust.getCustom(businessID);
+        if(instance!=null) {
 
+            if (instance.getBooking() != null && (!instance.getBooking().equals("null"))) {
+                Heading.setText(instance.getBooking());
+            } else {
+                Heading.setText("Booking");
+            }
+        }
+    }
     public void checkFile(){
         days = new ArrayList<>();
         date = new ArrayList<>();

@@ -53,15 +53,17 @@ public class customizeMenuController {
         Parent rootNode = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
         Customise instance = c.getCustom(businessID);
         System.out.println(instance);
-        if(instance.getMenuName()!=null){
-            title.setText(instance.getMenuName());
+        if(instance!=null) {
+            if (instance.getMenuName() != null) {
+                title.setText(instance.getMenuName());
+            }
+            if (instance.getBooking() != null) {
+                b.setText(instance.getBooking());
+            }
+            if (instance.getViewing() != null) {
+                viewb.setText(instance.getViewing());
+            }
         }
-        if(instance.getBooking()!=null){
-            b.setText(instance.getBooking());
-        } if(instance.getViewing()!=null){
-            viewb.setText(instance.getViewing());
-        }
-
 
         title.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
