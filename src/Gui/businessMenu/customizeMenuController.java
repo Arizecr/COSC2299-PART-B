@@ -38,9 +38,7 @@ public class customizeMenuController {
 
     @FXML
     void save(ActionEvent event) throws IOException {
-
         update(title.getText());
-
     }
     /*
    * return to business menu

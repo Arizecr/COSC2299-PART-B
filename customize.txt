@@ -1,3 +1,1 @@
-Title:LOGO:BackgroundColour
-
-//In Initialize take this in and change it on startup. Customize will change this file.
+b1:Title1:t2:t3:BackgroundColour
