@@ -5,89 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/Controller.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/bregister.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/bregisterController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployee.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDay.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDayController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDay.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDayController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessMakeBooking.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomer.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenu.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenuController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDay.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/services.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibility.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/chooseBusiness.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/chooseBusinessController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/customerMenu/viewBookings.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/login.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/register.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/registerController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/verifyBusiness.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Gui/verifyBusinessController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bookings/Bookings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bookings/CurrentBookings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bookings/PastBookings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bookings/Services.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/coreFunctions/Driver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/coreFunctions/WriteToFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/menu/BusinessMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/menu/CustomerMenu.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/menu/Login.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/menu/Register.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/AddEmployeeTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/CustomerBookingTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/Logging.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/LoginTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/RegisterTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/ServicesTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/WorkdayTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/checkIDTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/viewBookingTesting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/user/Business.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/user/BusinessOwner.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/user/Customer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/user/Employee.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/userBase/User.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Program_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Program_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COSC-2299-Part-A.iml" afterPath="$PROJECT_DIR$/COSC-2299-Part-A.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -143,11 +61,9 @@
       <file leaf-file-name="BusinessMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/menu/BusinessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -357,6 +273,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="COSC2299-PARTB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PARTB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PARTB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PARTB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COSC2299-PARTB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -725,13 +673,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00143" summary="multiple business implementation">
-      <created>1493603143871</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1493603143871</updated>
-    </task>
     <task id="LOCAL-00144" summary="multiple business implementation">
       <created>1493955240946</created>
       <option name="number" value="00144" />
@@ -1068,7 +1009,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494807410292</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="business hours fix">
+      <created>1495251333385</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1495251333386</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1658,11 +1606,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/BusinessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
