@@ -108,7 +108,7 @@ public class viewBusinessHours implements Initializable{
         String day ="" ;
         String starttime ="";
         String endtime="";
-        try {//
+        try {
             br = new BufferedReader(new FileReader("businessdaysList.txt"));
             try {
                 String x;
