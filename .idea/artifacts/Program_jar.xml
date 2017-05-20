@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Program:jar">
-    <output-path>$PROJECT_DIR$</output-path>
+  <artifact type="jar" build-on-make="true" name="Program:jar">
+    <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="Program.jar">
       <element id="module-output" name="COSC-2299-Part-A" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar" path-in-jar="/" />
