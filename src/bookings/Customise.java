@@ -24,6 +24,7 @@ public class Customise {
     private String booking;
     private String viewing;
     private String colour;
+    public Customise(){}
     public Customise(String bId, String menuName, String booking, String viewing,String colour) {
         this.menuName = menuName;
         this.bId = bId;
@@ -113,6 +114,15 @@ public class Customise {
         //there is no customisation for this business yet
         customiseList.add(c);
         w.rewriteToFile(customiseList,"customize.txt");
+
+    }
+    public Customise getCustom(String b){
+        for(int i=0; i < customiseList.size() ;i++){
+            if(b.equals(customiseList.get(i).getbId())){
+                return customiseList.get(i);
+            }
+        }
+      return null;
 
     }
     public String toString(){

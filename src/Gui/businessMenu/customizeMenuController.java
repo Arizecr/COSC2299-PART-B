@@ -1,6 +1,8 @@
 package Gui.businessMenu;
 
-import javafx.application.Platform;
+import bookings.Customise;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ import java.io.IOException;
  */
 public class customizeMenuController {
     private businessMenuController bc;
+    Customise c = new Customise();
 
     @FXML
     private TextField title;
@@ -38,8 +41,36 @@ public class customizeMenuController {
 
     @FXML
     void save(ActionEvent event) throws IOException {
-        update(title.getText());
+        if(title.getText()!=null){
+
+        }
+
     }
+    public void startChoose(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("customiseMenu.fxml"));
+        Customise instance = c.getCustom(businessID);
+
+        if(instance!=null){
+            title.setText(c.getMenuName());
+            b.setText(c.getBooking());
+            viewb.setText(c.getViewing());
+        }
+        title.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+
+
+            }
+        });
+
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+
+    }
+
     /*
    * return to business menu
    */
@@ -64,7 +95,7 @@ public class customizeMenuController {
     }
     /*
      * Update business owner information
-     */
+
     private void update(String abc){
         Platform.runLater(new Runnable() {
             @Override
@@ -73,7 +104,7 @@ public class customizeMenuController {
                 label.getChildrenUnmodifiable();
             }
         });
-    }
+    }  */
 
 
 }

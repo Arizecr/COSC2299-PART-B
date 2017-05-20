@@ -59,11 +59,22 @@ public class businessMenuController extends Controller implements Initializable{
         Parent root;
         try {
             passToC("customizeMenu.fxml", businessID);
-            root = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
+       /*     root = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
             Stage stage = new Stage();
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(root, 450, 450));
-            stage.show();
+            stage.show();*/
+            passToChooseCustomer("chooseCustomer.fxml", businessID);
+            Parent home_page = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
+            Scene home_page_scene = new Scene(home_page);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            //app_stage.setScene(home_page_scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("customizeMenu.fxml"));
+            Pane pane = loader.load();
+            //MUST change classname to the file u want to pass the variable to
+            customizeMenuController controller = loader.getController();
+            //function in the controller u go must contain this
+            controller.startChoose(app_stage);
             // Hide this current window (if this is what you want)
             //((Node)(event.getSource())).getScene().getWindow().hide();
         }
