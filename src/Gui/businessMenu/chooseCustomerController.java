@@ -76,6 +76,7 @@ public class chooseCustomerController {
         loginMenu.loadCustomerInformation();
         ArrayList<String> b = new ArrayList<>();
         for(int i = 0; i< Login.customerList.size(); i++){
+            if(businessID.equals(Login.customerList.get(i).getBusiness()))
             b.add("("+ Login.customerList.get(i).getUsername()+ ") "+ Login.customerList.get(i).getName());
         }
 

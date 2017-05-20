@@ -104,6 +104,8 @@ public class bookingController {
             } else {
                 Heading.setText("Booking");
             }
+        }else {
+            Heading.setText("Booking");
         }
     }
     public void setH2(){
@@ -115,6 +117,8 @@ public class bookingController {
             } else {
                 Heading.setText("Current Bookings");
             }
+        } else {
+            Heading.setText("Current Bookings");
         }
     }
     public void startMakeBook(Stage stage) throws IOException {

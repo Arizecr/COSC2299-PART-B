@@ -244,9 +244,13 @@ public class businessBookingController {
 
             if (instance.getBooking() != null && (!instance.getBooking().equals("null"))) {
                 Heading.setText(instance.getBooking());
-            } else {
+            }
+            else {
                 Heading.setText("Booking");
             }
+        }
+        else {
+            Heading.setText("Booking");
         }
     }
     public void checkFile(){
