@@ -3,8 +3,14 @@ package Gui.businessMenu;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -16,7 +22,17 @@ public class customizeMenuController {
 
     @FXML
     private TextField title;
+    @FXML
+    private TextField b;
+    @FXML
+    private TextField viewb;
 
+    public static String businessID;
+
+    public static void setBusinessID(String bid){
+        businessID = bid;
+
+    }
     @FXML
     private Label label;
 
@@ -25,20 +41,31 @@ public class customizeMenuController {
 
         update(title.getText());
 
+    }
+    /*
+   * return to business menu
+   */
+    @FXML
+    void back(ActionEvent event) throws IOException {
+        //Passes to addEmployeeController
+
+        passToBusinessMenu("businessMenu.fxml", businessID);
+        Parent home_page = FXMLLoader.load(getClass().getResource("businessMenu.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
 
 
-
-
-/*
-        if(title.getText() != null){
-            businessMenuController.setBusinessName("sas");
-
-        }*/
-
-
+        //System.out.println(busId); //get Businessid
 
     }
+    private void passToBusinessMenu(String fxmlFile, String parameterToPass) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        businessMenuController controller = loader.getController();
+        businessMenuController.setBusinessID(businessID);
 
+    }
     /*
      * Update business owner information
      */
