@@ -64,7 +64,7 @@ public class businessMenuController extends Controller implements Initializable{
             stage.setTitle("My New Stage Title");
             stage.setScene(new Scene(root, 450, 450));
             stage.show();*/
-            passToChooseCustomer("chooseCustomer.fxml", businessID);
+
             Parent home_page = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
             Scene home_page_scene = new Scene(home_page);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

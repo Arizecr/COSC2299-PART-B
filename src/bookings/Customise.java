@@ -33,6 +33,27 @@ public class Customise {
         this.colour=colour;
 
     }
+
+    public void setbId(String bId) {
+        this.bId = bId;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
+    public void setBooking(String booking) {
+        this.booking = booking;
+    }
+
+    public void setViewing(String viewing) {
+        this.viewing = viewing;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
     public String getMenuName() {
         return menuName;
     }
@@ -53,13 +74,14 @@ public class Customise {
 
     public void loadCustom() {
         BufferedReader br;
+        customiseList = new ArrayList<>();
         try {
 
 
             br = new BufferedReader(new FileReader("customize.txt"));
 
             try {
-                customiseList = new ArrayList<>();
+
                 String x;
                 String line = null;
 
@@ -78,6 +100,7 @@ public class Customise {
                         EOserviceList.add(emp);
                     }*/
                     Customise addC = new Customise(bid,t1,t2,t3,c);
+
                     customiseList.add(addC);
 
                 }
@@ -106,23 +129,32 @@ public class Customise {
 
     }
     public void addCustom(String b,Customise c){
+        boolean isNotFound = true;
+        loadCustom();
         for(int i=0; i < customiseList.size() ;i++){
             if(b.equals(customiseList.get(i).getbId())){
+                System.out.println("res");
                 customiseList.set(i,c);
+                isNotFound = false;
+
             }
         }
         //there is no customisation for this business yet
-        customiseList.add(c);
-        w.rewriteToFile(customiseList,"customize.txt");
-
+        if(isNotFound) {
+            customiseList.add(c);
+        }
+        w.rewriteToFile(customiseList, "customize.txt");
     }
+
     public Customise getCustom(String b){
+        loadCustom();
         for(int i=0; i < customiseList.size() ;i++){
             if(b.equals(customiseList.get(i).getbId())){
+
                 return customiseList.get(i);
             }
         }
-      return null;
+        return null;
 
     }
     public String toString(){

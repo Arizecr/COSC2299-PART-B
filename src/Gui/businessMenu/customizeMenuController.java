@@ -47,24 +47,48 @@ public class customizeMenuController {
 
     }
     public void startChoose(Stage stage) throws IOException {
+        c.loadCustom();
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
-        Parent rootNode = FXMLLoader.load(getClass().getResource("customiseMenu.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
         Customise instance = c.getCustom(businessID);
-
+        System.out.println(instance);
         if(instance!=null){
-            title.setText(c.getMenuName());
-            b.setText(c.getBooking());
-            viewb.setText(c.getViewing());
+            title.setText(instance.getMenuName());
+            b.setText(instance.getBooking());
+            viewb.setText(instance.getViewing());
         }
         title.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                Customise instance = c.getCustom(businessID);
+                instance.setMenuName(title.getText());
+                c.addCustom(businessID,instance);
 
+            }
+        });
+        b.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                Customise instance = c.getCustom(businessID);
+                instance.setBooking(b.getText());
+                c.addCustom(businessID,instance);
+
+            }
+        });
+        viewb.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                Customise instance = c.getCustom(businessID);
+                instance.setViewing(viewb.getText());
+                c.addCustom(businessID,instance);
 
             }
         });
 
+        ((Pane) rootNode).getChildren().add(title);
+        ((Pane) rootNode).getChildren().add(b);
+        ((Pane) rootNode).getChildren().add(viewb);
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
