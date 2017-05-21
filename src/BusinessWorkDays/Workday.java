@@ -259,11 +259,7 @@ public class Workday
             }
         }
 
-        if(count==0){
-
-            return true;
-        }
-        return false;
+        return count == 0;
     }
 
     public void printFile(String realbId){

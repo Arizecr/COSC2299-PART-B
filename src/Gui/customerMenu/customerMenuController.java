@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -80,8 +79,13 @@ public class customerMenuController {
         controller.startViewBook(app_stage);
     }
     @FXML //exit system
-    public void handleCloseButtonAction(ActionEvent event) {
-        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+    public void handleCloseButtonAction(ActionEvent event)throws IOException {
+      //  ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+        Parent home_page = FXMLLoader.load(getClass().getResource("../login.fxml"));
+        Scene home_page_scene = new Scene(home_page);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(home_page_scene);
+        app_stage.show();
     }
 
 
@@ -90,8 +94,9 @@ public class customerMenuController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         bookingController controller = loader.getController();
-        controller.setBusinessID(businessID);
-        controller.setCustomerID(customerID);
+
+        bookingController.setBusinessID(businessID);
+        bookingController.setCustomerID(customerID);
 
     }
     /*

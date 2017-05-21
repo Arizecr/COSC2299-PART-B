@@ -67,7 +67,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID); //set business id
+        businessMenuController.setBusinessID(businessID); //set business id
 
     }
 
@@ -76,7 +76,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         currentBookings controller = loader.getController();
-        controller.setBusinessID(parameterToPass); //pass in business id
+        currentBookings.setBusinessID(parameterToPass); //pass in business id
 
     }
 
@@ -85,7 +85,7 @@ public class viewBookingSummaryController extends Controller implements Initiali
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         pastBookings controller = loader.getController();
-        controller.setBusinessID(parameterToPass); //pass in business id
+        pastBookings.setBusinessID(parameterToPass); //pass in business id
 
     }
 

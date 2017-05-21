@@ -97,7 +97,7 @@ public class removeWorkingDayController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        businessMenuController.setBusinessID(businessID);
 
     }
 

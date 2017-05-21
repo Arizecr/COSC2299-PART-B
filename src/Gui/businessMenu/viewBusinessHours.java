@@ -1,5 +1,6 @@
 package Gui.businessMenu;
 
+import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ import java.util.ResourceBundle;
 public class viewBusinessHours implements Initializable{
     //
     WriteToFile w =new WriteToFile();
+    Driver drive = new Driver();
     BusinessMenu bMenu = new BusinessMenu();
     public static String businessID;
     public ArrayList<String> start = new ArrayList<>();
@@ -149,7 +151,7 @@ public class viewBusinessHours implements Initializable{
         businessMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        businessMenuController.setBusinessID(parameterToPass);
 
     }
 
@@ -220,9 +222,15 @@ public class viewBusinessHours implements Initializable{
                     replaceDay(businessID + " Wednesday ",businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());
                     replaceDay(businessID + " Thursday " ,businessID + " Thursday " + thursStart.getText()+ " " +thursEnd.getText());
                     replaceDay(businessID + " Friday ",businessID + " Friday " + friStart.getText()+ " " +friEnd.getText());
+                    drive.loadandWriteNEmployeeWorktimes(businessID, "monday",mondayStart.getText(), mondayEnd.getText());
+                    drive.loadandWriteNEmployeeWorktimes(businessID, "tuesday",tuesdayStart.getText(), tuesdayEnd.getText());
+                    drive.loadandWriteNEmployeeWorktimes(businessID, "wednesday",wednesdayStart.getText(), wednesdayEnd.getText());
+                    drive.loadandWriteNEmployeeWorktimes(businessID, "thursday",thursStart.getText(), thursEnd.getText());
+                    drive.loadandWriteNEmployeeWorktimes(businessID, "friday",friStart.getText(), friEnd.getText());
 
                 }
                 else{//this is a new business
+
                     allbdays.add(businessID + " Monday " + mondayStart.getText()+ " " +mondayEnd.getText());
                     allbdays.add(businessID + " Tuesday " + tuesdayStart.getText()+ " " +tuesdayEnd.getText());
                     allbdays.add(businessID + " Wednesday " + wednesdayStart.getText()+ " " +wednesdayEnd.getText());

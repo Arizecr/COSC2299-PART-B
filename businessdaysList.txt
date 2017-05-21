@@ -3,8 +3,8 @@ b2 Tuesday 9:00 17:00
 b2 Wednesday 9:00 17:00
 b2 Thursday 9:00 17:00
 b2 Friday 9:00 16:00
-b1 Monday 12:00 13:00
+b1 Monday 12:00 15:00
 b1 Tuesday 15:00 16:00
 b1 Wednesday 7:00 10:00
-b1 Thursday 4:00 5:00
-b1 Friday 13:00 15:00
+b1 Thursday 7:00 8:00
+b1 Friday 14:00 15:00

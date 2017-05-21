@@ -50,7 +50,7 @@ public class currentBookings  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        businessMenuController.setBusinessID(businessID);
 
     }
 
@@ -62,7 +62,7 @@ public class currentBookings  {
         viewBookingSummaryController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        viewBookingSummaryController.setBusinessID(parameterToPass);
 
     }
 
@@ -85,14 +85,14 @@ public class currentBookings  {
         ArrayList<String> bookings = new ArrayList<>();
 
         //list all current bookings
-        for(int i=0;i<driver.currentBookings.size();i++){
-            if(driver.currentBookings.get(i).getBusiness().equals(businessID)){
-                String s = "Date: " + driver.currentBookings.get(i).getDate();
-                s+="\nDay: " + driver.currentBookings.get(i).getDayBooked();
-                s+="\nTime: " + driver.currentBookings.get(i).getTimeBooked();
-                s+="\nService: " + driver.currentBookings.get(i).getServiceBooked();
-                if(e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID())!=null){
-                    s+="\nEmployee: " + e.getEmployeeName(businessID,driver.currentBookings.get(i).getEmployeeID());
+        for(int i = 0; i< Driver.currentBookings.size(); i++){
+            if(Driver.currentBookings.get(i).getBusiness().equals(businessID)){
+                String s = "Date: " + Driver.currentBookings.get(i).getDate();
+                s+="\nDay: " + Driver.currentBookings.get(i).getDayBooked();
+                s+="\nTime: " + Driver.currentBookings.get(i).getTimeBooked();
+                s+="\nService: " + Driver.currentBookings.get(i).getServiceBooked();
+                if(e.getEmployeeName(businessID, Driver.currentBookings.get(i).getEmployeeID())!=null){
+                    s+="\nEmployee: " + e.getEmployeeName(businessID, Driver.currentBookings.get(i).getEmployeeID());
                 }
                 bookings.add(s);
             }
@@ -187,7 +187,7 @@ public class currentBookings  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBookingSummaryController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBookingSummaryController.setBusinessID(parameterToPass);
 
     }
 

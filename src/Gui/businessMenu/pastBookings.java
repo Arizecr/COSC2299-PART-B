@@ -50,7 +50,7 @@ public class pastBookings{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        businessMenuController.setBusinessID(businessID);
 
     }
 
@@ -72,14 +72,14 @@ public class pastBookings{
         ArrayList<String> bookings = new ArrayList<>();
 
         //load in past booking information
-        for(int i=0;i<driver.pastBookings.size();i++){
-            if(driver.pastBookings.get(i).getBusiness().equals(businessID)){
-                String s = "Date: " + driver.pastBookings.get(i).getDate();
-                s+="\nDay: " + driver.pastBookings.get(i).getDayBooked();
-                s+="\nTime: " + driver.pastBookings.get(i).getTimeBooked();
-                s+="\nService: " + driver.pastBookings.get(i).getServiceBooked();
-                if(e.getEmployeeName(businessID,driver.pastBookings.get(i).getEmployeeID())!=null){
-                    s+="\nEmployee: " + e.getEmployeeName(businessID,driver.pastBookings.get(i).getEmployeeID());
+        for(int i = 0; i< Driver.pastBookings.size(); i++){
+            if(Driver.pastBookings.get(i).getBusiness().equals(businessID)){
+                String s = "Date: " + Driver.pastBookings.get(i).getDate();
+                s+="\nDay: " + Driver.pastBookings.get(i).getDayBooked();
+                s+="\nTime: " + Driver.pastBookings.get(i).getTimeBooked();
+                s+="\nService: " + Driver.pastBookings.get(i).getServiceBooked();
+                if(e.getEmployeeName(businessID, Driver.pastBookings.get(i).getEmployeeID())!=null){
+                    s+="\nEmployee: " + e.getEmployeeName(businessID, Driver.pastBookings.get(i).getEmployeeID());
                 }
                 bookings.add(s);
             }
@@ -168,7 +168,7 @@ public class pastBookings{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBookingSummaryController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBookingSummaryController.setBusinessID(parameterToPass);
 
     }
 

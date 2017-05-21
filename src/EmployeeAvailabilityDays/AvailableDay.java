@@ -33,7 +33,7 @@ public class AvailableDay {
     private String workday;
     private String bid;
 
-    public AvailableDay(){};
+    public AvailableDay(){}
 
     Employee e = new Employee();
     //list for worker availability

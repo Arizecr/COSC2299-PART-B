@@ -57,7 +57,7 @@ public class bregisterController {
             if(valid == 0&&p.getText().equals(password.getText())){
 
 
-                toTxt.WriteToTXT(new Business(username.getText(), password.getText(), name.getText(),ownername.getText(), address.getText(), mobile.getText()), "business.txt");
+                toTxt.WriteToTXT(new Business(username.getText(), password.getText(), name.getText(),ownername.getText(), address.getText(), mobile.getText()), "businessPending.txt");
                 switchToLogin(event);
             }
             else if(!p.getText().equals(password.getText())){

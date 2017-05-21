@@ -166,12 +166,7 @@ public class addEmployeeController implements Initializable{
         }
 
         //checks format validity
-        if(!name.matches("^[a-zA-Z\\s]+$")){
-
-
-            return false; //invalid
-        }
-        return true;
+        return name.matches("^[a-zA-Z\\s]+$");
     }
 
     /*
@@ -188,12 +183,7 @@ public class addEmployeeController implements Initializable{
         }
 
         //checks format validity - all digits required
-        if(!isNumeric(tfn)) {
-
-
-            return true; //invalid - non digit
-        }
-        return false;
+        return !isNumeric(tfn);
     }
 
     /*
@@ -215,13 +205,7 @@ public class addEmployeeController implements Initializable{
         }
 
         //mobile nomust start with 04
-        if(phone.charAt(0) != '0'||phone.charAt(1) != '4' ){
-
-
-            return true; //invalid
-
-        }
-        return false;
+        return phone.charAt(0) != '0' || phone.charAt(1) != '4';
     }
 
     private boolean isNumeric(String s) {
@@ -250,7 +234,7 @@ public class addEmployeeController implements Initializable{
         businessMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        businessMenuController.setBusinessID(parameterToPass);
 
     }
 }

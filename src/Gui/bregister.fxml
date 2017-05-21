@@ -16,7 +16,7 @@
       <TextField fx:id="ownername" layoutX="137.0" layoutY="249.0" promptText="Business Owner name" />
       <TextField fx:id="address" layoutX="137.0" layoutY="292.0" promptText="883, Glayde Avenue" />
       <TextField fx:id="mobile" layoutX="137.0" layoutY="331.0" promptText="enter phone number" />
-      <Button fx:id="registerAccount" layoutX="247.0" layoutY="432.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="27.0" prefWidth="123.0" text="Register Business" />
+      <Button fx:id="registerAccount" layoutX="247.0" layoutY="432.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="27.0" prefWidth="123.0" text="Send Request" />
       <Text layoutX="155.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register">
          <font>
             <Font name="American Typewriter" size="26.0" />

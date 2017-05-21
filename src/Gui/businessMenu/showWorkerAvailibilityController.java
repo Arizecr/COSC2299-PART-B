@@ -70,7 +70,7 @@ public class showWorkerAvailibilityController implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         businessMenuController controller = loader.getController();
-        controller.setBusinessID(businessID);
+        businessMenuController.setBusinessID(businessID);
 
     }
 
@@ -84,7 +84,7 @@ public class showWorkerAvailibilityController implements Initializable{
         System.out.println("dwlo");
         readEmployee();
         ad.loadInfo(businessID);
-        ArrayList<String> array = ad.Bavailability;
+        ArrayList<String> array = AvailableDay.Bavailability;
 
         clarityArrAD(array,null);
 
@@ -93,7 +93,7 @@ public class showWorkerAvailibilityController implements Initializable{
 
         name.textProperty().addListener((obs, oldText, newText) -> {
             ArrayList<String> array2 = new ArrayList<>();
-            ArrayList<String> arrayz = ad.Bavailability;
+            ArrayList<String> arrayz = AvailableDay.Bavailability;
             if(!(name.getText() == null)){
 
 

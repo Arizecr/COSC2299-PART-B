@@ -305,11 +305,9 @@ public class BusinessMenu {
            // System.out.println("Invalid time:");
             return true;
         }
-        if (!t.contains(":00")&&!t.contains(":30")){//System.out.println("In the form HH:30 or HH:00 only");
-             return true;}
+        return !t.contains(":00") && !t.contains(":30");
 
 
-        return false;
     }
     public boolean ctime(String t){
         return checktime(t);
@@ -382,9 +380,8 @@ public class BusinessMenu {
         if( !timeCheck (starttime, endtime)){
 //add a check against current bookings in system
             //if( driver.checkAllWorktimes(bId,day,starttime,endtime)){return true;}//check against current shifts on this day
-            if( w.readWork2(bId,day,starttime,endtime)){return true;}//checks based on business hours set
+            return w.readWork2(bId, day, starttime, endtime);
 
-            return false;//correct booking time
         }
         return true;
     }

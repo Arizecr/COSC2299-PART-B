@@ -127,8 +127,8 @@ public class addServices extends Controller implements Initializable{
               alert.showAndWait();
           }
           else{ //successfully removed service
-              service.serviceList.remove(index - 1);
-              filewriter.rewriteToFile(service.serviceList,"services.txt");
+              Services.serviceList.remove(index - 1);
+              filewriter.rewriteToFile(Services.serviceList,"services.txt");
               System.out.print("Service removed");
 
               pass("businessMenu.fxml", businessID);
@@ -161,7 +161,7 @@ public class addServices extends Controller implements Initializable{
         //ArrayList<Button> b = new ArrayList<>();
         // AnchorPane root = new AnchorPane();
 
-        ArrayList<Services> array = service.serviceList;
+        ArrayList<Services> array = Services.serviceList;
 
         ArrayList<String> array2 = new ArrayList<>();
         array2 = test(array);
@@ -218,7 +218,7 @@ public class addServices extends Controller implements Initializable{
         businessMenuController controller = loader.getController();
 
         //function in the controller u go must contain this
-        controller.setBusinessID(parameterToPass);
+        businessMenuController.setBusinessID(parameterToPass);
 
     }
 

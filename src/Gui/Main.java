@@ -17,6 +17,8 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 480, 350));
         primaryStage.show();
 
+        //DMDKWAOIDJAIWFJOg
+
     }
 
     //launch program

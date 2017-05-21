@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import menu.Login;
 
@@ -47,12 +48,48 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+
+
+    @FXML
+    private Button customize;
+
+    @FXML
+    void customizeGui(ActionEvent event) {
+
+        Parent root;
+        try {
+            passToC("customizeMenu.fxml", businessID);
+       /*     root = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();*/
+
+            Parent home_page = FXMLLoader.load(getClass().getResource("customizeMenu.fxml"));
+            Scene home_page_scene = new Scene(home_page);
+            Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            //app_stage.setScene(home_page_scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("customizeMenu.fxml"));
+            Pane pane = loader.load();
+            //MUST change classname to the file u want to pass the variable to
+            customizeMenuController controller = loader.getController();
+            //function in the controller u go must contain this
+            controller.startChoose(app_stage);
+            // Hide this current window (if this is what you want)
+            //((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     //pass business id throughout functions/scenes
     private void pass(String fxmlFile, String parameterToPass) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addEmployeeController.setBusinessID(parameterToPass);
 
     }
 
@@ -61,7 +98,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         showWorkerAvailibilityController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        showWorkerAvailibilityController.setBusinessID(parameterToPass);
 
     }
 
@@ -70,7 +107,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         removeWorkingDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        removeWorkingDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -79,7 +116,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addWorkingDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addWorkingDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -88,7 +125,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBusinessHours controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBusinessHours.setBusinessID(parameterToPass);
 
     }
 
@@ -97,7 +134,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addEmployeeAvailableDayController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addEmployeeAvailableDayController.setBusinessID(parameterToPass);
 
     }
 
@@ -107,7 +144,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         chooseCustomerController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        chooseCustomerController.setBusinessID(parameterToPass);
 
     }
 
@@ -117,7 +154,7 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         addServices controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        addServices.setBusinessID(parameterToPass);
 
     }
 
@@ -127,7 +164,16 @@ public class businessMenuController extends Controller implements Initializable{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
         Pane pane = loader.load();
         viewBookingSummaryController controller = loader.getController();
-        controller.setBusinessID(parameterToPass);
+        viewBookingSummaryController.setBusinessID(parameterToPass);
+
+    }
+
+    private void passToC(String fxmlFile, String parameterToPass) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Pane pane = loader.load();
+        customizeMenuController controller = loader.getController();
+        customizeMenuController.setBusinessID(parameterToPass);
 
     }
 
@@ -173,7 +219,7 @@ public class businessMenuController extends Controller implements Initializable{
      */
     @FXML
     private void switchToLogin(ActionEvent event) throws IOException {
-        Parent home_page = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent home_page = FXMLLoader.load(getClass().getResource("../login.fxml"));
         Scene home_page_scene = new Scene(home_page);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(home_page_scene);
@@ -263,6 +309,9 @@ public class businessMenuController extends Controller implements Initializable{
 
     }
 
+
+
+
     @FXML //exit system
     public void handleCloseButtonAction(ActionEvent event) {
 
@@ -279,6 +328,21 @@ public class businessMenuController extends Controller implements Initializable{
         app_stage.setScene(home_page_scene);
         app_stage.show();
     }
+
+
+
+
+    ///////////////CUSTOMIZE\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    @FXML
+    private static Text businessName;
+
+    public static void setBusinessName(String abc){
+        businessName.setText(abc);
+    }
+
+
+
 
 
     @Override

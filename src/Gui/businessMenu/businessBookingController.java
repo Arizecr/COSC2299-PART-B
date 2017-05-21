@@ -1,4 +1,5 @@
 package Gui.businessMenu;
+import bookings.Customise;
 import bookings.Services;
 import coreFunctions.Driver;
 import coreFunctions.WriteToFile;
@@ -18,7 +19,7 @@ import javafx.util.Callback;
 import menu.BusinessMenu;
 import menu.Login;
 import user.Employee;
-
+import javafx.scene.text.Text;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -69,6 +70,8 @@ public class businessBookingController {
 
     @FXML
     private TextField starttime;
+    @FXML
+    private Text Heading;
 
     @FXML
     private TextField endtime;
@@ -98,6 +101,7 @@ public class businessBookingController {
      * make a booking
      */
     public void startMakeBook(Stage stage) throws IOException {
+        setH1();
         FXMLLoader loader = new FXMLLoader();
         //Parent rootNode = (Parent) loader.load(getClass().getResource("customerMenu.fxml"));
         Parent rootNode = FXMLLoader.load(getClass().getResource("businessMakeBooking.fxml"));
@@ -109,17 +113,17 @@ public class businessBookingController {
         // AnchorPane root = new AnchorPane();
 
         //load all services
-        for(int i=0;i<s.serviceList.size();i++){
+        for(int i = 0; i< Services.serviceList.size(); i++){
             //makes sure the services of only the current business are displayed
-            if(businessID.equals(s.serviceList.get(i).b())){
-                String n = s.serviceList.get(i).getName() +" - length: ";
-                String l = s.serviceList.get(i).getLengthT();
+            if(businessID.equals(Services.serviceList.get(i).b())){
+                String n = Services.serviceList.get(i).getName() +" - length: ";
+                String l = Services.serviceList.get(i).getLengthT();
                 String Time[] = l.split("-", 2);
                 String hours = Time[0];
                 String min = Time[1];
                 //final format of string in the list
-                n+= hours +" Hours and " +min +" Minutes ($" + s.serviceList.get(i).getCost()+")";
-                ser.add(s.serviceList.get(i));
+                n+= hours +" Hours and " +min +" Minutes ($" + Services.serviceList.get(i).getCost()+")";
+                ser.add(Services.serviceList.get(i));
                 services.add(n);
 
 
@@ -146,11 +150,11 @@ public class businessBookingController {
         //user selects service
         c.setTooltip(new Tooltip("Select the service"));
         e.loadEmployeeInformation();
-        for(int i=0;i<e.employeeList.size();i++){
+        for(int i = 0; i< Employee.employeeList.size(); i++){
             //makes sure the services of only the current business are displayed
-            if(businessID.equals(e.employeeList.get(i).getbId())){
-                emp.add(e.employeeList.get(i));
-                String n = e.employeeList.get(i).getName();
+            if(businessID.equals(Employee.employeeList.get(i).getbId())){
+                emp.add(Employee.employeeList.get(i));
+                String n = Employee.employeeList.get(i).getName();
 
                 employees.add(n);
 
@@ -226,13 +230,29 @@ public class businessBookingController {
         ((AnchorPane) rootNode).getChildren().add(starttime);
         ((AnchorPane) rootNode).getChildren().add(endtime);
         ((AnchorPane) rootNode).getChildren().add(c2);
+        ((AnchorPane) rootNode).getChildren().add(Heading);
         ((AnchorPane) rootNode).getChildren().addAll(c);
 
         Scene scene = new Scene(rootNode);
         stage.setScene(scene);
 
     }
+    public void setH1(){
+        Customise cust = new Customise();
+        Customise instance = cust.getCustom(businessID);
+        if(instance!=null) {
 
+            if (instance.getBooking() != null && (!instance.getBooking().equals("null"))) {
+                Heading.setText(instance.getBooking());
+            }
+            else {
+                Heading.setText("Booking");
+            }
+        }
+        else {
+            Heading.setText("Booking");
+        }
+    }
     public void checkFile(){
         days = new ArrayList<>();
         date = new ArrayList<>();
@@ -365,14 +385,9 @@ public class businessBookingController {
         {
             return true;
         }
-        if (dateinfo.getYear()!=Year&&dateinfo.getDayOfYear()<=(dayOfYear+30))
-        {
-            return true;
-        }
+        return dateinfo.getYear() != Year && dateinfo.getDayOfYear() <= (dayOfYear + 30);
 
 
-
-        return false;
     }
     public void checkBooking(ActionEvent event) throws IOException {//when button clicked
         if(addBooking()){
