@@ -4,87 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="fix">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BusinessWorkDays/Workday.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EmployeeAvailabilityDays/AvailableDay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/Controller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/bregister.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/bregisterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployee.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDay.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeAvailableDayController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addEmployeeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addServices.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDay.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/addWorkingDayController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessBookingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessMakeBooking.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenu.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/businessMenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomer.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/chooseCustomerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/currentBookings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenu.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/customizeMenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/pastBookings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDay.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/removeWorkingDayController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/services.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/servicesController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibility.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/showWorkerAvailibilityController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummary.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBookingSummaryController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/businessMenu/viewBusinessHours.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/chooseBusiness.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/chooseBusinessController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/bookingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenu.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/customerMenuController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/makeBooking.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/customerMenu/viewBookings.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/login.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/register.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/registerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/verifyBusiness.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gui/verifyBusinessController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/Bookings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/CurrentBookings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/Customise.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/PastBookings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bookings/Services.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/coreFunctions/Driver.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/coreFunctions/WriteToFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/menu/BusinessMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/menu/CustomerMenu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/menu/Login.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/menu/Register.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/AddEmployeeTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/CustomerBookingTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/EmployeeAvailabilityTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/Logging.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/LoginTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/RegisterTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/ServicesTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/WorkdayTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/WorkingTimesTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/checkIDTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/viewBookingTesting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/user/Business.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/user/BusinessOwner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/user/Customer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/user/Employee.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/userBase/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+    <list default="true" id="f3e927a7-7279-4919-86bb-0fe83c5eded7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COSC-2299-Part-A.iml" afterPath="$PROJECT_DIR$/COSC-2299-Part-A.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -111,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="98">
               <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customise.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bookings/Customise.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2092">
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -205,7 +136,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Part-C" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="PUSH_TAGS">
@@ -340,6 +271,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="businessMenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -733,13 +736,6 @@
       <option name="presentableId" value="Default" />
       <updated>1492862601481</updated>
     </task>
-    <task id="LOCAL-00148" summary="fixing small bug in business registration">
-      <created>1493963361533</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1493963361533</updated>
-    </task>
     <task id="LOCAL-00149" summary="add services started">
       <created>1493964297812</created>
       <option name="number" value="00149" />
@@ -1076,7 +1072,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495256060054</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="fixing build">
+      <created>1495372012274</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1495372012275</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1197,7 +1200,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="retrieve bID" />
     <MESSAGE value="fixed error" />
     <MESSAGE value="current bookings" />
     <MESSAGE value="multiple business implementation" />
@@ -1222,7 +1224,8 @@
     <MESSAGE value="verification" />
     <MESSAGE value="business hours fix" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fixing build" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1235,7 +1238,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/menu/CustomerMenu.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Gui/bregisterController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/Register.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/menu/Login.java" />
@@ -1382,6 +1384,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bookings/Customise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2092">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
