@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.customerMenu.bookingController">
+    <children>
+        <Pane id="Lolo" layoutX="31.0" layoutY="17.0" prefHeight="206.0" prefWidth="279.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="17.0">
+            <children>
+                <Text fx:id="Heading" layoutX="47.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="">
+                    <font>
+                        <Font name="American Typewriter" size="26.0" />
+                    </font>
+                </Text>
+                <Button layoutX="270.0" layoutY="420.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="57.0" text="Back" textFill="#4465ab" />
+
+            </children>
+            <effect>
+                <DropShadow color="#9a9090" />
+            </effect>
+        </Pane>
+    </children>
+</AnchorPane>
