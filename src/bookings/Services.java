@@ -400,11 +400,16 @@ public class Services {
                 subList.add(serviceList.get(i));
             }
         }
+        if(subList.size()!=0){
         int largest = subList.size()-1;//gets the last in the list
         String c = subList.get(largest).sId.substring(1);//gets the number
         //due to deletion this may not be the same as the index of arraylist
+
         count = Integer.parseInt(c)+1;
-        return "s"+count;
+        return "s"+count;}
+        else{
+            return "s"+1;
+        }
     }
     public String toString() {
         String part1=bId + ":" + sId + ":" + name + ":" + lengthT + ":"+ cost ;

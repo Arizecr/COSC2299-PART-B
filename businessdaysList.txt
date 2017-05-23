@@ -8,3 +8,8 @@ b1 Tuesday 15:00 16:00
 b1 Wednesday 7:00 10:00
 b1 Thursday 7:00 8:00
 b1 Friday 14:00 15:00
+b111 Monday 07:00 17:00
+b111 Tuesday 07:00 17:00
+b111 Wednesday 07:00 17:00
+b111 Thursday 07:00 17:00
+b111 Friday 07:00 17:00
